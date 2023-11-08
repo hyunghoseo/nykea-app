@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 Before you begin, ensure you have the following installed:
 
 - Node.js (LTS version recommended)
-- Yarn
+- Yarn ([note on package manager](#note-on-package-manager))
 - Git
 
 ### Setting Up the Backend
