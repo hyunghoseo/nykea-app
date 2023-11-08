@@ -72,3 +72,47 @@ WIP
 This project uses Yarn as its package manager to ensure consistent installation of dependencies and compatibility with the `yarn.lock` file in the repository. The `yarn.lock` file locks the versions of the project's dependencies, which helps to avoid discrepancies between different development and production environments. For this reason, contributors are encouraged to use Yarn for installing, updating, and managing the project's dependencies.
 
 If you do not have Yarn installed on your system, you can follow the instructions on the [Yarn Installation Page](https://classic.yarnpkg.com/en/docs/install/).
+
+## Testing
+
+Testing is an integral part of our development process to ensure the quality and reliability of our code. In this project, we use different testing strategies for the backend and the frontend.
+
+### Backend Testing
+
+For the backend, we use Jest as our testing framework.
+
+**Running Tests:**
+
+To run the backend tests, navigate to the `backend/` directory and run the following command:
+
+```bash
+yarn test
+```
+
+This will execute all the tests located in the `__tests__/` folder.
+
+**Writing Tests:**
+
+Tests should be written in the `__tests__/` directory and structured to reflect the directory structure of the code being tested. Test files should be named in the format `[filename].test.js`.
+
+Please ensure that any new backend features include corresponding unit tests and that you update existing tests as necessary.
+
+### Frontend Testing
+
+The frontend testing is setup with Jest for unit tests and React Native Testing Library for component tests.
+
+**Running Tests:**
+
+To run the frontend tests, navigate to the `frontend/` directory and run:
+
+```bash
+yarn test
+```
+
+This command will run all the test suites defined in the project.
+
+**Writing Tests:**
+
+Frontend tests should be placed in a `__tests__` directory within the relevant feature or component folder. Test files should be named in the format `[ComponentName].test.js`.
+
+Make sure to write tests for any new components or utility functions, and update tests after making changes to the corresponding parts of the codebase.
