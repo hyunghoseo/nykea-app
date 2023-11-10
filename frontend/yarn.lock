@@ -5837,7 +5837,7 @@ jest-environment-node@^29.2.1, jest-environment-node@^29.7.0:
     jest-mock "^29.7.0"
     jest-util "^29.7.0"
 
-jest-expo@^49.0.0:
+jest-expo@~49.0.0:
   version "49.0.0"
   resolved "https://registry.yarnpkg.com/jest-expo/-/jest-expo-49.0.0.tgz#d1c91ddb1303f8666de47d45ba52174bff6fb241"
   integrity sha512-nglYg6QPYSqCsrsOFiGosQi+m1rrqmYluPbFXNnXNEOrB2MvxMOgQJeWfMHDExHMX1ymLWX+7y8mYo6XVJpBJQ==

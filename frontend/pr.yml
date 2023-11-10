@@ -1,0 +1,37 @@
+name: Pull Request into Master, Develop and Preprod
+
+on:
+  pull_request:
+    branches:
+      - "main"
+      - "develop"
+
+jobs:
+  #First job
+  install-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "yarn"
+
+      - name: Install Node modules
+        run: yarn ci
+
+      - name: Linting
+        run: yarn lint
+
+      - name: Unit & Integration tests
+        run: yarn test:ci
+
+      - name: Jest coverage report
+        uses: ArtiomTr/jest-coverage-report-action@v2.0.6
+        with:
+          coverage-file: ./jest-report.json
+          base-coverage-file: ./jest-report.json
