@@ -19,4 +19,4 @@ jobs:
   #Second job
   frontend:
     needs: workflow-setup
-    uses: ./.github/workflows/frontend.yml
+    uses: ./frontend.yml
