@@ -8,8 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "jest"
   },
   "jest": {
     "testEnvironment": "node"
