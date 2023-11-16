@@ -22,3 +22,10 @@ jobs:
      uses: ./.github/workflows/frontend.yml
      with:
        environment: develop
+
+   #Second job
+   backend:
+     needs: workflow-setup
+     uses: ./.github/workflows/backend.yml
+     with:
+       environment: develop
