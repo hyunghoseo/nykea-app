@@ -1,0 +1,27 @@
+name: "Backend"
+
+on: 
+   workflow_call:
+     inputs:
+       environment:
+         required: true
+         type: string
+
+jobs:
+   install-frontend:
+      runs-on: ubuntu-latest
+     
+      steps:
+         - name: Checkout
+           uses: actions/checkout@v3
+         - name: Use Node.js 18
+           uses: actions/setup-node@v3
+           with:
+              node-version: 18
+         - name: Install Node modules
+           run: cd backend && yarn install
+         - name: Linting
+           run: cd backend && yarn lint
+         - name: Unit & Integration tests
+           run: cd backend && yarn test
+         
