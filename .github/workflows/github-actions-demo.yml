@@ -20,6 +20,3 @@ jobs:
   frontend:
     needs: workflow-setup
     uses: ./.github/workflows/frontend.yml
-    with:
-      environment: release
-    secrets: inherit
