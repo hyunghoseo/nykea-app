@@ -19,4 +19,4 @@ jobs:
          with:
            node-version: 14
        - name: Install Node modules
-         run: cd frontend && yarn ci
+         run: cd frontend && yarn install
