@@ -1,0 +1,15 @@
+name: "Frontend"
+
+on: 
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+jobs:
+  install-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node modules
+        run: cd frontend && yarn install
