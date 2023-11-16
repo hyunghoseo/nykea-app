@@ -1,15 +1,26 @@
-name: "Frontend"
+name: Reusable workflow
 
-on: 
+on:
   workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
+    # Map the workflow outputs to job outputs
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.example_job.outputs.output1 }}
+      secondword:
+        description: "The second output string"
+        value: ${{ jobs.example_job.outputs.output2 }}
 
 jobs:
-  install-frontend:
+  example_job:
+    name: Generate output
     runs-on: ubuntu-latest
+    # Map the job outputs to step outputs
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+      output2: ${{ steps.step2.outputs.secondword }}
     steps:
-      - name: Install Node modules
-        run: cd frontend && yarn install
+      - id: step1
+        run: echo "firstword=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "secondword=world" >> $GITHUB_OUTPUT
