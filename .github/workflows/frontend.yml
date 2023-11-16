@@ -21,7 +21,7 @@ jobs:
          - name: Install Node modules
            run: cd frontend && yarn install
          - name: Linting
-           run: yarn lint
+           run: cd frontend && yarn lint
          - name: Unit & Integration tests
-           run: yarn test
+           run: cd frontend && yarn test
          
