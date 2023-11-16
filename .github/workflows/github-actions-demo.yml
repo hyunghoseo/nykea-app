@@ -11,9 +11,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Use Latest Node.js
+      - name: Use Node.js 14
         uses: actions/setup-node@v3
         with:
-          node-version: latest
-      - name: Install Node modules
-        run: yarn ci
+          node-version: 14
