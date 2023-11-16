@@ -4,8 +4,21 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 
 jobs:
-  #Frontend
-  frontend:
-    uses: ./.github/workflows/frontend.yml
-    with:
-      environment: develop
+  #First job
+   workflow-setup:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v4
+       - name: Use Node.js 14
+         uses: actions/setup-node@v3
+         with:
+           node-version: 14
+
+   #Second job
+   frontend:
+     needs: workflow-setup
+     uses: ./.github/workflows/frontend.yml
+     with:
+       environment: develop
