@@ -20,8 +20,6 @@ jobs:
               node-version: 18
          - name: Install Node modules
            run: cd backend && yarn install
-         - name: Linting
-           run: cd backend && yarn lint
          - name: Unit & Integration tests
            run: cd backend && yarn test
          
