@@ -33,6 +33,8 @@ Install the necessary dependencies:
 yarn install
 ```
 
+**If not already present, create a copy of the .env.example file and name it .env.**
+
 Start the Strapi development server:
 
 ```bash
