@@ -49,7 +49,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          source: "strapi-build.tar.gz"
+          source: "backend/strapi-build.tar.gz"
           target: "/tmp"
 
       - name: SSH and Git Pull on Server
