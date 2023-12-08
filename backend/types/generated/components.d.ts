@@ -57,22 +57,12 @@ export interface CommonLink extends Schema.Component {
   };
 }
 
-export interface OpeningAgenda extends Schema.Component {
-  collectionName: 'components_opening_agenda';
-  info: {
-    displayName: 'Agenda';
-    icon: 'bulletList';
-  };
-  attributes: {};
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'agenda.default': AgendaDefault;
       'common.date-time': CommonDateTime;
       'common.link': CommonLink;
-      'opening.agenda': OpeningAgenda;
     }
   }
 }
