@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_list_defaults",
+  "info": {
+    "displayName": "Default",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "text"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    }
+  }
+}

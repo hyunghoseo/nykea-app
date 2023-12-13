@@ -67,6 +67,20 @@
         }
       },
       "component": "agenda.default"
+    },
+    "Announcements": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "list.announcement",
+        "list.default",
+        "list.event"
+      ],
+      "required": true
     }
   }
 }

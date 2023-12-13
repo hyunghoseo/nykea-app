@@ -108,6 +108,11 @@
         }
       },
       "component": "common.date-time"
+    },
+    "Group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::group.group"
     }
   }
 }

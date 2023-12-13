@@ -66,11 +66,11 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "user_info_id": {
+    "user_info": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::user-info.user-info",
-      "mappedBy": "user_id"
+      "mappedBy": "users_permissions_user"
     }
   }
 }

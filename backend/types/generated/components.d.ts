@@ -57,12 +57,58 @@ export interface CommonLink extends Schema.Component {
   };
 }
 
+export interface ListAnnouncement extends Schema.Component {
+  collectionName: 'components_list_announcements';
+  info: {
+    displayName: 'Announcement';
+  };
+  attributes: {
+    Announcement: Attribute.Relation<
+      'list.announcement',
+      'oneToOne',
+      'api::announcement.announcement'
+    >;
+  };
+}
+
+export interface ListDefault extends Schema.Component {
+  collectionName: 'components_list_defaults';
+  info: {
+    displayName: 'Default';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    Description: Attribute.Text;
+    Link: Attribute.Component<'common.link', true>;
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+  };
+}
+
+export interface ListEvent extends Schema.Component {
+  collectionName: 'components_list_events';
+  info: {
+    displayName: 'Event';
+    icon: 'calendar';
+  };
+  attributes: {
+    event: Attribute.Relation<'list.event', 'oneToOne', 'api::event.event'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'agenda.default': AgendaDefault;
       'common.date-time': CommonDateTime;
       'common.link': CommonLink;
+      'list.announcement': ListAnnouncement;
+      'list.default': ListDefault;
+      'list.event': ListEvent;
     }
   }
 }

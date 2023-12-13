@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "user_infos",
+  "collectionName": "announcements",
   "info": {
-    "singularName": "user-info",
-    "pluralName": "user-infos",
-    "displayName": "UserInfo",
+    "singularName": "announcement",
+    "pluralName": "announcements",
+    "displayName": "Announcement",
     "description": ""
   },
   "options": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "DisplayName": {
+    "Title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -27,39 +27,31 @@
       "unique": true,
       "minLength": 1
     },
-    "FirstName": {
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true,
-      "minLength": 1
+      "type": "text"
     },
-    "LastName": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true,
-      "minLength": 1
-    },
-    "MiddleName": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
-    "users_permissions_user": {
+    "Group": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "user_info"
+      "target": "api::group.group"
     }
   }
 }
