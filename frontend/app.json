@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "frontend",
+    "displayName": "NY KEA",
     "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
