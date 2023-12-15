@@ -4,7 +4,8 @@
   "info": {
     "singularName": "group",
     "pluralName": "groups",
-    "displayName": "Group"
+    "displayName": "Group",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,6 +33,18 @@
         }
       },
       "type": "text"
+    },
+    "Picture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

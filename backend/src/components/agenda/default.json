@@ -28,11 +28,13 @@
         "images"
       ]
     },
-    "URL": {
-      "type": "string"
-    },
     "Assignee": {
       "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.link"
     }
   }
 }

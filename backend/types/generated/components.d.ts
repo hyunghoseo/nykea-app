@@ -20,8 +20,8 @@ export interface AgendaDefault extends Schema.Component {
     >;
     Description: Attribute.Text;
     Image: Attribute.Media;
-    URL: Attribute.String;
     Assignee: Attribute.String;
+    Link: Attribute.Component<'common.link'>;
   };
 }
 

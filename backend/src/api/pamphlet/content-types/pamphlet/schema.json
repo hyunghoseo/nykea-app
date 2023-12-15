@@ -4,7 +4,7 @@
   "info": {
     "singularName": "pamphlet",
     "pluralName": "pamphlets",
-    "displayName": "Pamphlet",
+    "displayName": "Service",
     "description": ""
   },
   "options": {
@@ -81,6 +81,14 @@
         "list.event"
       ],
       "required": true
+    },
+    "SermonVideo": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }

@@ -862,6 +862,7 @@ export interface ApiGroupGroup extends Schema.CollectionType {
     singularName: 'group';
     pluralName: 'groups';
     displayName: 'Group';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -883,6 +884,12 @@ export interface ApiGroupGroup extends Schema.CollectionType {
         minLength: 1;
       }>;
     Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Picture: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -917,7 +924,7 @@ export interface ApiPamphletPamphlet extends Schema.CollectionType {
   info: {
     singularName: 'pamphlet';
     pluralName: 'pamphlets';
-    displayName: 'Pamphlet';
+    displayName: 'Service';
     description: '';
   };
   options: {
@@ -980,6 +987,12 @@ export interface ApiPamphletPamphlet extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    SermonVideo: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -999,6 +1012,81 @@ export interface ApiPamphletPamphlet extends Schema.CollectionType {
       'api::pamphlet.pamphlet',
       'oneToMany',
       'api::pamphlet.pamphlet'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiSupportSupport extends Schema.CollectionType {
+  collectionName: 'supports';
+  info: {
+    singularName: 'support';
+    pluralName: 'supports';
+    displayName: 'Support';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    FullName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Email: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Phone: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Message: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::support.support',
+      'oneToMany',
+      'api::support.support'
     >;
     locale: Attribute.String;
   };
@@ -1107,6 +1195,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::group.group': ApiGroupGroup;
       'api::pamphlet.pamphlet': ApiPamphletPamphlet;
+      'api::support.support': ApiSupportSupport;
       'api::user-info.user-info': ApiUserInfoUserInfo;
     }
   }
