@@ -45,5 +45,5 @@ jobs:
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           local-dir: frontend/web-build/
-          server-dir: home/nykea/public_html
+          server-dir: home/nykea/public_html/
           dangerous-clean-slate: false
