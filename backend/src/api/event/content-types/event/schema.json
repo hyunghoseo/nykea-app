@@ -109,7 +109,7 @@
       },
       "component": "common.date-time"
     },
-    "Group": {
+    "HostingGroup": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::group.group"

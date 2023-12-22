@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "announcements",
+  "collectionName": "banners",
   "info": {
-    "singularName": "announcement",
-    "pluralName": "announcements",
-    "displayName": "Announcement",
+    "singularName": "banner",
+    "pluralName": "banners",
+    "displayName": "Banner",
     "description": ""
   },
   "options": {
@@ -24,21 +24,7 @@
       },
       "type": "string",
       "required": true,
-      "unique": true,
-      "minLength": 1
-    },
-    "Poster": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "unique": true
     },
     "Description": {
       "pluginOptions": {
@@ -46,22 +32,35 @@
           "localized": true
         }
       },
-      "type": "text"
+      "type": "string"
     },
-    "Group": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::group.group"
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.link"
     },
-    "Private": {
+    "StartDate": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "boolean",
-      "default": false,
+      "type": "date",
       "required": true
+    },
+    "EndDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "date",
+      "required": false
     }
   }
 }

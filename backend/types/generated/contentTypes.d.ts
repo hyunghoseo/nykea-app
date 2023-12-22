@@ -808,6 +808,14 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       'oneToOne',
       'api::group.group'
     >;
+    Private: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -827,6 +835,80 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       'api::announcement.announcement',
       'oneToMany',
       'api::announcement.announcement'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'Banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Link: Attribute.Component<'common.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    StartDate: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    EndDate: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::banner.banner',
+      'oneToMany',
+      'api::banner.banner'
     >;
     locale: Attribute.String;
   };
@@ -908,7 +990,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Group: Attribute.Relation<
+    HostingGroup: Attribute.Relation<
       'api::event.event',
       'oneToOne',
       'api::group.group'
@@ -1000,6 +1082,80 @@ export interface ApiGroupGroup extends Schema.CollectionType {
   };
 }
 
+export interface ApiLeaderLeader extends Schema.CollectionType {
+  collectionName: 'leaders';
+  info: {
+    singularName: 'leader';
+    pluralName: 'leaders';
+    displayName: 'Leader';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    StartYear: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    EndYear: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<9999>;
+    FullName: Attribute.Relation<
+      'api::leader.leader',
+      'oneToOne',
+      'api::user-info.user-info'
+    >;
+    Title: Attribute.Enumeration<['Pastor', 'Chairman', 'Wives', 'Sunghwa']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Picture: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::leader.leader',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::leader.leader',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::leader.leader',
+      'oneToMany',
+      'api::leader.leader'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiPamphletPamphlet extends Schema.CollectionType {
   collectionName: 'pamphlets';
   info: {
@@ -1074,6 +1230,14 @@ export interface ApiPamphletPamphlet extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    ServiceType: Attribute.Enumeration<['Sunday', 'Family', 'Special']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'Sunday'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1274,8 +1438,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::announcement.announcement': ApiAnnouncementAnnouncement;
+      'api::banner.banner': ApiBannerBanner;
       'api::event.event': ApiEventEvent;
       'api::group.group': ApiGroupGroup;
+      'api::leader.leader': ApiLeaderLeader;
       'api::pamphlet.pamphlet': ApiPamphletPamphlet;
       'api::support.support': ApiSupportSupport;
       'api::user-info.user-info': ApiUserInfoUserInfo;

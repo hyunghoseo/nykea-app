@@ -28,13 +28,29 @@
         "images"
       ]
     },
-    "Assignee": {
-      "type": "string"
-    },
     "Link": {
       "type": "component",
       "repeatable": false,
       "component": "common.link"
+    },
+    "AgendaType": {
+      "type": "enumeration",
+      "enum": [
+        "Kiwon",
+        "Opening Song",
+        "Family Pledge",
+        "Opening Prayer",
+        "Monthly Video",
+        "Sermon"
+      ]
+    },
+    "AssignedGroup": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::group.group"
+    },
+    "Video": {
+      "type": "string"
     }
   }
 }

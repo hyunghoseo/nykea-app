@@ -89,6 +89,21 @@
         }
       },
       "type": "string"
+    },
+    "ServiceType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Sunday",
+        "Family",
+        "Special"
+      ],
+      "required": true,
+      "default": "Sunday"
     }
   }
 }

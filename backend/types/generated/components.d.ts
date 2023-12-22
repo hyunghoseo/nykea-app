@@ -20,8 +20,23 @@ export interface AgendaDefault extends Schema.Component {
     >;
     Description: Attribute.Text;
     Image: Attribute.Media;
-    Assignee: Attribute.String;
     Link: Attribute.Component<'common.link'>;
+    AgendaType: Attribute.Enumeration<
+      [
+        'Kiwon',
+        'Opening Song',
+        'Family Pledge',
+        'Opening Prayer',
+        'Monthly Video',
+        'Sermon'
+      ]
+    >;
+    AssignedGroup: Attribute.Relation<
+      'agenda.default',
+      'oneToOne',
+      'api::group.group'
+    >;
+    Video: Attribute.String;
   };
 }
 
