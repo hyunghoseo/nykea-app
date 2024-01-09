@@ -24,22 +24,26 @@
       },
       "type": "string",
       "required": true,
-      "minLength": 1
+      "minLength": 5
     },
-    "Description": {
+    "ShortDescription": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text"
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 5,
+      "required": true
     },
     "Picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
