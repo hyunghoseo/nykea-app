@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "pamphlets",
+  "collectionName": "services",
   "info": {
-    "singularName": "pamphlet",
-    "pluralName": "pamphlets",
+    "singularName": "service",
+    "pluralName": "services",
     "displayName": "Service",
     "description": ""
   },

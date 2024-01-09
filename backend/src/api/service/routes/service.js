@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pamphlet router
+ * service router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::pamphlet.pamphlet');
+module.exports = createCoreRouter('api::service.service');
