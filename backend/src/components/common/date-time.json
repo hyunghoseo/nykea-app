@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_common_date_times",
+  "info": {
+    "displayName": "DateTime",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "Time": {
+      "type": "time"
+    }
+  }
+}
