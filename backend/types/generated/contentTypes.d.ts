@@ -803,7 +803,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Group: Attribute.Relation<
+    HostingGroup: Attribute.Relation<
       'api::announcement.announcement',
       'oneToOne',
       'api::group.group'
@@ -816,6 +816,12 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
+    Link: Attribute.Component<'common.link', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -995,6 +1001,14 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'oneToOne',
       'api::group.group'
     >;
+    Private: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1268,6 +1282,7 @@ export interface ApiSupportSupport extends Schema.CollectionType {
     singularName: 'support';
     pluralName: 'supports';
     displayName: 'Support';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1308,6 +1323,33 @@ export interface ApiSupportSupport extends Schema.CollectionType {
       }>;
     Message: Attribute.Text &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    DateSubmitted: Attribute.DateTime &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Status: Attribute.Enumeration<['Submitted', 'Under Review', 'Completed']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'Submitted'>;
+    Memo: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    DateCompleted: Attribute.DateTime &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

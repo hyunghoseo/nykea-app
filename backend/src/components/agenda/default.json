@@ -51,6 +51,11 @@
     },
     "Video": {
       "type": "string"
+    },
+    "Standing": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

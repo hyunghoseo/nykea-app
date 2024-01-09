@@ -4,7 +4,8 @@
   "info": {
     "singularName": "support",
     "pluralName": "supports",
-    "displayName": "Support"
+    "displayName": "Support",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -61,6 +62,46 @@
       },
       "type": "text",
       "required": true
+    },
+    "DateSubmitted": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime",
+      "required": true
+    },
+    "Status": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Submitted",
+        "Under Review",
+        "Completed"
+      ],
+      "required": true,
+      "default": "Submitted"
+    },
+    "Memo": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
+    },
+    "DateCompleted": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime"
     }
   }
 }

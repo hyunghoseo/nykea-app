@@ -37,6 +37,9 @@ export interface AgendaDefault extends Schema.Component {
       'api::group.group'
     >;
     Video: Attribute.String;
+    Standing: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 

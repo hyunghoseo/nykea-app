@@ -48,7 +48,7 @@
       },
       "type": "text"
     },
-    "Group": {
+    "HostingGroup": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::group.group"
@@ -62,6 +62,16 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.link"
     }
   }
 }
