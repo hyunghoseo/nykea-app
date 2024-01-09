@@ -1,9 +1,9 @@
 {
   "kind": "singleType",
-  "collectionName": "about_pages",
+  "collectionName": "church-infos",
   "info": {
-    "singularName": "about-page",
-    "pluralName": "about-pages",
+    "singularName": "church-info",
+    "pluralName": "church-infos",
     "displayName": "ChurchInfo",
     "description": ""
   },

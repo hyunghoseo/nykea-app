@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * about-page service
+ * church-info service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::about-page.about-page');
+module.exports = createCoreService('api::church-info.church-info');
