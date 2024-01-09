@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_common_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "minLength": 1,
+      "required": true
+    },
+    "URL": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    }
+  }
+}

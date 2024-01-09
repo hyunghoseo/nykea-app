@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_list_announcements",
+  "info": {
+    "displayName": "Announcement"
+  },
+  "options": {},
+  "attributes": {
+    "Announcement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::announcement.announcement"
+    }
+  }
+}

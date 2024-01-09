@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_list_events",
+  "info": {
+    "displayName": "Event",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    }
+  }
+}
