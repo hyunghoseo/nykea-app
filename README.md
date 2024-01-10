@@ -91,11 +91,11 @@ To run the backend tests, navigate to the `backend/` directory and run the follo
 yarn test
 ```
 
-This will execute all the tests located in the `__tests__/` folder.
+This will execute all the tests located in the `tests/` folder.
 
 **Writing Tests:**
 
-Tests should be written in the `__tests__/` directory and structured to reflect the directory structure of the code being tested. Test files should be named in the format `[filename].test.js`.
+Tests should be written in the `tests/` directory and structured to reflect the directory structure of the code being tested. Test files should be named in the format `[filename].test.js`.
 
 Please ensure that any new backend features include corresponding unit tests and that you update existing tests as necessary.
 
