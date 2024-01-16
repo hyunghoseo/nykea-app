@@ -54,14 +54,6 @@
       "type": "string",
       "required": true
     },
-    "PrivatePolicy": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text"
-    },
     "FamilyWebsites": {
       "type": "component",
       "repeatable": true,
@@ -71,6 +63,15 @@
         }
       },
       "component": "common.link"
+    },
+    "PrivatePolicy": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "richtext",
+      "required": true
     }
   }
 }

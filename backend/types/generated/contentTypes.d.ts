@@ -884,16 +884,17 @@ export interface ApiChurchInfoChurchInfo extends Schema.SingleType {
           localized: false;
         };
       }>;
-    PrivatePolicy: Attribute.Text &
+    FamilyWebsites: Attribute.Component<'common.link', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    FamilyWebsites: Attribute.Component<'common.link', true> &
+    PrivatePolicy: Attribute.RichText &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
