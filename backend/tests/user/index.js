@@ -37,7 +37,7 @@ it('should return users data for authenticated user', async () => {
 
   const role = defaultRole ? defaultRole.id : null;
 
-  /** Creates a new user an push to database */
+  /** Creates a new user and push to database */
   const user = await strapi.plugins['users-permissions'].services.user.add({
     ...mockUserData,
     username: 'tester2',
