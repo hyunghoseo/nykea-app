@@ -708,7 +708,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
         };
       }> &
       Attribute.SetMinMaxLength<{
-        minLength: 1;
+        minLength: 5;
       }>;
     Poster: Attribute.Media &
       Attribute.SetPluginOptions<{

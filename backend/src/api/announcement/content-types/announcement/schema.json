@@ -25,7 +25,7 @@
       "type": "string",
       "required": true,
       "unique": true,
-      "minLength": 1
+      "minLength": 5
     },
     "Poster": {
       "type": "media",
