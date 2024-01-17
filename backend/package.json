@@ -29,6 +29,7 @@
     "@strapi/strapi": "4.15.0",
     "better-sqlite3": "8.6.0",
     "pg": "^8.11.3",
+    "strapi-plugin-config-sync": "^1.2.3",
     "supertest": "^6.3.3"
   },
   "author": {

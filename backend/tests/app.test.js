@@ -14,4 +14,4 @@ it("strapi is defined", () => {
 });
 
 require('./api/group');
-require('./user');
+require('./api/user');
