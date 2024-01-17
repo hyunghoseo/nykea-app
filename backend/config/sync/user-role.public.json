@@ -4,6 +4,12 @@
   "type": "public",
   "permissions": [
     {
+      "action": "api::group.group.find"
+    },
+    {
+      "action": "api::group.group.findOne"
+    },
+    {
       "action": "plugin::users-permissions.auth.callback"
     },
     {
