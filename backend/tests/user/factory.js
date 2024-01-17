@@ -32,6 +32,7 @@ const createUser = async (strapi, data) => {
     const defaultRole = await strapi
         .query("role", "users-permissions")
         .findOne({}, []);
+    print(defaultRole);
     /** Creates a new user an push to database */
     return await strapi.plugins["users-permissions"].services.user.add({
         ...(data || mockUserData()),

@@ -8,7 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "test": "jest --forceExit --detectOpenHandles"
+    "test": "jest --watchAll --forceExit --detectOpenHandles"
   },
   "jest": {
     "testPathIgnorePatterns": [

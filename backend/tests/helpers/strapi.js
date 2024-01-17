@@ -2,6 +2,7 @@ const Strapi = require("@strapi/strapi");
 const fs = require("fs");
 
 let instance;
+let apiToken;
 
 /**
  * Setups strapi for futher testing
@@ -14,6 +15,25 @@ async function setupStrapi() {
     await instance.server.mount();
   }
   return instance;
+}
+
+const getRandomID = () => {
+  return Math.round(Math.random() * 10000).toString();
+};
+
+const getFullAPIToken = async () => {
+  if (!apiToken) {
+    const tokenService = strapi.service("admin::api-token");
+
+    const attributes = {
+      name: `token${getRandomID()}`,
+      description: "",
+      type: "full-access",
+      lifespan: null,
+    };
+    apiToken = await tokenService.create(attributes);
+  }
+  return apiToken.accessKey;
 }
 
 /**
@@ -75,4 +95,4 @@ async function cleanupStrapi() {
   }
 }
 
-module.exports = { setupStrapi, cleanupStrapi, grantPrivilege };
+module.exports = { setupStrapi, cleanupStrapi, grantPrivilege, getFullAPIToken };

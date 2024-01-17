@@ -2,8 +2,8 @@ const request = require('supertest');
 
 // user mock data
 const mockUserData = {
-    username: "tester",
-    email: "tester@strapi.com",
+    username: `tester`,
+    email: `tester@strapi.com`,
     provider: "local",
     password: "1234abc",
     confirmed: true,
@@ -14,6 +14,8 @@ it("should login user and return jwt token", async () => {
     /** Creates a new user and save it to the database */
     await strapi.plugins["users-permissions"].services.user.add({
         ...mockUserData,
+        username: `tester${Math.random()}`,
+        email: `tester${Math.random()}@strapi.com`,
     });
 
     await request(strapi.server.httpServer) // app server is an instance of Class: http.Server
@@ -40,8 +42,8 @@ it('should return users data for authenticated user', async () => {
     /** Creates a new user and push to database */
     const user = await strapi.plugins['users-permissions'].services.user.add({
         ...mockUserData,
-        username: 'tester2',
-        email: 'tester2@strapi.com',
+        username: `tester${Math.random()}`,
+        email: `tester${Math.random()}@strapi.com`,
         role,
     });
 
