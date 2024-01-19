@@ -21,6 +21,12 @@ jobs:
       - name: Install Node modules
         run: cd backend && yarn install
       - name: Config Sync
-        run: cd backend && yarn cs import --yes --force
+        run: |
+          cd backend
+          yarn start
+          yarn cs import --yes --force
+          yarn build
       - name: Unit & Integration tests
-        run: cd backend && yarn test
+        run: |
+          cd backend
+          yarn test
