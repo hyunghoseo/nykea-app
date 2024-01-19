@@ -27,12 +27,15 @@ const mockUserData = (options = {}) => {
  * @param options that overwrites default options
  * @returns {object} object of new created user, fetched from database
  */
-const createUser = async (strapi, data) => {
+const createUser = async (strapi, role, data) => {
     /** Gets the default user role */
     const defaultRole = await strapi
-        .query("role", "users-permissions")
-        .findOne({}, []);
-    print(defaultRole);
+        .db.query("plugin::users-permissions.role")
+        .findOne({
+            where: {
+                id: role
+            }
+        }, []);
     /** Creates a new user an push to database */
     return await strapi.plugins["users-permissions"].services.user.add({
         ...(data || mockUserData()),

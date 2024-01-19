@@ -2,7 +2,6 @@ const Strapi = require("@strapi/strapi");
 const fs = require("fs");
 
 let instance;
-let apiToken;
 
 /**
  * Setups strapi for futher testing
@@ -15,25 +14,6 @@ async function setupStrapi() {
     await instance.server.mount();
   }
   return instance;
-}
-
-const getRandomID = () => {
-  return Math.round(Math.random() * 10000).toString();
-};
-
-const getFullAPIToken = async () => {
-  if (!apiToken) {
-    const tokenService = strapi.service("admin::api-token");
-
-    const attributes = {
-      name: `token${getRandomID()}`,
-      description: "",
-      type: "full-access",
-      lifespan: null,
-    };
-    apiToken = await tokenService.create(attributes);
-  }
-  return apiToken.accessKey;
 }
 
 /**
@@ -53,7 +33,7 @@ const jwt = async (idOrEmail) =>
  * @param {boolean} enabled, default true
  * @param {string} policy, default ''
  */
-const grantPrivilege = async (
+const grantPrivilage = async (
   roleID = 1,
   value,
   enabled = true,
@@ -72,10 +52,9 @@ const grantPrivilege = async (
  * @see grantPrivilege
  */
 
-const grantPrivileges = async (roleID = 1, values = []) => {
-  values.forEach((value) => grantPrivilege(roleID, value));
+const grantPrivilages = async (roleID = 1, values = []) => {
+  values.forEach((value) => grantPrivilage(roleID, value));
 };
-
 
 async function cleanupStrapi() {
   const dbSettings = strapi.config.get("database.connection");
@@ -95,4 +74,4 @@ async function cleanupStrapi() {
   }
 }
 
-module.exports = { setupStrapi, cleanupStrapi, grantPrivilege, getFullAPIToken };
+module.exports = { setupStrapi, cleanupStrapi, jwt };

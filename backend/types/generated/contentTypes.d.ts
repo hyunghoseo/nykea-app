@@ -1072,7 +1072,6 @@ export interface ApiGroupGroup extends Schema.CollectionType {
         maxLength: 50;
       }>;
     Picture: Attribute.Media &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
