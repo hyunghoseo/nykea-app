@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -34,9 +34,11 @@ const Header = () => {
   };
 
   // Animation stuff
-  const screenWidth = Dimensions.get("window").width;
-  const [menuAnimation] = useState(new Animated.Value(screenWidth));
-  const [dimAnimation] = useState(new Animated.Value(0));
+  const [screenWidth, setScreenWidth] = useState(
+    Dimensions.get("window").width
+  );
+  const menuAnimation = useRef(new Animated.Value(screenWidth)).current;
+  const dimAnimation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(menuAnimation, {
@@ -50,6 +52,23 @@ const Header = () => {
       useNativeDriver: true,
     }).start();
   }, [isMenuOpen, menuAnimation]);
+
+  // Handle screen resize
+  useEffect(() => {
+    const updateWidth = () => {
+      const newWidth = Dimensions.get("window").width;
+      setScreenWidth(newWidth);
+      if (!isMenuOpen) {
+        menuAnimation.setValue(newWidth); // Instantly update position without animation
+      }
+    };
+
+    const event = Dimensions.addEventListener("change", updateWidth);
+
+    return () => {
+      event.remove();
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
