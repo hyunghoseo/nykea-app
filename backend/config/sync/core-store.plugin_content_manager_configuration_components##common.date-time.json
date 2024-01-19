@@ -1,0 +1,76 @@
+{
+  "key": "plugin_content_manager_configuration_components::common.date-time",
+  "value": {
+    "uid": "common.date-time",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Date": {
+        "edit": {
+          "label": "Date",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Date",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Time": {
+        "edit": {
+          "label": "Time",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Time",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Date",
+        "Time"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Date",
+            "size": 4
+          },
+          {
+            "name": "Time",
+            "size": 4
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

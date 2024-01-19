@@ -1,0 +1,544 @@
+{
+  "name": "Editor",
+  "code": "strapi-editor",
+  "description": "Editors can manage and publish contents including those of other users.",
+  "permissions": [
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::announcement.announcement",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "HostingGroup",
+          "Private",
+          "Link.Label",
+          "Link.URL"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::announcement.announcement",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "HostingGroup",
+          "Private",
+          "Link.Label",
+          "Link.URL"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::announcement.announcement",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "HostingGroup",
+          "Private",
+          "Link.Label",
+          "Link.URL"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::banner.banner",
+      "properties": {
+        "fields": [
+          "Title",
+          "Description",
+          "Link.Label",
+          "Link.URL",
+          "StartDate",
+          "EndDate"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::banner.banner",
+      "properties": {
+        "fields": [
+          "Title",
+          "Description",
+          "Link.Label",
+          "Link.URL",
+          "StartDate",
+          "EndDate"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::banner.banner",
+      "properties": {
+        "fields": [
+          "Title",
+          "Description",
+          "Link.Label",
+          "Link.URL",
+          "StartDate",
+          "EndDate"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::church-info.church-info",
+      "properties": {
+        "fields": [
+          "ChurchName",
+          "Phone",
+          "Email",
+          "Address",
+          "PrivatePolicy",
+          "FamilyWebsites.Label",
+          "FamilyWebsites.URL"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::church-info.church-info",
+      "properties": {
+        "fields": [
+          "ChurchName",
+          "Phone",
+          "Email",
+          "Address",
+          "PrivatePolicy",
+          "FamilyWebsites.Label",
+          "FamilyWebsites.URL"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::church-info.church-info",
+      "properties": {
+        "fields": [
+          "ChurchName",
+          "Phone",
+          "Email",
+          "Address",
+          "PrivatePolicy",
+          "FamilyWebsites.Label",
+          "FamilyWebsites.URL"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "Pictures",
+          "Location",
+          "Fee",
+          "Links.Label",
+          "Links.URL",
+          "StartDate.Date",
+          "StartDate.Time",
+          "EndDate.Date",
+          "EndDate.Time",
+          "HostingGroup",
+          "Private"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "Pictures",
+          "Location",
+          "Fee",
+          "Links.Label",
+          "Links.URL",
+          "StartDate.Date",
+          "StartDate.Time",
+          "EndDate.Date",
+          "EndDate.Time",
+          "HostingGroup",
+          "Private"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "Pictures",
+          "Location",
+          "Fee",
+          "Links.Label",
+          "Links.URL",
+          "StartDate.Date",
+          "StartDate.Time",
+          "EndDate.Date",
+          "EndDate.Time",
+          "HostingGroup",
+          "Private"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::group.group",
+      "properties": {
+        "fields": [
+          "Name",
+          "ShortDescription",
+          "Picture"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::group.group",
+      "properties": {
+        "fields": [
+          "Name",
+          "ShortDescription",
+          "Picture"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::group.group",
+      "properties": {
+        "fields": [
+          "Name",
+          "ShortDescription",
+          "Picture"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::leader.leader",
+      "properties": {
+        "fields": [
+          "StartYear",
+          "EndYear",
+          "FullName",
+          "Title",
+          "Picture"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::leader.leader",
+      "properties": {
+        "fields": [
+          "StartYear",
+          "EndYear",
+          "FullName",
+          "Title",
+          "Picture"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::leader.leader",
+      "properties": {
+        "fields": [
+          "StartYear",
+          "EndYear",
+          "FullName",
+          "Title",
+          "Picture"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::service.service",
+      "properties": {
+        "fields": [
+          "Title",
+          "Date",
+          "Sermon",
+          "MC",
+          "Accompanist",
+          "Translation",
+          "Agenda.Title",
+          "Agenda.AssignedUser",
+          "Agenda.Description",
+          "Agenda.Image",
+          "Agenda.Link.Label",
+          "Agenda.Link.URL",
+          "Agenda.AgendaType",
+          "Agenda.AssignedGroup",
+          "Agenda.Video",
+          "Agenda.Standing",
+          "Announcements",
+          "SermonVideo",
+          "ServiceType"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::service.service",
+      "properties": {
+        "fields": [
+          "Title",
+          "Date",
+          "Sermon",
+          "MC",
+          "Accompanist",
+          "Translation",
+          "Agenda.Title",
+          "Agenda.AssignedUser",
+          "Agenda.Description",
+          "Agenda.Image",
+          "Agenda.Link.Label",
+          "Agenda.Link.URL",
+          "Agenda.AgendaType",
+          "Agenda.AssignedGroup",
+          "Agenda.Video",
+          "Agenda.Standing",
+          "Announcements",
+          "SermonVideo",
+          "ServiceType"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::service.service",
+      "properties": {
+        "fields": [
+          "Title",
+          "Date",
+          "Sermon",
+          "MC",
+          "Accompanist",
+          "Translation",
+          "Agenda.Title",
+          "Agenda.AssignedUser",
+          "Agenda.Description",
+          "Agenda.Image",
+          "Agenda.Link.Label",
+          "Agenda.Link.URL",
+          "Agenda.AgendaType",
+          "Agenda.AssignedGroup",
+          "Agenda.Video",
+          "Agenda.Standing",
+          "Announcements",
+          "SermonVideo",
+          "ServiceType"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::support.support",
+      "properties": {
+        "fields": [
+          "FullName",
+          "Email",
+          "Phone",
+          "Title",
+          "Message",
+          "DateSubmitted",
+          "Status",
+          "Memo",
+          "DateCompleted"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::support.support",
+      "properties": {
+        "fields": [
+          "FullName",
+          "Email",
+          "Phone",
+          "Title",
+          "Message",
+          "DateSubmitted",
+          "Status",
+          "Memo",
+          "DateCompleted"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::support.support",
+      "properties": {
+        "fields": [
+          "FullName",
+          "Email",
+          "Phone",
+          "Title",
+          "Message",
+          "DateSubmitted",
+          "Status",
+          "Memo",
+          "DateCompleted"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::user-info.user-info",
+      "properties": {
+        "fields": [
+          "DisplayName",
+          "FirstName",
+          "LastName",
+          "MiddleName",
+          "users_permissions_user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::user-info.user-info",
+      "properties": {
+        "fields": [
+          "DisplayName",
+          "FirstName",
+          "LastName",
+          "MiddleName",
+          "users_permissions_user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::user-info.user-info",
+      "properties": {
+        "fields": [
+          "DisplayName",
+          "FirstName",
+          "LastName",
+          "MiddleName",
+          "users_permissions_user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.copy-link",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.create",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.download",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.update",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.configure-view",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.read",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    }
+  ]
+}

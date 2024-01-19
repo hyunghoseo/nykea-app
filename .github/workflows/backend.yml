@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  install-frontend:
+  test-backend:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,5 +20,14 @@ jobs:
           node-version: 18
       - name: Install Node modules
         run: cd backend && yarn install
+      - name: Config Sync
+        run: |
+          cd backend
+          yarn build
+          yarn start
+          yarn cs import --yes --force
+          yarn build
       - name: Unit & Integration tests
-        run: cd backend && yarn test
+        run: |
+          cd backend
+          yarn test
