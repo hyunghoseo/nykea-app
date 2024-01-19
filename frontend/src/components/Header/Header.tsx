@@ -184,6 +184,8 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     overflow: "hidden",
+    backgroundColor: "transparent",
+    pointerEvents: "none",
     zIndex: 101,
   },
   menu: {
