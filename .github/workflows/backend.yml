@@ -24,6 +24,7 @@ jobs:
         run: |
           cd backend
           yarn build
+          yarn start
           yarn cs import --yes --force
           yarn build
       - name: Unit & Integration tests
