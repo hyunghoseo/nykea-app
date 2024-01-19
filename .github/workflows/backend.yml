@@ -23,7 +23,7 @@ jobs:
       - name: Config Sync
         run: |
           cd backend
-          yarn start
+          yarn build
           yarn cs import --yes --force
           yarn build
       - name: Unit & Integration tests
