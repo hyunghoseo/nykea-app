@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 module.exports = ({ env }) => ({
   auth: {
     secret: env('ADMIN_JWT_SECRET'),
@@ -7,7 +8,7 @@ module.exports = ({ env }) => ({
   },
   transfer: {
     token: {
-      salt: env('TRANSFER_TOKEN_SALT'),
+      salt: env('TRANSFER_TOKEN_SALT', crypto.randomBytes(16).toString('base64')),
     },
   },
   flags: {
@@ -15,4 +16,7 @@ module.exports = ({ env }) => ({
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
   url: "dashboard",
+  watchIgnoreFiles: [
+    '**/config/sync/**',
+  ]
 });
