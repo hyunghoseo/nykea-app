@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  install-frontend:
+  test-backend:
     runs-on: ubuntu-latest
 
     steps:
