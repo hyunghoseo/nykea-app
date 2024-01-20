@@ -34,4 +34,4 @@ jobs:
       - name: Unit & Integration tests
         run: |
           cd backend
-          yarn test
+          yarn jest --watchAll=false --forceExit --detectOpenHandles
