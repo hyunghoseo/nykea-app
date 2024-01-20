@@ -19,11 +19,16 @@ jobs:
         with:
           node-version: 18
       - name: Install Node modules
-        run: cd backend && yarn install
-      - name: Config Sync
+        run: |
+          cd backend
+          yarn install
+      - name: Build project
         run: |
           cd backend
           yarn build
+      - name: Start project
+        run: |
+          cp .env.example .env
           yarn start
       - name: Unit & Integration tests
         run: |
