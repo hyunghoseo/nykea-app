@@ -212,7 +212,7 @@ const getStyles = (headerHeight: number) =>
       width: "100%",
       top: headerHeight,
       left: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent overlay
+      // backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent overlay
       zIndex: 50,
     },
     menuContainer: {

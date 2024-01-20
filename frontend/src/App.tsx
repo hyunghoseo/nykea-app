@@ -1,23 +1,9 @@
-import {
-  LinkingOptions,
-  NavigationContainer,
-  ParamListBase,
-} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { View, StyleSheet } from "react-native";
 import Header from "./components/Header/Header";
 import AppNavigator from "./navigation/AppNavigator";
 import { registerRootComponent } from "expo";
-
-const linking: LinkingOptions<ParamListBase> = {
-  prefixes: ["nykea.org", "nykea://"],
-  config: {
-    screens: {
-      Home: "home",
-      About: "about",
-      // More screens...
-    },
-  },
-};
+import { linking } from "./navigation/navigationLinks";
 
 const App = () => {
   return (
