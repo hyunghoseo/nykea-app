@@ -191,7 +191,8 @@ const getStyles = (headerHeight: number) =>
       flexDirection: "row",
     },
     navLink: {
-      marginLeft: 38,
+      marginLeft: 30,
+      padding: 8,
     },
     navText: {
       fontSize: 14,
@@ -227,7 +228,7 @@ const getStyles = (headerHeight: number) =>
     },
     menu: {
       position: "relative",
-      top: 0, // Adjust as needed
+      top: 0,
       left: 0,
       right: 0,
       backgroundColor: "white",
