@@ -5,7 +5,6 @@ import GroupsScreen from "../screens/GroupsScreen";
 import ServicesScreen from "../screens/ServicesScreen";
 import EventsScreen from "../screens/EventsScreen";
 import ContactUsScreen from "../screens/ContactUsScreen";
-import { View, StyleSheet } from "react-native";
 
 const Stack = createStackNavigator();
 

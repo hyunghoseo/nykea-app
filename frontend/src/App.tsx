@@ -1,4 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { View, StyleSheet } from "react-native";
 import Header from "./components/Header/Header";
 import AppNavigator from "./navigation/AppNavigator";
@@ -7,7 +7,13 @@ import { linking } from "./navigation/navigationLinks";
 
 const App = () => {
   return (
-    <NavigationContainer linking={linking}>
+    <NavigationContainer
+      linking={linking}
+      theme={{
+        ...DefaultTheme,
+        colors: { ...DefaultTheme.colors, background: "white" },
+      }}
+    >
       <View style={styles.container}>
         <Header />
         <View style={styles.screenContainer}>
@@ -24,6 +30,7 @@ const styles = StyleSheet.create({
   },
   screenContainer: {
     flex: 1,
+    backgroundColor: "white",
   },
 });
 
