@@ -5,25 +5,27 @@ on: [push]
 
 jobs:
   #First job
-   workflow-setup:
-     runs-on: ubuntu-latest
+  workflow-setup:
+    runs-on: ubuntu-latest
 
-     steps:
-       - name: Checkout
-         uses: actions/checkout@v4
-       - name: Use Node.js 18
-         uses: actions/setup-node@v3
-         with:
-           node-version: 18
+    steps:
+      - name: Checkout         
+        uses: actions/checkout@v4
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-   #Second job
-   frontend:
+  #Second job
+  frontend:
      needs: workflow-setup
      uses: ./.github/workflows/frontend.yml
      with:
        environment: develop
 
-   #Second job
-   backend:
+  #Second job
+  backend:
      needs: workflow-setup
      uses: ./.github/workflows/backend.yml
+     with:
+       environment: develop
