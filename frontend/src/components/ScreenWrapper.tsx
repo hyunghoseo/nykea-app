@@ -11,7 +11,6 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
   },
   content: {
     padding: 20,
