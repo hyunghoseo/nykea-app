@@ -30,7 +30,6 @@ jobs:
         run: |
           cd backend
           cp .env.example .env
-          yarn start
           yarn cs import --yes
           
       - name: Unit & Integration tests
