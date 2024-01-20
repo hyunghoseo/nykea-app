@@ -1,10 +1,11 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "../screens/HomeScreen";
+
 import AboutScreen from "../screens/AboutScreen";
-import GroupsScreen from "../screens/GroupsScreen";
-import ServicesScreen from "../screens/ServicesScreen";
-import EventsScreen from "../screens/EventsScreen";
 import ContactUsScreen from "../screens/ContactUsScreen";
+import EventsScreen from "../screens/EventsScreen";
+import GroupsScreen from "../screens/GroupsScreen";
+import HomeScreen from "../screens/HomeScreen";
+import ServicesScreen from "../screens/ServicesScreen";
 
 const Stack = createStackNavigator();
 

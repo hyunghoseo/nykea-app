@@ -1,5 +1,6 @@
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { View, StyleSheet } from "react-native";
+
 import Header from "./components/Header/Header";
 import AppNavigator from "./navigation/AppNavigator";
 import { linking } from "./navigation/navigationLinks";

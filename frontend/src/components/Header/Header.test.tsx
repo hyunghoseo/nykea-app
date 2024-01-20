@@ -1,11 +1,12 @@
+import { NavigationContainer } from "@react-navigation/native";
 import {
   render,
   screen,
   cleanup,
   waitFor,
 } from "@testing-library/react-native";
+
 import Header from "./Header";
-import { NavigationContainer } from "@react-navigation/native";
 
 describe("Header - Mobile", () => {
   beforeEach(() => {
@@ -15,7 +16,7 @@ describe("Header - Mobile", () => {
     render(
       <NavigationContainer>
         <Header />
-      </NavigationContainer>
+      </NavigationContainer>,
     );
   });
 
@@ -34,7 +35,7 @@ describe("Header - Desktop", () => {
     render(
       <NavigationContainer>
         <Header />
-      </NavigationContainer>
+      </NavigationContainer>,
     );
   });
 

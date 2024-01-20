@@ -1,3 +1,5 @@
+import { ParamListBase, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { useEffect, useRef, useState } from "react";
 import {
   View,
@@ -10,12 +12,10 @@ import {
   Dimensions,
 } from "react-native";
 import { Icon } from "react-native-elements";
-import { ParamListBase, useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
 
+import theme from "../../constants/theme";
 import { navigationLinks } from "../../navigation/navigationLinks";
 import { useResponsiveLayout } from "../../utils/useResponsiveLayout";
-import theme from "../../constants/theme";
 
 const MOBILE_HEADER_HEIGHT = 110;
 const DESKTOP_HEADER_HEIGHT = 90;
@@ -39,7 +39,7 @@ const Header = () => {
 
   // Animation stuff
   const [screenWidth, setScreenWidth] = useState(
-    Dimensions.get("window").width
+    Dimensions.get("window").width,
   );
   const menuAnimation = useRef(new Animated.Value(screenWidth)).current;
   const dimAnimation = useRef(new Animated.Value(0)).current;
