@@ -11,11 +11,15 @@ const mockUserData = {
 };
 
 it("should login user and return jwt token", async () => {
+
+    const username = `tester${Math.random()}`;
+    const email = `tester${Math.random()}@strapi.com`;
+
     /** Creates a new user and save it to the database */
     await strapi.plugins["users-permissions"].services.user.add({
         ...mockUserData,
-        username: `tester${Math.random()}`,
-        email: `tester${Math.random()}@strapi.com`,
+        username: username,
+        email: email,
     });
 
     await request(strapi.server.httpServer) // app server is an instance of Class: http.Server
@@ -23,7 +27,7 @@ it("should login user and return jwt token", async () => {
         .set("accept", "application/json")
         .set("Content-Type", "application/json")
         .send({
-            identifier: mockUserData.email,
+            identifier: email,
             password: mockUserData.password,
         })
         .expect("Content-Type", /json/)
@@ -38,12 +42,14 @@ it('should return users data for authenticated user', async () => {
     const defaultRole = await strapi.query('plugin::users-permissions.role').findOne({}, []);
 
     const role = defaultRole ? defaultRole.id : null;
+    const username = `tester${Math.random()}`;
+    const email = `tester${Math.random()}@strapi.com`;
 
     /** Creates a new user and push to database */
     const user = await strapi.plugins['users-permissions'].services.user.add({
         ...mockUserData,
-        username: `tester${Math.random()}`,
-        email: `tester${Math.random()}@strapi.com`,
+        username: username,
+        email: email,
         role,
     });
 
