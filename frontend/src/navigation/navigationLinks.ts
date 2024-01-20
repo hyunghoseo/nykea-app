@@ -4,7 +4,6 @@ export interface NavLink {
 }
 
 export const navigationLinks = [
-  { title: "Home", route: "Home" },
   { title: "About", route: "About" },
   { title: "Groups", route: "Groups" },
   { title: "Services", route: "Services" },

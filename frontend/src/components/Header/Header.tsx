@@ -77,12 +77,15 @@ const Header = () => {
   return (
     <>
       {isMobile ? (
+        // Mobile header
         <View style={styles.mobileHeaderContainer}>
           <View style={styles.backChevron} />
-          <Image
-            source={require("../../assets/logo.png")}
-            style={styles.logoMobile}
-          />
+          <TouchableOpacity onPress={() => navigateTo("Home")}>
+            <Image
+              source={require("../../assets/logo.png")}
+              style={styles.logoMobile}
+            />
+          </TouchableOpacity>
           <TouchableOpacity onPressOut={toggleMenu} style={styles.hamburger}>
             <Icon
               name={isMenuOpen ? "close" : "menu"}
@@ -92,14 +95,21 @@ const Header = () => {
           </TouchableOpacity>
         </View>
       ) : (
+        // Desktop header
         <View style={styles.desktopHeaderContainer}>
-          <Image
-            source={require("../../assets/logo-large.png")}
-            style={styles.logoDesktop}
-          />
+          <TouchableOpacity onPress={() => navigateTo("Home")}>
+            <Image
+              source={require("../../assets/logo-large.png")}
+              style={styles.logoDesktop}
+            />
+          </TouchableOpacity>
           <View style={styles.navLinksContainer}>
             {navigationLinks.map((link) => (
-              <TouchableOpacity key={link.route} style={styles.navLink}>
+              <TouchableOpacity
+                key={link.route}
+                onPress={() => navigateTo(link.route)}
+                style={styles.navLink}
+              >
                 <Text style={styles.navText}>{link.title}</Text>
               </TouchableOpacity>
             ))}
