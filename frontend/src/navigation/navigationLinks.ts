@@ -20,6 +20,7 @@ export const linking: LinkingOptions<ParamListBase> = {
       Home: "home",
       About: "about",
       Groups: "groups",
+      Services: "services",
       Events: "events",
       ContactUs: "contact-us",
     },
