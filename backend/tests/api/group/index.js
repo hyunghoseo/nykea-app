@@ -7,7 +7,9 @@ describe("Group Test", () => {
     let authenticatedUser;
     beforeAll(async () => {
         publicUser = await userFactory.createUser(strapi, 2);
+        console.log(publicUser)
         authenticatedUser = await userFactory.createUser(strapi, 1);
+        console.log(authenticatedUser)
         addTestData();
     });
 
