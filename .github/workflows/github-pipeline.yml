@@ -4,26 +4,14 @@ run-name: ${{ github.actor }}, ${{ github.ref_name }}🚀
 on: [push]
 
 jobs:
-  #First job
-  workflow-setup:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-  #Second job
+  #Frontend job
   frontend:
     needs: workflow-setup
     uses: ./.github/workflows/frontend.yml
     with:
       environment: develop
 
-  #Second job
+  #Backend job
   backend:
     needs: workflow-setup
     uses: ./.github/workflows/backend.yml
