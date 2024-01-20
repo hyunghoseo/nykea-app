@@ -28,6 +28,7 @@ jobs:
           yarn build
       - name: Start project
         run: |
+          cd backend
           cp .env.example .env
           yarn start
       - name: Unit & Integration tests
