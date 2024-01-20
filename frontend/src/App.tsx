@@ -2,7 +2,6 @@ import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { View, StyleSheet } from "react-native";
 import Header from "./components/Header/Header";
 import AppNavigator from "./navigation/AppNavigator";
-import { registerRootComponent } from "expo";
 import { linking } from "./navigation/navigationLinks";
 
 const App = () => {
@@ -33,7 +32,5 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
 });
-
-registerRootComponent(App);
 
 export default App;
