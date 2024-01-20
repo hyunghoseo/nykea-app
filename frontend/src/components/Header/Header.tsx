@@ -80,7 +80,10 @@ const Header = () => {
         // Mobile header
         <View style={styles.mobileHeaderContainer}>
           <View style={styles.backChevron} />
-          <TouchableOpacity onPress={() => navigateTo("Home")}>
+          <TouchableOpacity
+            onPress={() => navigateTo("Home")}
+            activeOpacity={0.6}
+          >
             <Image
               source={require("../../assets/logo.png")}
               style={styles.logoMobile}
@@ -97,7 +100,10 @@ const Header = () => {
       ) : (
         // Desktop header
         <View style={styles.desktopHeaderContainer}>
-          <TouchableOpacity onPress={() => navigateTo("Home")}>
+          <TouchableOpacity
+            onPress={() => navigateTo("Home")}
+            activeOpacity={0.6}
+          >
             <Image
               source={require("../../assets/logo-large.png")}
               style={styles.logoDesktop}
