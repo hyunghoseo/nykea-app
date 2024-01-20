@@ -26,11 +26,12 @@ jobs:
         run: |
           cd backend
           yarn build
-      - name: Start project
+      - name: Import Configuration
         run: |
           cd backend
           cp .env.example .env
           yarn cs import --yes
+          yarn build
           
       - name: Unit & Integration tests
         run: |
