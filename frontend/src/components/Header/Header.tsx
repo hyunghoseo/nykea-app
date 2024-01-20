@@ -14,7 +14,7 @@ import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 import { navigationLinks } from "../../navigation/navigationLinks";
-import useResponsiveLayout from "../../utils/useResponsiveLayout";
+import { useResponsiveLayout } from "../../utils/useResponsiveLayout";
 import theme from "../../constants/theme";
 
 const MOBILE_HEADER_HEIGHT = 110;
@@ -78,7 +78,7 @@ const Header = () => {
     <>
       {isMobile ? (
         // Mobile header
-        <View style={styles.mobileHeaderContainer}>
+        <View style={styles.mobileHeaderContainer} testID="mobile-header">
           <View style={styles.backChevron} />
           <TouchableOpacity
             onPress={() => navigateTo("Home")}
@@ -94,12 +94,13 @@ const Header = () => {
               name={isMenuOpen ? "close" : "menu"}
               size={40}
               color={theme.colors.primary[0]}
+              testID="menu-icon"
             />
           </TouchableOpacity>
         </View>
       ) : (
         // Desktop header
-        <View style={styles.desktopHeaderContainer}>
+        <View style={styles.desktopHeaderContainer} testID="desktop-header">
           <TouchableOpacity
             onPress={() => navigateTo("Home")}
             activeOpacity={0.6}
@@ -125,7 +126,7 @@ const Header = () => {
 
       {isMobile && (
         <>
-          <View style={styles.menuContainer}>
+          <View style={styles.menuContainer} testID="menu-container">
             <Animated.View
               style={[
                 styles.menu,
