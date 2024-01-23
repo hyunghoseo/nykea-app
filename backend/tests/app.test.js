@@ -15,3 +15,4 @@ it("strapi is defined", () => {
 
 require('./api/group');
 require('./api/user');
+require('./api/church-info');

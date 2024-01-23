@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-01-19T02:19:11.669Z"
+    "x-generation-date": "2024-01-23T03:36:54.623Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -25,7 +25,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1337/api",
+      "url": "http://0.0.0.0:1338/api",
       "description": "Development server"
     }
   ],
@@ -1817,6 +1817,7 @@
           "Phone",
           "Email",
           "Address",
+          "PrivatePolicy",
           "locale"
         ],
         "type": "object",
@@ -1833,14 +1834,14 @@
           "Address": {
             "type": "string"
           },
-          "PrivatePolicy": {
-            "type": "string"
-          },
           "FamilyWebsites": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CommonLinkComponent"
             }
+          },
+          "PrivatePolicy": {
+            "type": "string"
           },
           "locale": {
             "type": "string"
@@ -1858,7 +1859,8 @@
               "ChurchName",
               "Phone",
               "Email",
-              "Address"
+              "Address",
+              "PrivatePolicy"
             ],
             "type": "object",
             "properties": {
@@ -1874,14 +1876,14 @@
               "Address": {
                 "type": "string"
               },
-              "PrivatePolicy": {
-                "type": "string"
-              },
               "FamilyWebsites": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/CommonLinkComponent"
                 }
+              },
+              "PrivatePolicy": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -2010,7 +2012,8 @@
           "ChurchName",
           "Phone",
           "Email",
-          "Address"
+          "Address",
+          "PrivatePolicy"
         ],
         "properties": {
           "ChurchName": {
@@ -2025,14 +2028,14 @@
           "Address": {
             "type": "string"
           },
-          "PrivatePolicy": {
-            "type": "string"
-          },
           "FamilyWebsites": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CommonLinkComponent"
             }
+          },
+          "PrivatePolicy": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
