@@ -42,8 +42,6 @@ describe("Group Test", () => {
     // })
 
     it("Public user should find groups", async () => {
-        console.log("public user jwt")
-        console.log(await jwt(publicUser.id))
         await request(strapi.server.httpServer)
             .get("/api/groups")
             .set("accept", "application/json")

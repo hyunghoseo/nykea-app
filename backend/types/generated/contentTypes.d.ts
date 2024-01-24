@@ -1009,6 +1009,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
+    Contact: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
