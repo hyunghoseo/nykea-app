@@ -68,7 +68,8 @@ async function cleanupStrapi() {
   //delete test database after all tests have completed
   if (dbSettings && dbSettings.connection && dbSettings.connection.filename) {
     const tmpDbFile = dbSettings.connection.filename;
-    if (tmpDbFile == "test.db" && fs.existsSync(tmpDbFile)) {
+    if (tmpDbFile.endsWith("test.db") && fs.existsSync(tmpDbFile)) {
+      console.log("test.db DELETED")
       fs.unlinkSync(tmpDbFile);
     }
   }
