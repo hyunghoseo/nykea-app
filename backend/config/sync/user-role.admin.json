@@ -1,0 +1,19 @@
+{
+  "name": "Admin",
+  "description": "Pastor",
+  "type": "admin",
+  "permissions": [
+    {
+      "action": "api::group.group.create"
+    },
+    {
+      "action": "api::group.group.find"
+    },
+    {
+      "action": "api::group.group.findOne"
+    },
+    {
+      "action": "api::group.group.update"
+    }
+  ]
+}
