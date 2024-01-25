@@ -4,6 +4,9 @@
   "type": "authenticated",
   "permissions": [
     {
+      "action": "api::banner.banner.find"
+    },
+    {
       "action": "api::group.group.find"
     },
     {
