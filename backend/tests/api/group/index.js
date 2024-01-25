@@ -2,9 +2,11 @@ const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
 
+let publicUser;
 let authenticatedUser;
 let adminUser;
 beforeAll(async () => {
+    publicUser = await userFactory.createUser(strapi, "public");
     authenticatedUser = await userFactory.createUser(strapi, "authenticated");
     adminUser = await userFactory.createUser(strapi, "admin");
 });
@@ -30,6 +32,7 @@ describe("Group Permission Test", () => {
         await request(strapi.server.httpServer)
             .get("/api/groups")
             .set("accept", "application/json")
+            .set("Authorization", `Bearer ${await jwt(publicUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
     });
@@ -56,6 +59,7 @@ describe("Group Permission Test", () => {
         await request(strapi.server.httpServer)
             .post("/api/groups")
             .set("accept", "application/json")
+            .set("Authorization", `Bearer ${await jwt(publicUser.id)}`)
             .send(constructGroup(0))
             .expect("Content-Type", /json/)
             .expect(500)
@@ -87,6 +91,7 @@ describe("Group Permission Test", () => {
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
+            .set("Authorization", `Bearer ${await jwt(publicUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
     });
@@ -126,6 +131,7 @@ describe("Group Service Test", () => {
         await request(strapi.server.httpServer)
             .get("/api/groups")
             .set("accept", "application/json")
+            .set("Authorization", `Bearer ${await jwt(publicUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
@@ -139,6 +145,7 @@ describe("Group Service Test", () => {
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
+            .set("Authorization", `Bearer ${await jwt(publicUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
