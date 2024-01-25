@@ -24,7 +24,8 @@ const mockUserData = (options = {}) => {
 /**
  * Creates new user in strapi database
  * @param strapi, instance of strapi
- * @param options that overwrites default options
+ * @param role that overwrites default options "authenticated", "admin"
+ * @param data that overwrites default user mock data
  * @returns {object} object of new created user, fetched from database
  */
 const createUser = async (strapi, role, data = null) => {
@@ -45,6 +46,5 @@ const createUser = async (strapi, role, data = null) => {
 
 module.exports = {
     mockUserData,
-    createUser,
-    defaultData,
+    createUser
 };

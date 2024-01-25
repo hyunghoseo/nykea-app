@@ -31,7 +31,7 @@ describe("Group Permission Test", () => {
             .get("/api/groups")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
     });
 
     it("Authenticated user should find groups", async () => {
@@ -40,7 +40,7 @@ describe("Group Permission Test", () => {
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
     });
 
     it("Admin user should find groups", async () => {
@@ -49,7 +49,7 @@ describe("Group Permission Test", () => {
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
     });
 
     it("Public user should not post group", async () => {
@@ -88,7 +88,7 @@ describe("Group Permission Test", () => {
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
     });
 
     it("Authenticated user should find a group", async () => {
@@ -97,7 +97,7 @@ describe("Group Permission Test", () => {
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
     });
 
     it("Admin user should find a group", async () => {
@@ -106,7 +106,7 @@ describe("Group Permission Test", () => {
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
     });
 })
 
@@ -127,7 +127,7 @@ describe("Group Service Test", () => {
             .get("/api/groups")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
-            .expect(200) // Expect response http code 200
+            .expect(200)
             .then((data) => {
                 expect(data.body.data.length).toBe(2);
             });
