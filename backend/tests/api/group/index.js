@@ -17,7 +17,7 @@ describe("Group Test", () => {
         return {
             data: {
                 "Name": "Test Group " + id,
-                "ShortDescription": "Group Description" + id,
+                "ShortDescription": "Group Description " + id,
                 "Picture": null,
                 "locale": "en",
                 "publishedAt": Date.now(),
@@ -99,7 +99,7 @@ describe("Group Test", () => {
 
     it("Public user should find a group", async () => {
         const id = 1;
-        const group = constructGroup(1);
+        const group = constructGroup(id);
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
@@ -115,7 +115,7 @@ describe("Group Test", () => {
 
     it("Authenticated user should find a group", async () => {
         const id = 1;
-        const group = constructGroup(1);
+        const group = constructGroup(id);
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
@@ -132,7 +132,7 @@ describe("Group Test", () => {
 
     it("Admin user should find a group", async () => {
         const id = 1;
-        const group = constructGroup(1);
+        const group = constructGroup(id);
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
