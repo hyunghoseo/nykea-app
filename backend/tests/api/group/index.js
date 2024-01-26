@@ -9,7 +9,7 @@ describe("Group Test", () => {
         authenticatedUser = await userFactory.createUser(strapi, "authenticated");
         adminUser = await userFactory.createUser(strapi, "admin");
     });
-    
+
     /**
      * @param {string | number} id
      */
@@ -52,7 +52,7 @@ describe("Group Test", () => {
             .send(constructGroup(1))
             .expect("Content-Type", /json/)
             .expect(200)
-      
+
         await request(strapi.server.httpServer)
             .post("/api/groups")
             .set("accept", "application/json")
@@ -61,7 +61,7 @@ describe("Group Test", () => {
             .expect("Content-Type", /json/)
             .expect(200)
     })
-  
+
     it("Public user should find groups", async () => {
         await request(strapi.server.httpServer)
             .get("/api/groups")
