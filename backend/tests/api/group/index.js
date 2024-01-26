@@ -2,32 +2,30 @@ const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
 
-let publicUser;
-let authenticatedUser;
-let adminUser;
-beforeAll(async () => {
-    publicUser = await userFactory.createUser(strapi, "public");
-    authenticatedUser = await userFactory.createUser(strapi, "authenticated");
-    adminUser = await userFactory.createUser(strapi, "admin");
-});
-
-/**
- * @param {string | number} id
- */
-const constructGroup = (id) => {
-    return {
-        data: {
-            "Name": "Test Group " + id,
-            "ShortDescription": "Group Description" + id,
-            "Picture": null,
-            "locale": "en",
-            "publishedAt": Date.now(),
-        }
-    };
-}
-
-describe("Group Permission Test", () => {
-
+describe("Group Test", () => {
+    let publicUser;
+    let authenticatedUser;
+    let adminUser;
+    beforeAll(async () => {
+        publicUser = await userFactory.createUser(strapi, "public");
+        authenticatedUser = await userFactory.createUser(strapi, "authenticated");
+        adminUser = await userFactory.createUser(strapi, "admin");
+    });
+    
+    /**
+     * @param {string | number} id
+     */
+    const constructGroup = (id) => {
+        return {
+            data: {
+                "Name": "Test Group " + id,
+                "ShortDescription": "Group Description" + id,
+                "Picture": null,
+                "locale": "en",
+                "publishedAt": Date.now(),
+            }
+        };
+    }
     it("Public user should find groups", async () => {
         await request(strapi.server.httpServer)
             .get("/api/groups")
@@ -113,9 +111,6 @@ describe("Group Permission Test", () => {
             .expect("Content-Type", /json/)
             .expect(200)
     });
-})
-
-describe("Group Service Test", () => {
 
     it("Create groups", async () => {
         await request(strapi.server.httpServer)
