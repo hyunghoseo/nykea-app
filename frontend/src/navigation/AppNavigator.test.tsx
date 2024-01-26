@@ -8,7 +8,7 @@ describe("<AppNavigator />", () => {
     render(
       <NavigationContainer>
         <AppNavigator />
-      </NavigationContainer>
+      </NavigationContainer>,
     );
 
     // Test if the initial screen (HomeScreen) is rendered
