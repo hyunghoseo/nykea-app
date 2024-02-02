@@ -1,34 +1,18 @@
 const request = require('supertest');
-
-// user mock data
-const mockUserData = {
-    username: `tester`,
-    email: `tester@strapi.com`,
-    provider: "local",
-    password: "1234abc",
-    confirmed: true,
-    blocked: null,
-};
+const userFactory = require("../../user/factory");
 
 it("should login user and return jwt token", async () => {
-
-    const username = `tester${Math.random()}`;
-    const email = `tester${Math.random()}@strapi.com`;
-
+    let mockUser = userFactory.mockUserData();
     /** Creates a new user and save it to the database */
-    await strapi.plugins["users-permissions"].services.user.add({
-        ...mockUserData,
-        username: username,
-        email: email,
-    });
+    await strapi.plugins["users-permissions"].services.user.add(mockUser);
 
     await request(strapi.server.httpServer) // app server is an instance of Class: http.Server
         .post("/api/auth/local")
         .set("accept", "application/json")
         .set("Content-Type", "application/json")
         .send({
-            identifier: email,
-            password: mockUserData.password,
+            identifier: mockUser.email,
+            password: mockUser.password,
         })
         .expect("Content-Type", /json/)
         .expect(200)
@@ -38,18 +22,15 @@ it("should login user and return jwt token", async () => {
 });
 
 it('should return users data for authenticated user', async () => {
+    let mockUser = await userFactory.mockUserData();
     /** Gets the default user role */
     const defaultRole = await strapi.query('plugin::users-permissions.role').findOne({}, []);
 
     const role = defaultRole ? defaultRole.id : null;
-    const username = `tester${Math.random()}`;
-    const email = `tester${Math.random()}@strapi.com`;
 
     /** Creates a new user and push to database */
     const user = await strapi.plugins['users-permissions'].services.user.add({
-        ...mockUserData,
-        username: username,
-        email: email,
+        ...mockUser,
         role,
     });
 

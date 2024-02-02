@@ -2,10 +2,14 @@
  * Default data that factory use
  */
 const defaultData = {
-    password: "1234Abc",
+    username: `tester`,
+    email: `tester@strapi.com`,
     provider: "local",
+    password: "1234abc",
     confirmed: true,
+    blocked: null,
 };
+
 /**
  * Returns random username object for user creation
  * @param {object} options that overwrites default options
@@ -14,12 +18,11 @@ const defaultData = {
 const mockUserData = (options = {}) => {
     const usernameSuffix = Math.round(Math.random() * 10000).toString();
     return {
+        ...defaultData,
         username: `tester${usernameSuffix}`,
         email: `tester${usernameSuffix}@strapi.com`,
-        ...defaultData,
         ...options,
     };
-    return;
 };
 /**
  * Creates new user in strapi database
