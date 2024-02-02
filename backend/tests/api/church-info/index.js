@@ -11,6 +11,8 @@ describe("Church-Info Test", () => {
         authenticatedUser = await userFactory.createUser(strapi, 1);
     });
 
+    //inserting a random test line
+    
     it("Public user should find church-info", async () => {
         await request(strapi.server.httpServer)
             .get("/api/church-info")
