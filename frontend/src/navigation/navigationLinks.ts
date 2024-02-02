@@ -6,7 +6,7 @@ export interface NavLink {
 }
 
 export const navigationLinks = [
-  { title: "About", route: "About" },
+  { title: "About Us", route: "About" },
   { title: "Groups", route: "Groups" },
   { title: "Sunday Services", route: "Services" },
   { title: "Events", route: "Events" },
