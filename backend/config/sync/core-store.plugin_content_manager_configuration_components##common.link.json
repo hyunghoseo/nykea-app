@@ -1,0 +1,76 @@
+{
+  "key": "plugin_content_manager_configuration_components::common.link",
+  "value": {
+    "uid": "common.link",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "Label",
+      "defaultSortBy": "Label",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Label": {
+        "edit": {
+          "label": "Label",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Label",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "URL": {
+        "edit": {
+          "label": "URL",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "URL",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Label",
+        "URL"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Label",
+            "size": 6
+          },
+          {
+            "name": "URL",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

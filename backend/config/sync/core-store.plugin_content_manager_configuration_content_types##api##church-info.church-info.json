@@ -1,0 +1,212 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::church-info.church-info",
+  "value": {
+    "uid": "api::church-info.church-info",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "ChurchName",
+      "defaultSortBy": "ChurchName",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ChurchName": {
+        "edit": {
+          "label": "ChurchName",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ChurchName",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Phone": {
+        "edit": {
+          "label": "Phone",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Phone",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Email": {
+        "edit": {
+          "label": "Email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Address": {
+        "edit": {
+          "label": "Address",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Address",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "PrivatePolicy": {
+        "edit": {
+          "label": "PrivatePolicy",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "PrivatePolicy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "FamilyWebsites": {
+        "edit": {
+          "label": "FamilyWebsites",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "FamilyWebsites",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "ChurchName",
+        "Phone",
+        "Email"
+      ],
+      "edit": [
+        [
+          {
+            "name": "ChurchName",
+            "size": 6
+          },
+          {
+            "name": "Phone",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Email",
+            "size": 6
+          },
+          {
+            "name": "Address",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "PrivatePolicy",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "FamilyWebsites",
+            "size": 12
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

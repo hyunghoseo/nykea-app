@@ -123,6 +123,14 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "Contact": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

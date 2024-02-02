@@ -1,0 +1,329 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::event.event",
+  "value": {
+    "uid": "api::event.event",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "Title",
+      "defaultSortBy": "Title",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Title": {
+        "edit": {
+          "label": "Title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Poster": {
+        "edit": {
+          "label": "Poster",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Poster",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Description": {
+        "edit": {
+          "label": "Description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Pictures": {
+        "edit": {
+          "label": "Pictures",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Pictures",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Location": {
+        "edit": {
+          "label": "Location",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Location",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Fee": {
+        "edit": {
+          "label": "Fee",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Fee",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Links": {
+        "edit": {
+          "label": "Links",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Links",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "StartDate": {
+        "edit": {
+          "label": "StartDate",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "StartDate",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "EndDate": {
+        "edit": {
+          "label": "EndDate",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "EndDate",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "HostingGroup": {
+        "edit": {
+          "label": "HostingGroup",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "Name"
+        },
+        "list": {
+          "label": "HostingGroup",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Private": {
+        "edit": {
+          "label": "Private",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Private",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Contact": {
+        "edit": {
+          "label": "Contact",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Contact",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "Description"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Title",
+            "size": 6
+          },
+          {
+            "name": "Poster",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Description",
+            "size": 6
+          },
+          {
+            "name": "Pictures",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Location",
+            "size": 6
+          },
+          {
+            "name": "Fee",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Links",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "StartDate",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "EndDate",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "HostingGroup",
+            "size": 6
+          },
+          {
+            "name": "Private",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Contact",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
