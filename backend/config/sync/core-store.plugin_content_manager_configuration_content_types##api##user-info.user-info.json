@@ -1,0 +1,193 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::user-info.user-info",
+  "value": {
+    "uid": "api::user-info.user-info",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "DisplayName",
+      "defaultSortBy": "DisplayName",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "DisplayName": {
+        "edit": {
+          "label": "DisplayName",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "DisplayName",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "FirstName": {
+        "edit": {
+          "label": "FirstName",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "FirstName",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "LastName": {
+        "edit": {
+          "label": "LastName",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "LastName",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "MiddleName": {
+        "edit": {
+          "label": "MiddleName",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "MiddleName",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "users_permissions_user": {
+        "edit": {
+          "label": "users_permissions_user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "users_permissions_user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "DisplayName",
+        "FirstName",
+        "LastName"
+      ],
+      "edit": [
+        [
+          {
+            "name": "DisplayName",
+            "size": 6
+          },
+          {
+            "name": "FirstName",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "LastName",
+            "size": 6
+          },
+          {
+            "name": "MiddleName",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "users_permissions_user",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

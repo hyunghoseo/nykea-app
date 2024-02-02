@@ -1,5 +1,5 @@
 name: github-pipeline
-run-name: ${{ github.actor }} is testing out GitHub Actions on ${{ github.ref_name }}🚀
+run-name: ${{ github.actor }}, ${{ github.ref_name }}🚀
 
 on: [push]
 

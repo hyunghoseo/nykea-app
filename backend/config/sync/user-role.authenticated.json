@@ -1,0 +1,19 @@
+{
+  "name": "Authenticated",
+  "description": "Default role given to authenticated user.",
+  "type": "authenticated",
+  "permissions": [
+    {
+      "action": "api::group.group.find"
+    },
+    {
+      "action": "api::group.group.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.auth.changePassword"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::service.service",
+  "value": {
+    "uid": "api::service.service",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "Title",
+      "defaultSortBy": "Title",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Title": {
+        "edit": {
+          "label": "Title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Date": {
+        "edit": {
+          "label": "Date",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Date",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Sermon": {
+        "edit": {
+          "label": "Sermon",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "DisplayName"
+        },
+        "list": {
+          "label": "Sermon",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "MC": {
+        "edit": {
+          "label": "MC",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "DisplayName"
+        },
+        "list": {
+          "label": "MC",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Accompanist": {
+        "edit": {
+          "label": "Accompanist",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "DisplayName"
+        },
+        "list": {
+          "label": "Accompanist",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Translation": {
+        "edit": {
+          "label": "Translation",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Translation",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Agenda": {
+        "edit": {
+          "label": "Agenda",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Agenda",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Announcements": {
+        "edit": {
+          "label": "Announcements",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Announcements",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "SermonVideo": {
+        "edit": {
+          "label": "SermonVideo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SermonVideo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ServiceType": {
+        "edit": {
+          "label": "ServiceType",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ServiceType",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Title",
+        "Date",
+        "Sermon"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Title",
+            "size": 6
+          },
+          {
+            "name": "Date",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Sermon",
+            "size": 6
+          },
+          {
+            "name": "MC",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Accompanist",
+            "size": 6
+          },
+          {
+            "name": "Translation",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Agenda",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Announcements",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "SermonVideo",
+            "size": 6
+          },
+          {
+            "name": "ServiceType",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

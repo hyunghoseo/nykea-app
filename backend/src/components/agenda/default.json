@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_agenda_defaults",
+  "info": {
+    "displayName": "Default",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "AssignedUser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-info.user-info"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.link"
+    },
+    "AgendaType": {
+      "type": "enumeration",
+      "enum": [
+        "Kiwon",
+        "Opening Song",
+        "Family Pledge",
+        "Opening Prayer",
+        "Monthly Video",
+        "Sermon"
+      ]
+    },
+    "AssignedGroup": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::group.group"
+    },
+    "Video": {
+      "type": "string"
+    },
+    "Standing": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

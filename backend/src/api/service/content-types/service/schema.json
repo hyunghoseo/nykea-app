@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Date": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "date",
+      "required": true
+    },
+    "Sermon": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-info.user-info"
+    },
+    "MC": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-info.user-info"
+    },
+    "Accompanist": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-info.user-info"
+    },
+    "Translation": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "default": "English FM 89.0"
+    },
+    "Agenda": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "agenda.default"
+    },
+    "Announcements": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "list.announcement",
+        "list.default",
+        "list.event"
+      ],
+      "required": true
+    },
+    "SermonVideo": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
+    },
+    "ServiceType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Sunday",
+        "Family",
+        "Special"
+      ],
+      "required": true,
+      "default": "Sunday"
+    }
+  }
+}

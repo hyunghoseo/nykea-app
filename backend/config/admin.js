@@ -15,4 +15,7 @@ module.exports = ({ env }) => ({
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
   url: "dashboard",
+  watchIgnoreFiles: [
+    '**/config/sync/**',
+  ]
 });
