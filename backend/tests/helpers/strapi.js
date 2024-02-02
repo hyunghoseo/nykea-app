@@ -7,6 +7,7 @@ let instance;
  * Setups strapi for futher testing
  */
 async function setupStrapi() {
+  console.log("Setup Strapi");
   if (!instance) {
     await Strapi().load();
     instance = strapi; // strapi is global now
@@ -29,6 +30,7 @@ const jwt = async (idOrEmail) =>
  * Clean up strapi after testing
  */
 async function cleanupStrapi() {
+  console.log("Cleanup Strapi");
   const dbSettings = strapi.config.get("database.connection");
 
   //close server to release the db-file
