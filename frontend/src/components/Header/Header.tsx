@@ -17,8 +17,8 @@ import theme from "../../constants/theme";
 import { navigationLinks } from "../../navigation/navigationLinks";
 import { useResponsiveLayout } from "../../utils/useResponsiveLayout";
 
-const MOBILE_HEADER_HEIGHT = 110;
-const DESKTOP_HEADER_HEIGHT = 90;
+const MOBILE_HEADER_HEIGHT = 84;
+const DESKTOP_HEADER_HEIGHT = 96;
 const ANIMATION_TIME = 250;
 
 const Header = () => {
@@ -187,12 +187,12 @@ const getStyles = (headerHeight: number) =>
       borderBottomColor: "#ddd",
     },
     logoMobile: {
-      height: 70,
-      width: 70,
+      height: 60,
+      width: 60,
     },
     logoDesktop: {
-      height: 37,
-      width: 247,
+      height: 45,
+      width: 253,
     },
     navLinksContainer: {
       flexDirection: "row",
