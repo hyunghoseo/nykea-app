@@ -76,20 +76,6 @@
           "sortable": true
         }
       },
-      "FamilyWebsites": {
-        "edit": {
-          "label": "FamilyWebsites",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "FamilyWebsites",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "PrivatePolicy": {
         "edit": {
           "label": "PrivatePolicy",
@@ -100,6 +86,20 @@
         },
         "list": {
           "label": "PrivatePolicy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "FamilyWebsites": {
+        "edit": {
+          "label": "FamilyWebsites",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "FamilyWebsites",
           "searchable": false,
           "sortable": false
         }
@@ -193,13 +193,13 @@
         ],
         [
           {
-            "name": "FamilyWebsites",
-            "size": 12
+            "name": "PrivatePolicy",
+            "size": 8
           }
         ],
         [
           {
-            "name": "PrivatePolicy",
+            "name": "FamilyWebsites",
             "size": 12
           }
         ]
