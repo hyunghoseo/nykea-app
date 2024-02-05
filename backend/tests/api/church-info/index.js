@@ -21,7 +21,7 @@ describe("Church Info Test", () => {
         return {
             data: {
                 "ChurchName": "Test Name " + id,
-                "Phone": "000-000-0000" + id,
+                "Phone": "000-000-0000",
                 "Email": "test" + id + "@test.com",
                 "Address": id + "north haledon",
                 "PrivatePolicy": "policy" + id,
