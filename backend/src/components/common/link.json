@@ -9,7 +9,7 @@
   "attributes": {
     "Label": {
       "type": "string",
-      "minLength": 5,
+      "minLength": 1,
       "required": true
     },
     "URL": {

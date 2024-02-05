@@ -66,7 +66,7 @@ export interface CommonLink extends Schema.Component {
     Label: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 5;
+        minLength: 1;
       }>;
     URL: Attribute.String &
       Attribute.Required &

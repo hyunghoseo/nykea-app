@@ -65,7 +65,7 @@
       "StartDate": {
         "edit": {
           "label": "StartDate",
-          "description": "Start date of the banner to be active.",
+          "description": "Banner will be displayed on the homepage from this date",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -79,7 +79,7 @@
       "EndDate": {
         "edit": {
           "label": "EndDate",
-          "description": "End date of the banner to be inactive.",
+          "description": "Banner will be displayed on the homepage until this date",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -155,15 +155,11 @@
           {
             "name": "Title",
             "size": 12
-          },
-          {
-            "name": "Description",
-            "size": 12
           }
         ],
         [
           {
-            "name": "Link",
+            "name": "Description",
             "size": 12
           }
         ],
@@ -175,6 +171,12 @@
           {
             "name": "EndDate",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Link",
+            "size": 12
           }
         ]
       ],

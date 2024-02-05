@@ -86,8 +86,8 @@
         },
         "list": {
           "label": "Location",
-          "searchable": true,
-          "sortable": true
+          "searchable": false,
+          "sortable": false
         }
       },
       "Fee": {
@@ -278,10 +278,6 @@
         ],
         [
           {
-            "name": "Location",
-            "size": 6
-          },
-          {
             "name": "Fee",
             "size": 6
           }
@@ -312,6 +308,12 @@
           {
             "name": "Private",
             "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Location",
+            "size": 12
           }
         ],
         [

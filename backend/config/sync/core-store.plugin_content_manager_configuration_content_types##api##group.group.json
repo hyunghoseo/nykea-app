@@ -122,31 +122,29 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "Name",
+        "Picture",
+        "ShortDescription"
+      ],
       "edit": [
         [
           {
             "name": "Name",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "ShortDescription",
-            "size": 12
+            "size": 6
           }
         ],
         [
           {
             "name": "Picture",
-            "size": 12
+            "size": 6
+          },
+          {
+            "name": "ShortDescription",
+            "size": 6
           }
         ]
-      ],
-      "list": [
-        "id",
-        "Name",
-        "ShortDescription",
-        "Picture"
       ]
     }
   },

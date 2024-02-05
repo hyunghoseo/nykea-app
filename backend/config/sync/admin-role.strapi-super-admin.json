@@ -18,7 +18,8 @@
           "Link.URL"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -29,7 +30,8 @@
       "subject": "api::announcement.announcement",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -40,33 +42,14 @@
       "subject": "api::announcement.announcement",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
-      "actionParameters": {},
-      "subject": "api::announcement.announcement",
-      "properties": {
-        "fields": [
-          "Title",
-          "Poster",
-          "Description",
-          "HostingGroup",
-          "Private",
-          "Link.Label",
-          "Link.URL"
-        ],
-        "locales": [
-          "en"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
       "actionParameters": {},
       "subject": "api::announcement.announcement",
       "properties": {
@@ -80,7 +63,29 @@
           "Link.URL"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::announcement.announcement",
+      "properties": {
+        "fields": [
+          "Title",
+          "Poster",
+          "Description",
+          "HostingGroup",
+          "Private",
+          "Link.Label",
+          "Link.URL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -99,7 +104,8 @@
           "EndDate"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -110,7 +116,8 @@
       "subject": "api::banner.banner",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -121,7 +128,8 @@
       "subject": "api::banner.banner",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -140,7 +148,8 @@
           "EndDate"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -159,7 +168,8 @@
           "EndDate"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -179,7 +189,8 @@
           "FamilyWebsites.URL"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -190,7 +201,8 @@
       "subject": "api::church-info.church-info",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -201,7 +213,8 @@
       "subject": "api::church-info.church-info",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -221,7 +234,8 @@
           "FamilyWebsites.URL"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -241,7 +255,8 @@
           "FamilyWebsites.URL"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -269,7 +284,8 @@
           "Contact"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -280,7 +296,8 @@
       "subject": "api::event.event",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -291,7 +308,8 @@
       "subject": "api::event.event",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -319,7 +337,8 @@
           "Contact"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -347,7 +366,8 @@
           "Contact"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -363,7 +383,8 @@
           "Picture"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -374,7 +395,8 @@
       "subject": "api::group.group",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -385,7 +407,8 @@
       "subject": "api::group.group",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -401,7 +424,8 @@
           "Picture"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -417,7 +441,8 @@
           "Picture"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -435,7 +460,8 @@
           "Picture"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -446,7 +472,8 @@
       "subject": "api::leader.leader",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -457,7 +484,8 @@
       "subject": "api::leader.leader",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -475,7 +503,8 @@
           "Picture"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -493,7 +522,8 @@
           "Picture"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -525,7 +555,8 @@
           "ServiceType"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -536,7 +567,8 @@
       "subject": "api::service.service",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -547,7 +579,8 @@
       "subject": "api::service.service",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -579,7 +612,8 @@
           "ServiceType"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -611,7 +645,8 @@
           "ServiceType"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -633,7 +668,8 @@
           "DateCompleted"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -644,7 +680,8 @@
       "subject": "api::support.support",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -655,7 +692,8 @@
       "subject": "api::support.support",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -677,7 +715,8 @@
           "DateCompleted"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -699,7 +738,8 @@
           "DateCompleted"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -717,7 +757,8 @@
           "users_permissions_user"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -728,7 +769,8 @@
       "subject": "api::user-info.user-info",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -739,7 +781,8 @@
       "subject": "api::user-info.user-info",
       "properties": {
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -757,7 +800,8 @@
           "users_permissions_user"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -775,7 +819,8 @@
           "users_permissions_user"
         ],
         "locales": [
-          "en"
+          "en",
+          "ko"
         ]
       },
       "conditions": []

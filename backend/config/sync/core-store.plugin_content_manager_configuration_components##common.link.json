@@ -23,7 +23,7 @@
       "Label": {
         "edit": {
           "label": "Label",
-          "description": "",
+          "description": "Button label",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -37,7 +37,7 @@
       "URL": {
         "edit": {
           "label": "URL",
-          "description": "",
+          "description": "When the button is clicked, it will go to this URL.",
           "placeholder": "",
           "visible": true,
           "editable": true
