@@ -19,9 +19,6 @@
       "action": "api::church-info.church-info.createLocalization"
     },
     {
-      "action": "api::church-info.church-info.delete"
-    },
-    {
       "action": "api::church-info.church-info.find"
     },
     {
