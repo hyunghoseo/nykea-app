@@ -280,9 +280,7 @@
           {
             "name": "Location",
             "size": 6
-          }
-        ],
-        [
+          },
           {
             "name": "Fee",
             "size": 6
