@@ -4,6 +4,9 @@
   "type": "authenticated",
   "permissions": [
     {
+      "action": "api::church-info.church-info.find"
+    },
+    {
       "action": "api::group.group.find"
     },
     {

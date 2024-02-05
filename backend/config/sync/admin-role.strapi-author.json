@@ -190,8 +190,7 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private",
-          "Contact"
+          "Private"
         ]
       },
       "conditions": [
@@ -217,8 +216,7 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private",
-          "Contact"
+          "Private"
         ]
       },
       "conditions": [
@@ -244,8 +242,7 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private",
-          "Contact"
+          "Private"
         ]
       },
       "conditions": [
