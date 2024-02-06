@@ -1316,8 +1316,11 @@ export interface ApiSupportSupport extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
       }>;
     Email: Attribute.String &
       Attribute.Required &
@@ -1325,6 +1328,9 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
       }>;
     Phone: Attribute.String &
       Attribute.Required &
@@ -1332,20 +1338,29 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
       }>;
     Title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
       }>;
     Message: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
       }>;
     DateSubmitted: Attribute.DateTime &
       Attribute.Required &
@@ -1365,7 +1380,7 @@ export interface ApiSupportSupport extends Schema.CollectionType {
     Memo: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     DateCompleted: Attribute.DateTime &

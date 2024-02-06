@@ -19,11 +19,12 @@
     "FullName": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 1
     },
     "Email": {
       "pluginOptions": {
@@ -33,7 +34,8 @@
       },
       "type": "string",
       "regex": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
-      "required": true
+      "required": true,
+      "minLength": 1
     },
     "Phone": {
       "pluginOptions": {
@@ -43,25 +45,28 @@
       },
       "type": "string",
       "regex": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$",
-      "required": true
+      "required": true,
+      "minLength": 1
     },
     "Title": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 1
     },
     "Message": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "text",
-      "required": true
+      "required": true,
+      "minLength": 1
     },
     "DateSubmitted": {
       "pluginOptions": {
@@ -90,7 +95,7 @@
     "Memo": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "text"
