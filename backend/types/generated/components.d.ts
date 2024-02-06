@@ -11,7 +11,7 @@ export interface AgendaDefault extends Schema.Component {
     Title: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 3;
+        minLength: 1;
       }>;
     AssignedUser: Attribute.Relation<
       'agenda.default',
@@ -30,7 +30,8 @@ export interface AgendaDefault extends Schema.Component {
         'Monthly Video',
         'Sermon'
       ]
-    >;
+    > &
+      Attribute.Required;
     AssignedGroup: Attribute.Relation<
       'agenda.default',
       'oneToOne',
