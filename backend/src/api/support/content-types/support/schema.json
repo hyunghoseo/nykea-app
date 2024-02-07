@@ -19,7 +19,7 @@
     "FullName": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
@@ -34,8 +34,7 @@
       },
       "type": "string",
       "regex": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
-      "required": true,
-      "minLength": 1
+      "required": true
     },
     "Phone": {
       "pluginOptions": {
@@ -45,13 +44,12 @@
       },
       "type": "string",
       "regex": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$",
-      "required": true,
-      "minLength": 1
+      "required": true
     },
     "Title": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
@@ -61,7 +59,7 @@
     "Message": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "text",
@@ -95,7 +93,7 @@
     "Memo": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "text"
