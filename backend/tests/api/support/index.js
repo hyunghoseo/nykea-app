@@ -14,7 +14,7 @@ describe("Support Test", () => {
     /**
      * @param {string | number} id
      */
-    const constructGroup = (id) => {
+    const constructSupportTicket = (id) => {
         return {
             data: {
                 "FullName": "Test Name" + id,
@@ -23,7 +23,7 @@ describe("Support Test", () => {
                 "Title": "Test Title" + id,
                 "Message": "Test Message" + id,
                 "DateSubmitted": Date.now(),
-                "Status": "Submitted", //"Under Review" or "Completed"
+                "Status": "Submitted", // "Under Review" or "Completed"
                 "Memo": "Test Memo" + id,
                 "DateCompleted": Date.now(),
                 "locale": "en"
