@@ -7,7 +7,7 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "FullName",
+      "mainField": "Title",
       "defaultSortBy": "FullName",
       "defaultSortOrder": "ASC"
     },
@@ -206,59 +206,67 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "FullName",
-        "Email",
-        "Phone"
-      ],
       "edit": [
         [
           {
             "name": "FullName",
-            "size": 6
-          },
+            "size": 12
+          }
+        ],
+        [
           {
             "name": "Email",
-            "size": 6
+            "size": 12
           }
         ],
         [
           {
             "name": "Phone",
-            "size": 6
-          },
+            "size": 12
+          }
+        ],
+        [
           {
             "name": "Title",
-            "size": 6
+            "size": 12
           }
         ],
         [
           {
             "name": "Message",
-            "size": 6
-          },
-          {
-            "name": "DateSubmitted",
-            "size": 6
+            "size": 12
           }
         ],
         [
           {
-            "name": "Status",
-            "size": 6
-          },
-          {
-            "name": "Memo",
-            "size": 6
+            "name": "DateSubmitted",
+            "size": 12
           }
         ],
         [
           {
             "name": "DateCompleted",
-            "size": 6
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Status",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Memo",
+            "size": 12
           }
         ]
+      ],
+      "list": [
+        "id",
+        "FullName",
+        "Email",
+        "Phone"
       ]
     }
   },
