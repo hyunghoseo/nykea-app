@@ -15,10 +15,14 @@ describe("Support Test", () => {
      * @param {string | number} id
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     const constructSupportTicket = (id) => {
 =======
     const constructGroup = (id) => {
 >>>>>>> afbec58 (created test index.js for support)
+=======
+    const constructSupportTicket = (id) => {
+>>>>>>> 287759c (KEA-147 turned off localization (testing impact on Strapi response content type))
         return {
             data: {
                 "FullName": "Test Name" + id,
@@ -28,11 +32,15 @@ describe("Support Test", () => {
                 "Message": "Test Message" + id,
                 "DateSubmitted": Date.now(),
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Status": "Submitted", // "Under Review" or "Completed"
                 "Memo": null,
                 "DateCompleted": null,
 =======
                 "Status": "Submitted", //"Under Review" or "Completed"
+=======
+                "Status": "Submitted", // "Under Review" or "Completed"
+>>>>>>> 287759c (KEA-147 turned off localization (testing impact on Strapi response content type))
                 "Memo": "Test Memo" + id,
                 "DateCompleted": Date.now(),
 >>>>>>> afbec58 (created test index.js for support)
@@ -41,6 +49,7 @@ describe("Support Test", () => {
         };
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     it("Public user should post support ticket", async () => {
         await request(strapi.server.httpServer)
@@ -165,6 +174,18 @@ describe("Support Test", () => {
     //         .expect("Content-Type", /json/)
     //         .expect(500)
     // })
+=======
+    it("Public user should post support ticket", async () => {
+        await request(strapi.server.httpServer)
+            .post("/api/support")
+            .set("accept", "application/json")
+            .send(constructSupportTicket(1))
+            .then(response => {
+                const contentType = response.headers['content-type'];
+                console.log('Content-Type:', contentType);
+            });
+    });
+>>>>>>> 287759c (KEA-147 turned off localization (testing impact on Strapi response content type))
 
     // it("Authenticated user should not post group", async () => {
     //     await request(strapi.server.httpServer)
