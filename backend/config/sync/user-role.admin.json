@@ -14,6 +14,21 @@
     },
     {
       "action": "api::group.group.update"
+    },
+    {
+      "action": "api::service.service.create"
+    },
+    {
+      "action": "api::service.service.createLocalization"
+    },
+    {
+      "action": "api::service.service.find"
+    },
+    {
+      "action": "api::service.service.findOne"
+    },
+    {
+      "action": "api::service.service.update"
     }
   ]
 }

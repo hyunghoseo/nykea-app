@@ -10,6 +10,12 @@
       "action": "api::group.group.findOne"
     },
     {
+      "action": "api::service.service.find"
+    },
+    {
+      "action": "api::service.service.findOne"
+    },
+    {
       "action": "plugin::users-permissions.auth.callback"
     },
     {
