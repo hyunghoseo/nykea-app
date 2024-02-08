@@ -46,7 +46,9 @@
           "localized": true
         }
       },
-      "type": "text"
+      "type": "text",
+      "required": true,
+      "minLength": 5
     },
     "HostingGroup": {
       "type": "relation",
