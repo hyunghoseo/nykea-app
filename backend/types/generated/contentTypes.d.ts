@@ -717,10 +717,14 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
         };
       }>;
     Description: Attribute.Text &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 5;
       }>;
     HostingGroup: Attribute.Relation<
       'api::announcement.announcement',
