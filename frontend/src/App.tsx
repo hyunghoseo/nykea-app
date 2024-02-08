@@ -40,7 +40,7 @@ const App = () => {
         colors: { ...DefaultTheme.colors, background: "white" },
       }}
     >
-      <View style={styles.container}>
+      <View style={styles.container} onLayout={onLayoutRootView}>
         <Header />
         <View style={styles.screenContainer}>
           <AppNavigator />
