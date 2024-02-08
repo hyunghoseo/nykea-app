@@ -14,14 +14,11 @@ describe("Announcement Test", () => {
     const constructAnnouncement = (id) => {
         return {
             data: {
-                "Name": "Test Announcement " + id,
+                "Title": "Test Announcement " + id,
                 "Poster": null,
                 "Description": "Announcement Description " + id,
                 "HostingGroup": "Announcement HostingGroup" + id,
                 "Private": false,
-                "PastingDate": Date.now(),
-
-
                 "locale": "en",
                 "publishedAt": Date.now(),
             }
@@ -39,7 +36,7 @@ describe("Announcement Test", () => {
     })
 
     // Post
-    it("[Announcement] Public user should not post group", async () => {
+    it("[Announcement] Public user should not post announcement", async () => {
         await request(strapi.server.httpServer)
             .post("/api/announcements")
             .set("accept", "application/json")
@@ -47,6 +44,8 @@ describe("Announcement Test", () => {
             .expect("Content-Type", /json/)
             .expect(500)
     })
+
+    
 
 })
 
