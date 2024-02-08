@@ -1,13 +1,13 @@
-import { useCallback } from "react";
-import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import { View, StyleSheet } from "react-native";
-import { useFonts } from "expo-font";
 import {
   KumbhSans_500Medium,
   KumbhSans_600SemiBold,
 } from "@expo-google-fonts/kumbh-sans";
 import { NotoSans_400Regular } from "@expo-google-fonts/noto-sans";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
+import { View, StyleSheet } from "react-native";
 
 import Header from "./components/Header/Header";
 import AppNavigator from "./navigation/AppNavigator";
