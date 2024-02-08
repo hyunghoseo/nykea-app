@@ -14,7 +14,7 @@ describe("Announcement Test", () => {
     const constructAnnouncement = (id) => {
         return {
             data: {
-                "Name": "Test Announcement " + id,
+                "Title": "Test Announcement " + id,
                 "Poster": null,
                 "Description": "Announcement Description " + id,
                 "Private": false,
