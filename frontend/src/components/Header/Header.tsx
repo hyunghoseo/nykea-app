@@ -202,8 +202,8 @@ const getStyles = (headerHeight: number) =>
       padding: 8,
     },
     navText: {
+      fontFamily: "KumbhSans_500Medium",
       fontSize: 14,
-      fontWeight: "500",
       lineHeight: 24,
       letterSpacing: 0.5,
     },
@@ -246,8 +246,8 @@ const getStyles = (headerHeight: number) =>
       paddingVertical: 25,
     },
     menuText: {
+      fontFamily: "KumbhSans_600SemiBold",
       fontSize: 18,
-      fontWeight: "600",
       lineHeight: 32,
       letterSpacing: 0.75,
     },
