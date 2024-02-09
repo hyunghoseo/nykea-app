@@ -36,7 +36,7 @@ describe("Announcement Test", () => {
     })
 
     // Post
-    it("[Announcement] Public user should not post announcement", async () => {
+    it("[Announcement] Public user should not post group", async () => {
         await request(strapi.server.httpServer)
             .post("/api/announcements")
             .set("accept", "application/json")
