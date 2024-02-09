@@ -24,7 +24,9 @@
       },
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "maxLength": 50,
+      "minLength": 5
     },
     "Description": {
       "pluginOptions": {
@@ -32,7 +34,8 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "Link": {
       "type": "component",
@@ -42,7 +45,8 @@
           "localized": true
         }
       },
-      "component": "common.link"
+      "component": "common.link",
+      "required": true
     },
     "StartDate": {
       "pluginOptions": {

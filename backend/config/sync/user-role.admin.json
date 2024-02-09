@@ -4,6 +4,18 @@
   "type": "admin",
   "permissions": [
     {
+      "action": "api::banner.banner.create"
+    },
+    {
+      "action": "api::banner.banner.find"
+    },
+    {
+      "action": "api::banner.banner.findOne"
+    },
+    {
+      "action": "api::banner.banner.update"
+    },
+    {
       "action": "api::group.group.create"
     },
     {

@@ -60,6 +60,7 @@ export interface CommonLink extends Schema.Component {
   info: {
     displayName: 'Link';
     icon: 'earth';
+    description: '';
   };
   attributes: {
     Label: Attribute.String &
@@ -70,7 +71,7 @@ export interface CommonLink extends Schema.Component {
     URL: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 1;
+        minLength: 5;
       }>;
   };
 }
