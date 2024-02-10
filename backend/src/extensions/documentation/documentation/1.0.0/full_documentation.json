@@ -33,6 +33,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "x-generation-date": "2024-03-07T17:57:04.073Z"
 =======
     "x-generation-date": "2024-02-10T19:18:45.644Z"
@@ -82,7 +83,13 @@
 =======
     "x-generation-date": "2024-02-10T04:29:43.105Z"
 >>>>>>> 6eaf0e9 (KEA-147 drafted all tests)
+<<<<<<< HEAD
 >>>>>>> 823b2b3 (KEA-147 drafted all tests)
+=======
+=======
+    "x-generation-date": "2024-02-10T19:18:45.644Z"
+>>>>>>> 7872248 (KEA-147 cleaned up tests)
+>>>>>>> 3e963af (KEA-147 cleaned up tests)
   },
   "x-strapi-config": {
     "plugins": [
