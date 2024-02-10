@@ -52,6 +52,7 @@ describe("Support Test", () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     /**
         Admin:
@@ -70,11 +71,16 @@ describe("Support Test", () => {
           **/
 
 >>>>>>> fc33d26 (KEA-147 cleaned up tests)
+=======
+>>>>>>> f0f05d7 (KEA-149 uncommented other tests)
     it("Public user should post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f0f05d7 (KEA-149 uncommented other tests)
             .send(constructSupportTicket(1))       
             .expect('Content-Type',/json/)
             .expect(200)
