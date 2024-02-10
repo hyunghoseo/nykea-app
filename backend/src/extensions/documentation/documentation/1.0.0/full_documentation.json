@@ -34,6 +34,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "x-generation-date": "2024-03-07T17:57:04.073Z"
 =======
     "x-generation-date": "2024-02-10T19:18:45.644Z"
@@ -89,7 +90,13 @@
 =======
     "x-generation-date": "2024-02-10T19:18:45.644Z"
 >>>>>>> 7872248 (KEA-147 cleaned up tests)
+<<<<<<< HEAD
 >>>>>>> 3e963af (KEA-147 cleaned up tests)
+=======
+=======
+    "x-generation-date": "2024-02-10T19:26:24.926Z"
+>>>>>>> 0334efe (KEA-149 uncommented other tests)
+>>>>>>> b941cf8 (KEA-149 uncommented other tests)
   },
   "x-strapi-config": {
     "plugins": [
@@ -101,10 +108,14 @@
   "servers": [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "url": "https://admin.nykea.org/api",
       "description": "Production server"
 =======
       "url": "http://0.0.0.0:1338/api",
+=======
+      "url": "http://localhost:1338/api",
+>>>>>>> b941cf8 (KEA-149 uncommented other tests)
       "description": "Development server"
 >>>>>>> 823b2b3 (KEA-147 drafted all tests)
     }
