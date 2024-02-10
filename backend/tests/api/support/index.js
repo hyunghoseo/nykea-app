@@ -31,34 +31,18 @@ describe("Support Test", () => {
         };
     }
 
-    /**
-        Admin:
-        [] create - done
-        [x] find - done
-        [x] findOne 
-        [x] update 
-        AuthUser:
-        [x] create - done
-        [] find - done
-      
-        Public:
-        [x] create - done
-        [] find - done
-
-          **/
-
     it("Public user should post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
-            .send(constructSupportTicket(1))        //id1
+            .send(constructSupportTicket(1))       
             .expect('Content-Type',/json/)
             .expect(200)
 
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
-            .send(constructSupportTicket(2))        //id2
+            .send(constructSupportTicket(2))        
             .expect("Content-Type", /json/)
             .expect(200)
     });
@@ -68,7 +52,7 @@ describe("Support Test", () => {
             .post("/api/supports")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructSupportTicket(3))        //id3
+            .send(constructSupportTicket(3))        
             .expect("Content-Type", /json/)
             .expect(200)
     })
