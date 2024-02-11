@@ -1,20 +1,37 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { View, StyleSheet } from "react-native";
 
-export default function Sample() {
+import Header from "./components/Header/Header";
+import AppNavigator from "./navigation/AppNavigator";
+import { linking } from "./navigation/navigationLinks";
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer
+      linking={linking}
+      theme={{
+        ...DefaultTheme,
+        colors: { ...DefaultTheme.colors, background: "white" },
+      }}
+    >
+      <View style={styles.container}>
+        <Header />
+        <View style={styles.screenContainer}>
+          <AppNavigator />
+        </View>
+      </View>
+    </NavigationContainer>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  screenContainer: {
+    flex: 1,
+    backgroundColor: "white",
   },
 });
+
+export default App;

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-02-02T01:11:37.548Z"
+    "x-generation-date": "2024-02-05T01:22:19.473Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1273,6 +1273,7 @@
       "BannerLocalizationRequest": {
         "required": [
           "Title",
+          "Link",
           "StartDate",
           "locale"
         ],
@@ -1309,6 +1310,7 @@
           "data": {
             "required": [
               "Title",
+              "Link",
               "StartDate"
             ],
             "type": "object",
@@ -1455,6 +1457,7 @@
         "type": "object",
         "required": [
           "Title",
+          "Link",
           "StartDate"
         ],
         "properties": {
