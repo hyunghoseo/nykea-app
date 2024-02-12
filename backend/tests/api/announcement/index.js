@@ -25,15 +25,18 @@ describe("Announcement Test", () => {
         };
     }
 
-    // Get
+    // Get all announcements (public users)
     it("[Announcement] Get All Announcements", async () => {
         await request(strapi.server.httpServer)
             .get("/api/announcements")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
-            
     })
+
+    // Get private announcements ()
+
+    // Get 
 
     // Post
     it("[Announcement] Public user should not post announcement", async () => {
