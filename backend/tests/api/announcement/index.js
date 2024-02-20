@@ -46,6 +46,7 @@ describe("Announcement Test", () => {
     })
 
     it("[Create] Admin user should post Announcements", async () => {
+        const announcement = constructAnnouncement(1);
         await request(strapi.server.httpServer)
             .post("/api/announcements")
             .set("accept", "application/json")
@@ -53,9 +54,14 @@ describe("Announcement Test", () => {
             .send(constructAnnouncement(1))
             .expect("Content-Type", /json/)
             .expect(200)
-            .then((data) => {
-                console.log(data.body.data);
-                // expect(data.body.data.length).toBe(0)
+            .expect((data) => {
+                data = data.body.data;
+                expect(data.attributes.Title).toBe(announcement.data.Title);
+                // expected "null", but received "undefined"
+                // expect(data.attributes.Poster).toBe(announcement.data.Poster);
+                expect(data.attributes.Description).toBe(announcement.data.Description);
+                expect(data.attributes.Private).toBe(announcement.data.Private);
+                expect(data.attributes.locale).toBe(announcement.data.locale);
             })
     })
 
@@ -66,6 +72,9 @@ describe("Announcement Test", () => {
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
+            .then((data) => {
+                expect(data.body.data.length).toBe(1);
+            })
     })
 
     it("[Find] Authenticated user should find Announcements", async () => {
@@ -74,6 +83,9 @@ describe("Announcement Test", () => {
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
+            .then((data) => {
+                expect(data.body.data.length).toBe(1);
+            })
     })
 
     it("[Find] Admin user should find Announcements", async () => {
@@ -82,6 +94,9 @@ describe("Announcement Test", () => {
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
+            .then((data) => {
+                expect(data.body.data.length).toBe(1);
+            })
     })
 
     // FindOne
@@ -96,8 +111,6 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
-                // expected "null", but received "undefined"
-                // expect(data.attributes.Poster).toBe(announcement.data.Poster);
                 expect(data.attributes.Description).toBe(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
@@ -116,7 +129,6 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
-                // expect(data.attributes.Poster).toBe(announcement.data.Poster);
                 expect(data.attributes.Description).toBe(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
@@ -135,7 +147,6 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
-                // expect(data.attributes.Poster).toBe(announcement.data.Poster);
                 expect(data.attributes.Description).toBe(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
@@ -143,40 +154,44 @@ describe("Announcement Test", () => {
     })
 
     // Update
-    // it("[Update] Public user should not update Announcements", async () => {
-    //     const id = 1;
-    //     const announcement = putAnnouncement();
-    //     await request(strapi.server.httpServer)
-    //         .put("/api/announcements")
-    //         .set("accept", "application/json")
-    //         .set('Content-Type', 'application/json')
-    //         .send(putAnnouncement())
-    //         // .expect("Content-Type", /json/)
-    //         .expect(405)
-    //         .then((data) => {
-    //             console.log(data);
-    //             expect(data.attributes.Title).toBe(announcement.data.Title);
-    //         })
-    // })
+    it("[Update] Public user should not update Announcements", async () => {
+        const id = 1;
+        await request(strapi.server.httpServer)
+            .put("/api/announcements/" + id)
+            .set("accept", "application/json")
+            .set('Content-Type', 'application/json')
+            .send(constructAnnouncement(3))
+            .expect("Content-Type", /json/)
+            .expect(500)
+    })
 
-    // it("[Update] Authenticated user should not update Announcements", async () => {
-    //     await request(strapi.server.httpServer)
-    //         .post("/api/announcements")
-    //         .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-    //         .send(putAnnouncement())
-    //         .expect(500)
-    // })
+    it("[Update] Authenticated user should not update Announcements", async () => {
+        const id = 1;
+        await request(strapi.server.httpServer)
+            .put("/api/announcements/" + id)
+            .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
+            .set('Content-Type', 'application/json')
+            .send(constructAnnouncement(3))
+            .expect("Content-Type", /json/)
+            .expect(500)
+    })
 
     it("[Update] Admin user should update Announcements", async () => {
+        const id = 1;
+        const announcement = constructAnnouncement(3);
         await request(strapi.server.httpServer)
-            .put("/api/announcements/")
+            .put("/api/announcements/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .send(constructAnnouncement(3))
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
-                console.log(data);
+                data = data.body.data;
+                expect(data.attributes.Title).toBe(announcement.data.Title);
+                expect(data.attributes.Description).toBe(announcement.data.Description);
+                expect(data.attributes.Private).toBe(announcement.data.Private);
+                expect(data.attributes.locale).toBe(announcement.data.locale);
             })
     })
     
