@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-02-05T01:22:19.473Z"
+    "x-generation-date": "2024-02-22T00:43:09.140Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1098,6 +1098,15 @@
                             }
                           }
                         }
+                      },
+                      "Type": {
+                        "type": "string",
+                        "enum": [
+                          "Administrative",
+                          "Community",
+                          "Education",
+                          "Activities"
+                        ]
                       },
                       "createdAt": {
                         "type": "string",
@@ -3604,6 +3613,15 @@
                           }
                         }
                       },
+                      "Type": {
+                        "type": "string",
+                        "enum": [
+                          "Administrative",
+                          "Community",
+                          "Education",
+                          "Activities"
+                        ]
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -3800,6 +3818,15 @@
             ],
             "example": "string or id"
           },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Administrative",
+              "Community",
+              "Education",
+              "Activities"
+            ]
+          },
           "locale": {
             "type": "string"
           }
@@ -3834,6 +3861,15 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "Administrative",
+                  "Community",
+                  "Education",
+                  "Activities"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -4590,6 +4626,15 @@
                 }
               }
             }
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Administrative",
+              "Community",
+              "Education",
+              "Activities"
+            ]
           },
           "createdAt": {
             "type": "string",
@@ -7650,6 +7695,15 @@
                             }
                           }
                         }
+                      },
+                      "Type": {
+                        "type": "string",
+                        "enum": [
+                          "Administrative",
+                          "Community",
+                          "Education",
+                          "Activities"
+                        ]
                       },
                       "createdAt": {
                         "type": "string",

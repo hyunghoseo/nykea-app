@@ -6,7 +6,6 @@ describe("Group Test", () => {
     let authenticatedUser;
     let adminUser;
     beforeAll(async () => {
-        console.log("Group before all");
         authenticatedUser = await userFactory.createUser(strapi, "authenticated");
         adminUser = await userFactory.createUser(strapi, "admin");
     });
@@ -20,6 +19,7 @@ describe("Group Test", () => {
                 "Name": "Test Group " + id,
                 "ShortDescription": "Group Description " + id,
                 "Picture": null,
+                "Type": "Administrative",
                 "locale": "en",
                 "publishedAt": Date.now(),
             }
@@ -110,6 +110,7 @@ describe("Group Test", () => {
                 data = data.body.data;
                 expect(data.attributes.Name).toBe(group.data.Name);
                 expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
+                expect(data.attributes.Type).toBe(group.data.Type);
                 expect(data.attributes.locale).toBe(group.data.locale);
             })
     });
@@ -127,6 +128,7 @@ describe("Group Test", () => {
                 data = data.body.data;
                 expect(data.attributes.Name).toBe(group.data.Name);
                 expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
+                expect(data.attributes.Type).toBe(group.data.Type);
                 expect(data.attributes.locale).toBe(group.data.locale);
             })
     });
@@ -144,6 +146,7 @@ describe("Group Test", () => {
                 data = data.body.data;
                 expect(data.attributes.Name).toBe(group.data.Name);
                 expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
+                expect(data.attributes.Type).toBe(group.data.Type);
                 expect(data.attributes.locale).toBe(group.data.locale);
             })
     });
