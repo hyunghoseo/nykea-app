@@ -23,8 +23,7 @@
         }
       },
       "type": "string",
-      "required": true,
-      "minLength": 5
+      "required": true
     },
     "ShortDescription": {
       "pluginOptions": {
@@ -33,9 +32,7 @@
         }
       },
       "type": "string",
-      "maxLength": 50,
-      "minLength": 5,
-      "required": true
+      "required": false
     },
     "Picture": {
       "type": "media",
@@ -46,7 +43,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
