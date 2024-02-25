@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "test": "jest",
     "lint": "eslint .",
-    "build:web": "npx expo export:web"
+    "build:web": "npx expo export:web",
+    "gen-api": "npx openapi-codegen gen api"
   },
   "jest": {
     "preset": "jest-expo",
@@ -45,6 +46,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@openapi-codegen/cli": "^2.0.0",
+    "@openapi-codegen/typescript": "^8.0.0",
     "@testing-library/react-native": "^12.4.3",
     "@types/jest": "^29.5.8",
     "@types/react": "~18.2.14",
