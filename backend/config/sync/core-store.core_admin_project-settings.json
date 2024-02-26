@@ -1,0 +1,10 @@
+{
+  "key": "core_admin_project-settings",
+  "value": {
+    "menuLogo": {},
+    "authLogo": {}
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
