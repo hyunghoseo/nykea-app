@@ -10,7 +10,7 @@ export const navigationLinks = [
   { title: "Groups", route: "Groups" },
   { title: "Sunday Services", route: "Services" },
   { title: "Events", route: "Events" },
-  { title: "Contact Us", route: "ContactUs" },
+  { title: "Contact Us", route: "Contact Us" },
 ];
 
 export const linking: LinkingOptions<ParamListBase> = {
@@ -22,7 +22,7 @@ export const linking: LinkingOptions<ParamListBase> = {
       Groups: "groups",
       Services: "services",
       Events: "events",
-      ContactUs: "contact-us",
+      "Contact Us": "contact-us",
     },
   },
 };

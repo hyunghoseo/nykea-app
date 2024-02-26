@@ -22,7 +22,7 @@ const AppNavigator = () => {
       <Stack.Screen name="Groups" component={GroupsScreen} />
       <Stack.Screen name="Services" component={ServicesScreen} />
       <Stack.Screen name="Events" component={EventsScreen} />
-      <Stack.Screen name="ContactUs" component={ContactUsScreen} />
+      <Stack.Screen name="Contact Us" component={ContactUsScreen} />
     </Stack.Navigator>
   );
 };
