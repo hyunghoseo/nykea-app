@@ -10,9 +10,10 @@ import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import { View, StyleSheet } from "react-native";
 
-import Header from "./components/Header/Header";
-import AppNavigator from "./navigation/AppNavigator";
-import { linking } from "./navigation/navigationLinks";
+import Header from "@/components/Header/Header";
+import { LocaleProvider } from "@/contexts/LocaleProvider";
+import AppNavigator from "@/navigation/AppNavigator";
+import { linking } from "@/navigation/navigationLinks";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -36,22 +37,24 @@ const App = () => {
   }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer
-        linking={linking}
-        theme={{
-          ...DefaultTheme,
-          colors: { ...DefaultTheme.colors, background: "white" },
-        }}
-      >
-        <View style={styles.container} onLayout={onLayoutRootView}>
-          <Header />
-          <View style={styles.screenContainer}>
-            <AppNavigator />
+    <LocaleProvider>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer
+          linking={linking}
+          theme={{
+            ...DefaultTheme,
+            colors: { ...DefaultTheme.colors, background: "white" },
+          }}
+        >
+          <View style={styles.container} onLayout={onLayoutRootView}>
+            <Header />
+            <View style={styles.screenContainer}>
+              <AppNavigator />
+            </View>
           </View>
-        </View>
-      </NavigationContainer>
-    </QueryClientProvider>
+        </NavigationContainer>
+      </QueryClientProvider>
+    </LocaleProvider>
   );
 };
 
