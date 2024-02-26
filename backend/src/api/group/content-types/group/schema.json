@@ -49,6 +49,20 @@
           "localized": true
         }
       }
+    },
+    "Type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Administrative",
+        "Community",
+        "Education",
+        "Activities"
+      ]
     }
   }
 }
