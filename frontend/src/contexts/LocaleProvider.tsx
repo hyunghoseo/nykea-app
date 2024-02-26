@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getLocales } from "expo-localization";
 import {
   createContext,
   useContext,
@@ -6,8 +7,6 @@ import {
   ReactNode,
   useEffect,
 } from "react";
-import { Platform } from "react-native";
-import { getLocales } from "expo-localization";
 
 export type Locale = "en" | "ko" | "ja";
 
