@@ -380,7 +380,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ],
         "locales": [
           "en",
@@ -421,7 +422,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ],
         "locales": [
           "en",
@@ -438,7 +440,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ],
         "locales": [
           "en",
