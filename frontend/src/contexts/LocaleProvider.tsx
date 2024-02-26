@@ -7,7 +7,7 @@ import {
   useEffect,
 } from "react";
 import { Platform } from "react-native";
-import * as RNLocalize from "react-native-localize";
+import { getLocales } from "expo-localization";
 
 export type Locale = "en" | "ko" | "ja";
 
@@ -28,24 +28,11 @@ export const useLocale = () => {
 };
 
 const getDeviceLocale = (): Locale => {
-  // Mobile
-  if (Platform.OS !== "web") {
-    const locales = RNLocalize.getLocales();
-    if (locales.length > 0) {
-      const localeCode = locales[0].languageTag.split("-")[0];
-      return ["en", "ko", "ja"].includes(localeCode)
-        ? (localeCode as Locale)
-        : defaultLocale;
-    }
-  }
-  // Web
-  else {
-    const browserLang = navigator.language.split("-")[0];
-    return ["en", "ko", "ja"].includes(browserLang)
-      ? (browserLang as Locale)
-      : defaultLocale;
-  }
-  return defaultLocale;
+  const locales = getLocales();
+  const localeCode = locales[0].languageCode || "";
+  return ["en", "ko", "ja"].includes(localeCode)
+    ? (localeCode as Locale)
+    : defaultLocale;
 };
 
 interface LocaleProviderProps {

@@ -25,6 +25,6 @@
       "bundler": "metro",
       "favicon": "./src/assets/favicon.png"
     },
-    "plugins": ["expo-font"]
+    "plugins": ["expo-font", "expo-localization"]
   }
 }
