@@ -1070,25 +1070,25 @@ export interface ApiGroupGroup extends Schema.CollectionType {
         i18n: {
           localized: true;
         };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 5;
       }>;
     ShortDescription: Attribute.String &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 5;
-        maxLength: 50;
       }>;
     Picture: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
+        };
+      }>;
+    Type: Attribute.Enumeration<
+      ['Administrative', 'Community', 'Education', 'Activities']
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
