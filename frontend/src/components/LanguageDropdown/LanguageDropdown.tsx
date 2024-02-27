@@ -66,8 +66,8 @@ const LanguageDropdown: React.FC = () => {
   return (
     <Dropdown
       style={styles.dropdown}
-      containerStyle={styles.dropdownContainer}
-      itemContainerStyle={styles.dropdownItemContainer}
+      containerStyle={styles.dropdownMenu}
+      itemContainerStyle={styles.dropdownItem}
       selectedTextStyle={styles.text}
       placeholderStyle={styles.text}
       iconStyle={{ height: 24, width: 24 }}
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     padding: 8,
     fontSize: 3,
   },
-  dropdownContainer: {
+  dropdownMenu: {
     borderRadius: 4,
     borderWidth: 0,
     shadowColor: "#000",
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 4, // for Android
   },
-  dropdownItemContainer: {
+  dropdownItem: {
     padding: 8,
   },
   item: {
