@@ -17,7 +17,7 @@ export const linking: LinkingOptions<ParamListBase> = {
   prefixes: ["nykea.org", "nykea://"],
   config: {
     screens: {
-      Home: "home",
+      Home: "",
       About: "about",
       Groups: "groups",
       Services: "services",
