@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Text,
   View,
@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useHover } from "react-native-web-hooks";
 
 import ChevronDown from "@/assets/chevron-down.svg";
 import Minus from "@/assets/minus.svg";
@@ -33,6 +34,20 @@ const languageOptions: LanguageOption[] = [
   },
 ];
 
+const DropdownItem = (item: LanguageOption) => {
+  const ref = useRef<View>(null);
+  const isHovered = useHover(ref);
+
+  const itemStyles = [styles.item, isHovered && styles.itemHovered];
+
+  return (
+    <View ref={ref} style={itemStyles}>
+      <Image source={item.flag} style={styles.flag} />
+      <Text style={styles.text}>{item.label}</Text>
+    </View>
+  );
+};
+
 const LanguageDropdown: React.FC = () => {
   const { locale, setLocale } = useLocale();
   const [data, setData] = useState(languageOptions);
@@ -50,14 +65,7 @@ const LanguageDropdown: React.FC = () => {
     languageOptions.find((option) => option.locale === locale) ||
     languageOptions[0];
 
-  const renderLabel = (item: LanguageOption) => {
-    return (
-      <View style={styles.item}>
-        <Image source={item.flag} style={styles.flag} />
-        <Text style={styles.text}>{item.label}</Text>
-      </View>
-    );
-  };
+  const renderLabel = (item: LanguageOption) => <DropdownItem {...item} />;
 
   const renderLeftIcon = () => (
     <Image source={currentLocaleOption.flag} style={styles.flag} />
@@ -118,13 +126,15 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 4, // for Android
   },
-  dropdownItem: {
-    padding: 8,
-  },
+  dropdownItem: {},
   item: {
     flexDirection: "row",
     alignItems: "center",
-    height: 24,
+    height: 40,
+    padding: 8,
+  },
+  itemHovered: {
+    backgroundColor: "#E9EFF6",
   },
   flag: {
     width: 24,
