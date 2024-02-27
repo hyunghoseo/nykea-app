@@ -13,9 +13,10 @@ import {
 } from "react-native";
 import { Icon } from "react-native-elements";
 
-import theme from "../../constants/theme";
-import { navigationLinks } from "../../navigation/navigationLinks";
-import { useResponsiveLayout } from "../../utils/useResponsiveLayout";
+import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
+import theme from "@/constants/theme";
+import { navigationLinks } from "@/navigation/navigationLinks";
+import { useResponsiveLayout } from "@/utils/useResponsiveLayout";
 
 const MOBILE_HEADER_HEIGHT = 84;
 const DESKTOP_HEADER_HEIGHT = 96;
@@ -85,7 +86,7 @@ const Header = () => {
             activeOpacity={0.6}
           >
             <Image
-              source={require("../../assets/logo.png")}
+              source={require("@/assets/logo.png")}
               style={styles.logoMobile}
             />
           </TouchableOpacity>
@@ -101,25 +102,30 @@ const Header = () => {
       ) : (
         // Desktop header
         <View style={styles.desktopHeaderContainer} testID="desktop-header">
-          <TouchableOpacity
-            onPress={() => navigateTo("Home")}
-            activeOpacity={0.6}
-          >
-            <Image
-              source={require("../../assets/logo-large.png")}
-              style={styles.logoDesktop}
-            />
-          </TouchableOpacity>
-          <View style={styles.navLinksContainer}>
-            {navigationLinks.map((link) => (
-              <TouchableOpacity
-                key={link.route}
-                onPress={() => navigateTo(link.route)}
-                style={styles.navLink}
-              >
-                <Text style={styles.navText}>{link.title}</Text>
-              </TouchableOpacity>
-            ))}
+          <View style={styles.desktopHeaderSection}>
+            <TouchableOpacity
+              onPress={() => navigateTo("Home")}
+              activeOpacity={0.6}
+            >
+              <Image
+                source={require("@/assets/logo-large.png")}
+                style={styles.logoDesktop}
+              />
+            </TouchableOpacity>
+            <View style={styles.navLinksContainer}>
+              {navigationLinks.map((link) => (
+                <TouchableOpacity
+                  key={link.route}
+                  onPress={() => navigateTo(link.route)}
+                  style={styles.navLink}
+                >
+                  <Text style={styles.navText}>{link.title}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+          <View style={styles.desktopHeaderSection}>
+            <LanguageDropdown />
           </View>
         </View>
       )}
@@ -181,10 +187,15 @@ const getStyles = (headerHeight: number) =>
     desktopHeaderContainer: {
       flexDirection: "row",
       alignItems: "center",
-      paddingHorizontal: 30,
+      justifyContent: "space-between",
       height: headerHeight,
       borderBottomWidth: 1,
       borderBottomColor: "#ddd",
+    },
+    desktopHeaderSection: {
+      flexDirection: "row",
+      alignItems: "center",
+      paddingHorizontal: 30,
     },
     logoMobile: {
       height: 60,
