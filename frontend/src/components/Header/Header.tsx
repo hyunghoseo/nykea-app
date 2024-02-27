@@ -12,6 +12,7 @@ import {
   Dimensions,
 } from "react-native";
 import { Icon } from "react-native-elements";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
 import {
@@ -26,13 +27,14 @@ import { navRoutes } from "@/navigation/AppNavigator";
 const ANIMATION_TIME = 250;
 
 const Header = () => {
+  const { top } = useSafeAreaInsets();
   const { isMobile } = useResponsiveLayout();
   const { t } = useTranslation();
 
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const headerHeight = isMobile ? MOBILE_HEADER_HEIGHT : DESKTOP_HEADER_HEIGHT;
-  const styles = getStyles(headerHeight);
+  const styles = getStyles(headerHeight, top);
 
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -85,7 +87,7 @@ const Header = () => {
       {isMobile ? (
         // Mobile header
         <View style={styles.mobileHeaderContainer} testID="mobile-header">
-          <View style={styles.backChevron} />
+          <LanguageDropdown />
           <TouchableOpacity
             onPress={() => navigateTo("Home")}
             activeOpacity={0.6}
@@ -178,7 +180,7 @@ const Header = () => {
   );
 };
 
-const getStyles = (headerHeight: number) =>
+const getStyles = (headerHeight: number, top: number) =>
   StyleSheet.create({
     mobileHeaderContainer: {
       flexDirection: "row",
@@ -234,21 +236,20 @@ const getStyles = (headerHeight: number) =>
     dimOverlay: {
       position: "absolute",
       width: "100%",
-      top: headerHeight,
+      top: headerHeight + top,
       left: 0,
       backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent overlay
       zIndex: 50,
     },
     menuContainer: {
       position: "absolute",
-      top: headerHeight,
+      top: headerHeight + top,
       left: 0,
       right: 0,
       bottom: 0,
-      overflow: "hidden",
+      overflow: "visible",
       backgroundColor: "transparent",
-      pointerEvents: "none",
-      zIndex: 101,
+      zIndex: 100,
     },
     menu: {
       position: "relative",
@@ -256,7 +257,6 @@ const getStyles = (headerHeight: number) =>
       left: 0,
       right: 0,
       backgroundColor: "white",
-      zIndex: 100,
     },
     menuItem: {
       paddingHorizontal: 30,

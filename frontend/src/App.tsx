@@ -7,8 +7,11 @@ import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 import { useCallback } from "react";
 import { View, StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "@/components/Header/Header";
 import { TranslationEntryKey } from "@/config/translations";
@@ -37,10 +40,14 @@ const NavigationLayout: React.FC = () => {
         },
       }}
     >
-      <Header />
-      <View style={styles.screenContainer}>
-        <AppNavigator />
-      </View>
+      <SafeAreaView style={styles.container}>
+        {/* TODO: we could add more complex behavior to StatusBar in the future */}
+        <StatusBar style="light" backgroundColor="#225DA7" />
+        <Header />
+        <View style={styles.screenContainer}>
+          <AppNavigator />
+        </View>
+      </SafeAreaView>
     </NavigationContainer>
   );
 };
@@ -64,11 +71,16 @@ const App = () => {
 
   return (
     <LocaleProvider>
-      <QueryClientProvider client={queryClient}>
-        <View style={styles.container} onLayout={onLayoutRootView}>
-          <NavigationLayout />
-        </View>
-      </QueryClientProvider>
+      <SafeAreaProvider>
+        <QueryClientProvider client={queryClient}>
+          <GestureHandlerRootView
+            style={styles.container}
+            onLayout={onLayoutRootView}
+          >
+            <NavigationLayout />
+          </GestureHandlerRootView>
+        </QueryClientProvider>
+      </SafeAreaProvider>
     </LocaleProvider>
   );
 };
