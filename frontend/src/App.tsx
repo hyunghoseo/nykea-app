@@ -45,6 +45,10 @@ const App = () => {
             ...DefaultTheme,
             colors: { ...DefaultTheme.colors, background: "white" },
           }}
+          documentTitle={{
+            formatter: (options, route) =>
+              `NY KEA - ${options?.title ?? route?.name}`,
+          }}
         >
           <View style={styles.container} onLayout={onLayoutRootView}>
             <Header />
