@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: "row",
     alignItems: "center",
+    height: 24,
   },
   flag: {
     width: 18,
