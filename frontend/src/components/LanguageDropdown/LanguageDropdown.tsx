@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 
+import ChevronDown from "@/assets/chevron-down.svg";
+import Minus from "@/assets/minus.svg";
 import { useLocale, Locale } from "@/contexts/LocaleProvider";
 
 interface LanguageOption {
@@ -32,6 +34,7 @@ const languageOptions: LanguageOption[] = [
 const LanguageDropdown: React.FC = () => {
   const { locale, setLocale } = useLocale();
   const [data, setData] = useState(languageOptions);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     // Filter out the selected language
@@ -54,9 +57,11 @@ const LanguageDropdown: React.FC = () => {
     );
   };
 
-  const renderLeftIcon = () => {
-    return <Image source={currentLocaleOption.flag} style={styles.flag} />;
-  };
+  const renderLeftIcon = () => (
+    <Image source={currentLocaleOption.flag} style={styles.flag} />
+  );
+
+  const renderRightIcon = () => (isMenuOpen ? <Minus /> : <ChevronDown />);
 
   return (
     <View style={styles.container}>
@@ -66,6 +71,7 @@ const LanguageDropdown: React.FC = () => {
         itemContainerStyle={styles.dropdownItemContainer}
         selectedTextStyle={styles.text}
         placeholderStyle={styles.text}
+        iconStyle={{ height: 24, width: 24 }}
         activeColor="#E9EFF6"
         data={data}
         labelField="label"
@@ -75,7 +81,9 @@ const LanguageDropdown: React.FC = () => {
         onChange={(item) => setLocale(item.locale)}
         renderItem={renderLabel}
         renderLeftIcon={renderLeftIcon}
-        fontFamily="KumbhSans_500Medium"
+        renderRightIcon={renderRightIcon}
+        onFocus={() => setIsMenuOpen(true)}
+        onBlur={() => setIsMenuOpen(false)}
       />
     </View>
   );
