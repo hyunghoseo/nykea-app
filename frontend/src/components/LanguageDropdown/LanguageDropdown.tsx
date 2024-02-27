@@ -115,9 +115,8 @@ const styles = StyleSheet.create({
     height: 24,
   },
   flag: {
-    width: 18,
-    height: 18,
-    margin: 6,
+    width: 24,
+    height: 24,
   },
   text: {
     fontFamily: "KumbhSans_500Medium",
