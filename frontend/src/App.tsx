@@ -11,13 +11,39 @@ import { useCallback } from "react";
 import { View, StyleSheet } from "react-native";
 
 import Header from "@/components/Header/Header";
+import { TranslationEntryKey } from "@/config/translations";
 import { LocaleProvider } from "@/contexts/LocaleProvider";
-import AppNavigator from "@/navigation/AppNavigator";
-import { linking } from "@/navigation/navigationLinks";
+import { useTranslation } from "@/hooks/useTranslation";
+import { AppNavigator, linking } from "@/navigation/AppNavigator";
 
 SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
+
+const NavigationLayout: React.FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <NavigationContainer
+      linking={linking}
+      theme={{
+        ...DefaultTheme,
+        colors: { ...DefaultTheme.colors, background: "white" },
+      }}
+      documentTitle={{
+        formatter: (options, route) => {
+          const pageTitle = t(`nav.${route?.name}` as TranslationEntryKey);
+          return pageTitle ? `${pageTitle} - ${t("home")}` : t("home");
+        },
+      }}
+    >
+      <Header />
+      <View style={styles.screenContainer}>
+        <AppNavigator />
+      </View>
+    </NavigationContainer>
+  );
+};
 
 const App = () => {
   const [fontsLoaded, fontError] = useFonts({
@@ -39,24 +65,9 @@ const App = () => {
   return (
     <LocaleProvider>
       <QueryClientProvider client={queryClient}>
-        <NavigationContainer
-          linking={linking}
-          theme={{
-            ...DefaultTheme,
-            colors: { ...DefaultTheme.colors, background: "white" },
-          }}
-          documentTitle={{
-            formatter: (options, route) =>
-              `NY KEA - ${options?.title ?? route?.name}`,
-          }}
-        >
-          <View style={styles.container} onLayout={onLayoutRootView}>
-            <Header />
-            <View style={styles.screenContainer}>
-              <AppNavigator />
-            </View>
-          </View>
-        </NavigationContainer>
+        <View style={styles.container} onLayout={onLayoutRootView}>
+          <NavigationLayout />
+        </View>
       </QueryClientProvider>
     </LocaleProvider>
   );

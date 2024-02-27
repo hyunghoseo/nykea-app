@@ -14,16 +14,21 @@ import {
 import { Icon } from "react-native-elements";
 
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
-import theme from "@/constants/theme";
-import { navigationLinks } from "@/navigation/navigationLinks";
-import { useResponsiveLayout } from "@/utils/useResponsiveLayout";
+import {
+  DESKTOP_HEADER_HEIGHT,
+  MOBILE_HEADER_HEIGHT,
+} from "@/config/constants";
+import theme from "@/config/theme";
+import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
+import { useTranslation } from "@/hooks/useTranslation";
+import { navRoutes } from "@/navigation/AppNavigator";
 
-const MOBILE_HEADER_HEIGHT = 84;
-const DESKTOP_HEADER_HEIGHT = 96;
 const ANIMATION_TIME = 250;
 
 const Header = () => {
   const { isMobile } = useResponsiveLayout();
+  const { t } = useTranslation();
+
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const headerHeight = isMobile ? MOBILE_HEADER_HEIGHT : DESKTOP_HEADER_HEIGHT;
@@ -113,13 +118,13 @@ const Header = () => {
               />
             </TouchableOpacity>
             <View style={styles.navLinksContainer}>
-              {navigationLinks.map((link) => (
+              {navRoutes.map((route) => (
                 <TouchableOpacity
-                  key={link.route}
-                  onPress={() => navigateTo(link.route)}
+                  key={route}
+                  onPress={() => navigateTo(route)}
                   style={styles.navLink}
                 >
-                  <Text style={styles.navText}>{link.title}</Text>
+                  <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -144,13 +149,13 @@ const Header = () => {
               ]}
             >
               <ScrollView>
-                {navigationLinks.map((link) => (
+                {navRoutes.map((route) => (
                   <TouchableOpacity
-                    key={link.route}
-                    onPress={() => navigateTo(link.route)}
+                    key={route}
+                    onPress={() => navigateTo(route)}
                     style={styles.menuItem}
                   >
-                    <Text style={styles.menuText}>{link.title}</Text>
+                    <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
                   </TouchableOpacity>
                 ))}
               </ScrollView>
