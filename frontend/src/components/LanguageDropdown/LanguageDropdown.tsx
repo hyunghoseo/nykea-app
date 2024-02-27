@@ -64,35 +64,30 @@ const LanguageDropdown: React.FC = () => {
   const renderRightIcon = () => (isMenuOpen ? <Minus /> : <ChevronDown />);
 
   return (
-    <View style={styles.container}>
-      <Dropdown
-        style={styles.dropdown}
-        containerStyle={styles.dropdownContainer}
-        itemContainerStyle={styles.dropdownItemContainer}
-        selectedTextStyle={styles.text}
-        placeholderStyle={styles.text}
-        iconStyle={{ height: 24, width: 24 }}
-        activeColor="#E9EFF6"
-        data={data}
-        labelField="label"
-        valueField="locale"
-        placeholder={currentLocaleOption.label}
-        value={locale}
-        onChange={(item) => setLocale(item.locale)}
-        renderItem={renderLabel}
-        renderLeftIcon={renderLeftIcon}
-        renderRightIcon={renderRightIcon}
-        onFocus={() => setIsMenuOpen(true)}
-        onBlur={() => setIsMenuOpen(false)}
-      />
-    </View>
+    <Dropdown
+      style={styles.dropdown}
+      containerStyle={styles.dropdownContainer}
+      itemContainerStyle={styles.dropdownItemContainer}
+      selectedTextStyle={styles.text}
+      placeholderStyle={styles.text}
+      iconStyle={{ height: 24, width: 24 }}
+      activeColor="#E9EFF6"
+      data={data}
+      labelField="label"
+      valueField="locale"
+      placeholder={currentLocaleOption.label}
+      value={locale}
+      onChange={(item) => setLocale(item.locale)}
+      renderItem={renderLabel}
+      renderLeftIcon={renderLeftIcon}
+      renderRightIcon={renderRightIcon}
+      onFocus={() => setIsMenuOpen(true)}
+      onBlur={() => setIsMenuOpen(false)}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-  },
   dropdown: {
     height: 40,
     width: 124,
