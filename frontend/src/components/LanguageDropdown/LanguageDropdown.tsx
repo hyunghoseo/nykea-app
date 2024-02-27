@@ -5,8 +5,10 @@ import {
   StyleSheet,
   Image,
   ImageSourcePropType,
+  Platform,
 } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import ChevronDown from "@/assets/chevron-down.svg";
 import Minus from "@/assets/minus.svg";
@@ -64,30 +66,40 @@ const LanguageDropdown: React.FC = () => {
   const renderRightIcon = () => (isMenuOpen ? <Minus /> : <ChevronDown />);
 
   return (
-    <Dropdown
-      style={styles.dropdown}
-      containerStyle={styles.dropdownMenu}
-      itemContainerStyle={styles.dropdownItem}
-      selectedTextStyle={styles.text}
-      placeholderStyle={styles.text}
-      iconStyle={{ height: 24, width: 24 }}
-      activeColor="#E9EFF6"
-      data={data}
-      labelField="label"
-      valueField="locale"
-      placeholder={currentLocaleOption.label}
-      value={locale}
-      onChange={(item) => setLocale(item.locale)}
-      renderItem={renderLabel}
-      renderLeftIcon={renderLeftIcon}
-      renderRightIcon={renderRightIcon}
-      onFocus={() => setIsMenuOpen(true)}
-      onBlur={() => setIsMenuOpen(false)}
-    />
+    <TouchableOpacity activeOpacity={0.6} style={styles.container}>
+      <Dropdown
+        style={styles.dropdown}
+        containerStyle={styles.dropdownMenu}
+        itemContainerStyle={styles.dropdownItem}
+        selectedTextStyle={styles.text}
+        placeholderStyle={styles.text}
+        iconStyle={{ height: 24, width: 24 }}
+        activeColor="#E9EFF6"
+        data={data}
+        labelField="label"
+        valueField="locale"
+        placeholder={currentLocaleOption.label}
+        value={locale}
+        onChange={(item) => setLocale(item.locale)}
+        renderItem={renderLabel}
+        renderLeftIcon={renderLeftIcon}
+        renderRightIcon={renderRightIcon}
+        onFocus={() => setIsMenuOpen(true)}
+        onBlur={() => setIsMenuOpen(false)}
+      />
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    ...Platform.select({
+      web: {
+        cursor: "pointer",
+      },
+    }),
+  },
   dropdown: {
     height: 40,
     width: 124,
