@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react-native";
+import { render, screen, waitFor } from "@testing-library/react-native";
 import React from "react";
 
 import App from "./App";
@@ -6,6 +6,8 @@ import App from "./App";
 describe("App Component", () => {
   it("should pass automatically", () => {
     render(<App />);
-    expect(true).toBeTruthy();
+    waitFor(() => {
+      expect(screen.getByText("Groups")).toBeTruthy();
+    });
   });
 });

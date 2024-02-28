@@ -28,7 +28,7 @@ export const useLocale = () => {
 
 const getDeviceLocale = (): Locale => {
   const locales = getLocales();
-  const localeCode = locales[0].languageCode || "";
+  const localeCode = locales[0]?.languageCode || "";
   return ["en", "ko", "ja"].includes(localeCode)
     ? (localeCode as Locale)
     : defaultLocale;

@@ -1,10 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
-import {
-  render,
-  screen,
-  cleanup,
-  waitFor,
-} from "@testing-library/react-native";
+import { render, screen, cleanup, waitFor } from "@test-utils";
 
 import Header from "./Header";
 
@@ -13,11 +7,7 @@ describe("Header - Mobile", () => {
     jest.mock("@/hooks/useResponsiveLayout", () => ({
       useResponsiveLayout: () => ({ isMobile: true }),
     }));
-    render(
-      <NavigationContainer>
-        <Header />
-      </NavigationContainer>,
-    );
+    render(<Header />);
   });
 
   afterEach(cleanup);
@@ -32,11 +22,7 @@ describe("Header - Desktop", () => {
     jest.mock("@/hooks/useResponsiveLayout", () => ({
       useResponsiveLayout: () => ({ isMobile: false }),
     }));
-    render(
-      <NavigationContainer>
-        <Header />
-      </NavigationContainer>,
-    );
+    render(<Header />);
   });
 
   afterEach(cleanup);

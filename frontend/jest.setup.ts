@@ -2,6 +2,7 @@
 import "react-native-gesture-handler/jestSetup";
 
 import mockAsyncStorage from "@react-native-async-storage/async-storage/jest/async-storage-mock";
+import mockSafeAreaContext from "react-native-safe-area-context/jest/mock";
 
 // include this section and the NativeAnimatedHelper section for mocking react-native-reanimated
 jest.mock("react-native-reanimated", () => {
@@ -18,3 +19,5 @@ jest.mock("react-native-reanimated", () => {
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 jest.mock("@react-native-async-storage/async-storage", () => mockAsyncStorage);
+
+jest.mock("react-native-safe-area-context", () => mockSafeAreaContext);

@@ -12,15 +12,6 @@
     "build:web": "npx expo export:web",
     "gen-api": "npx openapi-codegen gen api"
   },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.ts"
-    ]
-  },
   "dependencies": {
     "@expo-google-fonts/kumbh-sans": "^0.2.3",
     "@expo-google-fonts/noto-sans": "^0.2.3",
