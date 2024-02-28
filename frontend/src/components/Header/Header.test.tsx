@@ -10,7 +10,7 @@ import Header from "./Header";
 
 describe("Header - Mobile", () => {
   beforeEach(() => {
-    jest.mock("../../utils/useResponsiveLayout", () => ({
+    jest.mock("@/hooks/useResponsiveLayout", () => ({
       useResponsiveLayout: () => ({ isMobile: true }),
     }));
     render(
@@ -29,7 +29,7 @@ describe("Header - Mobile", () => {
 
 describe("Header - Desktop", () => {
   beforeEach(() => {
-    jest.mock("../../utils/useResponsiveLayout", () => ({
+    jest.mock("@/hooks/useResponsiveLayout", () => ({
       useResponsiveLayout: () => ({ isMobile: false }),
     }));
     render(
