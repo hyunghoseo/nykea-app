@@ -16,6 +16,6 @@ it("strapi is defined", () => {
 
 require('./api/banner');
 require('./api/group');
-// require('./api/leader');
+require('./api/leader');
 require('./api/user');
 require('./api/user-info');

@@ -24,8 +24,8 @@ const constructLeader = (id, userInfoId) => {
         data: {
             "StartYear": 2020,
             "EndYear": 9999,
-            "FullName": userInfoId,
             "Title": "Pastor",
+            "FullName": userInfoId,
             "Picture": null,
             "locale": "en",
             "publishedAt": Date.now(),

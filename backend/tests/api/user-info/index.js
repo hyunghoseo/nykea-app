@@ -105,7 +105,6 @@ describe("User Info Test", () => {
             .expect(200)
             .then((data) => {
                 data = data.body.data;
-                console.log(data);
                 expect(data.attributes.DisplayName).toBe(userInfo.data.DisplayName);
                 expect(data.attributes.FirstName).toBe(userInfo.data.FirstName);
                 expect(data.attributes.LastName).toBe(userInfo.data.LastName);
