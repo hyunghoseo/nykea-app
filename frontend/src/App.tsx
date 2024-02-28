@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import {
   KumbhSans_500Medium,
   KumbhSans_600SemiBold,
@@ -8,15 +9,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useCallback } from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import Header from "@/components/Header/Header";
 import { TranslationEntryKey } from "@/config/translations";
 import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { useTranslation } from "@/hooks/useTranslation";
+import { Layout } from "@/components/Layout";
 import { AppNavigator, linking } from "@/navigation/AppNavigator";
 
 SplashScreen.preventAutoHideAsync();
@@ -43,7 +43,9 @@ const NavigationLayout: React.FC = () => {
       <SafeAreaView style={styles.container}>
         {/* TODO: we could add more complex behavior to StatusBar in the future */}
         <StatusBar style="light" backgroundColor="#225DA7" />
-        <Header />
+        <Layout>
+          <AppNavigator />
+        </Layout>
       </SafeAreaView>
     </NavigationContainer>
   );
