@@ -94,6 +94,7 @@ const LanguageDropdown: React.FC = () => {
         renderRightIcon={renderRightIcon}
         onFocus={() => setIsMenuOpen(true)}
         onBlur={() => setIsMenuOpen(false)}
+        mode="auto" // Needs this to guarantee dropdown rather than modal
       />
     </TouchableOpacity>
   );
