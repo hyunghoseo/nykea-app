@@ -44,9 +44,6 @@ const NavigationLayout: React.FC = () => {
         {/* TODO: we could add more complex behavior to StatusBar in the future */}
         <StatusBar style="light" backgroundColor="#225DA7" />
         <Header />
-        <View style={styles.screenContainer}>
-          <AppNavigator />
-        </View>
       </SafeAreaView>
     </NavigationContainer>
   );

@@ -1,6 +1,6 @@
 import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -8,10 +8,14 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  Animated,
-  Dimensions,
 } from "react-native";
 import { Icon } from "react-native-elements";
+import Animated, {
+  FadeIn,
+  FadeOut,
+  SlideInRight,
+  SlideOutRight,
+} from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
@@ -22,90 +26,103 @@ import {
 import theme from "@/config/theme";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 import { useTranslation } from "@/hooks/useTranslation";
-import { navRoutes } from "@/navigation/AppNavigator";
+import { AppNavigator, navRoutes } from "@/navigation/AppNavigator";
 
 const ANIMATION_TIME = 250;
 
+interface MobileNavMenuProps {
+  opened: boolean;
+  navigateTo: (route: string) => void;
+}
+
+const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
+  opened,
+  navigateTo,
+}) => {
+  const { t } = useTranslation();
+  const styles = useStyles();
+
+  return (
+    <>
+      {opened && (
+        <>
+          <Animated.View
+            style={styles.dimOverlay}
+            entering={FadeIn.duration(ANIMATION_TIME)}
+            exiting={FadeOut.duration(ANIMATION_TIME)}
+            pointerEvents="box-none"
+          />
+          <Animated.View
+            style={styles.menu}
+            entering={SlideInRight.duration(ANIMATION_TIME)}
+            exiting={SlideOutRight.duration(ANIMATION_TIME)}
+            testID="menu-container"
+          >
+            <ScrollView>
+              {navRoutes.map((route) => (
+                <TouchableOpacity
+                  key={route}
+                  onPress={() => navigateTo(route)}
+                  style={styles.menuItem}
+                >
+                  <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </Animated.View>
+        </>
+      )}
+    </>
+  );
+};
+
 const Header = () => {
-  const { top } = useSafeAreaInsets();
   const { isMobile } = useResponsiveLayout();
   const { t } = useTranslation();
+  const styles = useStyles();
 
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
-
-  const headerHeight = isMobile ? MOBILE_HEADER_HEIGHT : DESKTOP_HEADER_HEIGHT;
-  const styles = getStyles(headerHeight, top);
-
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMenuOpen(!isMenuOpen);
-
   const navigateTo = (name: string) => {
     setMenuOpen(false);
     navigation.navigate(name);
   };
 
-  // Animation stuff
-  const [screenWidth, setScreenWidth] = useState(
-    Dimensions.get("window").width,
-  );
-  const menuAnimation = useRef(new Animated.Value(screenWidth)).current;
-  const dimAnimation = useRef(new Animated.Value(0)).current;
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
+  // Close menu if no longer mobile layout
   useEffect(() => {
-    Animated.timing(menuAnimation, {
-      toValue: isMenuOpen ? 0 : screenWidth,
-      duration: ANIMATION_TIME,
-      useNativeDriver: true,
-    }).start();
-    Animated.timing(dimAnimation, {
-      toValue: isMenuOpen ? 1 : 0,
-      duration: ANIMATION_TIME,
-      useNativeDriver: true,
-    }).start();
-  }, [isMenuOpen, menuAnimation]);
-
-  // Handle screen resize
-  useEffect(() => {
-    const updateWidth = () => {
-      const newWidth = Dimensions.get("window").width;
-      setScreenWidth(newWidth);
-      if (!isMenuOpen) {
-        menuAnimation.setValue(newWidth); // Instantly update position without animation
-      }
-    };
-
-    const event = Dimensions.addEventListener("change", updateWidth);
-
-    return () => {
-      event.remove();
-    };
-  }, [isMenuOpen]);
+    if (!isMobile) {
+      setMenuOpen(false);
+    }
+  }, [isMobile]);
 
   return (
     <>
       {isMobile ? (
         // Mobile header
-        <View style={styles.mobileHeaderContainer} testID="mobile-header">
-          <LanguageDropdown />
-          <TouchableOpacity
-            onPress={() => navigateTo("Home")}
-            activeOpacity={0.6}
-          >
-            <Image
-              source={require("@/assets/logo.png")}
-              style={styles.logoMobile}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity onPressOut={toggleMenu} style={styles.hamburger}>
-            <Icon
-              name={isMenuOpen ? "close" : "menu"}
-              size={40}
-              color={theme.colors.primary[0]}
-              testID="menu-icon"
-            />
-          </TouchableOpacity>
-        </View>
+        <>
+          <View style={styles.mobileHeaderContainer} testID="mobile-header">
+            <View style={{ width: 40 }} />
+            <TouchableOpacity
+              onPress={() => navigateTo("Home")}
+              activeOpacity={0.6}
+            >
+              <Image
+                source={require("@/assets/logo.png")}
+                style={styles.logoMobile}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPressOut={toggleMenu} style={styles.hamburger}>
+              <Icon
+                name={isMenuOpen ? "close" : "menu"}
+                size={40}
+                color={theme.colors.primary[0]}
+                testID="menu-icon"
+              />
+            </TouchableOpacity>
+          </View>
+        </>
       ) : (
         // Desktop header
         <View style={styles.desktopHeaderContainer} testID="desktop-header">
@@ -136,52 +153,24 @@ const Header = () => {
           </View>
         </View>
       )}
-
-      {isMobile && (
-        <>
-          <View style={styles.menuContainer} testID="menu-container">
-            <Animated.View
-              style={[
-                styles.menu,
-                {
-                  transform: [{ translateX: menuAnimation }],
-                  pointerEvents: isMenuOpen ? "auto" : "none",
-                  height: Dimensions.get("window").height - headerHeight,
-                },
-              ]}
-            >
-              <ScrollView>
-                {navRoutes.map((route) => (
-                  <TouchableOpacity
-                    key={route}
-                    onPress={() => navigateTo(route)}
-                    style={styles.menuItem}
-                  >
-                    <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
-            </Animated.View>
-          </View>
-
-          <Animated.View
-            pointerEvents={isMenuOpen ? "auto" : "none"}
-            style={[
-              styles.dimOverlay,
-              {
-                opacity: dimAnimation,
-                height: Dimensions.get("window").height - headerHeight,
-              },
-            ]}
-          />
-        </>
-      )}
+      <View style={styles.screenContainer}>
+        <AppNavigator />
+      </View>
+      <MobileNavMenu opened={isMenuOpen} navigateTo={navigateTo} />
     </>
   );
 };
 
-const getStyles = (headerHeight: number, top: number) =>
-  StyleSheet.create({
+const useStyles = () => {
+  const { top: topInset } = useSafeAreaInsets();
+  const { isMobile } = useResponsiveLayout();
+  const headerHeight = isMobile ? MOBILE_HEADER_HEIGHT : DESKTOP_HEADER_HEIGHT;
+
+  return StyleSheet.create({
+    screenContainer: {
+      flex: 1,
+      backgroundColor: "white",
+    },
     mobileHeaderContainer: {
       flexDirection: "row",
       justifyContent: "space-between",
@@ -236,26 +225,18 @@ const getStyles = (headerHeight: number, top: number) =>
     dimOverlay: {
       position: "absolute",
       width: "100%",
-      top: headerHeight + top,
+      top: headerHeight + topInset,
       left: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent overlay
-      zIndex: 50,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent overlay
     },
-    menuContainer: {
+    menu: {
       position: "absolute",
-      top: headerHeight + top,
+      top: headerHeight + topInset,
       left: 0,
       right: 0,
       bottom: 0,
-      overflow: "visible",
-      backgroundColor: "transparent",
-      zIndex: 100,
-    },
-    menu: {
-      position: "relative",
-      top: 0,
-      left: 0,
-      right: 0,
+      overflow: "hidden",
       backgroundColor: "white",
     },
     menuItem: {
@@ -270,5 +251,6 @@ const getStyles = (headerHeight: number, top: number) =>
       letterSpacing: 0.75,
     },
   });
+};
 
 export default Header;

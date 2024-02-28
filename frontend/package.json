@@ -13,6 +13,7 @@
     "gen-api": "npx openapi-codegen gen api"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@expo-google-fonts/kumbh-sans": "^0.2.3",
     "@expo-google-fonts/noto-sans": "^0.2.3",
     "@expo/metro-runtime": "~3.1.3",
