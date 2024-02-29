@@ -1,5 +1,5 @@
+import { navRoutes } from "@/config/navigation";
 import { Locale } from "@/contexts/LocaleProvider";
-import { navRoutes } from "@/navigation/AppNavigator";
 
 type NavRoute = (typeof navRoutes)[number];
 type PrefixedNavRoute = `nav.${NavRoute}`;

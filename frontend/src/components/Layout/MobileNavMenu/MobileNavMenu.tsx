@@ -7,9 +7,9 @@ import Animated, {
   SlideOutRight,
 } from "react-native-reanimated";
 
+import { navRoutes } from "@/config/navigation";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
-import { navRoutes } from "@/navigation/AppNavigator";
 
 import { styles } from "./MobileNavMenu.styles";
 

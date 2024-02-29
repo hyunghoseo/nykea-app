@@ -1,10 +1,10 @@
 import { Link } from "@react-navigation/native";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
+import { navRoutes } from "@/config/navigation";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
-import { navRoutes } from "@/navigation/AppNavigator";
 
 import { styles } from "./Header.styles";
 

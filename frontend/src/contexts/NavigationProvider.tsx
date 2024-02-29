@@ -6,12 +6,13 @@ import {
   NavigationContainerRefWithCurrent,
 } from "@react-navigation/native";
 
+import { RootStackParamList } from "@/config/navigation";
 import { TranslationEntryKey } from "@/config/translations";
 import { useTranslation } from "@/hooks/useTranslation";
 
 interface NavigationContextType {
   currentRoute?: string;
-  navigationRef: NavigationContainerRefWithCurrent<object>;
+  navigationRef: NavigationContainerRefWithCurrent<RootStackParamList>;
 }
 
 const NavigationContext = createContext<NavigationContextType | undefined>(
@@ -39,7 +40,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({
   const [currentRoute, setCurrentRoute] = useState<string | undefined>(
     undefined
   );
-  const navigationRef = createNavigationContainerRef();
+  const navigationRef = createNavigationContainerRef<RootStackParamList>();
 
   const { t } = useTranslation();
 

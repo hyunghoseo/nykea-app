@@ -4,6 +4,7 @@ import {
   KumbhSans_600SemiBold,
 } from "@expo-google-fonts/kumbh-sans";
 import { NotoSans_400Regular } from "@expo-google-fonts/noto-sans";
+import { createStackNavigator } from "@react-navigation/stack";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -13,14 +14,39 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { Layout } from "./components/Layout";
+import { RootStackParamList } from "./config/navigation";
 import { theme } from "./config/theme";
 import { LocaleProvider } from "./contexts/LocaleProvider";
 import { NavigationProvider } from "./contexts/NavigationProvider";
-import { AppNavigator } from "./navigation/AppNavigator";
+import AboutScreen from "./screens/AboutScreen";
+import ContactUsScreen from "./screens/ContactUsScreen";
+import EventsScreen from "./screens/EventsScreen";
+import GroupsScreen from "./screens/GroupsScreen";
+import HomeScreen from "./screens/HomeScreen";
+import ServicesScreen from "./screens/ServicesScreen";
 
 SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
+
+const RootStack = createStackNavigator<RootStackParamList>();
+
+export const AppNavigator = () => {
+  return (
+    <RootStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <RootStack.Screen name="Home" component={HomeScreen} />
+      <RootStack.Screen name="About" component={AboutScreen} />
+      <RootStack.Screen name="Groups" component={GroupsScreen} />
+      <RootStack.Screen name="Services" component={ServicesScreen} />
+      <RootStack.Screen name="Events" component={EventsScreen} />
+      <RootStack.Screen name="ContactUs" component={ContactUsScreen} />
+    </RootStack.Navigator>
+  );
+};
 
 const App = () => {
   const [fontsLoaded, fontError] = useFonts({
