@@ -5,60 +5,79 @@ import {
   MOBILE_HEADER_HEIGHT,
 } from "@/config/constants";
 import theme from "@/config/theme";
-import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 
-export const useStyles = () => {
-  const { isMobile } = useResponsiveLayout();
-  const headerHeight = isMobile ? MOBILE_HEADER_HEIGHT : DESKTOP_HEADER_HEIGHT;
-
-  return StyleSheet.create({
-    mobileHeaderContainer: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
-      paddingHorizontal: 20,
-      height: headerHeight,
-      borderBottomWidth: 1,
-      borderBottomColor: "#ddd",
-    },
-    desktopHeaderContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      height: headerHeight,
-      borderBottomWidth: 1,
-      borderBottomColor: "#ddd",
-    },
-    desktopHeaderSection: {
-      flexDirection: "row",
-      alignItems: "center",
-      paddingHorizontal: 30,
-    },
-    logoMobile: {
-      height: 60,
-      width: 60,
-    },
-    logoDesktop: {
-      height: 45,
-      width: 253,
-    },
-    navLinksContainer: {
-      flexDirection: "row",
-    },
-    navLink: {
-      marginLeft: 30,
-      padding: 8,
-    },
-    navText: {
-      fontFamily: "KumbhSans_500Medium",
-      color: "#2A2A2A",
-      fontSize: 14,
-      lineHeight: 24,
-      letterSpacing: 0.5,
-    },
-    icon: {
-      width: 40,
-      color: theme.colors.primary[0],
-    },
-  });
-};
+export const styles = StyleSheet.create({
+  header: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    backgroundColor: "white",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.16,
+    shadowRadius: 1.51,
+    elevation: 2,
+  },
+  mobileHeader: {
+    height: MOBILE_HEADER_HEIGHT,
+  },
+  desktopHeader: {
+    height: DESKTOP_HEADER_HEIGHT,
+  },
+  desktopHeaderLeftSection: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingLeft: 16,
+  },
+  desktopHeaderRightSection: {
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingRight: 32,
+  },
+  logoMobileContainer: {
+    height: MOBILE_HEADER_HEIGHT,
+    justifyContent: "center",
+    paddingHorizontal: 12,
+  },
+  logoMobile: {
+    height: 60,
+    width: 60,
+  },
+  logoDesktopContainer: {
+    height: DESKTOP_HEADER_HEIGHT - 32,
+    justifyContent: "center",
+    paddingHorizontal: 16,
+  },
+  logoDesktop: {
+    height: 45,
+    width: 253,
+  },
+  navLinksContainer: {
+    flexDirection: "row",
+  },
+  navLink: {
+    marginHorizontal: 8,
+    padding: 14,
+  },
+  navText: {
+    fontFamily: "KumbhSans_500Medium",
+    color: "#2A2A2A",
+    fontSize: 14,
+    lineHeight: 24,
+    letterSpacing: 0.5,
+  },
+  activeNavText: {
+    fontFamily: "KumbhSans_700Bold",
+    color: theme.colors.primary[0],
+  },
+  icon: {
+    width: 80,
+    height: MOBILE_HEADER_HEIGHT,
+    alignItems: "center",
+    justifyContent: "center",
+    color: theme.colors.primary[0],
+  },
+});

@@ -4,7 +4,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
 import { navRoutes } from "@/navigation/AppNavigator";
 
-import { useStyles } from "./Header.styles";
+import { styles } from "./Header.styles";
 
 interface HeaderProps {
   variant: "mobile" | "desktop";
@@ -24,30 +24,42 @@ export const Header: React.FC<HeaderProps> = ({
   navigateTo,
 }) => {
   const { t } = useTranslation();
-  const styles = useStyles();
 
   return variant === "mobile" ? (
     // Mobile header
-    <View style={styles.mobileHeaderContainer} testID="mobile-header">
-      <TouchableOpacity onPressOut={onClickMobileLeftIcon} style={styles.icon}>
+    <View style={[styles.header, styles.mobileHeader]} testID="mobile-header">
+      <TouchableOpacity
+        onPressOut={onClickMobileLeftIcon}
+        style={styles.icon}
+        disabled={!mobileLeftIcon || !onClickMobileLeftIcon}
+      >
         {mobileLeftIcon}
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateTo("Home")} activeOpacity={0.6}>
+      <TouchableOpacity
+        onPress={() => navigateTo("Home")}
+        style={styles.logoMobileContainer}
+        activeOpacity={0.6}
+      >
         <Image
           source={require("@/assets/logo.png")}
           style={styles.logoMobile}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPressOut={onClickMobileRightIcon} style={styles.icon}>
+      <TouchableOpacity
+        onPressOut={onClickMobileRightIcon}
+        style={styles.icon}
+        disabled={!mobileRightIcon || !onClickMobileRightIcon}
+      >
         {mobileRightIcon}
       </TouchableOpacity>
     </View>
   ) : (
     // Desktop header
-    <View style={styles.desktopHeaderContainer} testID="desktop-header">
-      <View style={styles.desktopHeaderSection}>
+    <View style={[styles.header, styles.desktopHeader]} testID="desktop-header">
+      <View style={styles.desktopHeaderLeftSection}>
         <TouchableOpacity
           onPress={() => navigateTo("Home")}
+          style={styles.logoDesktopContainer}
           activeOpacity={0.6}
         >
           <Image
@@ -67,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({
           ))}
         </View>
       </View>
-      <View style={styles.desktopHeaderSection}>
+      <View style={styles.desktopHeaderRightSection}>
         <LanguageDropdown />
       </View>
     </View>

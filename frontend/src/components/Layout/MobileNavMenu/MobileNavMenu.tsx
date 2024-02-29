@@ -9,7 +9,7 @@ import Animated, {
 import { useTranslation } from "@/hooks/useTranslation";
 import { navRoutes } from "@/navigation/AppNavigator";
 
-import { useStyles } from "./MobileNavMenu.styles";
+import { styles } from "./MobileNavMenu.styles";
 
 const ANIMATION_TIME = 250;
 
@@ -23,7 +23,6 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
   navigateTo,
 }) => {
   const { t } = useTranslation();
-  const styles = useStyles();
 
   // The order of these elements is important as a replacement for z-index,
   // which is ignored when a component is unmounted and remounted.
