@@ -29,7 +29,7 @@ interface MenuItemProps {
 
 export const MenuItem: React.FC<MenuItemProps> = ({ route, onPress }) => {
   const { t } = useTranslation();
-  const { navigationRef } = useNavigationRef();
+  const { navigationRef, currentRoute } = useNavigationRef();
 
   const ref = useRef<TouchableHighlight>(null);
   const isHovered = useHover(ref);
@@ -44,7 +44,14 @@ export const MenuItem: React.FC<MenuItemProps> = ({ route, onPress }) => {
         navigationRef.navigate(route);
       }}
     >
-      <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
+      <Text
+        style={[
+          styles.menuText,
+          route === currentRoute && styles.menuTextActive,
+        ]}
+      >
+        {t(`nav.${route}`)}
+      </Text>
     </TouchableHighlight>
   );
 };

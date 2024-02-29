@@ -35,4 +35,8 @@ export const styles = StyleSheet.create({
     lineHeight: 32,
     letterSpacing: 0.75,
   },
+  menuTextActive: {
+    fontFamily: "KumbhSans_700Bold",
+    color: theme.colors.primary[0],
+  },
 });
