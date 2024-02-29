@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  Text,
-  View,
-  StyleSheet,
   Image,
   ImageSourcePropType,
   Platform,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useHover } from "react-native-web-hooks";
 
+import { Locale, useLocale } from "@/contexts/LocaleProvider";
 import ChevronDown from "@/assets/chevron-down.svg";
 import Minus from "@/assets/minus.svg";
-import { useLocale, Locale } from "@/contexts/LocaleProvider";
 
 interface LanguageOption {
   locale: Locale;

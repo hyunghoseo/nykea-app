@@ -1,7 +1,7 @@
 import { defineConfig } from "@openapi-codegen/cli";
 import {
-  generateSchemaTypes,
   generateReactQueryComponents,
+  generateSchemaTypes,
 } from "@openapi-codegen/typescript";
 
 export default defineConfig({

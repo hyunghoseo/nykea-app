@@ -1,4 +1,4 @@
-import { translations, TranslationEntryKey } from "@/config/translations";
+import { TranslationEntryKey, translations } from "@/config/translations";
 import { useLocale } from "@/contexts/LocaleProvider";
 
 export const useTranslation = () => {

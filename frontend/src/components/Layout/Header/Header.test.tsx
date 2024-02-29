@@ -1,4 +1,4 @@
-import { render, screen, cleanup, waitFor } from "@test-utils";
+import { cleanup, render, screen, waitFor } from "@test-utils";
 
 import Header from "./Header";
 
