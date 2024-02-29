@@ -40,9 +40,9 @@ const NavigationLayout: React.FC = () => {
         },
       }}
     >
+      {/* TODO: we could add more complex behavior to StatusBar in the future */}
+      <StatusBar style="light" backgroundColor="#225DA7" />
       <SafeAreaView style={styles.container}>
-        {/* TODO: we could add more complex behavior to StatusBar in the future */}
-        <StatusBar style="light" backgroundColor="#225DA7" />
         <Layout>
           <AppNavigator />
         </Layout>
@@ -70,16 +70,16 @@ const App = () => {
 
   return (
     <LocaleProvider>
-      <SafeAreaProvider>
-        <QueryClientProvider client={queryClient}>
-          <GestureHandlerRootView
-            style={styles.container}
-            onLayout={onLayoutRootView}
-          >
+      <QueryClientProvider client={queryClient}>
+        <GestureHandlerRootView
+          style={styles.container}
+          onLayout={onLayoutRootView}
+        >
+          <SafeAreaProvider>
             <NavigationLayout />
-          </GestureHandlerRootView>
-        </QueryClientProvider>
-      </SafeAreaProvider>
+          </SafeAreaProvider>
+        </GestureHandlerRootView>
+      </QueryClientProvider>
     </LocaleProvider>
   );
 };
@@ -87,10 +87,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  screenContainer: {
-    flex: 1,
-    backgroundColor: "white",
   },
 });
 
