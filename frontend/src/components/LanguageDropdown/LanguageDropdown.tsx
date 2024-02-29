@@ -71,7 +71,12 @@ const LanguageDropdown: React.FC = () => {
     <Image source={currentLocaleOption.flag} style={styles.flag} />
   );
 
-  const renderRightIcon = () => (isMenuOpen ? <Minus /> : <ChevronDown />);
+  const renderRightIcon = () =>
+    isMenuOpen ? (
+      <Minus style={styles.icon} />
+    ) : (
+      <ChevronDown style={styles.icon} />
+    );
 
   return (
     <TouchableOpacity activeOpacity={0.6} style={styles.container}>
@@ -102,7 +107,7 @@ const LanguageDropdown: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
+    flex: 1,
     ...Platform.select({
       web: {
         cursor: "pointer",
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
     borderColor: "#EAEAEA",
     borderWidth: 1,
     borderRadius: 4,
-    padding: 8,
+    // padding: 8,
     fontSize: 3,
   },
   dropdownMenu: {
@@ -127,12 +132,13 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 4, // for Android
   },
-  dropdownItem: {},
+  dropdownItem: {
+    // padding: 8,
+  },
   item: {
     flexDirection: "row",
     alignItems: "center",
     height: 40,
-    padding: 8,
   },
   itemHovered: {
     backgroundColor: "#E9EFF6",
@@ -140,13 +146,14 @@ const styles = StyleSheet.create({
   flag: {
     width: 24,
     height: 24,
+    margin: 8,
   },
+  icon: { margin: 8 },
   text: {
     fontFamily: "KumbhSans_500Medium",
     fontWeight: "500",
     fontSize: 13,
     lineHeight: 18,
-    marginHorizontal: 4,
   },
 });
 
