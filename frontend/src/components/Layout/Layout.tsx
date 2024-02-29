@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { ParamListBase, useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
 import { StyleSheet, View } from "react-native";
 import { Icon } from "react-native-elements";
 
@@ -9,6 +7,7 @@ import {
   MOBILE_HEADER_HEIGHT,
 } from "@/config/constants";
 import { theme } from "@/config/theme";
+import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 
 import { Header } from "./Header/Header";
@@ -20,15 +19,10 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { isMobile } = useResponsiveLayout();
+  const { currentRoute } = useNavigationRef();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
-  const navigateTo = (route: string) => {
-    setIsMenuOpen(false);
-    navigation.navigate(route);
-  };
 
   // Close menu if no longer mobile layout
   useEffect(() => {
@@ -36,6 +30,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       setIsMenuOpen(false);
     }
   }, [isMobile]);
+
+  // Close menu if current route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [currentRoute]);
 
   return (
     <View style={styles.layoutContainer}>
@@ -60,11 +59,13 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           />
         }
         onClickMobileRightIcon={toggleMenu}
-        navigateTo={navigateTo}
       />
       {/* The NavMenu must go after the rest of the app in order for it 
         to render on top when it mounts */}
-      <MobileNavMenu opened={isMenuOpen} navigateTo={navigateTo} />
+      <MobileNavMenu
+        opened={isMenuOpen}
+        closeMenu={() => setIsMenuOpen(false)}
+      />
     </View>
   );
 };

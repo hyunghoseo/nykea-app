@@ -1,5 +1,7 @@
+import { Link } from "@react-navigation/native";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
+import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
 import { navRoutes } from "@/navigation/AppNavigator";
@@ -12,7 +14,6 @@ interface HeaderProps {
   mobileRightIcon?: React.ReactNode;
   onClickMobileLeftIcon?: () => void;
   onClickMobileRightIcon?: () => void;
-  navigateTo: (route: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -21,9 +22,9 @@ export const Header: React.FC<HeaderProps> = ({
   mobileRightIcon,
   onClickMobileLeftIcon,
   onClickMobileRightIcon,
-  navigateTo,
 }) => {
   const { t } = useTranslation();
+  const { navigationRef } = useNavigationRef();
 
   return variant === "mobile" ? (
     // Mobile header
@@ -36,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({
         {mobileLeftIcon}
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigateTo("Home")}
+        onPress={() => navigationRef.navigate("Home")}
         style={styles.logoMobileContainer}
         activeOpacity={0.6}
       >
@@ -58,7 +59,7 @@ export const Header: React.FC<HeaderProps> = ({
     <View style={[styles.header, styles.desktopHeader]} testID="desktop-header">
       <View style={styles.desktopHeaderLeftSection}>
         <TouchableOpacity
-          onPress={() => navigateTo("Home")}
+          onPress={() => navigationRef.navigate("Home")}
           style={styles.logoDesktopContainer}
           activeOpacity={0.6}
         >
@@ -71,10 +72,12 @@ export const Header: React.FC<HeaderProps> = ({
           {navRoutes.map((route) => (
             <TouchableOpacity
               key={route}
-              onPress={() => navigateTo(route)}
+              onPress={() => navigationRef.navigate(route)}
               style={styles.navLink}
             >
-              <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
+              <Link to={{ screen: route }}>
+                <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
+              </Link>
             </TouchableOpacity>
           ))}
         </View>

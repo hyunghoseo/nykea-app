@@ -4,7 +4,7 @@ import { Header } from "./Header";
 
 describe("Header - Mobile", () => {
   beforeEach(() => {
-    render(<Header variant="mobile" navigateTo={jest.fn()} />);
+    render(<Header variant="mobile" />);
   });
 
   afterEach(cleanup);
@@ -19,7 +19,7 @@ describe("Header - Desktop", () => {
     jest.mock("@/hooks/useResponsiveLayout", () => ({
       useResponsiveLayout: () => ({ isMobile: false }),
     }));
-    render(<Header variant="desktop" navigateTo={jest.fn()} />);
+    render(<Header variant="desktop" />);
   });
 
   afterEach(cleanup);

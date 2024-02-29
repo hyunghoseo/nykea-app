@@ -1,3 +1,4 @@
+import { Link } from "@react-navigation/native";
 import { ScrollView, Text, TouchableOpacity } from "react-native";
 import Animated, {
   FadeIn,
@@ -6,6 +7,7 @@ import Animated, {
   SlideOutRight,
 } from "react-native-reanimated";
 
+import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import { navRoutes } from "@/navigation/AppNavigator";
 
@@ -15,14 +17,15 @@ const ANIMATION_TIME = 250;
 
 interface MobileNavMenuProps {
   opened: boolean;
-  navigateTo: (route: string) => void;
+  closeMenu: () => void;
 }
 
 export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
   opened,
-  navigateTo,
+  closeMenu,
 }) => {
   const { t } = useTranslation();
+  const { navigationRef } = useNavigationRef();
 
   // The order of these elements is important as a replacement for z-index,
   // which is ignored when a component is unmounted and remounted.
@@ -46,10 +49,15 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
           {navRoutes.map((route) => (
             <TouchableOpacity
               key={route}
-              onPress={() => navigateTo(route)}
+              onPress={() => {
+                navigationRef.navigate(route);
+                closeMenu();
+              }}
               style={styles.menuItem}
             >
-              <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
+              <Link to={{ screen: route }}>
+                <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
+              </Link>
             </TouchableOpacity>
           ))}
         </ScrollView>
