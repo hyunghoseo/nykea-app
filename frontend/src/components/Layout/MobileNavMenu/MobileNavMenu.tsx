@@ -53,9 +53,8 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
                 navigationRef.navigate(route);
                 closeMenu();
               }}
-              style={styles.menuItem}
             >
-              <Link to={{ screen: route }}>
+              <Link to={{ screen: route }} style={styles.menuItem}>
                 <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
               </Link>
             </TouchableOpacity>

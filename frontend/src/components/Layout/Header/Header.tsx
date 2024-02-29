@@ -38,13 +38,14 @@ export const Header: React.FC<HeaderProps> = ({
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigationRef.navigate("Home")}
-        style={styles.logoMobileContainer}
         activeOpacity={0.6}
       >
-        <Image
-          source={require("@/assets/logo.png")}
-          style={styles.logoMobile}
-        />
+        <Link to={{ screen: "Home" }} style={styles.logoMobileContainer}>
+          <Image
+            source={require("@/assets/logo.png")}
+            style={styles.logoMobile}
+          />
+        </Link>
       </TouchableOpacity>
       <TouchableOpacity
         onPressOut={onClickMobileRightIcon}
@@ -60,22 +61,22 @@ export const Header: React.FC<HeaderProps> = ({
       <View style={styles.desktopHeaderLeftSection}>
         <TouchableOpacity
           onPress={() => navigationRef.navigate("Home")}
-          style={styles.logoDesktopContainer}
           activeOpacity={0.6}
         >
-          <Image
-            source={require("@/assets/logo-large.png")}
-            style={styles.logoDesktop}
-          />
+          <Link to={{ screen: "Home" }} style={styles.logoDesktopContainer}>
+            <Image
+              source={require("@/assets/logo-large.png")}
+              style={styles.logoDesktop}
+            />
+          </Link>
         </TouchableOpacity>
         <View style={styles.navLinksContainer}>
           {navRoutes.map((route) => (
             <TouchableOpacity
               key={route}
               onPress={() => navigationRef.navigate(route)}
-              style={styles.navLink}
             >
-              <Link to={{ screen: route }}>
+              <Link to={{ screen: route }} style={styles.navLink}>
                 <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
               </Link>
             </TouchableOpacity>
