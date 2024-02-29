@@ -39,7 +39,7 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
     };
     const subscription = BackHandler.addEventListener(
       "hardwareBackPress",
-      onBackPress
+      onBackPress,
     );
 
     return () => subscription.remove();

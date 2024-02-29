@@ -16,7 +16,7 @@ interface NavigationContextType {
 }
 
 const NavigationContext = createContext<NavigationContextType | undefined>(
-  undefined
+  undefined,
 );
 
 // Only use this hook outside of Screen context
@@ -24,7 +24,7 @@ export const useNavigationRef = () => {
   const context = useContext(NavigationContext);
   if (!context) {
     throw new Error(
-      "useNavigationRef must be used within a NavigationProvider"
+      "useNavigationRef must be used within a NavigationProvider",
     );
   }
   return context;
@@ -38,7 +38,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({
   children,
 }) => {
   const [currentRoute, setCurrentRoute] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const navigationRef = createNavigationContainerRef<RootStackParamList>();
 
