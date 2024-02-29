@@ -3,7 +3,7 @@
 /** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 module.exports = {
   singleQuote: false, // TODO: Let's turn this on eventually
-  trailingComma: "es5",
+  trailingComma: "all",
   plugins: ["@ianvs/prettier-plugin-sort-imports"],
   importOrder: [
     "^(react/(.*)$)|^(react$)",
