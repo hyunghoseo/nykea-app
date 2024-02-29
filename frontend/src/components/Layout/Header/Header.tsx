@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { useHover } from "react-native-web-hooks";
 
 import { navRoutes } from "@/config/navigation";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
@@ -6,6 +8,37 @@ import { useTranslation } from "@/hooks/useTranslation";
 import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
 
 import { styles } from "./Header.styles";
+
+interface NavItemProps {
+  route: (typeof navRoutes)[number];
+}
+
+export const NavItem: React.FC<NavItemProps> = ({ route }) => {
+  const { t } = useTranslation();
+  const { navigationRef, currentRoute } = useNavigationRef();
+
+  const ref = useRef<TouchableOpacity>(null);
+  const isHovered = useHover(ref);
+
+  return (
+    <TouchableOpacity
+      ref={ref}
+      key={route}
+      style={styles.navLink}
+      onPress={() => navigationRef.navigate(route)}
+    >
+      <Text
+        style={[
+          styles.navText,
+          route === currentRoute && styles.navTextActive,
+          isHovered && styles.navTextHovered,
+        ]}
+      >
+        {t(`nav.${route}`)}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 interface HeaderProps {
   variant: "mobile" | "desktop";
@@ -69,13 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
         </TouchableOpacity>
         <View style={styles.navLinksContainer}>
           {navRoutes.map((route) => (
-            <TouchableOpacity
-              key={route}
-              style={styles.navLink}
-              onPress={() => navigationRef.navigate(route)}
-            >
-              <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
-            </TouchableOpacity>
+            <NavItem key={route} route={route} />
           ))}
         </View>
       </View>

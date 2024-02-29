@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import {
   KumbhSans_500Medium,
   KumbhSans_600SemiBold,
+  KumbhSans_700Bold,
 } from "@expo-google-fonts/kumbh-sans";
 import { NotoSans_400Regular } from "@expo-google-fonts/noto-sans";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -55,6 +56,7 @@ const App = () => {
   const [fontsLoaded, fontError] = useFonts({
     KumbhSans_500Medium,
     KumbhSans_600SemiBold,
+    KumbhSans_700Bold,
     NotoSans_400Regular,
   });
 

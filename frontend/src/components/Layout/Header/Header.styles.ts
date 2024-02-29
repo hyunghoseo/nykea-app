@@ -69,7 +69,12 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
     letterSpacing: 0.5,
   },
-  activeNavText: {
+  navTextHovered: {
+    color: theme.colors.primary[0],
+    borderBottomColor: theme.colors.primary[0],
+    borderBottomWidth: 1,
+  },
+  navTextActive: {
     fontFamily: "KumbhSans_700Bold",
     color: theme.colors.primary[0],
   },
