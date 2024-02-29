@@ -77,6 +77,7 @@ export const styles = StyleSheet.create({
   navTextActive: {
     fontFamily: "KumbhSans_700Bold",
     color: theme.colors.primary[0],
+    letterSpacing: 0.4,
   },
   icon: {
     width: 80,
