@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { Link } from "@react-navigation/native";
-import { ScrollView, Text, TouchableOpacity } from "react-native";
+import { BackHandler, ScrollView, Text, TouchableOpacity } from "react-native";
 import Animated, {
   FadeIn,
   FadeOut,
@@ -26,6 +27,23 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
 }) => {
   const { t } = useTranslation();
   const { navigationRef } = useNavigationRef();
+
+  useEffect(() => {
+    const onBackPress = () => {
+      if (opened) {
+        closeMenu();
+        return true;
+      } else {
+        return false;
+      }
+    };
+    const subscription = BackHandler.addEventListener(
+      "hardwareBackPress",
+      onBackPress
+    );
+
+    return () => subscription.remove();
+  }, [opened, closeMenu]);
 
   // The order of these elements is important as a replacement for z-index,
   // which is ignored when a component is unmounted and remounted.
