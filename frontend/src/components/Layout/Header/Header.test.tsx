@@ -1,13 +1,10 @@
 import { cleanup, render, screen, waitFor } from "@test-utils";
 
-import Header from "./Header";
+import { Header } from "./Header";
 
 describe("Header - Mobile", () => {
   beforeEach(() => {
-    jest.mock("@/hooks/useResponsiveLayout", () => ({
-      useResponsiveLayout: () => ({ isMobile: true }),
-    }));
-    render(<Header />);
+    render(<Header variant="mobile" navigateTo={jest.fn()} />);
   });
 
   afterEach(cleanup);
@@ -22,7 +19,7 @@ describe("Header - Desktop", () => {
     jest.mock("@/hooks/useResponsiveLayout", () => ({
       useResponsiveLayout: () => ({ isMobile: false }),
     }));
-    render(<Header />);
+    render(<Header variant="desktop" navigateTo={jest.fn()} />);
   });
 
   afterEach(cleanup);
