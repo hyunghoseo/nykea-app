@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 import { MOBILE_HEADER_HEIGHT } from "@/config/constants";
+import { theme } from "@/config/theme";
 
 export const styles = StyleSheet.create({
   dimOverlay: {
@@ -23,6 +24,9 @@ export const styles = StyleSheet.create({
   menuItem: {
     paddingHorizontal: 30,
     paddingVertical: 25,
+  },
+  menuItemHovered: {
+    backgroundColor: theme.colors.primary[9],
   },
   menuText: {
     fontFamily: "KumbhSans_600SemiBold",

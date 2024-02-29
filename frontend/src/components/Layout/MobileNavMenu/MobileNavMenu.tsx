@@ -1,19 +1,53 @@
-import { useEffect } from "react";
-import { BackHandler, ScrollView, Text, TouchableOpacity } from "react-native";
+import { useEffect, useRef } from "react";
+import {
+  BackHandler,
+  ScrollView,
+  Text,
+  TouchableHighlight,
+} from "react-native";
 import Animated, {
   FadeIn,
   FadeOut,
   SlideInRight,
   SlideOutRight,
 } from "react-native-reanimated";
+import { useHover } from "react-native-web-hooks";
 
 import { navRoutes } from "@/config/navigation";
+import { theme } from "@/config/theme";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 
 import { styles } from "./MobileNavMenu.styles";
 
 const ANIMATION_TIME = 250;
+
+interface MenuItemProps {
+  route: (typeof navRoutes)[number];
+  onPress?: () => void;
+}
+
+export const MenuItem: React.FC<MenuItemProps> = ({ route, onPress }) => {
+  const { t } = useTranslation();
+  const { navigationRef } = useNavigationRef();
+
+  const ref = useRef<TouchableHighlight>(null);
+  const isHovered = useHover(ref);
+
+  return (
+    <TouchableHighlight
+      ref={ref}
+      style={[styles.menuItem, isHovered && styles.menuItemHovered]}
+      underlayColor={theme.colors.primary[8]}
+      onPress={() => {
+        onPress?.();
+        navigationRef.navigate(route);
+      }}
+    >
+      <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
+    </TouchableHighlight>
+  );
+};
 
 interface MobileNavMenuProps {
   opened: boolean;
@@ -24,9 +58,6 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
   opened,
   closeMenu,
 }) => {
-  const { t } = useTranslation();
-  const { navigationRef } = useNavigationRef();
-
   useEffect(() => {
     const onBackPress = () => {
       if (opened) {
@@ -64,16 +95,7 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
       >
         <ScrollView>
           {navRoutes.map((route) => (
-            <TouchableOpacity
-              key={route}
-              style={styles.menuItem}
-              onPress={() => {
-                navigationRef.navigate(route);
-                closeMenu();
-              }}
-            >
-              <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
-            </TouchableOpacity>
+            <MenuItem key={route} route={route} onPress={closeMenu} />
           ))}
         </ScrollView>
       </Animated.View>
