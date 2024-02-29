@@ -55,7 +55,6 @@ export const Header: React.FC<HeaderProps> = ({
   onClickMobileLeftIcon,
   onClickMobileRightIcon,
 }) => {
-  const { t } = useTranslation();
   const { navigationRef } = useNavigationRef();
 
   return variant === "mobile" ? (
