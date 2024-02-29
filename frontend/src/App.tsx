@@ -13,17 +13,20 @@ import { StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import { Layout } from "./components/Layout";
-import { RootStackParamList } from "./config/navigation";
-import { theme } from "./config/theme";
-import { LocaleProvider } from "./contexts/LocaleProvider";
-import { NavigationProvider } from "./contexts/NavigationProvider";
-import AboutScreen from "./screens/AboutScreen";
-import ContactUsScreen from "./screens/ContactUsScreen";
-import EventsScreen from "./screens/EventsScreen";
-import GroupsScreen from "./screens/GroupsScreen";
-import HomeScreen from "./screens/HomeScreen";
-import ServicesScreen from "./screens/ServicesScreen";
+import { RootStackParamList } from "@/config/navigation";
+import { theme } from "@/config/theme";
+import { LocaleProvider } from "@/contexts/LocaleProvider";
+import { NavigationProvider } from "@/contexts/NavigationProvider";
+import { Layout } from "@/components/Layout";
+import AboutScreen from "@/screens/AboutScreen";
+import ContactUsScreen from "@/screens/ContactUsScreen";
+import EventsScreen from "@/screens/EventsScreen";
+import GroupsScreen from "@/screens/GroupsScreen";
+import HomeScreen from "@/screens/HomeScreen";
+import ServicesScreen from "@/screens/ServicesScreen";
+
+// These should eventually look like:
+// import { EventsScreen, EventsDetailScreen } from @/screens/Events;
 
 SplashScreen.preventAutoHideAsync();
 
