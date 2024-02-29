@@ -4,7 +4,7 @@ import {
   DESKTOP_HEADER_HEIGHT,
   MOBILE_HEADER_HEIGHT,
 } from "@/config/constants";
-import theme from "@/config/theme";
+import { theme } from "@/config/theme";
 
 export const styles = StyleSheet.create({
   header: {

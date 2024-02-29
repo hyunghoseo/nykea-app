@@ -8,7 +8,7 @@ import {
   DESKTOP_HEADER_HEIGHT,
   MOBILE_HEADER_HEIGHT,
 } from "@/config/constants";
-import theme from "@/config/theme";
+import { theme } from "@/config/theme";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 
 import { Header } from "./Header/Header";

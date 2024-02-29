@@ -4,7 +4,6 @@ import {
   KumbhSans_600SemiBold,
 } from "@expo-google-fonts/kumbh-sans";
 import { NotoSans_400Regular } from "@expo-google-fonts/noto-sans";
-import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -13,43 +12,15 @@ import { StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import { TranslationEntryKey } from "@/config/translations";
-import { LocaleProvider } from "@/contexts/LocaleProvider";
-import { useTranslation } from "@/hooks/useTranslation";
-import { Layout } from "@/components/Layout";
-import { AppNavigator, linking } from "@/navigation/AppNavigator";
+import { Layout } from "./components/Layout";
+import { theme } from "./config/theme";
+import { LocaleProvider } from "./contexts/LocaleProvider";
+import { NavigationProvider } from "./contexts/NavigationProvider";
+import { AppNavigator } from "./navigation/AppNavigator";
 
 SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
-
-const NavigationLayout: React.FC = () => {
-  const { t } = useTranslation();
-
-  return (
-    <NavigationContainer
-      linking={linking}
-      theme={{
-        ...DefaultTheme,
-        colors: { ...DefaultTheme.colors, background: "white" },
-      }}
-      documentTitle={{
-        formatter: (options, route) => {
-          const pageTitle = t(`nav.${route?.name}` as TranslationEntryKey);
-          return pageTitle ? `${pageTitle} - ${t("home")}` : t("home");
-        },
-      }}
-    >
-      {/* TODO: we could add more complex behavior to StatusBar in the future */}
-      <StatusBar style="light" backgroundColor="#225DA7" />
-      <SafeAreaView style={styles.container}>
-        <Layout>
-          <AppNavigator />
-        </Layout>
-      </SafeAreaView>
-    </NavigationContainer>
-  );
-};
 
 const App = () => {
   const [fontsLoaded, fontError] = useFonts({
@@ -76,7 +47,18 @@ const App = () => {
           onLayout={onLayoutRootView}
         >
           <SafeAreaProvider>
-            <NavigationLayout />
+            <NavigationProvider>
+              {/* TODO: we could add more complex behavior to StatusBar in the future */}
+              <StatusBar
+                style="light"
+                backgroundColor={theme.colors.primary[0]}
+              />
+              <SafeAreaView style={styles.container}>
+                <Layout>
+                  <AppNavigator />
+                </Layout>
+              </SafeAreaView>
+            </NavigationProvider>
           </SafeAreaProvider>
         </GestureHandlerRootView>
       </QueryClientProvider>
