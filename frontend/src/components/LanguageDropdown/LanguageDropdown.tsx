@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
   },
   icon: { margin: 8 },
   text: {
+    color: "#595959",
     fontFamily: "KumbhSans_500Medium",
     fontWeight: "500",
     fontSize: 13,
