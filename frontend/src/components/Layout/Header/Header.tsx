@@ -1,4 +1,3 @@
-import { Link } from "@react-navigation/native";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import { navRoutes } from "@/config/navigation";
@@ -38,14 +37,13 @@ export const Header: React.FC<HeaderProps> = ({
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigationRef.navigate("Home")}
+        style={styles.logoMobileContainer}
         activeOpacity={0.6}
       >
-        <Link to={{ screen: "Home" }} style={styles.logoMobileContainer}>
-          <Image
-            source={require("@/assets/logo.png")}
-            style={styles.logoMobile}
-          />
-        </Link>
+        <Image
+          source={require("@/assets/logo.png")}
+          style={styles.logoMobile}
+        />
       </TouchableOpacity>
       <TouchableOpacity
         onPress={onClickMobileRightIcon}
@@ -61,24 +59,22 @@ export const Header: React.FC<HeaderProps> = ({
       <View style={styles.desktopHeaderLeftSection}>
         <TouchableOpacity
           onPress={() => navigationRef.navigate("Home")}
+          style={styles.logoDesktopContainer}
           activeOpacity={0.6}
         >
-          <Link to={{ screen: "Home" }} style={styles.logoDesktopContainer}>
-            <Image
-              source={require("@/assets/logo-large.png")}
-              style={styles.logoDesktop}
-            />
-          </Link>
+          <Image
+            source={require("@/assets/logo-large.png")}
+            style={styles.logoDesktop}
+          />
         </TouchableOpacity>
         <View style={styles.navLinksContainer}>
           {navRoutes.map((route) => (
             <TouchableOpacity
               key={route}
+              style={styles.navLink}
               onPress={() => navigationRef.navigate(route)}
             >
-              <Link to={{ screen: route }} style={styles.navLink}>
-                <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
-              </Link>
+              <Text style={styles.navText}>{t(`nav.${route}`)}</Text>
             </TouchableOpacity>
           ))}
         </View>

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "@react-navigation/native";
 import { BackHandler, ScrollView, Text, TouchableOpacity } from "react-native";
 import Animated, {
   FadeIn,
@@ -67,14 +66,13 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
           {navRoutes.map((route) => (
             <TouchableOpacity
               key={route}
+              style={styles.menuItem}
               onPress={() => {
                 navigationRef.navigate(route);
                 closeMenu();
               }}
             >
-              <Link to={{ screen: route }} style={styles.menuItem}>
-                <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
-              </Link>
+              <Text style={styles.menuText}>{t(`nav.${route}`)}</Text>
             </TouchableOpacity>
           ))}
         </ScrollView>

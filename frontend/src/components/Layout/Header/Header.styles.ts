@@ -38,7 +38,6 @@ export const styles = StyleSheet.create({
     paddingRight: 32,
   },
   logoMobileContainer: {
-    flex: 1,
     height: MOBILE_HEADER_HEIGHT,
     justifyContent: "center",
     paddingHorizontal: 12,
@@ -48,7 +47,6 @@ export const styles = StyleSheet.create({
     width: 60,
   },
   logoDesktopContainer: {
-    flex: 1,
     height: DESKTOP_HEADER_HEIGHT - 32,
     justifyContent: "center",
     paddingHorizontal: 16,
@@ -61,7 +59,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
   },
   navLink: {
-    flex: 1,
     marginHorizontal: 8,
     padding: 14,
   },
