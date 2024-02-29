@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({
     // Mobile header
     <View style={[styles.header, styles.mobileHeader]} testID="mobile-header">
       <TouchableOpacity
-        onPressOut={onClickMobileLeftIcon}
+        onPress={onClickMobileLeftIcon}
         style={styles.icon}
         disabled={!mobileLeftIcon || !onClickMobileLeftIcon}
       >
@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
         </Link>
       </TouchableOpacity>
       <TouchableOpacity
-        onPressOut={onClickMobileRightIcon}
+        onPress={onClickMobileRightIcon}
         style={styles.icon}
         disabled={!mobileRightIcon || !onClickMobileRightIcon}
       >
