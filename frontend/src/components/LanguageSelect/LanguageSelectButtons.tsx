@@ -37,7 +37,7 @@ export const LanguageSelectButtons: React.FC = () => {
   return (
     <View style={styles.container}>
       {languageOptions.map((option) => (
-        <LanguageButton {...option} />
+        <LanguageButton key={option.locale} {...option} />
       ))}
     </View>
   );
