@@ -11,6 +11,7 @@ export const theme = {
       "#BDCEE5",
       "#D3DFED",
       "#E9EFF6",
+      "#2A2A2A"
     ],
   },
 };

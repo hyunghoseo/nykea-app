@@ -35,7 +35,7 @@ export const useStyles = () => {
     menuText: {
       fontFamily:
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
-      color: "#2A2A2A",
+      color: theme.colors.primary[10],
       fontSize: 18,
       lineHeight: 32,
       letterSpacing: 0.75,
