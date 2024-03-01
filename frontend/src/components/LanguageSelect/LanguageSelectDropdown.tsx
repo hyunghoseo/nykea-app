@@ -11,7 +11,6 @@ import ChevronDown from "@/assets/chevron-down.svg";
 import Minus from "@/assets/minus.svg";
 
 const DropdownItem: React.FC<LanguageOption> = (languageOption) => {
-  const { locale } = useLocale();
   const ref = useRef<View>(null);
   const isHovered = useHover(ref);
 
@@ -19,7 +18,10 @@ const DropdownItem: React.FC<LanguageOption> = (languageOption) => {
     <View ref={ref} style={[styles.item, isHovered && styles.itemHovered]}>
       <Image source={languageOption.flag} style={styles.flag} />
       <Text
-        style={[styles.text, locale === "en" ? styles.textEn : styles.textKo]}
+        style={[
+          styles.text,
+          languageOption.locale === "en" ? styles.textEn : styles.textKo,
+        ]}
       >
         {languageOption.label}
       </Text>
@@ -58,7 +60,7 @@ export const LanguageSelectDropdown: React.FC = () => {
 
   const textStyles = [
     styles.text,
-    locale === "en" ? styles.textEn : styles.textKo,
+    currentLocaleOption.locale === "en" ? styles.textEn : styles.textKo,
   ];
 
   return (
