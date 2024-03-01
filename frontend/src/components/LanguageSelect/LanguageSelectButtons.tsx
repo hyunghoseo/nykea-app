@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Image, Platform, StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableHighlight } from "react-native-gesture-handler";
 import { useHover } from "react-native-web-hooks";
 
 import { LanguageOption, languageOptions } from "@/config/languages";
@@ -8,16 +8,16 @@ import { theme } from "@/config/theme";
 import { useLocale } from "@/contexts/LocaleProvider";
 
 const LanguageButton: React.FC<LanguageOption> = (languageOption) => {
-  const ref = useRef<TouchableOpacity>(null);
+  const ref = useRef<TouchableHighlight>(null);
   const isHovered = useHover(ref);
 
   const { locale, setLocale } = useLocale();
 
   return (
-    <TouchableOpacity
+    <TouchableHighlight
       ref={ref}
       onPress={() => setLocale(languageOption.locale)}
-      activeOpacity={0.6}
+      underlayColor={theme.colors.primary[8]}
       hitSlop={8}
       style={[
         styles.button,
@@ -25,16 +25,18 @@ const LanguageButton: React.FC<LanguageOption> = (languageOption) => {
         languageOption.locale === locale && styles.buttonActive,
       ]}
     >
-      <Image source={languageOption.flag} style={styles.flag} />
-      <Text
-        style={[
-          styles.text,
-          languageOption.locale === "en" ? styles.textEn : styles.textKo,
-        ]}
-      >
-        {languageOption.label}
-      </Text>
-    </TouchableOpacity>
+      <View style={styles.buttonContent}>
+        <Image source={languageOption.flag} style={styles.flag} />
+        <Text
+          style={[
+            styles.text,
+            languageOption.locale === "en" ? styles.textEn : styles.textKo,
+          ]}
+        >
+          {languageOption.label}
+        </Text>
+      </View>
+    </TouchableHighlight>
   );
 };
 
@@ -55,7 +57,6 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 40,
-    flexDirection: "row",
     borderColor: "#EAEAEA",
     borderWidth: 1,
     borderRadius: 4,
@@ -72,6 +73,9 @@ const styles = StyleSheet.create({
   },
   buttonActive: {
     backgroundColor: theme.colors.primary[9],
+  },
+  buttonContent: {
+    flexDirection: "row",
   },
   flag: {
     width: 24,

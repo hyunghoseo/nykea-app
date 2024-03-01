@@ -70,7 +70,7 @@ export const LanguageSelectDropdown: React.FC = () => {
         selectedTextStyle={textStyles}
         placeholderStyle={textStyles}
         iconStyle={{ height: 24, width: 24 }}
-        activeColor="#E9EFF6"
+        activeColor={theme.colors.primary[9]}
         data={data}
         labelField="label"
         valueField="locale"
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   itemHovered: {
-    backgroundColor: theme.colors.primary[9],
+    backgroundColor: theme.colors.primary[8],
   },
   flag: {
     width: 24,
