@@ -20,7 +20,7 @@ import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSelectButtons } from "@/components/LanguageSelect";
 
-import { styles } from "./MobileNavMenu.styles";
+import { useStyles } from "./MobileNavMenu.styles";
 
 const ANIMATION_TIME = 250;
 
@@ -30,6 +30,7 @@ interface MenuItemProps {
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({ route, onPress }) => {
+  const styles = useStyles();
   const { t } = useTranslation();
   const { navigationRef, currentRoute } = useNavigationRef();
 
@@ -67,6 +68,7 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
   opened,
   closeMenu,
 }) => {
+  const styles = useStyles();
   useEffect(() => {
     const onBackPress = () => {
       if (opened) {

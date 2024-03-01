@@ -7,13 +7,14 @@ import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSelectDropdown } from "@/components/LanguageSelect";
 
-import { styles } from "./Header.styles";
+import { useStyles } from "./Header.styles";
 
 interface NavItemProps {
   route: (typeof navRoutes)[number];
 }
 
 export const NavItem: React.FC<NavItemProps> = ({ route }) => {
+  const styles = useStyles();
   const { t } = useTranslation();
   const { navigationRef, currentRoute } = useNavigationRef();
 
@@ -55,6 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
   onClickMobileLeftIcon,
   onClickMobileRightIcon,
 }) => {
+  const styles = useStyles();
   const { navigationRef } = useNavigationRef();
 
   return variant === "mobile" ? (
