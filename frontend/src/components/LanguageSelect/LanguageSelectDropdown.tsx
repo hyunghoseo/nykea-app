@@ -5,25 +5,23 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useHover } from "react-native-web-hooks";
 
 import { LanguageOption, languageOptions } from "@/config/languages";
+import { theme } from "@/config/theme";
 import { useLocale } from "@/contexts/LocaleProvider";
 import ChevronDown from "@/assets/chevron-down.svg";
 import Minus from "@/assets/minus.svg";
 
-const DropdownItem = (item: LanguageOption) => {
+const DropdownItem: React.FC<LanguageOption> = (languageOption) => {
   const ref = useRef<View>(null);
   const isHovered = useHover(ref);
 
-  const itemStyles = [styles.item, isHovered && styles.itemHovered];
-
   return (
-    <View ref={ref} style={itemStyles}>
-      <Image source={item.flag} style={styles.flag} />
-      <Text style={styles.text}>{item.label}</Text>
+    <View ref={ref} style={[styles.item, isHovered && styles.itemHovered]}>
+      <Image source={languageOption.flag} style={styles.flag} />
+      <Text style={styles.text}>{languageOption.label}</Text>
     </View>
   );
 };
-
-const LanguageDropdown: React.FC = () => {
+export const LanguageSelectDropdown: React.FC = () => {
   const { locale, setLocale } = useLocale();
   const [data, setData] = useState(languageOptions);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,7 +94,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
     // padding: 8,
-    fontSize: 3,
   },
   dropdownMenu: {
     borderRadius: 4,
@@ -116,7 +113,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   itemHovered: {
-    backgroundColor: "#E9EFF6",
+    backgroundColor: theme.colors.primary[9],
   },
   flag: {
     width: 24,
@@ -132,5 +129,3 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
   },
 });
-
-export default LanguageDropdown;

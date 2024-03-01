@@ -4,6 +4,7 @@ import {
   ScrollView,
   Text,
   TouchableHighlight,
+  View,
 } from "react-native";
 import Animated, {
   FadeIn,
@@ -17,6 +18,7 @@ import { navRoutes } from "@/config/navigation";
 import { theme } from "@/config/theme";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
+import { LanguageSelectButtons } from "@/components/LanguageSelect";
 
 import { styles } from "./MobileNavMenu.styles";
 
@@ -104,6 +106,9 @@ export const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
           {navRoutes.map((route) => (
             <MenuItem key={route} route={route} onPress={closeMenu} />
           ))}
+          <View style={styles.languageSelectContainer}>
+            <LanguageSelectButtons />
+          </View>
         </ScrollView>
       </Animated.View>
     </>

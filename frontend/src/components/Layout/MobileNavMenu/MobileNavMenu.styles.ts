@@ -39,4 +39,8 @@ export const styles = StyleSheet.create({
     fontFamily: "KumbhSans_700Bold",
     color: theme.colors.primary[0],
   },
+  languageSelectContainer: {
+    paddingHorizontal: 32,
+    paddingVertical: 20,
+  },
 });

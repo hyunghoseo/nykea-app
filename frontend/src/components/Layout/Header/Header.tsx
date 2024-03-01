@@ -5,7 +5,7 @@ import { useHover } from "react-native-web-hooks";
 import { navRoutes } from "@/config/navigation";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTranslation } from "@/hooks/useTranslation";
-import LanguageDropdown from "@/components/LanguageDropdown/LanguageDropdown";
+import { LanguageSelectDropdown } from "@/components/LanguageSelect";
 
 import { styles } from "./Header.styles";
 
@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({
         </View>
       </View>
       <View style={styles.desktopHeaderRightSection}>
-        <LanguageDropdown />
+        <LanguageSelectDropdown />
       </View>
     </View>
   );
