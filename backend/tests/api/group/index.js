@@ -1,6 +1,7 @@
 const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
+const constructor = require("../../helpers/constructor");
 
 describe("Group Test", () => {
     let authenticatedUser;
@@ -10,27 +11,11 @@ describe("Group Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    /**
-     * @param {string | number} id
-     */
-    const constructGroup = (id) => {
-        return {
-            data: {
-                "Name": "Test Group " + id,
-                "ShortDescription": "Group Description " + id,
-                "Picture": null,
-                "Type": "Administrative",
-                "locale": "en",
-                "publishedAt": Date.now(),
-            }
-        };
-    }
-
     it("Public user should not post group", async () => {
         await request(strapi.server.httpServer)
             .post("/api/groups")
             .set("accept", "application/json")
-            .send(constructGroup(0))
+            .send(constructor.constructGroup(0))
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -40,7 +25,7 @@ describe("Group Test", () => {
             .post("/api/groups")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructGroup(0))
+            .send(constructor.constructGroup(0))
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -50,7 +35,7 @@ describe("Group Test", () => {
             .post("/api/groups")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructGroup(1))
+            .send(constructor.constructGroup(1))
             .expect("Content-Type", /json/)
             .expect(200)
 
@@ -58,7 +43,7 @@ describe("Group Test", () => {
             .post("/api/groups")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructGroup(1))
+            .send(constructor.constructGroup(1))
             .expect("Content-Type", /json/)
             .expect(200)
     })
@@ -100,7 +85,7 @@ describe("Group Test", () => {
 
     it("Public user should find a group", async () => {
         const id = 1;
-        const group = constructGroup(id);
+        const group = constructor.constructGroup(id);
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
@@ -117,7 +102,7 @@ describe("Group Test", () => {
 
     it("Authenticated user should find a group", async () => {
         const id = 1;
-        const group = constructGroup(id);
+        const group = constructor.constructGroup(id);
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")
@@ -135,7 +120,7 @@ describe("Group Test", () => {
 
     it("Admin user should find a group", async () => {
         const id = 1;
-        const group = constructGroup(id);
+        const group = constructor.constructGroup(id);
         await request(strapi.server.httpServer)
             .get("/api/groups/" + 1)
             .set("accept", "application/json")

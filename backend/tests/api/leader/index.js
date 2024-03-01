@@ -2,7 +2,6 @@ const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
 const constructor = require("../../helpers/constructor");
-const qs = require('qs');
 
 describe("Leader Test", () => {
     let authenticatedUser;

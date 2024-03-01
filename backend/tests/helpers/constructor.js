@@ -1,4 +1,20 @@
 /**
+ * @param {string | number} id
+ */
+const constructGroup = (id) => {
+    return {
+        data: {
+            "Name": "Test Group " + id,
+            "ShortDescription": "Group Description " + id,
+            "Picture": null,
+            "Type": "Administrative",
+            "locale": "en",
+            "publishedAt": Date.now(),
+        }
+    };
+}
+
+/**
   * @param {string | number} id
   */
 const constructUserInfo = (id) => {
@@ -34,5 +50,5 @@ const constructLeader = (id, userInfoId) => {
 }
 
 module.exports = {
-    constructUserInfo, constructLeader
+    constructGroup, constructUserInfo, constructLeader
 }
