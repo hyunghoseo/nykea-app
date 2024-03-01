@@ -159,21 +159,4 @@ describe("Leader Test", () => {
                 expect(fullName.MiddleName).toBe(chairman.attributes.MiddleName);
             })
     });
-
-    // it("Admin user should find a group", async () => {
-    //     const id = 1;
-    //     const group = constructGroup(id);
-    //     await request(strapi.server.httpServer)
-    //         .get("/api/groups/" + 1)
-    //         .set("accept", "application/json")
-    //         .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-    //         .expect("Content-Type", /json/)
-    //         .expect(200)
-    //         .then((data) => {
-    //             data = data.body.data;
-    //             expect(data.attributes.Name).toBe(group.data.Name);
-    //             expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
-    //             expect(data.attributes.locale).toBe(group.data.locale);
-    //         })
-    // });
 })
