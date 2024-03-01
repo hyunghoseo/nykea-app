@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary[9],
   },
   menuText: {
-    fontFamily: "KumbhSans_600SemiBold",
+    fontFamily: "KumbhSans_600SemiBold, NotoSansKR_500Medium",
     color: "#2A2A2A",
     fontSize: 18,
     lineHeight: 32,

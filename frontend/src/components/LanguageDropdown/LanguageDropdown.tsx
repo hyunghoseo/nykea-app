@@ -151,10 +151,10 @@ const styles = StyleSheet.create({
   icon: { margin: 8 },
   text: {
     color: "#595959",
-    fontFamily: "KumbhSans_500Medium",
-    fontWeight: "500",
+    fontFamily: "KumbhSans_500Medium, NotoSansKR_500Medium",
     fontSize: 13,
     lineHeight: 18,
+    letterSpacing: 0.25,
   },
 });
 

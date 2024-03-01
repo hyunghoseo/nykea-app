@@ -1297,6 +1297,11 @@
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/kumbh-sans/-/kumbh-sans-0.2.3.tgz#2f4530e2236b8a9db0fc789ba4ae1022733eb1b8"
   integrity sha512-TAUisGf6Ke4pYi9ENH+5nIFCv35WAxfxIA67odvn+bvtaNEOXNlBNI+J/Z17mhNKbBG3dRJsqPaZlUl64bCowg==
 
+"@expo-google-fonts/noto-sans-kr@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/noto-sans-kr/-/noto-sans-kr-0.2.3.tgz#b25290ea2c50d28430ebd66cab763ecd0a2ff617"
+  integrity sha512-ha+y6yJsjtcSW9E4UmF6J/pVf5HQdv6iO72o8sZNbmimMXpEL94djjDD+l3TGq3Rp6Y8npKpEqYbnPK0SB247A==
+
 "@expo-google-fonts/noto-sans@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/noto-sans/-/noto-sans-0.2.3.tgz#8168003c435a5d7de24b651fb27ab6f8fafb78de"

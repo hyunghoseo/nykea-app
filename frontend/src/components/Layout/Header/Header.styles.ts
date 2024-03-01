@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
     padding: 14,
   },
   navText: {
-    fontFamily: "KumbhSans_500Medium",
+    fontFamily: "KumbhSans_500Medium, NotoSansKR_500Medium",
     color: "#2A2A2A",
     fontSize: 14,
     lineHeight: 24,
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   navTextActive: {
-    fontFamily: "KumbhSans_700Bold",
+    fontFamily: "KumbhSans_700Bold, NotoSansKR_700Bold",
     color: theme.colors.primary[0],
     letterSpacing: 0.4,
   },
