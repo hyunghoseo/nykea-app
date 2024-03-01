@@ -1,38 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  Image,
-  ImageSourcePropType,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, Platform, StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useHover } from "react-native-web-hooks";
 
-import { Locale, useLocale } from "@/contexts/LocaleProvider";
+import { LanguageOption, languageOptions } from "@/config/languages";
+import { useLocale } from "@/contexts/LocaleProvider";
 import ChevronDown from "@/assets/chevron-down.svg";
 import Minus from "@/assets/minus.svg";
-
-interface LanguageOption {
-  locale: Locale;
-  label: string;
-  flag: ImageSourcePropType;
-}
-
-const languageOptions: LanguageOption[] = [
-  {
-    locale: "en",
-    label: "English",
-    flag: require("@/assets/flag-english.png"),
-  },
-  {
-    locale: "ko",
-    label: "한국어",
-    flag: require("@/assets/flag-korean.png"),
-  },
-];
 
 const DropdownItem = (item: LanguageOption) => {
   const ref = useRef<View>(null);

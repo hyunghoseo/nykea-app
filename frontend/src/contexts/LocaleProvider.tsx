@@ -8,7 +8,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getLocales } from "expo-localization";
 
-export type Locale = "en" | "ko" | "ja";
+import { Locale } from "@/config/languages";
 
 interface LocaleContextType {
   locale: Locale;
@@ -67,3 +67,4 @@ export const LocaleProvider: React.FC<LocaleProviderProps> = ({ children }) => {
     </LocaleContext.Provider>
   );
 };
+export { Locale };
