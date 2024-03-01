@@ -11,6 +11,7 @@ export type RootStackParamList = {
   Groups: undefined;
   Services: undefined;
   Events: undefined;
+  Announcements: undefined;
   ContactUs: undefined;
 };
 
@@ -24,6 +25,7 @@ export const linking: LinkingOptions<RootStackParamList> = {
       Groups: "groups",
       Services: "services",
       Events: "events",
+      Announcements: "announcements",
       ContactUs: "contact-us",
       // (query param example) Profile: "profile/:userId"
     },
@@ -36,5 +38,6 @@ export const navRoutes = [
   "Groups",
   "Services",
   "Events",
+  "Announcements",
   "ContactUs",
 ] as const;
