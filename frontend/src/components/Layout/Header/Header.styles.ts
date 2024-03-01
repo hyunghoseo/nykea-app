@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import {
   DESKTOP_HEADER_HEIGHT,
@@ -9,6 +10,8 @@ import { useLocale } from "@/contexts/LocaleProvider";
 
 export const useStyles = () => {
   const { locale } = useLocale();
+  const { top: topInset } = useSafeAreaInsets();
+
   return StyleSheet.create({
     header: {
       position: "absolute",
@@ -24,7 +27,10 @@ export const useStyles = () => {
       elevation: 2,
     },
     mobileHeader: {
-      height: MOBILE_HEADER_HEIGHT,
+      // Extends the height of the header by the height of the status bar
+      height: MOBILE_HEADER_HEIGHT + topInset,
+      paddingTop: topInset,
+      top: -topInset,
     },
     desktopHeader: {
       height: DESKTOP_HEADER_HEIGHT,

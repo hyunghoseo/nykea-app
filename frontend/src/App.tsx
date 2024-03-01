@@ -96,10 +96,7 @@ const App = () => {
           <SafeAreaProvider>
             <NavigationProvider>
               {/* TODO: we could add more complex behavior to StatusBar in the future */}
-              <StatusBar
-                style="light"
-                backgroundColor={theme.colors.primary[0]}
-              />
+              <StatusBar style="dark" backgroundColor="white" />
               <SafeAreaView style={styles.container}>
                 <Layout>
                   <AppNavigator />
