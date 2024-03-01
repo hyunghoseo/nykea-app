@@ -26,8 +26,8 @@ export const useStyles = () => {
       backgroundColor: "white",
     },
     menuItem: {
-      paddingHorizontal: 30,
-      paddingVertical: 25,
+      paddingHorizontal: 32,
+      paddingVertical: 20,
     },
     menuItemHovered: {
       backgroundColor: theme.colors.primary[9],
@@ -36,12 +36,12 @@ export const useStyles = () => {
       fontFamily:
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
       color: theme.colors.primary[10],
-      fontSize: 18,
-      lineHeight: 32,
+      fontSize: 16,
+      lineHeight: 30,
       letterSpacing: 0.75,
     },
     menuTextActive: {
-      fontFamily: locale === "en" ? "KumbhSans_700Bold" : "NotoSans_700Bold",
+      fontFamily: locale === "en" ? "KumbhSans_700Bold" : "NotoSansKR_700Bold",
       color: theme.colors.primary[0],
     },
     languageSelectContainer: {
