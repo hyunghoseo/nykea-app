@@ -76,20 +76,6 @@
           "sortable": false
         }
       },
-      "Location": {
-        "edit": {
-          "label": "Location",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Location",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "Fee": {
         "edit": {
           "label": "Fee",
@@ -189,6 +175,20 @@
           "sortable": true
         }
       },
+      "Address": {
+        "edit": {
+          "label": "Address",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Address",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -249,12 +249,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "Title",
-        "Poster",
-        "Description"
-      ],
       "edit": [
         [
           {
@@ -278,18 +272,12 @@
         ],
         [
           {
-            "name": "Location",
+            "name": "HostingGroup",
             "size": 6
           },
           {
             "name": "Fee",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "Links",
-            "size": 12
           }
         ],
         [
@@ -306,20 +294,32 @@
         ],
         [
           {
-            "name": "HostingGroup",
-            "size": 6
-          },
-          {
-            "name": "Private",
-            "size": 4
+            "name": "Address",
+            "size": 12
           }
         ],
         [
+          {
+            "name": "Links",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Private",
+            "size": 4
+          },
           {
             "name": "Contact",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "Description"
       ]
     }
   },

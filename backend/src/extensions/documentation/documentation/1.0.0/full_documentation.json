@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-02-26T22:56:36.050Z"
+    "x-generation-date": "2024-03-02T00:05:16.599Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2412,9 +2412,6 @@
               "example": "string or id"
             }
           },
-          "Location": {
-            "type": "string"
-          },
           "Fee": {
             "type": "string"
           },
@@ -2446,6 +2443,12 @@
           },
           "Contact": {
             "type": "string"
+          },
+          "Address": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommonAddressComponent"
+            }
           },
           "locale": {
             "type": "string"
@@ -2496,9 +2499,6 @@
                   "example": "string or id"
                 }
               },
-              "Location": {
-                "type": "string"
-              },
               "Fee": {
                 "type": "string"
               },
@@ -2530,6 +2530,12 @@
               },
               "Contact": {
                 "type": "string"
+              },
+              "Address": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CommonAddressComponent"
+                }
               },
               "locale": {
                 "type": "string"
@@ -3429,9 +3435,6 @@
               }
             }
           },
-          "Location": {
-            "type": "string"
-          },
           "Fee": {
             "type": "string"
           },
@@ -3674,6 +3677,12 @@
           "Contact": {
             "type": "string"
           },
+          "Address": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommonAddressComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -3772,6 +3781,20 @@
             "type": "string",
             "format": "time",
             "example": "12:54.000"
+          }
+        }
+      },
+      "CommonAddressComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "Address": {
+            "type": "string"
+          },
+          "AddressDetail": {
+            "type": "string"
           }
         }
       },
@@ -8323,9 +8346,6 @@
                           }
                         }
                       },
-                      "Location": {
-                        "type": "string"
-                      },
                       "Fee": {
                         "type": "string"
                       },
@@ -8402,6 +8422,23 @@
                       },
                       "Contact": {
                         "type": "string"
+                      },
+                      "Address": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "Address": {
+                              "type": "string"
+                            },
+                            "AddressDetail": {
+                              "type": "string"
+                            }
+                          }
+                        }
                       },
                       "createdAt": {
                         "type": "string",
