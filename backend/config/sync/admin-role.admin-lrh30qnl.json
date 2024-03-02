@@ -221,6 +221,8 @@
         "fields": [
           "Title",
           "Poster",
+          "Description",
+          "Pictures",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -259,6 +261,8 @@
         "fields": [
           "Title",
           "Poster",
+          "Description",
+          "Pictures",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -286,6 +290,8 @@
         "fields": [
           "Title",
           "Poster",
+          "Description",
+          "Pictures",
           "Fee",
           "Links.Label",
           "Links.URL",

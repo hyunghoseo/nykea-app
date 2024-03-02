@@ -161,9 +161,9 @@
           "sortable": true
         }
       },
-      "Location": {
+      "Address": {
         "edit": {
-          "label": "Location",
+          "label": "Address",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -278,6 +278,16 @@
         ],
         [
           {
+            "name": "HostingGroup",
+            "size": 6
+          },
+          {
+            "name": "Fee",
+            "size": 6
+          }
+        ],
+        [
+          {
             "name": "StartDate",
             "size": 12
           }
@@ -296,11 +306,21 @@
         ],
         [
           {
+            "name": "Address",
+            "size": 12
+          }
+        ],
+        [
+          {
             "name": "Links",
             "size": 12
           }
         ],
         [
+          {
+            "name": "Private",
+            "size": 4
+          },
           {
             "name": "Contact",
             "size": 6
@@ -322,7 +342,8 @@
         "Title",
         "Poster",
         "HostingGroup",
-        "Private"
+        "Private",
+        "Description"
       ]
     }
   },
