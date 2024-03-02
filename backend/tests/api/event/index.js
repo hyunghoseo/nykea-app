@@ -20,7 +20,6 @@ describe("Event Test", () => {
                 "Poster": null,
                 "Picture": null,
                 "Description": "Event Description " + id,
-                "Location": "Event Location " + id,
                 "Fee": "Event Fee " + id, 
                 "Contact": "Event Contact " + id,
                 "Private": false,
@@ -61,12 +60,12 @@ describe("Event Test", () => {
             .expect(200)
             .expect((data) => {
                 data = data.body.data;
+                console.log(data.attributes);
                 expect(data.attributes.Title).toBe(event.data.Title);
                 // expected "null", but received "undefined"
                 // expect(data.attributes.Poster).toBe(event.data.Poster);
                 // expect(data.attributes.Picture).toBe(event.data.Picture);
                 expect(data.attributes.Description).toBe(event.data.Description);
-                expect(data.attributes.Location).toBe(event.data.Location);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -121,7 +120,6 @@ describe("Event Test", () => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
                 expect(data.attributes.Description).toBe(event.data.Description);
-                expect(data.attributes.Location).toBe(event.data.Location);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -142,7 +140,6 @@ describe("Event Test", () => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
                 expect(data.attributes.Description).toBe(event.data.Description);
-                expect(data.attributes.Location).toBe(event.data.Location);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -163,7 +160,6 @@ describe("Event Test", () => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
                 expect(data.attributes.Description).toBe(event.data.Description);
-                expect(data.attributes.Location).toBe(event.data.Location);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -209,7 +205,6 @@ describe("Event Test", () => {
                 console.log(data.attributes.Title);
                 expect(data.attributes.Title).toBe(event.data.Title);
                 expect(data.attributes.Description).toBe(event.data.Description);
-                expect(data.attributes.Location).toBe(event.data.Location);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
