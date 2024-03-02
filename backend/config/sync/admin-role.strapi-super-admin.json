@@ -271,7 +271,6 @@
           "Poster",
           "Description",
           "Pictures",
-          "Location",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -281,7 +280,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Address.Address",
+          "Address.AddressDetail"
         ],
         "locales": [
           "en",
@@ -324,7 +325,6 @@
           "Poster",
           "Description",
           "Pictures",
-          "Location",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -334,7 +334,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Address.Address",
+          "Address.AddressDetail"
         ],
         "locales": [
           "en",
@@ -353,7 +355,6 @@
           "Poster",
           "Description",
           "Pictures",
-          "Location",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -363,7 +364,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Address.Address",
+          "Address.AddressDetail"
         ],
         "locales": [
           "en",

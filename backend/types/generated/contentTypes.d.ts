@@ -974,12 +974,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    Location: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     Fee: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1018,6 +1012,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
       }> &
       Attribute.DefaultTo<false>;
     Contact: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Address: Attribute.Component<'common.address', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
