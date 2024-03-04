@@ -190,7 +190,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Location.Label"
         ]
       },
       "conditions": [
@@ -216,7 +217,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Location.Label"
         ]
       },
       "conditions": [
@@ -242,7 +244,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Location.Label"
         ]
       },
       "conditions": [

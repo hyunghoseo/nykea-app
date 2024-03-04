@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_components::common.address",
+  "key": "plugin_content_manager_configuration_components::common.address2",
   "value": {
-    "uid": "common.address",
+    "uid": "common.address2",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "Address",
-      "defaultSortBy": "id",
+      "mainField": "Label",
+      "defaultSortBy": "Label",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,16 +20,30 @@
           "sortable": false
         }
       },
-      "Address": {
+      "Label": {
         "edit": {
-          "label": "Address",
-          "description": "",
+          "label": "Label",
+          "description": "Location Name",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Address",
+          "label": "Label",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "AddressURL": {
+        "edit": {
+          "label": "AddressURL",
+          "description": "When the button is clicked, it will go to this URL.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "AddressURL",
           "searchable": true,
           "sortable": true
         }
@@ -37,7 +51,7 @@
       "AddressDetail": {
         "edit": {
           "label": "AddressDetail",
-          "description": "Apartment, suite, etc.",
+          "description": "Room name, floor, etc.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -52,18 +66,25 @@
     "layouts": {
       "list": [
         "id",
-        "Address",
-        "AddressDetail"
+        "AddressDetail",
+        "AddressURL",
+        "Label"
       ],
       "edit": [
         [
           {
-            "name": "Address",
-            "size": 6
+            "name": "Label",
+            "size": 4
           },
           {
-            "name": "AddressDetail",
+            "name": "AddressURL",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "AddressDetail",
+            "size": 4
           }
         ]
       ]

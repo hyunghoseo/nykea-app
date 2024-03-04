@@ -231,7 +231,8 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private"
+          "Private",
+          "Location.Label"
         ],
         "locales": [
           "en"
@@ -268,7 +269,8 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private"
+          "Private",
+          "Location.Label"
         ],
         "locales": [
           "en"
@@ -294,7 +296,8 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private"
+          "Private",
+          "Location.Label"
         ],
         "locales": [
           "en"

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-03-02T00:38:51.136Z"
+    "x-generation-date": "2024-03-04T23:11:11.440Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2376,7 +2376,9 @@
       "EventLocalizationRequest": {
         "required": [
           "Title",
+          "StartDate",
           "Private",
+          "Location",
           "locale"
         ],
         "type": "object",
@@ -2444,10 +2446,10 @@
           "Contact": {
             "type": "string"
           },
-          "Address": {
+          "Location": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CommonAddressComponent"
+              "$ref": "#/components/schemas/CommonAddress2Component"
             }
           },
           "locale": {
@@ -2464,7 +2466,9 @@
           "data": {
             "required": [
               "Title",
-              "Private"
+              "StartDate",
+              "Private",
+              "Location"
             ],
             "type": "object",
             "properties": {
@@ -2531,10 +2535,10 @@
               "Contact": {
                 "type": "string"
               },
-              "Address": {
+              "Location": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/CommonAddressComponent"
+                  "$ref": "#/components/schemas/CommonAddress2Component"
                 }
               },
               "locale": {
@@ -2662,7 +2666,9 @@
         "type": "object",
         "required": [
           "Title",
-          "Private"
+          "StartDate",
+          "Private",
+          "Location"
         ],
         "properties": {
           "Title": {
@@ -3677,10 +3683,10 @@
           "Contact": {
             "type": "string"
           },
-          "Address": {
+          "Location": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CommonAddressComponent"
+              "$ref": "#/components/schemas/CommonAddress2Component"
             }
           },
           "createdAt": {
@@ -3784,13 +3790,16 @@
           }
         }
       },
-      "CommonAddressComponent": {
+      "CommonAddress2Component": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
-          "Address": {
+          "Label": {
+            "type": "string"
+          },
+          "AddressURL": {
             "type": "string"
           },
           "AddressDetail": {
@@ -8423,7 +8432,7 @@
                       "Contact": {
                         "type": "string"
                       },
-                      "Address": {
+                      "Location": {
                         "type": "array",
                         "items": {
                           "type": "object",
@@ -8431,7 +8440,10 @@
                             "id": {
                               "type": "number"
                             },
-                            "Address": {
+                            "Label": {
+                              "type": "string"
+                            },
+                            "AddressURL": {
                               "type": "string"
                             },
                             "AddressDetail": {

@@ -89,7 +89,8 @@
           "localized": true
         }
       },
-      "component": "common.date-time"
+      "component": "common.date-time",
+      "required": true
     },
     "EndDate": {
       "type": "component",
@@ -124,7 +125,7 @@
       },
       "type": "string"
     },
-    "Address": {
+    "Location": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
@@ -132,7 +133,8 @@
           "localized": true
         }
       },
-      "component": "common.address"
+      "component": "common.address2",
+      "required": true
     }
   }
 }
