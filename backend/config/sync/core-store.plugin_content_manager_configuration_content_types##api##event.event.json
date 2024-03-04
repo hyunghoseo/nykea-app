@@ -161,9 +161,9 @@
           "sortable": true
         }
       },
-      "Address": {
+      "Location": {
         "edit": {
-          "label": "Address",
+          "label": "Location",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -171,20 +171,6 @@
         },
         "list": {
           "label": "Location",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "Description": {
-        "edit": {
-          "label": "Description",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Description",
           "searchable": false,
           "sortable": false
         }
@@ -301,12 +287,6 @@
         [
           {
             "name": "Location",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "Address",
             "size": 12
           }
         ],
