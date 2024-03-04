@@ -175,16 +175,16 @@
           "sortable": true
         }
       },
-      "Address": {
+      "Location": {
         "edit": {
-          "label": "Address",
+          "label": "Location",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Address",
+          "label": "Location",
           "searchable": false,
           "sortable": false
         }
@@ -294,7 +294,7 @@
         ],
         [
           {
-            "name": "Address",
+            "name": "Location",
             "size": 12
           }
         ],

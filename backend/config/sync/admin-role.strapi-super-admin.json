@@ -281,8 +281,9 @@
           "HostingGroup",
           "Private",
           "Contact",
-          "Address.Address",
-          "Address.AddressDetail"
+          "Location.Label",
+          "Location.AddressURL",
+          "Location.AddressDetail"
         ],
         "locales": [
           "en",
@@ -335,8 +336,9 @@
           "HostingGroup",
           "Private",
           "Contact",
-          "Address.Address",
-          "Address.AddressDetail"
+          "Location.Label",
+          "Location.AddressURL",
+          "Location.AddressDetail"
         ],
         "locales": [
           "en",
@@ -365,8 +367,9 @@
           "HostingGroup",
           "Private",
           "Contact",
-          "Address.Address",
-          "Address.AddressDetail"
+          "Location.Label",
+          "Location.AddressURL",
+          "Location.AddressDetail"
         ],
         "locales": [
           "en",

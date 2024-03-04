@@ -1,16 +1,18 @@
 {
-  "collectionName": "components_common_addresses",
+  "collectionName": "components_common_address2s",
   "info": {
     "displayName": "Address",
-    "icon": "book",
+    "icon": "pinMap",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Address": {
+    "Label": {
       "type": "string",
-      "required": true,
-      "minLength": 5
+      "required": true
+    },
+    "AddressURL": {
+      "type": "string"
     },
     "AddressDetail": {
       "type": "string"
