@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
     borderColor: "#EAEAEA",
     borderWidth: 1,
     borderRadius: 4,
-    // padding: 8,
   },
   dropdownMenu: {
     borderRadius: 4,
@@ -117,7 +116,6 @@ const styles = StyleSheet.create({
     elevation: 4, // for Android
   },
   dropdownItem: {
-    // padding: 8,
   },
   item: {
     flexDirection: "row",

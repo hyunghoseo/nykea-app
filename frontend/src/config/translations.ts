@@ -12,7 +12,7 @@ type Translations = {
 
 export const translations: Translations = {
   en: {
-    home: "NY KEA Family Church",
+    home: "NY Korean Family Church",
     "nav.About": "About Us",
     "nav.Groups": "Groups",
     "nav.Services": "Sunday Services",
@@ -30,7 +30,7 @@ export const translations: Translations = {
     "nav.ContactUs": "문의하기",
   },
   ja: {
-    home: "NY KEA Family Church",
+    home: "NY Korean Family Church",
     "nav.About": "About Us",
     "nav.Groups": "Groups",
     "nav.Services": "Sunday Services",

@@ -34,7 +34,7 @@ import EventsScreen from "@/screens/EventsScreen";
 import GroupsScreen from "@/screens/GroupsScreen";
 import HomeScreen from "@/screens/HomeScreen";
 import ServicesScreen from "@/screens/ServicesScreen";
-import AnnouncementsScreen from "./screens/AnnouncementsScreen";
+import AnnouncementsScreen from "@/screens/AnnouncementsScreen";
 
 
 // These should eventually look like:
