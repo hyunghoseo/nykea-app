@@ -17,8 +17,19 @@ describe("Event Test", () => {
         return {
             data: {
                 "Title": "Event Title " + id,
-                "Poster": null,
-                "Picture": null,
+                "StartDate": {
+                    "id": id,
+                    "Date": "2024-03-04",
+                    "Time": "12:13:54.000"
+                  },
+                "Location": [
+                {
+                    "id": id,
+                    "Label": "MARCH TEST",
+                    "AddressURL": "www.blahblah",
+                    "AddressDetail": "3rd Floor"
+                }
+                ],
                 "Description": "Event Description " + id,
                 "Fee": "Event Fee " + id, 
                 "Contact": "Event Contact " + id,
@@ -60,7 +71,6 @@ describe("Event Test", () => {
             .expect(200)
             .expect((data) => {
                 data = data.body.data;
-                console.log(data.attributes);
                 expect(data.attributes.Title).toBe(event.data.Title);
                 // expected "null", but received "undefined"
                 // expect(data.attributes.Poster).toBe(event.data.Poster);
@@ -192,7 +202,7 @@ describe("Event Test", () => {
 
     it("[Update] Admin user should update Events", async () => {
         const id = 1;
-        const event = constructEvent(13);
+        const event = constructEvent(1);
         await request(strapi.server.httpServer)
             .put("/api/events/" + id)
             .set("accept", "application/json")
