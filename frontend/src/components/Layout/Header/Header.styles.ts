@@ -61,8 +61,8 @@ export const useStyles = () => {
       paddingHorizontal: 16,
     },
     logoDesktop: {
-      height: 45,
-      width: 253,
+      height: 36,
+      width: 322,
     },
     navLinksContainer: {
       flexDirection: "row",
