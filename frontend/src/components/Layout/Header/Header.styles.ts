@@ -74,7 +74,7 @@ export const useStyles = () => {
     navText: {
       fontFamily:
         locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
-      color: theme.colors.primary[10],
+      color: theme.colors.black,
       fontSize: 14,
       lineHeight: 24,
       letterSpacing: 0.5,

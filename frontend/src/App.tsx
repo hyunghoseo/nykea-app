@@ -25,7 +25,6 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { RootStackParamList } from "@/config/navigation";
-import { theme } from "@/config/theme";
 import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
@@ -36,6 +35,7 @@ import GroupsScreen from "@/screens/GroupsScreen";
 import HomeScreen from "@/screens/HomeScreen";
 import ServicesScreen from "@/screens/ServicesScreen";
 import AnnouncementsScreen from "./screens/AnnouncementsScreen";
+
 
 // These should eventually look like:
 // import { EventsScreen, EventsDetailScreen } from @/screens/Events;
