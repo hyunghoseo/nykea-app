@@ -29,13 +29,12 @@ import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
 import AboutScreen from "@/screens/AboutScreen";
+import AnnouncementsScreen from "@/screens/AnnouncementsScreen";
 import ContactUsScreen from "@/screens/ContactUsScreen";
 import EventsScreen from "@/screens/EventsScreen";
 import GroupsScreen from "@/screens/GroupsScreen";
 import HomeScreen from "@/screens/HomeScreen";
 import ServicesScreen from "@/screens/ServicesScreen";
-import AnnouncementsScreen from "@/screens/AnnouncementsScreen";
-
 
 // These should eventually look like:
 // import { EventsScreen, EventsDetailScreen } from @/screens/Events;

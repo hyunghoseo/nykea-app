@@ -115,8 +115,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 4, // for Android
   },
-  dropdownItem: {
-  },
+  dropdownItem: {},
   item: {
     flexDirection: "row",
     alignItems: "center",
