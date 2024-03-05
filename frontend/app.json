@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "NY Korean Family Church",
+    "slug": "nykea-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -24,7 +22,9 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "plugins": ["expo-font", "expo-localization"]
   }
 }

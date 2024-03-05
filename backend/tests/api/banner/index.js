@@ -20,7 +20,7 @@ describe("Banner Test", () => {
                 "Description": "Banner Description " + id,
                 "Link": {
                     "id": 1,
-                    "Label": "NY KEA",
+                    "Label": "NY Korean Family Church",
                     "URL": "www.nykea.org"
                 },
                 "StartDate": "2024-01-26",

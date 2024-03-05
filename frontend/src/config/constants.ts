@@ -1,0 +1,3 @@
+export const MOBILE_HEADER_HEIGHT = 84;
+export const DESKTOP_HEADER_HEIGHT = 96;
+export const MOBILE_BREAKPOINT = 1280;
