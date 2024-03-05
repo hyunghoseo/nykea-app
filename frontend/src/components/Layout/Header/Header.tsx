@@ -88,28 +88,28 @@ export const Header: React.FC<HeaderProps> = ({
       </TouchableOpacity>
     </View>
   ) : (
-      // Desktop header
-      <View style={[styles.header, styles.desktopHeader]} testID="desktop-header">
-        <View style={styles.desktopHeaderLeftSection}>
-          <TouchableOpacity
-            onPress={() => navigationRef.navigate("Home")}
-            style={styles.logoDesktopContainer}
-            activeOpacity={0.6}
-          >
-            <Image
-              source={require("@/assets/logo-large.png")}
-              style={styles.logoDesktop}
-            />
-          </TouchableOpacity>
-          <View style={styles.navLinksContainer}>
-            {navRoutes.map((route) => (
-              <NavItem key={route} route={route} />
-            ))}
-          </View>
-        </View>
-        <View style={styles.desktopHeaderRightSection}>
-          <LanguageSelectDropdown />
+    // Desktop header
+    <View style={[styles.header, styles.desktopHeader]} testID="desktop-header">
+      <View style={styles.desktopHeaderLeftSection}>
+        <TouchableOpacity
+          onPress={() => navigationRef.navigate("Home")}
+          style={styles.logoDesktopContainer}
+          activeOpacity={0.6}
+        >
+          <Image
+            source={require("@/assets/logo-large.png")}
+            style={styles.logoDesktop}
+          />
+        </TouchableOpacity>
+        <View style={styles.navLinksContainer}>
+          {navRoutes.map((route) => (
+            <NavItem key={route} route={route} />
+          ))}
         </View>
       </View>
-    );
+      <View style={styles.desktopHeaderRightSection}>
+        <LanguageSelectDropdown />
+      </View>
+    </View>
+  );
 };
