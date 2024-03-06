@@ -43,6 +43,8 @@ export const NavItem: React.FC<NavItemProps> = ({ route }) => {
 
 interface HeaderProps {
   variant: "mobile" | "desktop";
+  mobileLeftText?: string;
+  mobileRightText?: string;
   mobileLeftIcon?: React.ReactNode;
   mobileRightIcon?: React.ReactNode;
   onClickMobileLeftIcon?: () => void;
@@ -51,6 +53,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   variant,
+  mobileLeftText,
+  mobileRightText,
   mobileLeftIcon,
   mobileRightIcon,
   onClickMobileLeftIcon,
@@ -68,6 +72,7 @@ export const Header: React.FC<HeaderProps> = ({
         disabled={!mobileLeftIcon || !onClickMobileLeftIcon}
       >
         {mobileLeftIcon}
+        <Text style={styles.iconText}>{mobileLeftText}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigationRef.navigate("Home")}
@@ -85,6 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
         disabled={!mobileRightIcon || !onClickMobileRightIcon}
       >
         {mobileRightIcon}
+        <Text style={styles.iconText}>{mobileRightText}</Text>
       </TouchableOpacity>
     </View>
   ) : (

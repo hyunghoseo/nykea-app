@@ -96,5 +96,14 @@ export const useStyles = () => {
       justifyContent: "center",
       color: theme.colors.primary[0],
     },
+    iconText: {
+      fontFamily:
+        locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
+      color: theme.colors.primary[0],
+      fontSize: 12,
+      lineHeight: 8,
+      letterSpacing: 0.5,
+      marginTop: 10,
+    },
   });
 };
