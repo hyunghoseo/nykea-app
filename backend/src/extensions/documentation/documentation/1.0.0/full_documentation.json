@@ -38,6 +38,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "x-generation-date": "2024-03-07T17:57:04.073Z"
 =======
     "x-generation-date": "2024-02-10T19:18:45.644Z"
@@ -105,7 +106,13 @@
 =======
     "x-generation-date": "2024-03-07T20:18:28.904Z"
 >>>>>>> e90dc1f (made memo null in constructsupportticket)
+<<<<<<< HEAD
 >>>>>>> 238cb7d (made memo null in constructsupportticket)
+=======
+=======
+    "x-generation-date": "2024-03-07T20:38:32.113Z"
+>>>>>>> b32574d (resolved merge conflicts)
+>>>>>>> 60de178 (resolved merge conflicts)
   },
   "x-strapi-config": {
     "plugins": [
