@@ -14,127 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-<<<<<<< HEAD
-    "x-generation-date": "2024-03-16T13:56:12.385Z"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "x-generation-date": "2024-03-07T17:57:04.073Z"
-=======
-    "x-generation-date": "2024-02-10T19:18:45.644Z"
->>>>>>> c8f2b81 (KEA-147 cleaned up tests)
-=======
-    "x-generation-date": "2024-02-06T23:10:23.250Z"
->>>>>>> 47f7587 (checked content architecture and designed content view)
-=======
-    "x-generation-date": "2024-02-06T23:57:53.865Z"
->>>>>>> 28832a0 (created test index.js for support)
-=======
-    "x-generation-date": "2024-02-07T04:23:15.175Z"
->>>>>>> 14c97d2 (KEA-147 turned off localization (testing impact on Strapi response content type))
-=======
-    "x-generation-date": "2024-02-10T04:29:43.105Z"
->>>>>>> 8baaf5e (KEA-147 drafted all tests)
-=======
-    "x-generation-date": "2024-02-10T19:18:45.644Z"
->>>>>>> 029906c (KEA-147 cleaned up tests)
-=======
-    "x-generation-date": "2024-02-10T19:26:24.926Z"
->>>>>>> e28e938 (KEA-149 uncommented other tests)
-=======
-    "x-generation-date": "2024-03-07T19:49:27.274Z"
->>>>>>> aa33de5 (edited strapi fields)
-=======
-    "x-generation-date": "2024-03-07T20:04:44.120Z"
->>>>>>> a5c78c8 (removed minimum length)
-=======
-    "x-generation-date": "2024-03-07T20:17:22.121Z"
->>>>>>> 2323513 (made datecompleted null in constructsupporticket)
-=======
-    "x-generation-date": "2024-03-07T20:18:28.904Z"
->>>>>>> a510004 (made memo null in constructsupportticket)
-=======
-    "x-generation-date": "2024-03-07T20:38:32.113Z"
->>>>>>> 76f2b52 (resolved merge conflicts)
-=======
-    "x-generation-date": "2024-02-06T23:10:23.250Z"
->>>>>>> 1ddc263 (checked content architecture and designed content view)
-=======
-    "x-generation-date": "2024-02-06T23:57:53.865Z"
->>>>>>> 8baaac7 (created test index.js for support)
-=======
-    "x-generation-date": "2024-02-07T04:23:15.175Z"
->>>>>>> 754cf20 (KEA-147 turned off localization (testing impact on Strapi response content type))
-=======
-    "x-generation-date": "2024-02-10T04:29:43.105Z"
->>>>>>> 6eaf0e9 (KEA-147 drafted all tests)
-=======
-    "x-generation-date": "2024-02-10T19:18:45.644Z"
->>>>>>> 7872248 (KEA-147 cleaned up tests)
-=======
-    "x-generation-date": "2024-02-10T19:26:24.926Z"
->>>>>>> 0334efe (KEA-149 uncommented other tests)
-=======
-    "x-generation-date": "2024-03-07T20:04:44.120Z"
->>>>>>> 114774e (removed minimum length)
-=======
-    "x-generation-date": "2024-03-07T20:17:22.121Z"
->>>>>>> fd3f0a4 (made datecompleted null in constructsupporticket)
-=======
-    "x-generation-date": "2024-03-07T20:18:28.904Z"
->>>>>>> e90dc1f (made memo null in constructsupportticket)
-=======
-    "x-generation-date": "2024-03-07T20:38:32.113Z"
->>>>>>> b32574d (resolved merge conflicts)
-=======
-    "x-generation-date": "2024-02-06T23:10:23.250Z"
->>>>>>> 021f411 (checked content architecture and designed content view)
-=======
-    "x-generation-date": "2024-02-06T23:57:53.865Z"
->>>>>>> afbec58 (created test index.js for support)
-=======
-    "x-generation-date": "2024-02-07T04:23:15.175Z"
->>>>>>> 287759c (KEA-147 turned off localization (testing impact on Strapi response content type))
-=======
-    "x-generation-date": "2024-02-10T04:29:43.105Z"
->>>>>>> 989b687 (KEA-147 drafted all tests)
-=======
-    "x-generation-date": "2024-02-10T19:18:45.644Z"
->>>>>>> fc33d26 (KEA-147 cleaned up tests)
-=======
-    "x-generation-date": "2024-02-10T19:26:24.926Z"
->>>>>>> f0f05d7 (KEA-149 uncommented other tests)
-=======
-    "x-generation-date": "2024-03-07T19:49:27.274Z"
->>>>>>> ccc4cbf (edited strapi fields)
->>>>>>> 9ccaf73 (edited strapi fields)
+    "x-generation-date": "2024-03-16T13:56:23.761Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -145,18 +25,8 @@
   },
   "servers": [
     {
-<<<<<<< HEAD
       "url": "https://admin.nykea.org/api",
       "description": "Production server"
-=======
-<<<<<<< HEAD
-      "url": "http://localhost:1338/api",
-      "description": "Development server"
-=======
-      "url": "https://admin.nykea.org/api",
-      "description": "Production server"
->>>>>>> ccc4cbf (edited strapi fields)
->>>>>>> 9ccaf73 (edited strapi fields)
     }
   ],
   "externalDocs": {
