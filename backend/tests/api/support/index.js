@@ -43,7 +43,6 @@ describe("Support Test", () => {
 >>>>>>> 287759c (KEA-147 turned off localization (testing impact on Strapi response content type))
                 "Memo": "Test Memo" + id,
                 "DateCompleted": Date.now(),
->>>>>>> afbec58 (created test index.js for support)
                 "locale": "en"
             }
         };
