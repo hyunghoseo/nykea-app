@@ -1318,9 +1318,6 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
       }>;
     Email: Attribute.String &
       Attribute.Required &
@@ -1342,9 +1339,6 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
       }>;
     Message: Attribute.Text &
       Attribute.Required &
@@ -1352,9 +1346,6 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
       }>;
     DateSubmitted: Attribute.DateTime &
       Attribute.Required &
