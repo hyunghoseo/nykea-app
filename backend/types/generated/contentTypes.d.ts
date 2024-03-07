@@ -895,7 +895,7 @@ export interface ApiChurchInfoChurchInfo extends Schema.SingleType {
     PrivatePolicy: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     FamilyWebsites: Attribute.Component<'common.link', true> &
