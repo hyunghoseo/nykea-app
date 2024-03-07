@@ -210,55 +210,55 @@
         [
           {
             "name": "FullName",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "Email",
-            "size": 12
+            "size": 8
           }
         ],
         [
           {
             "name": "Phone",
-            "size": 12
+            "size": 8
+          }
+        ],
+        [
+          {
+            "name": "Email",
+            "size": 8
           }
         ],
         [
           {
             "name": "Title",
-            "size": 12
+            "size": 8
           }
         ],
         [
           {
             "name": "Message",
-            "size": 12
+            "size": 8
           }
         ],
         [
           {
             "name": "DateSubmitted",
-            "size": 12
+            "size": 4
           }
         ],
         [
           {
             "name": "DateCompleted",
-            "size": 12
+            "size": 4
           }
         ],
         [
           {
             "name": "Status",
-            "size": 12
+            "size": 4
           }
         ],
         [
           {
             "name": "Memo",
-            "size": 12
+            "size": 8
           }
         ]
       ],
