@@ -24,7 +24,7 @@ describe("Support Test", () => {
                 "Message": "Test Message" + id,
                 "DateSubmitted": Date.now(),
                 "Status": "Submitted", // "Under Review" or "Completed"
-                "Memo": "Test Memo" + id,
+                "Memo": null,
                 "DateCompleted": null,
                 "locale": "en"
             }
