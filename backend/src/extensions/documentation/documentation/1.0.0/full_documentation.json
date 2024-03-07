@@ -37,6 +37,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "x-generation-date": "2024-03-07T17:57:04.073Z"
 =======
     "x-generation-date": "2024-02-10T19:18:45.644Z"
@@ -98,7 +99,13 @@
 =======
     "x-generation-date": "2024-03-07T20:17:22.121Z"
 >>>>>>> fd3f0a4 (made datecompleted null in constructsupporticket)
+<<<<<<< HEAD
 >>>>>>> 8f74309 (made datecompleted null in constructsupporticket)
+=======
+=======
+    "x-generation-date": "2024-03-07T20:18:28.904Z"
+>>>>>>> e90dc1f (made memo null in constructsupportticket)
+>>>>>>> 238cb7d (made memo null in constructsupportticket)
   },
   "x-strapi-config": {
     "plugins": [
