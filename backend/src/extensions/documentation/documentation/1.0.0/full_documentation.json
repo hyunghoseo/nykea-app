@@ -14,43 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-<<<<<<< HEAD
-    "x-generation-date": "2024-03-16T13:53:00.414Z"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "x-generation-date": "2024-03-07T17:57:04.073Z"
-=======
-    "x-generation-date": "2024-02-10T19:18:45.644Z"
->>>>>>> c8f2b81 (KEA-147 cleaned up tests)
-=======
-    "x-generation-date": "2024-02-06T23:10:23.250Z"
->>>>>>> 47f7587 (checked content architecture and designed content view)
-=======
-    "x-generation-date": "2024-02-06T23:57:53.865Z"
->>>>>>> 28832a0 (created test index.js for support)
-=======
-    "x-generation-date": "2024-02-07T04:23:15.175Z"
->>>>>>> 14c97d2 (KEA-147 turned off localization (testing impact on Strapi response content type))
-=======
-    "x-generation-date": "2024-02-10T04:29:43.105Z"
->>>>>>> 8baaf5e (KEA-147 drafted all tests)
-=======
-    "x-generation-date": "2024-02-10T19:18:45.644Z"
->>>>>>> 029906c (KEA-147 cleaned up tests)
-=======
-    "x-generation-date": "2024-02-10T19:26:24.926Z"
->>>>>>> e28e938 (KEA-149 uncommented other tests)
-=======
-    "x-generation-date": "2024-03-07T19:49:27.274Z"
->>>>>>> aa33de5 (edited strapi fields)
->>>>>>> ec4d815 (edited strapi fields)
+    "x-generation-date": "2024-03-16T13:53:16.798Z"
   },
   "x-strapi-config": {
     "plugins": [
