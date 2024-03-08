@@ -60,7 +60,7 @@ yarn install
 Start the Expo development server:
 
 ```bash
-yarn start
+expo start
 ```
 
 You can now run the app on iOS, Android, or web from the Expo developer tools that open in the browser.

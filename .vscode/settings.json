@@ -1,6 +1,0 @@
-{
-  "eslint.workingDirectories": [
-    { "directory": "./frontend", "changeProcessPwd": true },
-    { "directory": "./backend", "changeProcessPwd": true }
-  ]
-}
