@@ -1318,7 +1318,8 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'Calvin'>;
     Email: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{

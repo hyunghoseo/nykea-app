@@ -8,8 +8,8 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "Title",
-      "defaultSortBy": "FullName",
-      "defaultSortOrder": "ASC"
+      "defaultSortBy": "createdAt",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -209,47 +209,9 @@
       "edit": [
         [
           {
-            "name": "FullName",
-            "size": 8
-          }
-        ],
-        [
-          {
-            "name": "Phone",
-            "size": 8
-          }
-        ],
-        [
-          {
-            "name": "Email",
-            "size": 8
-          }
-        ],
-        [
-          {
             "name": "Title",
             "size": 8
-          }
-        ],
-        [
-          {
-            "name": "Message",
-            "size": 8
-          }
-        ],
-        [
-          {
-            "name": "DateSubmitted",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "DateCompleted",
-            "size": 4
-          }
-        ],
-        [
+          },
           {
             "name": "Status",
             "size": 4
@@ -257,16 +219,47 @@
         ],
         [
           {
+            "name": "FullName",
+            "size": 4
+          },
+          {
+            "name": "Phone",
+            "size": 4
+          },
+          {
+            "name": "Email",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Message",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "DateSubmitted",
+            "size": 6
+          },
+          {
+            "name": "DateCompleted",
+            "size": 6
+          }
+        ],
+        [
+          {
             "name": "Memo",
-            "size": 8
+            "size": 12
           }
         ]
       ],
       "list": [
         "id",
-        "FullName",
-        "Email",
-        "Phone"
+        "DateSubmitted",
+        "Status",
+        "Title",
+        "FullName"
       ]
     }
   },
