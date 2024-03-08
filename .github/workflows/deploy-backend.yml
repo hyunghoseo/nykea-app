@@ -52,6 +52,7 @@ jobs:
           source: "strapi-build.tar.gz"
           target: "/tmp"
 
+<<<<<<< HEAD
       - name: SSH and Git Pull on Server
         uses: appleboy/ssh-action@master
         with:
@@ -63,6 +64,8 @@ jobs:
             cd /var/www/nykea-app
             git pull origin main
             
+=======
+>>>>>>> da40994 (KEA-147 cleaned formatting)
       - name: Execute deployment script
         uses: appleboy/ssh-action@master
         with:
