@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 20,
+    alignItems: "center",
   },
 });
 
