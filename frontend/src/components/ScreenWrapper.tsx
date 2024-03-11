@@ -1,8 +1,12 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 
+import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
+
 const ScreenWrapper: React.FC<React.PropsWithChildren<object>> = ({
   children,
 }) => {
+  const styles = useStyles();
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>{children}</View>
@@ -10,14 +14,18 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<object>> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  content: {
-    padding: 20,
-    alignItems: "center",
-  },
-});
+const useStyles = () => {
+  const { isMobile } = useResponsiveLayout();
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    content: {
+      paddingVertical: 32,
+      paddingHorizontal: isMobile ? 32 : 56,
+      alignItems: "center",
+    },
+  });
+};
 
 export default ScreenWrapper;
