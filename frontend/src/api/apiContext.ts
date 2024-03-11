@@ -45,10 +45,13 @@ export function useApiContext<
   >,
 ): ApiContext {
   const { locale } = useLocale();
+  const customQueryKeyFn = (operation: QueryOperation) => {
+    return [...queryKeyFn(operation), locale]; // Append locale to the base query key
+  };
   return {
-    fetcherOptions: { queryParams: { locale: locale } },
+    fetcherOptions: { queryParams: { locale: locale, populate: "*" } },
     queryOptions: {},
-    queryKeyFn,
+    queryKeyFn: customQueryKeyFn,
   };
 }
 
