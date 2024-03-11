@@ -17,7 +17,6 @@ describe("Announcement Test", () => {
                 "Name": "Test Announcement " + id,
                 "Poster": null,
                 "Description": "Announcement Description " + id,
-                // "HostingGroup": "Announcement HostingGroup" + id,
                 "Private": false,
                 "locale": "en",
                 "publishedAt": Date.now(),
@@ -57,8 +56,6 @@ describe("Announcement Test", () => {
             .expect((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
-                // expected "null", but received "undefined"
-                // expect(data.attributes.Poster).toBe(announcement.data.Poster);
                 expect(data.attributes.Description).toBe(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
@@ -104,7 +101,7 @@ describe("Announcement Test", () => {
         const id = 1;
         const announcement = constructAnnouncement(id);
         await request(strapi.server.httpServer)
-            .get("/api/announcements/" + 1)
+            .get("/api/announcements/" + id)
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
@@ -121,7 +118,7 @@ describe("Announcement Test", () => {
         const id = 1;
         const announcement = constructAnnouncement(id);
         await request(strapi.server.httpServer)
-            .get("/api/announcements/" + 1)
+            .get("/api/announcements/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
@@ -139,7 +136,7 @@ describe("Announcement Test", () => {
         const id = 1;
         const announcement = constructAnnouncement(id);
         await request(strapi.server.httpServer)
-            .get("/api/announcements/" + 1)
+            .get("/api/announcements/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
