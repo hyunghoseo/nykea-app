@@ -4,7 +4,11 @@ import { Locale } from "@/contexts/LocaleProvider";
 type NavRoute = (typeof navRoutes)[number];
 type PrefixedNavRoute = `nav.${NavRoute}`;
 
-export type TranslationEntryKey = PrefixedNavRoute | "home";
+export type TranslationEntryKey =
+  | PrefixedNavRoute
+  | "home"
+  | "icon.Menu"
+  | "icon.Close";
 
 type Translations = {
   [key in Locale]: { [key in TranslationEntryKey]: string };
