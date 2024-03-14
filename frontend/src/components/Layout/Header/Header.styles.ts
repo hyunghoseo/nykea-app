@@ -21,9 +21,11 @@ export const useStyles = () => {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
+      // only affect Web and iOS
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.05,
       shadowRadius: 1.51,
+      // only affect Android
       elevation: 2,
     },
     mobileHeader: {
@@ -103,7 +105,7 @@ export const useStyles = () => {
       fontSize: 12,
       lineHeight: 8,
       letterSpacing: 0.5,
-      marginTop: 10,
+      paddingTop: 10,
     },
   });
 };
