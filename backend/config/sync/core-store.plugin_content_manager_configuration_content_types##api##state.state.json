@@ -20,20 +20,6 @@
           "sortable": true
         }
       },
-      "State": {
-        "edit": {
-          "label": "State",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "State",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "Abbreviation": {
         "edit": {
           "label": "Abbreviation",
@@ -44,6 +30,20 @@
         },
         "list": {
           "label": "Abbreviation",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "State": {
+        "edit": {
+          "label": "State",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "State",
           "searchable": true,
           "sortable": true
         }

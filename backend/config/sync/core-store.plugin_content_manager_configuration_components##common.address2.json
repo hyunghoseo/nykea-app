@@ -16,8 +16,8 @@
         "edit": {},
         "list": {
           "label": "id",
-          "searchable": false,
-          "sortable": false
+          "searchable": true,
+          "sortable": true
         }
       },
       "Label": {
@@ -37,7 +37,7 @@
       "AddressURL": {
         "edit": {
           "label": "AddressURL",
-          "description": "When the button is clicked, it will go to this URL",
+          "description": "When the  is clicked, it will go to this URL.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -141,27 +141,25 @@
         [
           {
             "name": "Address",
-            "size": 6
+            "size": 8
           },
           {
             "name": "AddressDetail",
-            "size": 6
+            "size": 4
           }
         ],
         [
           {
             "name": "City",
-            "size": 6
+            "size": 4
           },
           {
             "name": "state",
-            "size": 6
-          }
-        ],
-        [
+            "size": 4
+          },
           {
             "name": "Country",
-            "size": 6
+            "size": 4
           }
         ]
       ]

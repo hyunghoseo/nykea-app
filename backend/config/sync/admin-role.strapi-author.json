@@ -190,9 +190,9 @@
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
-          "Location.Address",
-          "Description"
+          "Location.Address"
         ]
       },
       "conditions": [
@@ -218,9 +218,9 @@
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
-          "Location.Address",
-          "Description"
+          "Location.Address"
         ]
       },
       "conditions": [
@@ -246,9 +246,9 @@
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
-          "Location.Address",
-          "Description"
+          "Location.Address"
         ]
       },
       "conditions": [
