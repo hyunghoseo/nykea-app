@@ -190,8 +190,8 @@
           "HostingGroup",
           "Private",
           "Contact",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ]
       },
@@ -218,8 +218,8 @@
           "HostingGroup",
           "Private",
           "Contact",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ]
       },
@@ -246,8 +246,8 @@
           "HostingGroup",
           "Private",
           "Contact",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ]
       },
