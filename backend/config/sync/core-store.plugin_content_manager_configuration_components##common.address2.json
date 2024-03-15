@@ -23,7 +23,7 @@
       "Label": {
         "edit": {
           "label": "Label",
-          "description": "Location Name",
+          "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -37,13 +37,27 @@
       "AddressURL": {
         "edit": {
           "label": "AddressURL",
-          "description": "When the button is clicked, it will go to this URL.",
+          "description": "When the button is clicked, it will go to this URL",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
           "label": "AddressURL",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Address": {
+        "edit": {
+          "label": "Address",
+          "description": "Street Address",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Address",
           "searchable": true,
           "sortable": true
         }
@@ -61,20 +75,63 @@
           "searchable": true,
           "sortable": true
         }
+      },
+      "City": {
+        "edit": {
+          "label": "City",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "City",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Country": {
+        "edit": {
+          "label": "Country",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Country",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "state": {
+        "edit": {
+          "label": "state",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "Abbreviation"
+        },
+        "list": {
+          "label": "state",
+          "searchable": true,
+          "sortable": true
+        }
       }
     },
     "layouts": {
       "list": [
         "id",
-        "AddressDetail",
+        "Label",
         "AddressURL",
-        "Label"
+        "Address"
       ],
       "edit": [
         [
           {
             "name": "Label",
-            "size": 4
+            "size": 6
           },
           {
             "name": "AddressURL",
@@ -83,8 +140,28 @@
         ],
         [
           {
+            "name": "Address",
+            "size": 6
+          },
+          {
             "name": "AddressDetail",
-            "size": 4
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "City",
+            "size": 6
+          },
+          {
+            "name": "state",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Country",
+            "size": 6
           }
         ]
       ]

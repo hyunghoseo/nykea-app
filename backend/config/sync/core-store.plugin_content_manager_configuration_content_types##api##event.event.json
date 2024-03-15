@@ -48,20 +48,6 @@
           "sortable": false
         }
       },
-      "Description": {
-        "edit": {
-          "label": "Description",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Description",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "Pictures": {
         "edit": {
           "label": "Pictures",
@@ -189,6 +175,20 @@
           "sortable": false
         }
       },
+      "Description": {
+        "edit": {
+          "label": "Description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Description",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -262,22 +262,18 @@
         ],
         [
           {
-            "name": "Description",
-            "size": 6
-          },
-          {
-            "name": "Pictures",
-            "size": 6
-          }
-        ],
-        [
-          {
             "name": "HostingGroup",
             "size": 6
           },
           {
             "name": "Fee",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Description",
+            "size": 12
           }
         ],
         [
@@ -313,13 +309,18 @@
             "name": "Contact",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "Pictures",
+            "size": 8
+          }
         ]
       ],
       "list": [
         "id",
         "Title",
-        "Poster",
-        "Description"
+        "Poster"
       ]
     }
   },
