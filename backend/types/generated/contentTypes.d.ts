@@ -975,7 +975,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    Fee: Attribute.Text &
+    Fee: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1021,6 +1021,13 @@ export interface ApiEventEvent extends Schema.CollectionType {
         };
       }>;
     Location: Attribute.Component<'common.address2', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.Blocks &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1318,7 +1325,6 @@ export interface ApiStateState extends Schema.CollectionType {
   attributes: {
     Abbreviation: Attribute.String &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

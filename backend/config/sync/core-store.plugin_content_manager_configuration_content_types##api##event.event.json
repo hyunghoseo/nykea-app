@@ -175,6 +175,20 @@
           "sortable": false
         }
       },
+      "Description": {
+        "edit": {
+          "label": "Description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Description",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -274,6 +288,12 @@
         ],
         [
           {
+            "name": "Description",
+            "size": 12
+          }
+        ],
+        [
+          {
             "name": "StartDate",
             "size": 12
           }
@@ -314,6 +334,12 @@
           {
             "name": "Description",
             "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Pictures",
+            "size": 8
           }
         ]
       ],

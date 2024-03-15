@@ -53,7 +53,15 @@ export interface CommonAddress2 extends Schema.Component {
   attributes: {
     Label: Attribute.String & Attribute.Required;
     AddressURL: Attribute.String;
+    Address: Attribute.String & Attribute.Required;
     AddressDetail: Attribute.String;
+    City: Attribute.String;
+    Country: Attribute.String & Attribute.DefaultTo<'USA'>;
+    state: Attribute.Relation<
+      'common.address2',
+      'oneToOne',
+      'api::state.state'
+    >;
   };
 }
 

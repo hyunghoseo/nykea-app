@@ -272,7 +272,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "Pictures",
           "Fee",
           "Links.Label",
@@ -334,7 +333,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "Pictures",
           "Fee",
           "Links.Label",
@@ -372,7 +370,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "Pictures",
           "Fee",
           "Links.Label",
