@@ -171,8 +171,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ]
       },
@@ -196,8 +196,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ]
       },
@@ -221,8 +221,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ]
       },

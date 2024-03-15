@@ -231,8 +231,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ],
         "locales": [
@@ -270,8 +270,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ],
         "locales": [
@@ -298,8 +298,8 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label",
           "Description",
+          "Location.Label",
           "Location.Address"
         ],
         "locales": [
