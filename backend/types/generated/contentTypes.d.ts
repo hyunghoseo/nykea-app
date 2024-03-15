@@ -1318,6 +1318,7 @@ export interface ApiStateState extends Schema.CollectionType {
   attributes: {
     Abbreviation: Attribute.String &
       Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
