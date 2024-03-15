@@ -21,9 +21,11 @@ export const useStyles = () => {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      shadowOffset: { width: 0, height: 1 },
-      shadowOpacity: 0.16,
+      // only affect Web and iOS
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.05,
       shadowRadius: 1.51,
+      // only affect Android
       elevation: 2,
     },
     mobileHeader: {
@@ -61,8 +63,8 @@ export const useStyles = () => {
       paddingHorizontal: 16,
     },
     logoDesktop: {
-      height: 45,
-      width: 253,
+      height: 36,
+      width: 322,
     },
     navLinksContainer: {
       flexDirection: "row",
@@ -95,6 +97,15 @@ export const useStyles = () => {
       alignItems: "center",
       justifyContent: "center",
       color: theme.colors.primary[0],
+    },
+    iconText: {
+      fontFamily:
+        locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
+      color: theme.colors.primary[0],
+      fontSize: 12,
+      lineHeight: 8,
+      letterSpacing: 0.5,
+      paddingTop: 10,
     },
   });
 };
