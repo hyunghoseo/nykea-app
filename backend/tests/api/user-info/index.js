@@ -3,7 +3,7 @@ const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
 const constructor = require("../../helpers/constructor");
 
-describe("Group Test", () => {
+describe("User Info Test", () => {
     let authenticatedUser;
     let adminUser;
     beforeAll(async () => {
@@ -11,128 +11,118 @@ describe("Group Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    it("Public user should not post group", async () => {
+    it("[Create] Public user should not post user-info", async () => {
         await request(strapi.server.httpServer)
-            .post("/api/groups")
+            .post("/api/user-infos")
             .set("accept", "application/json")
-            .send(constructor.constructGroup(0))
+            .send(constructor.constructUserInfo(0))
             .expect("Content-Type", /json/)
             .expect(500)
     })
 
-    it("Authenticated user should not post group", async () => {
+    it("[Create] Authenticated user should not post user-info", async () => {
         await request(strapi.server.httpServer)
-            .post("/api/groups")
+            .post("/api/user-infos")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructor.constructGroup(0))
+            .send(constructor.constructUserInfo(0))
             .expect("Content-Type", /json/)
             .expect(500)
     })
 
-    it("Admin user should post groups", async () => {
+    it("[Create] Admin user should post user-info", async () => {
         await request(strapi.server.httpServer)
-            .post("/api/groups")
+            .post("/api/user-infos")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructor.constructGroup(1))
+            .send(constructor.constructUserInfo(3))
             .expect("Content-Type", /json/)
             .expect(200)
 
         await request(strapi.server.httpServer)
-            .post("/api/groups")
+            .post("/api/user-infos")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructor.constructGroup(1))
+            .send(constructor.constructUserInfo(4))
             .expect("Content-Type", /json/)
             .expect(200)
     })
 
-    it("Public user should find groups", async () => {
+    it("[Find] Public user should not find user-infos", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups")
+            .get("/api/user-infos")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
-            .expect(200)
-            .then((data) => {
-                expect(data.body.data.length).toBe(2);
-            });
+            .expect(500)
     });
 
-    it("Authenticated user should find groups", async () => {
+    it("[Find] Authenticated user should find user-infos", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups")
+            .get("/api/user-infos")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
-                expect(data.body.data.length).toBe(2);
+                expect(data.body.data.length >= 2).toBe(true);
             });
     });
 
-    it("Admin user should find groups", async () => {
+    it("[Find] Admin user should find user-infos", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups")
+            .get("/api/user-infos")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
-                expect(data.body.data.length).toBe(2);
+                expect(data.body.data.length >= 2).toBe(true);
             });
     });
 
-    it("Public user should find a group", async () => {
-        const id = 1;
-        const group = constructor.constructGroup(id);
+    it("[FindOne] Public user should not find a user-info", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups/" + 1)
+            .get("/api/user-infos/" + 1)
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
-            .expect(200)
-            .then((data) => {
-                data = data.body.data;
-                expect(data.attributes.Name).toBe(group.data.Name);
-                expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
-                expect(data.attributes.Type).toBe(group.data.Type);
-                expect(data.attributes.locale).toBe(group.data.locale);
-            })
+            .expect(500)
     });
 
-    it("Authenticated user should find a group", async () => {
+    it("[FindOne] Authenticated user should find a user-info", async () => {
         const id = 1;
-        const group = constructor.constructGroup(id);
+        const userInfo = constructor.constructUserInfo(id)
         await request(strapi.server.httpServer)
-            .get("/api/groups/" + 1)
+            .get("/api/user-infos/" + 1)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
                 data = data.body.data;
-                expect(data.attributes.Name).toBe(group.data.Name);
-                expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
-                expect(data.attributes.Type).toBe(group.data.Type);
-                expect(data.attributes.locale).toBe(group.data.locale);
+                expect(data.attributes.DisplayName).toBe(userInfo.data.DisplayName);
+                expect(data.attributes.FirstName).toBe(userInfo.data.FirstName);
+                expect(data.attributes.LastName).toBe(userInfo.data.LastName);
+                expect(data.attributes.MiddleName).toBe(userInfo.data.MiddleName);
+                expect(data.attributes.locale).toBe(userInfo.data.locale);
             })
     });
 
-    it("Admin user should find a group", async () => {
+    it("[FindOne] Admin user should find a user-info", async () => {
         const id = 1;
-        const group = constructor.constructGroup(id);
+        const userInfo = constructor.constructUserInfo(id)
         await request(strapi.server.httpServer)
-            .get("/api/groups/" + 1)
+            .get("/api/user-infos/" + 1)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
                 data = data.body.data;
-                expect(data.attributes.Name).toBe(group.data.Name);
-                expect(data.attributes.ShortDescription).toBe(group.data.ShortDescription);
-                expect(data.attributes.Type).toBe(group.data.Type);
-                expect(data.attributes.locale).toBe(group.data.locale);
+                expect(data.attributes.DisplayName).toBe(userInfo.data.DisplayName);
+                expect(data.attributes.FirstName).toBe(userInfo.data.FirstName);
+                expect(data.attributes.LastName).toBe(userInfo.data.LastName);
+                expect(data.attributes.MiddleName).toBe(userInfo.data.MiddleName);
+                expect(data.attributes.locale).toBe(userInfo.data.locale);
             })
     });
 })

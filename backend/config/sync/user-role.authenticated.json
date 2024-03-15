@@ -16,6 +16,18 @@
       "action": "api::group.group.findOne"
     },
     {
+      "action": "api::leader.leader.find"
+    },
+    {
+      "action": "api::leader.leader.findOne"
+    },
+    {
+      "action": "api::user-info.user-info.find"
+    },
+    {
+      "action": "api::user-info.user-info.findOne"
+    },
+    {
       "action": "plugin::users-permissions.auth.changePassword"
     },
     {

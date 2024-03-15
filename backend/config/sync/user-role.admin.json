@@ -26,6 +26,30 @@
     },
     {
       "action": "api::group.group.update"
+    },
+    {
+      "action": "api::leader.leader.create"
+    },
+    {
+      "action": "api::leader.leader.find"
+    },
+    {
+      "action": "api::leader.leader.findOne"
+    },
+    {
+      "action": "api::leader.leader.update"
+    },
+    {
+      "action": "api::user-info.user-info.create"
+    },
+    {
+      "action": "api::user-info.user-info.find"
+    },
+    {
+      "action": "api::user-info.user-info.findOne"
+    },
+    {
+      "action": "api::user-info.user-info.update"
     }
   ]
 }
