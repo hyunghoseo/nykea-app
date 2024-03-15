@@ -221,7 +221,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "Pictures",
           "Fee",
           "Links.Label",
@@ -232,7 +231,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label"
+          "Location.Label",
+          "Description",
+          "Location.Address"
         ],
         "locales": [
           "en"
@@ -259,7 +260,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "Pictures",
           "Fee",
           "Links.Label",
@@ -270,7 +270,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label"
+          "Location.Label",
+          "Description",
+          "Location.Address"
         ],
         "locales": [
           "en"
@@ -286,7 +288,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "Pictures",
           "Fee",
           "Links.Label",
@@ -297,7 +298,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Location.Label"
+          "Location.Label",
+          "Description",
+          "Location.Address"
         ],
         "locales": [
           "en"

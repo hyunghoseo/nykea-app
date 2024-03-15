@@ -40,14 +40,6 @@
         }
       }
     },
-    "Description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text"
-    },
     "Pictures": {
       "type": "media",
       "multiple": true,
@@ -67,7 +59,8 @@
           "localized": true
         }
       },
-      "type": "text"
+      "type": "string",
+      "default": "$0.00"
     },
     "Links": {
       "displayName": "Link",
@@ -134,6 +127,15 @@
         }
       },
       "component": "common.address2",
+      "required": true
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks",
       "required": true
     }
   }

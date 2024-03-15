@@ -7,7 +7,7 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "id",
+      "mainField": "Date",
       "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
@@ -47,23 +47,44 @@
           "searchable": true,
           "sortable": true
         }
+      },
+      "TimeZone": {
+        "edit": {
+          "label": "TimeZone",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "TimeZone",
+          "searchable": true,
+          "sortable": true
+        }
       }
     },
     "layouts": {
       "list": [
         "id",
         "Date",
-        "Time"
+        "Time",
+        "TimeZone"
       ],
       "edit": [
         [
           {
             "name": "Date",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "Time",
             "size": 4
+          },
+          {
+            "name": "TimeZone",
+            "size": 6
           }
         ]
       ]

@@ -14,8 +14,24 @@
     "AddressURL": {
       "type": "string"
     },
+    "Address": {
+      "type": "string",
+      "required": true
+    },
     "AddressDetail": {
       "type": "string"
+    },
+    "City": {
+      "type": "string"
+    },
+    "Country": {
+      "type": "string",
+      "default": "USA"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
     }
   }
 }
