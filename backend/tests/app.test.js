@@ -14,11 +14,9 @@ it("strapi is defined", () => {
   expect(strapi).toBeDefined();
 });
 
-
 require('./api/banner');
 require('./api/group');
 require('./api/leader');
 require('./api/user');
 require('./api/user-info');
 require('./api/support');
-
