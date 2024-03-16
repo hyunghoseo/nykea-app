@@ -53,8 +53,8 @@ export const translations: Translations = {
     "icon.Close": "닫 기",
     "page.Groups.title": "부서 및 동아리",
     "page.Groups.description":
-      "뉴욕한인가정교회의 부서 및 동아리 대해 자세히 알아보세요. 각 그룹 또는 부서는 커뮤니티 내에서 역할을 합니다. 참여할 수 있는 그룹이나 궁금한 사항이 있으시면 언제든지 {link}.",
-    "page.Groups.description.linkText": "연락 주세요",
+      "뉴욕한인가정교회의 부서 및 동아리에 대해 자세히 알아보세요. 각 부서 및 그룹들은 교회에 기여하고 다양한 관심사로 커뮤니티에 문화 교류의 장을 마련합니다. 더 많은 그룹에 참여하고 싶으시거나 궁금한 점이 있으신가요? {link}.",
+    "page.Groups.description.linkText": "문의해주세요",
     "page.Groups.types.Administrative": "부서",
     "page.Groups.types.Community": "커뮤니티 ",
     "page.Groups.types.Education": "교육",
