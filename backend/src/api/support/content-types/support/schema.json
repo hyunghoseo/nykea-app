@@ -23,7 +23,7 @@
         }
       },
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "Calvin"
     },
     "Email": {
@@ -34,7 +34,7 @@
       },
       "type": "string",
       "regex": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
-      "required": true
+      "required": false
     },
     "Phone": {
       "pluginOptions": {
@@ -44,7 +44,7 @@
       },
       "type": "string",
       "regex": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$",
-      "required": true
+      "required": false
     },
     "Title": {
       "pluginOptions": {

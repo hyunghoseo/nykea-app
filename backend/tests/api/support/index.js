@@ -27,7 +27,6 @@ describe("Support Test", () => {
                 "Status": "Submitted", // "Under Review" or "Completed"
                 "Memo": "Test Memo" + id,
                 "DateCompleted": Date.now(),
-                "locale": "en"
             }
         };
     }
