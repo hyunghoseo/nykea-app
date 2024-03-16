@@ -4,6 +4,7 @@ import { Image } from "expo-image";
 import { Skeleton } from "moti/skeleton";
 import { StyleProp, StyleSheet, TouchableOpacity, View } from "react-native";
 
+import { PLACEHOLDER_BLUR_HASH } from "@/config/constants";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { Group } from "@/api/apiSchemas";
@@ -16,7 +17,6 @@ interface GroupCardProps extends Partial<Group> {
 export const GroupCard: React.FC<GroupCardProps> = (props) => {
   const styles = useStyles();
   const { h4, bodySmall } = useTypographyStyles();
-  const blurHash = "LBQ0w8og~Vt7xufQWCfQ_1j[9Hay";
 
   return (
     <TouchableOpacity
@@ -29,7 +29,7 @@ export const GroupCard: React.FC<GroupCardProps> = (props) => {
           <Image
             style={styles.image}
             contentFit="cover"
-            placeholder={blurHash}
+            placeholder={PLACEHOLDER_BLUR_HASH}
             source={
               props.Picture?.data
                 ? {
