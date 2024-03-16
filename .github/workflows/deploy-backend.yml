@@ -50,8 +50,8 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           source: "strapi-build.tar.gz"
-          target: "/tmp"
-          
+          target: "/tmp
+
       - name: Execute deployment script
         uses: appleboy/ssh-action@master
         with:
