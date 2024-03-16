@@ -49,6 +49,15 @@
       "action": "api::leader.leader.update"
     },
     {
+      "action": "api::support.support.find"
+    },
+    {
+      "action": "api::support.support.findOne"
+    },
+    {
+      "action": "api::support.support.update"
+    },
+    {
       "action": "api::user-info.user-info.create"
     },
     {
