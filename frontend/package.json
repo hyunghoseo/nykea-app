@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "prettier": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
-    "build:web": "npx expo export:web",
+    "build:web": "npx expo export --platform web",
     "generate-api": "npx openapi-codegen gen api"
   },
   "dependencies": {
