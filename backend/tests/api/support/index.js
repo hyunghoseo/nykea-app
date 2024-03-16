@@ -6,7 +6,6 @@ describe("Support Test", () => {
     let authenticatedUser;
     let adminUser;
     beforeAll(async () => {
-        console.log("Support before all");
         authenticatedUser = await userFactory.createUser(strapi, "authenticated");
         adminUser = await userFactory.createUser(strapi, "admin");
     });
