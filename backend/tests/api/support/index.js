@@ -11,7 +11,6 @@ describe("Support Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-            
     it("Public user should post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
@@ -76,7 +75,6 @@ describe("Support Test", () => {
                 expect(data.body.data.length).toBe(3);
             });
     });
-
 
     it("Admin user should find a support ticket", async () => {
         const id = 2
