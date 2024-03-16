@@ -63,8 +63,8 @@ const constructSupportTicket = (id) => {
             "Message": "Test Message" + id,
             "DateSubmitted": Date.now(),
             "Status": "Submitted", // "Under Review" or "Completed"
-            "Memo": "Test Memo" + id,
-            "DateCompleted": Date.now(),
+            "Memo": null,
+            "DateCompleted": null,
         }
     };
 }
