@@ -146,11 +146,11 @@
         [
           {
             "name": "Name",
-            "size": 12
+            "size": 6
           },
           {
             "name": "ShortDescription",
-            "size": 12
+            "size": 6
           }
         ],
         [
