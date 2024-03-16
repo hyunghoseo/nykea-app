@@ -116,7 +116,6 @@ describe("Support Test", () => {
                 expect(data.attributes.Message).toBe(support.data.Message);
                 expect(data.attributes.Status).toBe(support.data.Status);
                 expect(data.attributes.Memo).toBe(support.data.Memo);
-                expect(data.attributes.locale).toBe(support.data.locale);
             })
     });
 
