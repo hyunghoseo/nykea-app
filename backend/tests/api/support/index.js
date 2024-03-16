@@ -1,6 +1,7 @@
 const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
+const constructor = require("../../helpers/constructor");
 
 describe("Support Test", () => {
     let authenticatedUser;
@@ -10,39 +11,19 @@ describe("Support Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    /**
-     * @param {string | number} id
-     */
-
-    const constructSupportTicket = (id) => {
-        return {
-            data: {
-                "FullName": "Test Name" + id,
-                "Email": "test" + id + "@email.com",
-                "Phone": "111-111-1111",
-                "Title": "Test Title" + id,
-                "Message": "Test Message" + id,
-                "DateSubmitted": Date.now(),
-                "Status": "Submitted", // "Under Review" or "Completed"
-                "Memo": "Test Memo" + id,
-                "DateCompleted": Date.now(),
-            }
-        };
-    }
-
             
     it("Public user should post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
-            .send(constructSupportTicket(1))        //id1
+            .send(constructor.constructSupportTicket(1))        //id1
             .expect('Content-Type',/json/)
             .expect(200)
 
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
-            .send(constructSupportTicket(2))        //id2
+            .send(constructor.constructSupportTicket(2))        //id2
             .expect("Content-Type", /json/)
             .expect(200)
     });
@@ -52,7 +33,7 @@ describe("Support Test", () => {
             .post("/api/supports")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructSupportTicket(3))        //id3
+            .send(constructor.constructSupportTicket(3))        //id3
             .expect("Content-Type", /json/)
             .expect(200)
     })
@@ -62,7 +43,7 @@ describe("Support Test", () => {
             .post("/api/supports")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructSupportTicket(4))    
+            .send(constructor.constructSupportTicket(4))    
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -99,7 +80,7 @@ describe("Support Test", () => {
 
     it("Admin user should find a support ticket", async () => {
         const id = 2
-        const support = constructSupportTicket(id);
+        const support = constructor.constructSupportTicket(id);
         await request(strapi.server.httpServer)
             .get("/api/supports/" + id)
             .set("accept", "application/json")
