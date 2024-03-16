@@ -1,5 +1,7 @@
 import type { QueryKey, UseQueryOptions } from "@tanstack/react-query";
 
+import { useLocale } from "@/contexts/LocaleProvider";
+
 import { QueryOperation } from "./apiComponents";
 
 export type ApiContext = {
@@ -42,10 +44,14 @@ export function useApiContext<
     "queryKey" | "queryFn"
   >,
 ): ApiContext {
+  const { locale } = useLocale();
+  const customQueryKeyFn = (operation: QueryOperation) => {
+    return [...queryKeyFn(operation), locale]; // Append locale to the base query key
+  };
   return {
-    fetcherOptions: { queryParams: { locale: "ko" } },
+    fetcherOptions: { queryParams: { locale: locale, populate: "*" } },
     queryOptions: {},
-    queryKeyFn,
+    queryKeyFn: customQueryKeyFn,
   };
 }
 
