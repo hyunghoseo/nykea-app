@@ -8,11 +8,11 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
-      "localized": true
+      "localized": false
     }
   },
   "attributes": {
