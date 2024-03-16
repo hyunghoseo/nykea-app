@@ -38,7 +38,7 @@ export const GroupCard: React.FC<GroupCardProps> = (props) => {
                       "https://admin.nykea.org" +
                       props.Picture?.data?.attributes?.url,
                   }
-                : require("@/assets/placeholder.jpg")
+                : require("@/assets/placeholder.png")
             }
             transition={500}
           />
