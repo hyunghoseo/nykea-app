@@ -16,6 +16,15 @@
       "action": "api::banner.banner.update"
     },
     {
+      "action": "api::church-info.church-info.createLocalization"
+    },
+    {
+      "action": "api::church-info.church-info.find"
+    },
+    {
+      "action": "api::church-info.church-info.update"
+    },
+    {
       "action": "api::group.group.create"
     },
     {

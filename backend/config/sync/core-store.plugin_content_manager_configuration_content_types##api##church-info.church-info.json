@@ -174,27 +174,27 @@
         [
           {
             "name": "ChurchName",
-            "size": 6
+            "size": 12
           },
           {
             "name": "Phone",
-            "size": 6
+            "size": 12
           }
         ],
         [
           {
             "name": "Email",
-            "size": 6
+            "size": 12
           },
           {
             "name": "Address",
-            "size": 6
+            "size": 12
           }
         ],
         [
           {
             "name": "PrivatePolicy",
-            "size": 6
+            "size": 12
           }
         ],
         [
