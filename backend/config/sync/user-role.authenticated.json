@@ -25,6 +25,9 @@
       "action": "api::leader.leader.findOne"
     },
     {
+      "action": "api::support.support.create"
+    },
+    {
       "action": "api::user-info.user-info.find"
     },
     {

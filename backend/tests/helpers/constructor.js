@@ -49,6 +49,29 @@ const constructLeader = (id, userInfoId) => {
     };
 }
 
+/**
+ * @param {string | number} id
+ */
+
+const constructSupportTicket = (id) => {
+    return {
+        data: {
+            "FullName": "Test Name" + id,
+            "Email": "test" + id + "@email.com",
+            "Phone": "111-111-1111",
+            "Title": "Test Title" + id,
+            "Message": "Test Message" + id,
+            "DateSubmitted": Date.now(),
+            "Status": "Submitted", // "Under Review" or "Completed"
+            "Memo": null,
+            "DateCompleted": null,
+        }
+    };
+}
+
 module.exports = {
-    constructGroup, constructUserInfo, constructLeader
+    constructGroup, 
+    constructUserInfo, 
+    constructLeader,
+    constructSupportTicket
 }

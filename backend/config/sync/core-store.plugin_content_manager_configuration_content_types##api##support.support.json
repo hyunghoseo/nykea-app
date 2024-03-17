@@ -7,9 +7,9 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "FullName",
-      "defaultSortBy": "FullName",
-      "defaultSortOrder": "ASC"
+      "mainField": "Title",
+      "defaultSortBy": "createdAt",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -206,59 +206,60 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "FullName",
-        "Email",
-        "Phone"
-      ],
       "edit": [
         [
           {
-            "name": "FullName",
-            "size": 6
+            "name": "Title",
+            "size": 8
           },
           {
-            "name": "Email",
-            "size": 6
+            "name": "Status",
+            "size": 4
           }
         ],
         [
           {
-            "name": "Phone",
-            "size": 6
+            "name": "FullName",
+            "size": 4
           },
           {
-            "name": "Title",
-            "size": 6
+            "name": "Phone",
+            "size": 4
+          },
+          {
+            "name": "Email",
+            "size": 4
           }
         ],
         [
           {
             "name": "Message",
-            "size": 6
-          },
+            "size": 12
+          }
+        ],
+        [
           {
             "name": "DateSubmitted",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "Status",
-            "size": 6
           },
-          {
-            "name": "Memo",
-            "size": 6
-          }
-        ],
-        [
           {
             "name": "DateCompleted",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "Memo",
+            "size": 12
+          }
         ]
+      ],
+      "list": [
+        "id",
+        "DateSubmitted",
+        "Status",
+        "Title",
+        "FullName"
       ]
     }
   },

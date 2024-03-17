@@ -1304,30 +1304,27 @@ export interface ApiSupportSupport extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
-      localized: true;
+      localized: false;
     };
   };
   attributes: {
     FullName: Attribute.String &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     Email: Attribute.String &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     Phone: Attribute.String &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1376,7 +1373,6 @@ export interface ApiSupportSupport extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::support.support',
       'oneToOne',
@@ -1389,12 +1385,6 @@ export interface ApiSupportSupport extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::support.support',
-      'oneToMany',
-      'api::support.support'
-    >;
-    locale: Attribute.String;
   };
 }
 

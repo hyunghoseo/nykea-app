@@ -19,6 +19,9 @@
       "action": "api::group.group.findOne"
     },
     {
+      "action": "api::support.support.create"
+    },
+    {
       "action": "plugin::users-permissions.auth.callback"
     },
     {
