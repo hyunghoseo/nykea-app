@@ -4,6 +4,12 @@
   "type": "public",
   "permissions": [
     {
+      "action": "api::announcement.announcement.find"
+    },
+    {
+      "action": "api::announcement.announcement.findOne"
+    },
+    {
       "action": "api::banner.banner.find"
     },
     {

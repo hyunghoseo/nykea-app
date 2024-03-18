@@ -765,10 +765,6 @@
           "Status",
           "Memo",
           "DateCompleted"
-        ],
-        "locales": [
-          "en",
-          "ko"
         ]
       },
       "conditions": []
@@ -777,24 +773,7 @@
       "action": "plugin::content-manager.explorer.delete",
       "actionParameters": {},
       "subject": "api::support.support",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "actionParameters": {},
-      "subject": "api::support.support",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
+      "properties": {},
       "conditions": []
     },
     {
@@ -812,10 +791,6 @@
           "Status",
           "Memo",
           "DateCompleted"
-        ],
-        "locales": [
-          "en",
-          "ko"
         ]
       },
       "conditions": []
@@ -835,10 +810,6 @@
           "Status",
           "Memo",
           "DateCompleted"
-        ],
-        "locales": [
-          "en",
-          "ko"
         ]
       },
       "conditions": []

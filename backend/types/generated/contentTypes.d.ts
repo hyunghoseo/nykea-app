@@ -713,7 +713,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     Poster: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     Description: Attribute.Text &
