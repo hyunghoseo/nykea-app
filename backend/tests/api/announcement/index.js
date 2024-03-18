@@ -1,6 +1,7 @@
 const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
+const constructor = require("../../helpers/constructor");
 
 describe("Announcement Test", () => {
     let authenticatedUser;
@@ -11,25 +12,12 @@ describe("Announcement Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     })
 
-    const constructAnnouncement = (id) => {
-        return {
-            data: {
-                "Title": "Test Announcement " + id,
-                "Poster": null,
-                "Description": "Announcement Description " + id,
-                "Private": false,
-                "locale": "en",
-                "publishedAt": Date.now(),
-            }
-        };
-    }
-
     // Create
     it("[Create] Public user should not post Announcements", async () => {
         await request(strapi.server.httpServer)
             .post("/api/announcements")
             .set("accept", "application/json")
-            .send(constructAnnouncement(0))
+            .send(constructor.constructAnnouncement(0))
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -39,18 +27,18 @@ describe("Announcement Test", () => {
             .post("/api/announcements")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructAnnouncement(0))
+            .send(constructor.constructAnnouncement(0))
             .expect("Content-Type", /json/)
             .expect(500)
     })
 
     it("[Create] Admin user should post Announcements", async () => {
-        const announcement = constructAnnouncement(1);
+        const announcement = constructor.constructAnnouncement(1);
         await request(strapi.server.httpServer)
             .post("/api/announcements")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructAnnouncement(1))
+            .send(constructor.constructAnnouncement(1))
             .expect("Content-Type", /json/)
             .expect(200)
             .expect((data) => {
@@ -99,7 +87,7 @@ describe("Announcement Test", () => {
     // FindOne
     it("[FindOne] Public user should find an announcement", async () => {
         const id = 1;
-        const announcement = constructAnnouncement(id);
+        const announcement = constructor.constructAnnouncement(id);
         await request(strapi.server.httpServer)
             .get("/api/announcements/" + id)
             .set("accept", "application/json")
@@ -116,7 +104,7 @@ describe("Announcement Test", () => {
 
     it("[FindOne] Authenticated user should find an announcement", async () => {
         const id = 1;
-        const announcement = constructAnnouncement(id);
+        const announcement = constructor.constructAnnouncement(id);
         await request(strapi.server.httpServer)
             .get("/api/announcements/" + id)
             .set("accept", "application/json")
@@ -134,7 +122,7 @@ describe("Announcement Test", () => {
 
     it("[FindOne] Admin user should find an announcement", async () => {
         const id = 1;
-        const announcement = constructAnnouncement(id);
+        const announcement = constructor.constructAnnouncement(id);
         await request(strapi.server.httpServer)
             .get("/api/announcements/" + id)
             .set("accept", "application/json")
@@ -157,7 +145,7 @@ describe("Announcement Test", () => {
             .put("/api/announcements/" + id)
             .set("accept", "application/json")
             .set('Content-Type', 'application/json')
-            .send(constructAnnouncement(3))
+            .send(constructor.constructAnnouncement(3))
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -168,19 +156,19 @@ describe("Announcement Test", () => {
             .put("/api/announcements/" + id)
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .set('Content-Type', 'application/json')
-            .send(constructAnnouncement(3))
+            .send(constructor.constructAnnouncement(3))
             .expect("Content-Type", /json/)
             .expect(500)
     })
 
     it("[Update] Admin user should update Announcements", async () => {
         const id = 1;
-        const announcement = constructAnnouncement(3);
+        const announcement = constructor.constructAnnouncement(3);
         await request(strapi.server.httpServer)
             .put("/api/announcements/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructAnnouncement(3))
+            .send(constructor.constructAnnouncement(3))
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
@@ -191,7 +179,5 @@ describe("Announcement Test", () => {
                 expect(data.attributes.locale).toBe(announcement.data.locale);
             })
     })
-    
-
 })
 

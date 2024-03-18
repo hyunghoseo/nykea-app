@@ -11,11 +11,15 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description",
+          "StartDate.Date",
+          "StartDate.Time",
+          "EndDate.Date",
+          "EndDate.Time"
         ],
         "locales": [
           "en",
@@ -56,11 +60,15 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description",
+          "StartDate.Date",
+          "StartDate.Time",
+          "EndDate.Date",
+          "EndDate.Time"
         ],
         "locales": [
           "en",
@@ -77,11 +85,15 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description",
+          "StartDate.Date",
+          "StartDate.Time",
+          "EndDate.Date",
+          "EndDate.Time"
         ],
         "locales": [
           "en",

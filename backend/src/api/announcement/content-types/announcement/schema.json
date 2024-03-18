@@ -40,16 +40,6 @@
         }
       }
     },
-    "Description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text",
-      "required": true,
-      "minLength": 5
-    },
     "HostingGroup": {
       "type": "relation",
       "relation": "oneToOne",
@@ -74,6 +64,37 @@
         }
       },
       "component": "common.link"
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks",
+      "required": true
+    },
+    "StartDate": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "common.date-time",
+      "required": true
+    },
+    "EndDate": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "common.date-time",
+      "required": false
     }
   }
 }

@@ -11,11 +11,12 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description",
+          "StartDate.Date"
         ]
       },
       "conditions": [
@@ -30,11 +31,12 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description",
+          "StartDate.Date"
         ]
       },
       "conditions": [
@@ -49,11 +51,12 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description",
+          "StartDate.Date"
         ]
       },
       "conditions": [
