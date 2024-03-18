@@ -713,7 +713,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     Poster: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     Description: Attribute.Text &
@@ -1321,7 +1321,8 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'Calvin'>;
     Email: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {

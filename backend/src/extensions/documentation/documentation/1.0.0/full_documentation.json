@@ -8,25 +8,25 @@
     "contact": {
       "name": "TEAM",
       "email": "contact-email@something.io",
-      "url": "mywebsite.io"
+      "url": "www.nykea.org"
     },
     "license": {
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-02-20T23:13:48.950Z"
+    "x-generation-date": "2024-03-18T01:55:41.069Z"
   },
   "x-strapi-config": {
-    "path": "/documentation",
     "plugins": [
       "upload",
       "users-permissions"
-    ]
+    ],
+    "path": "/documentation"
   },
   "servers": [
     {
-      "url": "http://localhost:1338/api",
-      "description": "Development server"
+      "url": "https://admin.nykea.org/api",
+      "description": "Production server"
     }
   ],
   "externalDocs": {
@@ -1102,6 +1102,15 @@
                           }
                         }
                       },
+                      "Type": {
+                        "type": "string",
+                        "enum": [
+                          "Administrative",
+                          "Community",
+                          "Education",
+                          "Activities"
+                        ]
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -1276,6 +1285,7 @@
       "BannerLocalizationRequest": {
         "required": [
           "Title",
+          "Link",
           "StartDate",
           "locale"
         ],
@@ -1312,6 +1322,7 @@
           "data": {
             "required": [
               "Title",
+              "Link",
               "StartDate"
             ],
             "type": "object",
@@ -1458,6 +1469,7 @@
         "type": "object",
         "required": [
           "Title",
+          "Link",
           "StartDate"
         ],
         "properties": {
@@ -3604,6 +3616,15 @@
                           }
                         }
                       },
+                      "Type": {
+                        "type": "string",
+                        "enum": [
+                          "Administrative",
+                          "Community",
+                          "Education",
+                          "Activities"
+                        ]
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -3778,7 +3799,6 @@
       "GroupLocalizationRequest": {
         "required": [
           "Name",
-          "ShortDescription",
           "locale"
         ],
         "type": "object",
@@ -3800,6 +3820,15 @@
             ],
             "example": "string or id"
           },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Administrative",
+              "Community",
+              "Education",
+              "Activities"
+            ]
+          },
           "locale": {
             "type": "string"
           }
@@ -3813,8 +3842,7 @@
         "properties": {
           "data": {
             "required": [
-              "Name",
-              "ShortDescription"
+              "Name"
             ],
             "type": "object",
             "properties": {
@@ -3834,6 +3862,15 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "Administrative",
+                  "Community",
+                  "Education",
+                  "Activities"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -3959,8 +3996,7 @@
       "Group": {
         "type": "object",
         "required": [
-          "Name",
-          "ShortDescription"
+          "Name"
         ],
         "properties": {
           "Name": {
@@ -4590,6 +4626,15 @@
                 }
               }
             }
+          },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "Administrative",
+              "Community",
+              "Education",
+              "Activities"
+            ]
           },
           "createdAt": {
             "type": "string",
@@ -7651,6 +7696,15 @@
                           }
                         }
                       },
+                      "Type": {
+                        "type": "string",
+                        "enum": [
+                          "Administrative",
+                          "Community",
+                          "Education",
+                          "Activities"
+                        ]
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -8469,58 +8523,6 @@
           }
         }
       },
-      "SupportLocalizationRequest": {
-        "required": [
-          "FullName",
-          "Email",
-          "Phone",
-          "Title",
-          "Message",
-          "DateSubmitted",
-          "Status",
-          "locale"
-        ],
-        "type": "object",
-        "properties": {
-          "FullName": {
-            "type": "string"
-          },
-          "Email": {
-            "type": "string"
-          },
-          "Phone": {
-            "type": "string"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "Message": {
-            "type": "string"
-          },
-          "DateSubmitted": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Status": {
-            "type": "string",
-            "enum": [
-              "Submitted",
-              "Under Review",
-              "Completed"
-            ]
-          },
-          "Memo": {
-            "type": "string"
-          },
-          "DateCompleted": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "locale": {
-            "type": "string"
-          }
-        }
-      },
       "SupportRequest": {
         "type": "object",
         "required": [
@@ -8529,9 +8531,6 @@
         "properties": {
           "data": {
             "required": [
-              "FullName",
-              "Email",
-              "Phone",
               "Title",
               "Message",
               "DateSubmitted",
@@ -8572,77 +8571,6 @@
               "DateCompleted": {
                 "type": "string",
                 "format": "date-time"
-              },
-              "locale": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "SupportResponseDataObjectLocalized": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/Support"
-          }
-        }
-      },
-      "SupportLocalizationResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/SupportResponseDataObjectLocalized"
-          },
-          "meta": {
-            "type": "object"
-          }
-        }
-      },
-      "SupportListResponseDataItemLocalized": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/Support"
-          }
-        }
-      },
-      "SupportLocalizationListResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SupportListResponseDataItemLocalized"
-            }
-          },
-          "meta": {
-            "type": "object",
-            "properties": {
-              "pagination": {
-                "type": "object",
-                "properties": {
-                  "page": {
-                    "type": "integer"
-                  },
-                  "pageSize": {
-                    "type": "integer",
-                    "minimum": 25
-                  },
-                  "pageCount": {
-                    "type": "integer",
-                    "maximum": 1
-                  },
-                  "total": {
-                    "type": "integer"
-                  }
-                }
               }
             }
           }
@@ -8697,9 +8625,6 @@
       "Support": {
         "type": "object",
         "required": [
-          "FullName",
-          "Email",
-          "Phone",
           "Title",
           "Message",
           "DateSubmitted",
@@ -8745,10 +8670,6 @@
             "format": "date-time"
           },
           "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "publishedAt": {
             "type": "string",
             "format": "date-time"
           },
@@ -9037,20 +8958,6 @@
                 }
               }
             }
-          },
-          "localizations": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Support"
-                }
-              }
-            }
-          },
-          "locale": {
-            "type": "string"
           }
         }
       },
@@ -14682,98 +14589,6 @@
           }
         ],
         "operationId": "delete/supports/{id}"
-      }
-    },
-    "/supports/{id}/localizations": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SupportLocalizationResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Support"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "number"
-            }
-          }
-        ],
-        "operationId": "post/supports/{id}/localizations",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SupportLocalizationRequest"
-              }
-            }
-          }
-        }
       }
     },
     "/user-infos": {
