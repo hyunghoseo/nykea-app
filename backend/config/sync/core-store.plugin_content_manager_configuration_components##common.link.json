@@ -59,11 +59,11 @@
         [
           {
             "name": "Label",
-            "size": 6
+            "size": 4
           },
           {
             "name": "URL",
-            "size": 6
+            "size": 8
           }
         ]
       ]

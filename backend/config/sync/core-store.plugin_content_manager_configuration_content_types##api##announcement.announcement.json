@@ -48,20 +48,6 @@
           "sortable": false
         }
       },
-      "Description": {
-        "edit": {
-          "label": "Description",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Description",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "HostingGroup": {
         "edit": {
           "label": "HostingGroup",
@@ -101,6 +87,48 @@
         },
         "list": {
           "label": "Link",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Description": {
+        "edit": {
+          "label": "Description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Description",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "StartDate": {
+        "edit": {
+          "label": "StartDate",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "StartDate",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "EndDate": {
+        "edit": {
+          "label": "EndDate",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "EndDate",
           "searchable": false,
           "sortable": false
         }
@@ -165,12 +193,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "Title",
-        "Poster",
-        "Description"
-      ],
       "edit": [
         [
           {
@@ -184,18 +206,30 @@
         ],
         [
           {
-            "name": "Description",
+            "name": "HostingGroup",
             "size": 6
           },
           {
-            "name": "HostingGroup",
+            "name": "Private",
             "size": 6
           }
         ],
         [
           {
-            "name": "Private",
-            "size": 4
+            "name": "Description",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "StartDate",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "EndDate",
+            "size": 12
           }
         ],
         [
@@ -204,6 +238,12 @@
             "size": 12
           }
         ]
+      ],
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "Link"
       ]
     }
   },
