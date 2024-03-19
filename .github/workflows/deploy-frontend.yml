@@ -1,10 +1,10 @@
 name: Build and Deploy Expo App to cPanel
 
 on:
-  workflow_dispatch: null
   push:
     branches:
       - main
+      - bugfix/KEA-213-fix-deploy
     paths:
       - "frontend/**"
       - ".github/workflows/deploy-frontend.yml"
