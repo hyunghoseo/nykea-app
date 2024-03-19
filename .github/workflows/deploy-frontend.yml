@@ -46,5 +46,5 @@ jobs:
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           local-dir: frontend/dist/
-          server-dir: /
+          exclude: ""
           dangerous-clean-slate: false
