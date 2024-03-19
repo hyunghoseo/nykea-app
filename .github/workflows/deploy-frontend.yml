@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - bugfix/KEA-213-fix-deploy
     paths:
       - "frontend/**"
       - ".github/workflows/deploy-frontend.yml"
