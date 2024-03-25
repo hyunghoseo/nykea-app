@@ -736,23 +736,9 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
         };
       }>;
     Description: Attribute.Blocks &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
-        };
-      }>;
-    StartDate: Attribute.Component<'common.date-time'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    EndDate: Attribute.Component<'common.date-time'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;

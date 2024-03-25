@@ -15,8 +15,7 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description",
-          "StartDate.Date"
+          "Description"
         ]
       },
       "conditions": [
@@ -35,8 +34,7 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description",
-          "StartDate.Date"
+          "Description"
         ]
       },
       "conditions": [
@@ -55,8 +53,7 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description",
-          "StartDate.Date"
+          "Description"
         ]
       },
       "conditions": [

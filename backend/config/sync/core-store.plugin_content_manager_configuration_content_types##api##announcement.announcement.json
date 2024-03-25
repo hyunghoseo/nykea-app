@@ -105,34 +105,6 @@
           "sortable": false
         }
       },
-      "StartDate": {
-        "edit": {
-          "label": "StartDate",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "StartDate",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "EndDate": {
-        "edit": {
-          "label": "EndDate",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "EndDate",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -193,6 +165,12 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "Link"
+      ],
       "edit": [
         [
           {
@@ -222,28 +200,10 @@
         ],
         [
           {
-            "name": "StartDate",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "EndDate",
-            "size": 12
-          }
-        ],
-        [
-          {
             "name": "Link",
             "size": 12
           }
         ]
-      ],
-      "list": [
-        "id",
-        "Title",
-        "Poster",
-        "Link"
       ]
     }
   },

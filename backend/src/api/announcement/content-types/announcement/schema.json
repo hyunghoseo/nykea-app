@@ -72,28 +72,6 @@
         }
       },
       "type": "blocks",
-      "required": true
-    },
-    "StartDate": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "component": "common.date-time",
-      "required": true
-    },
-    "EndDate": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "component": "common.date-time",
       "required": false
     }
   }
