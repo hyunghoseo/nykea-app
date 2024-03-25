@@ -9,6 +9,7 @@ const constructAnnouncement = (id) => {
             "Poster": null,
             "Description": "Announcement Description " + id,
             "Private": false,
+            "YoutubeURL": null,
             "locale": "en",
             "publishedAt": Date.now(),
         }
