@@ -15,11 +15,7 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description",
-          "StartDate.Date",
-          "StartDate.Time",
-          "EndDate.Date",
-          "EndDate.Time"
+          "Description"
         ],
         "locales": [
           "en",
@@ -64,11 +60,7 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description",
-          "StartDate.Date",
-          "StartDate.Time",
-          "EndDate.Date",
-          "EndDate.Time"
+          "Description"
         ],
         "locales": [
           "en",
@@ -89,11 +81,7 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description",
-          "StartDate.Date",
-          "StartDate.Time",
-          "EndDate.Date",
-          "EndDate.Time"
+          "Description"
         ],
         "locales": [
           "en",
