@@ -73,6 +73,14 @@
       },
       "type": "blocks",
       "required": false
+    },
+    "YoutubeURL": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }

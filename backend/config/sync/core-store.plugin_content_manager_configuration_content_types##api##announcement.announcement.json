@@ -105,6 +105,20 @@
           "sortable": false
         }
       },
+      "YoutubeURL": {
+        "edit": {
+          "label": "YoutubeURL",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "YoutubeURL",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -165,23 +179,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "Title",
-        "Poster",
-        "Link"
-      ],
       "edit": [
-        [
-          {
-            "name": "Title",
-            "size": 6
-          },
-          {
-            "name": "Poster",
-            "size": 6
-          }
-        ],
         [
           {
             "name": "HostingGroup",
@@ -194,8 +192,18 @@
         ],
         [
           {
-            "name": "Description",
+            "name": "Title",
             "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Poster",
+            "size": 8
+          },
+          {
+            "name": "YoutubeURL",
+            "size": 4
           }
         ],
         [
@@ -203,7 +211,19 @@
             "name": "Link",
             "size": 12
           }
+        ],
+        [
+          {
+            "name": "Description",
+            "size": 12
+          }
         ]
+      ],
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "Link"
       ]
     }
   },
