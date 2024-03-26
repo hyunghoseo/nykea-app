@@ -11,11 +11,11 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description"
         ],
         "locales": [
           "en"
@@ -42,11 +42,11 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description"
         ],
         "locales": [
           "en"
@@ -62,11 +62,11 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description"
         ],
         "locales": [
           "en"
@@ -552,17 +552,6 @@
           "Memo",
           "DateCompleted"
         ],
-        "locales": [
-          "en"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "actionParameters": {},
-      "subject": "api::support.support",
-      "properties": {
         "locales": [
           "en"
         ]

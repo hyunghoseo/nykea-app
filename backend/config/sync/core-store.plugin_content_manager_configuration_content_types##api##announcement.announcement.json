@@ -48,20 +48,6 @@
           "sortable": false
         }
       },
-      "Description": {
-        "edit": {
-          "label": "Description",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Description",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "HostingGroup": {
         "edit": {
           "label": "HostingGroup",
@@ -103,6 +89,34 @@
           "label": "Link",
           "searchable": false,
           "sortable": false
+        }
+      },
+      "Description": {
+        "edit": {
+          "label": "Description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Description",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "YoutubeURL": {
+        "edit": {
+          "label": "YoutubeURL",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "YoutubeURL",
+          "searchable": true,
+          "sortable": true
         }
       },
       "createdAt": {
@@ -165,36 +179,30 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "Title",
-        "Poster",
-        "Description"
-      ],
       "edit": [
         [
           {
-            "name": "Title",
-            "size": 6
-          },
-          {
-            "name": "Poster",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "Description",
-            "size": 6
-          },
-          {
             "name": "HostingGroup",
             "size": 6
+          },
+          {
+            "name": "Private",
+            "size": 6
           }
         ],
         [
           {
-            "name": "Private",
+            "name": "Title",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Poster",
+            "size": 8
+          },
+          {
+            "name": "YoutubeURL",
             "size": 4
           }
         ],
@@ -203,7 +211,19 @@
             "name": "Link",
             "size": 12
           }
+        ],
+        [
+          {
+            "name": "Description",
+            "size": 12
+          }
         ]
+      ],
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "Link"
       ]
     }
   },

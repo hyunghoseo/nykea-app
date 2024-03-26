@@ -1,6 +1,24 @@
 /**
  * @param {string | number} id
  */
+const constructAnnouncement = (id) => {
+    return {
+        data: {
+            "Title": "Test Announcement " + id,
+            "HostingGroup": null,
+            "Poster": null,
+            "Description": "Announcement Description " + id,
+            "Private": false,
+            "YoutubeURL": null,
+            "locale": "en",
+            "publishedAt": Date.now(),
+        }
+    };
+}
+
+/**
+ * @param {string | number} id
+ */
 const constructGroup = (id) => {
     return {
         data: {
@@ -73,5 +91,6 @@ module.exports = {
     constructGroup, 
     constructUserInfo, 
     constructLeader,
-    constructSupportTicket
+    constructSupportTicket,
+    constructAnnouncement
 }

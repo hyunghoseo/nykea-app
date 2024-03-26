@@ -713,13 +713,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     Poster: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
-        };
-      }>;
-    Description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     HostingGroup: Attribute.Relation<
@@ -739,6 +733,18 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    Description: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    YoutubeURL: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -1317,7 +1323,8 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'Calvin'>;
     Email: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
