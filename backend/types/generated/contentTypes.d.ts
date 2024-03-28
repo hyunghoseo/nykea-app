@@ -1455,6 +1455,36 @@ export interface ApiSupportSupport extends Schema.CollectionType {
   };
 }
 
+export interface ApiTimezoneTimezone extends Schema.CollectionType {
+  collectionName: 'timezones';
+  info: {
+    singularName: 'timezone';
+    pluralName: 'timezones';
+    displayName: 'Timezone';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Timezone: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::timezone.timezone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::timezone.timezone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUserInfoUserInfo extends Schema.CollectionType {
   collectionName: 'user_infos';
   info: {
@@ -1563,6 +1593,7 @@ declare module '@strapi/types' {
       'api::service.service': ApiServiceService;
       'api::state.state': ApiStateState;
       'api::support.support': ApiSupportSupport;
+      'api::timezone.timezone': ApiTimezoneTimezone;
       'api::user-info.user-info': ApiUserInfoUserInfo;
     }
   }
