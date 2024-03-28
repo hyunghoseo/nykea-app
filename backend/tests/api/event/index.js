@@ -72,9 +72,6 @@ describe("Event Test", () => {
             .expect((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
-                // expected "null", but received "undefined"
-                // expect(data.attributes.Poster).toBe(event.data.Poster);
-                // expect(data.attributes.Picture).toBe(event.data.Picture);
                 expect(data.attributes.Description).toBe(event.data.Description);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
@@ -221,6 +218,4 @@ describe("Event Test", () => {
                 expect(data.attributes.locale).toBe(event.data.locale);
             })
     })
-
-    
 })
