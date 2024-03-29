@@ -16,8 +16,8 @@
         "edit": {},
         "list": {
           "label": "id",
-          "searchable": true,
-          "sortable": true
+          "searchable": false,
+          "sortable": false
         }
       },
       "Label": {
@@ -37,7 +37,7 @@
       "AddressURL": {
         "edit": {
           "label": "AddressURL",
-          "description": "When the  is clicked, it will go to this URL.",
+          "description": "When the link is clicked, it will go to this URL.",
           "placeholder": "",
           "visible": true,
           "editable": true

@@ -278,22 +278,6 @@
         ],
         [
           {
-            "name": "HostingGroup",
-            "size": 6
-          },
-          {
-            "name": "Fee",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "Description",
-            "size": 12
-          }
-        ],
-        [
-          {
             "name": "StartDate",
             "size": 12
           }
@@ -318,11 +302,11 @@
         ],
         [
           {
-            "name": "Private",
-            "size": 4
+            "name": "Contact",
+            "size": 6
           },
           {
-            "name": "Contact",
+            "name": "Fee",
             "size": 6
           },
           {
@@ -338,8 +322,8 @@
         ],
         [
           {
-            "name": "Pictures",
-            "size": 8
+            "name": "Description",
+            "size": 12
           }
         ]
       ],

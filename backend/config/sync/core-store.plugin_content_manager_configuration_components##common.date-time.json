@@ -75,9 +75,7 @@
           {
             "name": "Date",
             "size": 4
-          }
-        ],
-        [
+          },
           {
             "name": "Time",
             "size": 4

@@ -1028,7 +1028,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
         };
       }>;
     Description: Attribute.Blocks &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
