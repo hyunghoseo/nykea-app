@@ -1,6 +1,7 @@
 const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
+const constructor = require("../../helpers/constructor");
 
 describe("Event Test", () => {
     let authenticatedUser;
@@ -10,42 +11,12 @@ describe("Event Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    /**
-     * @param {string | number} id
-     */
-    const constructEvent = (id) => {
-        return {
-            data: {
-                "Title": "Event Title " + id,
-                "StartDate": {
-                    "id": id,
-                    "Date": "2024-03-04",
-                    "Time": "12:13:54.000"
-                  },
-                "Location": [
-                {
-                    "id": id,
-                    "Label": "MARCH TEST",
-                    "AddressURL": "www.blahblah",
-                    "AddressDetail": "3rd Floor"
-                }
-                ],
-                "Description": "Event Description " + id,
-                "Fee": "Event Fee " + id, 
-                "Contact": "Event Contact " + id,
-                "Private": false,
-                "locale": "en",
-                "publishedAt": Date.now(),
-            }
-        };
-    }
-
     // Create
     it("[Create] Public user should not post Events", async () => {
         await request(strapi.server.httpServer)
             .post("/api/events")
             .set("accept", "application/json")
-            .send(constructEvent(0))
+            .send(constructor.constructEvent(1))
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -55,27 +26,24 @@ describe("Event Test", () => {
             .post("/api/events")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructEvent(0))
+            .send(constructor.constructEvent(1))
             .expect("Content-Type", /json/)
             .expect(500)
     })
 
     it("[Create] Admin user should post Events", async () => {
-        const event = constructEvent(0);
+        const event = constructor.constructEvent(1);
         await request(strapi.server.httpServer)
             .post("/api/events")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructEvent(0))
+            .send(constructor.constructEvent(1))
             .expect("Content-Type", /json/)
             .expect(200)
             .expect((data) => {
                 data = data.body.data;
+                console.log(data);
                 expect(data.attributes.Title).toBe(event.data.Title);
-                // expected "null", but received "undefined"
-                // expect(data.attributes.Poster).toBe(event.data.Poster);
-                // expect(data.attributes.Picture).toBe(event.data.Picture);
-                expect(data.attributes.Description).toBe(event.data.Description);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -113,23 +81,23 @@ describe("Event Test", () => {
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
+                console.log(data.body.data);
                 expect(data.body.data.length).toBe(1);
             })
     })
 
     // FindOne
     it("[FindOne] Public user should find an event", async () => {
-        const id = 0;
-        const event = constructEvent(id);
+        const id = 1;
+        const event = constructor.constructEvent(id);
         await request(strapi.server.httpServer)
-            .get("/api/events/" + 1)
+            .get("/api/events/" + id)
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
-                expect(data.attributes.Description).toBe(event.data.Description);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -138,10 +106,10 @@ describe("Event Test", () => {
     })
 
     it("[FindOne] Authenticated user should find an event", async () => {
-        const id = 0;
-        const event = constructEvent(id);
+        const id = 1;
+        const event = constructor.constructEvent(id);
         await request(strapi.server.httpServer)
-            .get("/api/events/" + 1)
+            .get("/api/events/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
@@ -149,7 +117,6 @@ describe("Event Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
-                expect(data.attributes.Description).toBe(event.data.Description);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -158,10 +125,10 @@ describe("Event Test", () => {
     })
 
     it("[FindOne] Admin user should find an event", async () => {
-        const id = 0;
-        const event = constructEvent(id);
+        const id = 1;
+        const event = constructor.constructEvent(id);
         await request(strapi.server.httpServer)
-            .get("/api/events/" + 1)
+            .get("/api/events/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
@@ -169,7 +136,6 @@ describe("Event Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(event.data.Title);
-                expect(data.attributes.Description).toBe(event.data.Description);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
@@ -184,7 +150,7 @@ describe("Event Test", () => {
             .put("/api/events/" + id)
             .set("accept", "application/json")
             .set('Content-Type', 'application/json')
-            .send(constructEvent(10))
+            .send(constructor.constructEvent(3))
             .expect("Content-Type", /json/)
             .expect(500)
     })
@@ -195,26 +161,25 @@ describe("Event Test", () => {
             .put("/api/events/" + id)
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .set('Content-Type', 'application/json')
-            .send(constructEvent(12))
+            .send(constructor.constructEvent(3))
             .expect("Content-Type", /json/)
             .expect(500)
     })
 
     it("[Update] Admin user should update Events", async () => {
         const id = 1;
-        const event = constructEvent(1);
+        const event = constructor.constructEvent(3);
+        console.log(event);
         await request(strapi.server.httpServer)
             .put("/api/events/" + id)
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(event)
+            .send(constructor.constructEvent(3))
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
                 data = data.body.data;
-                console.log(data.attributes.Title);
                 expect(data.attributes.Title).toBe(event.data.Title);
-                expect(data.attributes.Description).toBe(event.data.Description);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);

@@ -69,9 +69,45 @@ const constructSupportTicket = (id) => {
     };
 }
 
+/**
+ * @param {string | number} id
+ */
+
+const constructEvent = (id) => {
+    return {
+        data: {
+            "Title": "Event Title " + id,
+            "Poster": null,
+            "StartDate": {
+                    "Date": "2024-04-14",
+                    "Time": "12:13:54.000",
+                    "TimeZone": "EST"
+                },
+            "Location": [
+                {
+                    "Label": "KEA Church 100",
+                    "AddressURL": "www.google.com",
+                    "Address": "374 Squaw Brook Rd",
+                    "AddressDetail": null,
+                    "City": null,
+                    "Country": null,
+                    "state": null
+                }
+            ],
+            "Description": "Event Description " + id,
+            "HostingGroup": null,
+            "Fee": "$ Event Fee " + id, 
+            "Contact": "Event Contact " + id,
+            "Private": false,
+            "locale": "en"
+        }
+    };
+}
+
 module.exports = {
     constructGroup, 
     constructUserInfo, 
     constructLeader,
-    constructSupportTicket
+    constructSupportTicket,
+    constructEvent
 }
