@@ -75,16 +75,14 @@
           {
             "name": "Date",
             "size": 4
-          }
-        ],
-        [
+          },
           {
             "name": "Time",
             "size": 4
           },
           {
             "name": "TimeZone",
-            "size": 6
+            "size": 4
           }
         ]
       ]

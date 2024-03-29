@@ -161,7 +161,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Pictures",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -171,9 +170,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Description",
           "Location.Label",
-          "Location.Address"
+          "Location.Address",
+          "Description"
         ]
       },
       "conditions": []
@@ -186,7 +185,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Pictures",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -196,9 +194,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Description",
           "Location.Label",
-          "Location.Address"
+          "Location.Address",
+          "Description"
         ]
       },
       "conditions": []
@@ -211,7 +209,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Pictures",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -221,9 +218,9 @@
           "EndDate.Time",
           "HostingGroup",
           "Private",
-          "Description",
           "Location.Label",
-          "Location.Address"
+          "Location.Address",
+          "Description"
         ]
       },
       "conditions": []

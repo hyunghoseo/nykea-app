@@ -962,7 +962,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Pictures: Attribute.Media &
+    Picture: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1021,7 +1021,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
         };
       }>;
     Description: Attribute.Blocks &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

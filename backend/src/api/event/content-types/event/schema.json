@@ -40,7 +40,7 @@
         }
       }
     },
-    "Pictures": {
+    "Picture": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -136,7 +136,7 @@
         }
       },
       "type": "blocks",
-      "required": true
+      "required": false
     }
   }
 }

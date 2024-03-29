@@ -8,8 +8,8 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "Title",
-      "defaultSortBy": "Title",
-      "defaultSortOrder": "ASC"
+      "defaultSortBy": "createdAt",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -48,16 +48,16 @@
           "sortable": false
         }
       },
-      "Pictures": {
+      "Picture": {
         "edit": {
-          "label": "Pictures",
+          "label": "Picture",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Pictures",
+          "label": "Picture",
           "searchable": false,
           "sortable": false
         }
@@ -252,28 +252,28 @@
       "edit": [
         [
           {
-            "name": "Title",
-            "size": 6
+            "name": "HostingGroup",
+            "size": 4
           },
+          {
+            "name": "Private",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Title",
+            "size": 12
+          }
+        ],
+        [
           {
             "name": "Poster",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "HostingGroup",
-            "size": 6
           },
           {
-            "name": "Fee",
+            "name": "Picture",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "Description",
-            "size": 12
           }
         ],
         [
@@ -302,25 +302,27 @@
         ],
         [
           {
-            "name": "Private",
-            "size": 4
+            "name": "Contact",
+            "size": 6
           },
           {
-            "name": "Contact",
+            "name": "Fee",
             "size": 6
           }
         ],
         [
           {
-            "name": "Pictures",
-            "size": 8
+            "name": "Description",
+            "size": 12
           }
         ]
       ],
       "list": [
         "id",
         "Title",
-        "Poster"
+        "Poster",
+        "HostingGroup",
+        "Private"
       ]
     }
   },
