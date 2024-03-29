@@ -8,8 +8,8 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "Title",
-      "defaultSortBy": "Title",
-      "defaultSortOrder": "ASC"
+      "defaultSortBy": "createdAt",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -223,7 +223,8 @@
         "id",
         "Title",
         "Poster",
-        "Link"
+        "HostingGroup",
+        "Private"
       ]
     }
   },
