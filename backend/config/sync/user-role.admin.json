@@ -25,6 +25,18 @@
       "action": "api::church-info.church-info.update"
     },
     {
+      "action": "api::event.event.create"
+    },
+    {
+      "action": "api::event.event.find"
+    },
+    {
+      "action": "api::event.event.findOne"
+    },
+    {
+      "action": "api::event.event.update"
+    },
+    {
       "action": "api::group.group.create"
     },
     {

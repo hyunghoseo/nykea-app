@@ -20,3 +20,4 @@ require('./api/leader');
 require('./api/user');
 require('./api/user-info');
 require('./api/support');
+require('./api/event');

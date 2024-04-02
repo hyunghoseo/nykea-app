@@ -40,15 +40,7 @@
         }
       }
     },
-    "Description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text"
-    },
-    "Pictures": {
+    "Picture": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -61,21 +53,14 @@
         }
       }
     },
-    "Location": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
     "Fee": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text"
+      "type": "string",
+      "default": "$0.00"
     },
     "Links": {
       "displayName": "Link",
@@ -97,7 +82,8 @@
           "localized": true
         }
       },
-      "component": "common.date-time"
+      "component": "common.date-time",
+      "required": true
     },
     "EndDate": {
       "type": "component",
@@ -131,6 +117,26 @@
         }
       },
       "type": "string"
+    },
+    "Location": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.address2",
+      "required": true
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks",
+      "required": false
     }
   }
 }

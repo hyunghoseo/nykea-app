@@ -269,19 +269,27 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
-          "Pictures",
-          "Location",
+          "Picture",
           "Fee",
           "Links.Label",
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Location.Label",
+          "Location.AddressURL",
+          "Location.Address",
+          "Location.AddressDetail",
+          "Location.City",
+          "Location.Country",
+          "Location.state",
+          "Description"
         ],
         "locales": [
           "en",
@@ -322,19 +330,27 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
-          "Pictures",
-          "Location",
+          "Picture",
           "Fee",
           "Links.Label",
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Location.Label",
+          "Location.AddressURL",
+          "Location.Address",
+          "Location.AddressDetail",
+          "Location.City",
+          "Location.Country",
+          "Location.state",
+          "Description"
         ],
         "locales": [
           "en",
@@ -351,19 +367,27 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
-          "Pictures",
-          "Location",
+          "Picture",
           "Fee",
           "Links.Label",
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
-          "Contact"
+          "Contact",
+          "Location.Label",
+          "Location.AddressURL",
+          "Location.Address",
+          "Location.AddressDetail",
+          "Location.City",
+          "Location.Country",
+          "Location.state",
+          "Description"
         ],
         "locales": [
           "en",
@@ -646,6 +670,78 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::state.state",
+      "properties": {
+        "fields": [
+          "Abbreviation",
+          "State"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::state.state",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::state.state",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::state.state",
+      "properties": {
+        "fields": [
+          "Abbreviation",
+          "State"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::state.state",
+      "properties": {
+        "fields": [
+          "Abbreviation",
+          "State"
         ],
         "locales": [
           "en",

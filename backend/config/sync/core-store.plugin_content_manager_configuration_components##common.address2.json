@@ -1,0 +1,172 @@
+{
+  "key": "plugin_content_manager_configuration_components::common.address2",
+  "value": {
+    "uid": "common.address2",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "Label",
+      "defaultSortBy": "Label",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Label": {
+        "edit": {
+          "label": "Label",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Label",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "AddressURL": {
+        "edit": {
+          "label": "AddressURL",
+          "description": "When the link is clicked, it will go to this URL.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "AddressURL",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Address": {
+        "edit": {
+          "label": "Address",
+          "description": "Street Address",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Address",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "AddressDetail": {
+        "edit": {
+          "label": "AddressDetail",
+          "description": "Room name, floor, etc.",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "AddressDetail",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "City": {
+        "edit": {
+          "label": "City",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "City",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Country": {
+        "edit": {
+          "label": "Country",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Country",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "state": {
+        "edit": {
+          "label": "state",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "Abbreviation"
+        },
+        "list": {
+          "label": "state",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Label",
+        "AddressURL",
+        "Address"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Label",
+            "size": 6
+          },
+          {
+            "name": "AddressURL",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "Address",
+            "size": 8
+          },
+          {
+            "name": "AddressDetail",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "City",
+            "size": 4
+          },
+          {
+            "name": "state",
+            "size": 4
+          },
+          {
+            "name": "Country",
+            "size": 4
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
