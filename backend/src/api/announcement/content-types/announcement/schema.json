@@ -72,7 +72,7 @@
         }
       },
       "type": "blocks",
-      "required": false
+      "required": true
     },
     "YoutubeURL": {
       "pluginOptions": {

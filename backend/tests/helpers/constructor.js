@@ -7,7 +7,18 @@ const constructAnnouncement = (id) => {
             "Title": "Test Announcement " + id,
             "HostingGroup": null,
             "Poster": null,
-            "Description": "Announcement Description " + id,
+            "Description": [
+                {
+                    "type": "heading",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "HelloOOOOO"
+                        }
+                    ],
+                    "level": 2
+                }
+            ],
             "Private": false,
             "YoutubeURL": null,
             "locale": "en",

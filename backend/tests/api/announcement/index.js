@@ -44,6 +44,7 @@ describe("Announcement Test", () => {
             .expect((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
+                expect(data.attributes.Description).toStrictEqual(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
             })
@@ -95,6 +96,7 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
+                expect(data.attributes.Description).toStrictEqual(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
             })
@@ -112,6 +114,7 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
+                expect(data.attributes.Description).toStrictEqual(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
             })
@@ -129,6 +132,7 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
+                expect(data.attributes.Description).toStrictEqual(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
             })
@@ -170,6 +174,7 @@ describe("Announcement Test", () => {
             .then((data) => {
                 data = data.body.data;
                 expect(data.attributes.Title).toBe(announcement.data.Title);
+                expect(data.attributes.Description).toStrictEqual(announcement.data.Description);
                 expect(data.attributes.Private).toBe(announcement.data.Private);
                 expect(data.attributes.locale).toBe(announcement.data.locale);
             })
