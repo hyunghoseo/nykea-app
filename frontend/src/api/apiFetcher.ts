@@ -1,6 +1,7 @@
 import { ApiContext } from "./apiContext";
 
-const baseUrl = "https://admin.nykea.org/api";
+const baseUrl = "http://localhost:1338/api"; //LOCAL
+// const baseUrl = "https://admin.nykea.org/api"; //PROD
 
 export type ErrorWrapper<TError> =
   | TError

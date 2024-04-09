@@ -1,48 +1,80 @@
-import { Announcement } from "@/api/apiSchemas";
-import { StyleProp, ViewStyle, StyleSheet } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
+import { H3, P } from "@expo/html-elements";
+import Moment from "moment";
 import { Skeleton } from "moti/skeleton";
-import { H1 } from "@expo/html-elements";
+import { StyleProp, StyleSheet, ViewStyle } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Shadow } from "react-native-shadow-2";
+
+import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
+import { useTypographyStyles } from "@/hooks/useTypographyStyles";
+import { Announcement } from "@/api/apiSchemas";
+
+import { Tag } from "../Layout/Tag";
 
 interface AnnouncementCardProps extends Partial<Announcement> {
-    isLoading?: boolean;
-    style?: StyleProp<ViewStyle>;
+  isLoading?: boolean;
+  style?: StyleProp<ViewStyle>;
 }
 
 export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
-    const styles = useStyles();
+  const styles = useStyles();
+  const { h3, date, bodyNormal } = useTypographyStyles();
 
-    return (
-        <TouchableOpacity
-            style={styles.container}
-            activeOpacity={0.6}
-            disabled={props.isLoading}
-        >
-            <Skeleton.Group show={Boolean(props.isLoading)}>
-                <Skeleton colorMode="light">
-                    <H1>hello</H1>
-                </Skeleton>
-            </Skeleton.Group>
-        </TouchableOpacity>
-    )
-}
+  return (
+    <Shadow
+      style={styles.outerContainer}
+      endColor="#86868600"
+      startColor="#8686861a"
+      distance={15}
+      offset={[4, 4]}
+    >
+      <TouchableOpacity
+        style={styles.innerContainer}
+        activeOpacity={0.6}
+        disabled={props.isLoading}
+      >
+        <Skeleton.Group show={Boolean(props.isLoading)}>
+          <Skeleton colorMode="light">
+            {props.HostingGroup?.data && (
+              <Tag text={props.HostingGroup?.data?.attributes?.Name} />
+            )}
+          </Skeleton>
+          <Skeleton colorMode="light">
+            <P style={[date, styles.text]}>
+              Posted on {Moment(props.publishedAt).format("MM/DD/YY")}
+            </P>
+          </Skeleton>
+          <Skeleton colorMode="light">
+            <H3 style={[h3, styles.text]}>{props.Title}</H3>
+          </Skeleton>
+          <Skeleton colorMode="light">
+            <P style={bodyNormal}>{props.Description}</P>
+          </Skeleton>
+        </Skeleton.Group>
+      </TouchableOpacity>
+    </Shadow>
+  );
+};
 
 const useStyles = () => {
-    const { isMobile } = useResponsiveLayout();
+  const { isMobile } = useResponsiveLayout();
 
-    return StyleSheet.create({
-        container: {
-            flex: 1,
-            gap: 32,
-            shadowColor: "#868686",
-            // only affect Web and iOS
-            shadowOffset: { width: 4, height: 4 },
-            shadowOpacity: 0.1,
-            shadowRadius: 1.51,
-            // only affect Android
-            elevation: 20,
-            // backgroundColor: "#f1ff4f"
-        },
-    })
-}
+  return StyleSheet.create({
+    outerContainer: {
+      flex: 1,
+      backgroundColor: "white",
+      gap: 32,
+      width: "100%",
+      borderRadius: 8,
+    },
+    innerContainer: {
+      paddingHorizontal: 24,
+      paddingVertical: 32,
+      width: "100%",
+      alignItems: "flex-start",
+    },
+    text: {
+      paddingBottom: 8,
+    },
+  });
+};

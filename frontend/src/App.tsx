@@ -29,7 +29,7 @@ import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
 import AboutScreen from "@/screens/AboutScreen";
-import AnnouncementsScreen from "@/screens/AnnouncementsScreen";
+import { AnnouncementsScreen } from "@/screens/AnnouncementsScreen";
 import ContactUsScreen from "@/screens/ContactUsScreen";
 import EventsScreen from "@/screens/EventsScreen";
 import { GroupsScreen } from "@/screens/GroupsScreen";
