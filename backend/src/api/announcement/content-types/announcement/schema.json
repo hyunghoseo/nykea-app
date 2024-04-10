@@ -80,7 +80,8 @@
           "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "regex": "^(https?\\:\\/\\/)?(www\\.youtube\\.com|youtu\\.be)\\/.+$"
     }
   }
 }

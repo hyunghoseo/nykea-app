@@ -108,7 +108,7 @@
       "YoutubeURL": {
         "edit": {
           "label": "YoutubeURL",
-          "description": "",
+          "description": "Paste a YouTube link here",
           "placeholder": "",
           "visible": true,
           "editable": true

@@ -559,6 +559,17 @@
       "conditions": []
     },
     {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::support.support",
+      "properties": {
+        "locales": [
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
       "action": "plugin::content-manager.explorer.read",
       "actionParameters": {},
       "subject": "api::support.support",
