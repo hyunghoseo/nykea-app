@@ -1305,61 +1305,6 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
-export interface ApiStateState extends Schema.CollectionType {
-  collectionName: 'states';
-  info: {
-    singularName: 'state';
-    pluralName: 'states';
-    displayName: 'State';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Abbreviation: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    State: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::state.state',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::state.state',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::state.state',
-      'oneToMany',
-      'api::state.state'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiSupportSupport extends Schema.CollectionType {
   collectionName: 'supports';
   info: {
@@ -1560,7 +1505,6 @@ declare module '@strapi/types' {
       'api::group.group': ApiGroupGroup;
       'api::leader.leader': ApiLeaderLeader;
       'api::service.service': ApiServiceService;
-      'api::state.state': ApiStateState;
       'api::support.support': ApiSupportSupport;
       'api::user-info.user-info': ApiUserInfoUserInfo;
     }
