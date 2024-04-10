@@ -104,17 +104,16 @@
           "sortable": true
         }
       },
-      "state": {
+      "State": {
         "edit": {
-          "label": "state",
+          "label": "State",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "Abbreviation"
+          "editable": true
         },
         "list": {
-          "label": "state",
+          "label": "State",
           "searchable": true,
           "sortable": true
         }
@@ -154,7 +153,7 @@
             "size": 4
           },
           {
-            "name": "state",
+            "name": "State",
             "size": 4
           },
           {

@@ -191,7 +191,10 @@
           "Contact",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.State",
+          "Description",
+          "Location.City",
+          "Location.Country"
         ]
       },
       "conditions": [
@@ -218,7 +221,10 @@
           "Contact",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.State",
+          "Description",
+          "Location.City",
+          "Location.Country"
         ]
       },
       "conditions": [
@@ -245,7 +251,10 @@
           "Contact",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.State",
+          "Description",
+          "Location.City",
+          "Location.Country"
         ]
       },
       "conditions": [

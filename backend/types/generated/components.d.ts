@@ -55,8 +55,7 @@ export interface CommonAddress2 extends Schema.Component {
     AddressURL: Attribute.String;
     Address: Attribute.String & Attribute.Required;
     AddressDetail: Attribute.String;
-    City: Attribute.String;
-    Country: Attribute.String & Attribute.DefaultTo<'USA'>;
+    City: Attribute.String & Attribute.Required;
     State: Attribute.Enumeration<
       [
         'AL, Alabama',
@@ -111,7 +110,9 @@ export interface CommonAddress2 extends Schema.Component {
         'WY, Wyoming'
       ]
     > &
+      Attribute.Required &
       Attribute.DefaultTo<'NJ, New Jersey'>;
+    Country: Attribute.String & Attribute.Required & Attribute.DefaultTo<'USA'>;
   };
 }
 

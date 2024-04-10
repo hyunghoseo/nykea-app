@@ -172,7 +172,10 @@
           "Private",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.State",
+          "Description",
+          "Location.City",
+          "Location.Country"
         ]
       },
       "conditions": []
@@ -196,7 +199,10 @@
           "Private",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.State",
+          "Description",
+          "Location.City",
+          "Location.Country"
         ]
       },
       "conditions": []
@@ -220,7 +226,10 @@
           "Private",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.State",
+          "Description",
+          "Location.City",
+          "Location.Country"
         ]
       },
       "conditions": []

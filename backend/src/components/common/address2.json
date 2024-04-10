@@ -12,7 +12,8 @@
       "required": true
     },
     "AddressURL": {
-      "type": "string"
+      "type": "string",
+      "regex": "(https?:\\/\\/www\\.google\\.com\\/maps\\/(?:.*?\\/)?(?:@)?(-?\\d{1,3}\\.\\d+),(-?\\d{1,3}\\.\\d+)(?:,\\d+z)?\\/?(?:.*?\\/)?(?:data=.*|layer=.*|ll=.*|z=.*|q=.*)|https?:\\/\\/(goo\\.gl\\/maps|maps\\.app\\.goo\\.gl)\\/.*$)"
     },
     "Address": {
       "type": "string",
@@ -22,11 +23,8 @@
       "type": "string"
     },
     "City": {
-      "type": "string"
-    },
-    "Country": {
       "type": "string",
-      "default": "USA"
+      "required": true
     },
     "State": {
       "type": "enumeration",
@@ -82,7 +80,13 @@
         "WI, Wisconsin",
         "WY, Wyoming"
       ],
-      "default": "NJ, New Jersey"
+      "default": "NJ, New Jersey",
+      "required": true
+    },
+    "Country": {
+      "type": "string",
+      "default": "USA",
+      "required": true
     }
   }
 }
