@@ -172,10 +172,12 @@
           "Private",
           "Location.Label",
           "Location.Address",
-          "Location.State",
-          "Description",
           "Location.City",
-          "Location.Country"
+          "Location.State",
+          "Location.Country",
+          "Description",
+          "StartDate.TimeZone",
+          "EndDate.TimeZone"
         ]
       },
       "conditions": []
@@ -199,10 +201,12 @@
           "Private",
           "Location.Label",
           "Location.Address",
-          "Location.State",
-          "Description",
           "Location.City",
-          "Location.Country"
+          "Location.State",
+          "Location.Country",
+          "Description",
+          "StartDate.TimeZone",
+          "EndDate.TimeZone"
         ]
       },
       "conditions": []
@@ -226,10 +230,12 @@
           "Private",
           "Location.Label",
           "Location.Address",
-          "Location.State",
-          "Description",
           "Location.City",
-          "Location.Country"
+          "Location.State",
+          "Location.Country",
+          "Description",
+          "StartDate.TimeZone",
+          "EndDate.TimeZone"
         ]
       },
       "conditions": []
