@@ -49,18 +49,6 @@
       "action": "api::event.event.update"
     },
     {
-      "action": "api::announcement.announcement.create"
-    },
-    {
-      "action": "api::announcement.announcement.find"
-    },
-    {
-      "action": "api::announcement.announcement.findOne"
-    },
-    {
-      "action": "api::announcement.announcement.update"
-    },
-    {
       "action": "api::group.group.create"
     },
     {
