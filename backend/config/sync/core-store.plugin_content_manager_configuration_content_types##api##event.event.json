@@ -308,16 +308,6 @@
           {
             "name": "Fee",
             "size": 6
-          },
-          {
-            "name": "Fee",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "Description",
-            "size": 12
           }
         ],
         [
@@ -332,8 +322,7 @@
         "Title",
         "Poster",
         "HostingGroup",
-        "Private",
-        "Description"
+        "Private"
       ]
     }
   },
