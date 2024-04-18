@@ -60,8 +60,7 @@
         }
       },
       "type": "string",
-      "default": "$0.00",
-      "regex": "\\$\\d+(?:\\.\\d+)?"
+      "default": "$0.00"
     },
     "Links": {
       "displayName": "Link",

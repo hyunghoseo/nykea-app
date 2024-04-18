@@ -29,6 +29,7 @@
     "State": {
       "type": "enumeration",
       "enum": [
+        "N/A",
         "AL, Alabama",
         "AK, Alaska",
         "AZ, Arizona",
@@ -84,7 +85,12 @@
       "required": true
     },
     "Country": {
-      "type": "string",
+      "type": "enumeration",
+      "enum": [
+        "USA",
+        "Rep. of Korea",
+        "Japan"
+      ],
       "default": "USA",
       "required": true
     }

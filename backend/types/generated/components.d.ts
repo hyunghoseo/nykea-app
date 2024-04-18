@@ -58,6 +58,7 @@ export interface CommonAddress2 extends Schema.Component {
     City: Attribute.String & Attribute.Required;
     State: Attribute.Enumeration<
       [
+        'N/A',
         'AL, Alabama',
         'AK, Alaska',
         'AZ, Arizona',
@@ -112,7 +113,9 @@ export interface CommonAddress2 extends Schema.Component {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'NJ, New Jersey'>;
-    Country: Attribute.String & Attribute.Required & Attribute.DefaultTo<'USA'>;
+    Country: Attribute.Enumeration<['USA', 'Rep. of Korea', 'Japan']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'USA'>;
   };
 }
 

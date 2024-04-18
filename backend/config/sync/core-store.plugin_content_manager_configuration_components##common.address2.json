@@ -23,7 +23,7 @@
       "Label": {
         "edit": {
           "label": "Label",
-          "description": "",
+          "description": "Location Title: Church, Park, etc.",
           "placeholder": "",
           "visible": true,
           "editable": true
