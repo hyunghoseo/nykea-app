@@ -4,6 +4,12 @@
   "type": "authenticated",
   "permissions": [
     {
+      "action": "api::announcement.announcement.find"
+    },
+    {
+      "action": "api::announcement.announcement.findOne"
+    },
+    {
       "action": "api::banner.banner.find"
     },
     {
@@ -11,6 +17,12 @@
     },
     {
       "action": "api::church-info.church-info.find"
+    },
+    {
+      "action": "api::event.event.find"
+    },
+    {
+      "action": "api::event.event.findOne"
     },
     {
       "action": "api::group.group.find"

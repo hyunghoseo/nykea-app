@@ -713,13 +713,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     Poster: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
-        };
-      }>;
-    Description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     HostingGroup: Attribute.Relation<
@@ -739,6 +733,19 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    Description: Attribute.Blocks &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    YoutubeURL: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -962,30 +969,19 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Pictures: Attribute.Media &
+    Picture: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    Location: Attribute.String &
+    Fee: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }>;
-    Fee: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+      }> &
+      Attribute.DefaultTo<'$0.00'>;
     Links: Attribute.Component<'common.link', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -993,6 +989,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
         };
       }>;
     StartDate: Attribute.Component<'common.date-time'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1018,6 +1015,19 @@ export interface ApiEventEvent extends Schema.CollectionType {
       }> &
       Attribute.DefaultTo<false>;
     Contact: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Location: Attribute.Component<'common.address2', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.Blocks &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1295,6 +1305,61 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiStateState extends Schema.CollectionType {
+  collectionName: 'states';
+  info: {
+    singularName: 'state';
+    pluralName: 'states';
+    displayName: 'State';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Abbreviation: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    State: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::state.state',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::state.state',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::state.state',
+      'oneToMany',
+      'api::state.state'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSupportSupport extends Schema.CollectionType {
   collectionName: 'supports';
   info: {
@@ -1317,7 +1382,8 @@ export interface ApiSupportSupport extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'Calvin'>;
     Email: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1494,6 +1560,7 @@ declare module '@strapi/types' {
       'api::group.group': ApiGroupGroup;
       'api::leader.leader': ApiLeaderLeader;
       'api::service.service': ApiServiceService;
+      'api::state.state': ApiStateState;
       'api::support.support': ApiSupportSupport;
       'api::user-info.user-info': ApiUserInfoUserInfo;
     }

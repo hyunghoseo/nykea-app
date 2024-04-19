@@ -11,11 +11,11 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description"
         ],
         "locales": [
           "en"
@@ -42,11 +42,11 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description"
         ],
         "locales": [
           "en"
@@ -62,11 +62,11 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
           "HostingGroup",
           "Private",
           "Link.Label",
-          "Link.URL"
+          "Link.URL",
+          "Description"
         ],
         "locales": [
           "en"
@@ -221,9 +221,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
-          "Pictures",
-          "Location",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -232,7 +229,10 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private"
+          "Private",
+          "Location.Label",
+          "Location.Address",
+          "Description"
         ],
         "locales": [
           "en"
@@ -259,9 +259,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
-          "Pictures",
-          "Location",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -270,7 +267,10 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private"
+          "Private",
+          "Location.Label",
+          "Location.Address",
+          "Description"
         ],
         "locales": [
           "en"
@@ -286,9 +286,6 @@
         "fields": [
           "Title",
           "Poster",
-          "Description",
-          "Pictures",
-          "Location",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -297,7 +294,10 @@
           "EndDate.Date",
           "EndDate.Time",
           "HostingGroup",
-          "Private"
+          "Private",
+          "Location.Label",
+          "Location.Address",
+          "Description"
         ],
         "locales": [
           "en"

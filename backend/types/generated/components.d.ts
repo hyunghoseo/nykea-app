@@ -43,15 +43,39 @@ export interface AgendaDefault extends Schema.Component {
   };
 }
 
+export interface CommonAddress2 extends Schema.Component {
+  collectionName: 'components_common_address2s';
+  info: {
+    displayName: 'Address';
+    icon: 'pinMap';
+    description: '';
+  };
+  attributes: {
+    Label: Attribute.String & Attribute.Required;
+    AddressURL: Attribute.String;
+    Address: Attribute.String & Attribute.Required;
+    AddressDetail: Attribute.String;
+    City: Attribute.String;
+    Country: Attribute.String & Attribute.DefaultTo<'USA'>;
+    state: Attribute.Relation<
+      'common.address2',
+      'oneToOne',
+      'api::state.state'
+    >;
+  };
+}
+
 export interface CommonDateTime extends Schema.Component {
   collectionName: 'components_common_date_times';
   info: {
     displayName: 'DateTime';
     icon: 'clock';
+    description: '';
   };
   attributes: {
     Date: Attribute.Date & Attribute.Required;
     Time: Attribute.Time;
+    TimeZone: Attribute.String & Attribute.DefaultTo<'EST'>;
   };
 }
 
@@ -123,6 +147,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'agenda.default': AgendaDefault;
+      'common.address2': CommonAddress2;
       'common.date-time': CommonDateTime;
       'common.link': CommonLink;
       'list.announcement': ListAnnouncement;
