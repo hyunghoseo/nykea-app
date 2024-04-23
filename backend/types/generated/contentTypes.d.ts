@@ -1082,7 +1082,7 @@ export interface ApiGroupGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    ShortDescription: Attribute.String &
+    ShortDescription: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1097,9 +1097,16 @@ export interface ApiGroupGroup extends Schema.CollectionType {
     Type: Attribute.Enumeration<
       ['Administrative', 'Community', 'Education', 'Activities']
     > &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
+        };
+      }>;
+    Criteria: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     createdAt: Attribute.DateTime;

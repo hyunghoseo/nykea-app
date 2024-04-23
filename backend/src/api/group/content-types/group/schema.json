@@ -31,7 +31,7 @@
           "localized": true
         }
       },
-      "type": "string",
+      "type": "text",
       "required": false
     },
     "Picture": {
@@ -50,7 +50,7 @@
     "Type": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "enumeration",
@@ -59,7 +59,16 @@
         "Community",
         "Education",
         "Activities"
-      ]
+      ],
+      "required": true
+    },
+    "Criteria": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
