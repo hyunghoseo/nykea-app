@@ -24,20 +24,20 @@ export async function apiFetch<
   THeaders extends {},
   TQueryParams extends {},
   TPathParams extends {},
->({
-  url,
-  method,
-  body,
-  headers,
-  pathParams,
-  queryParams,
-  signal,
-}: ApiFetcherOptions<
-  TBody,
-  THeaders,
-  TQueryParams,
-  TPathParams
->): Promise<TData> {
+  >({
+    url,
+    method,
+    body,
+    headers,
+    pathParams,
+    queryParams,
+    signal,
+  }: ApiFetcherOptions<
+    TBody,
+    THeaders,
+    TQueryParams,
+    TPathParams
+  >): Promise<TData> {
   try {
     const requestHeaders: HeadersInit = {
       "Content-Type": "application/json",
