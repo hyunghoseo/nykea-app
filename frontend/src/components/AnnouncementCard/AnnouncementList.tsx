@@ -27,7 +27,9 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
       listKey={numColumns + ""}
       maxItemsPerRow={numColumns}
       renderItem={({ item }) =>
-        item.attributes ? <AnnouncementCard {...item.attributes} /> : null
+        item.attributes ? (
+          <AnnouncementCard key={item.id} {...item.attributes} />
+        ) : null
       }
       style={styles.list}
       spacing={isMobile ? 24 : 32}

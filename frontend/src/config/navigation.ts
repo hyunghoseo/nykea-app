@@ -1,4 +1,5 @@
 import { LinkingOptions } from "@react-navigation/native";
+import { UndefinedInitialDataInfiniteOptions } from "@tanstack/react-query";
 
 /*
  * Examples with query params:
@@ -13,6 +14,7 @@ export type RootStackParamList = {
   Events: undefined;
   Announcements: undefined;
   ContactUs: undefined;
+  AnnouncementDetail: undefined;
 };
 
 export const linking: LinkingOptions<RootStackParamList> = {
@@ -27,6 +29,7 @@ export const linking: LinkingOptions<RootStackParamList> = {
       Events: "events",
       Announcements: "announcements",
       ContactUs: "contact-us",
+      AnnouncementDetail: "announcements/:id",
       // (query param example) Profile: "profile/:userId"
     },
   },
