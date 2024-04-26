@@ -1,13 +1,11 @@
 import { Text } from "react-native";
 
-import ScreenWrapper from "../ScreenWrapper";
+import ScreenWrapper from "../../components/ScreenWrapper";
 
-const AnnouncementDetails = () => {
+export const AnnouncementDetailsScreen = () => {
   return (
     <ScreenWrapper>
       <Text>AnnouncementDetails Screen</Text>
     </ScreenWrapper>
   );
 };
-
-export default AnnouncementDetails;

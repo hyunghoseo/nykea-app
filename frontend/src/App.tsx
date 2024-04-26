@@ -29,14 +29,15 @@ import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
 import AboutScreen from "@/screens/AboutScreen";
-import { AnnouncementsScreen } from "@/screens/AnnouncementsScreen";
+import {
+  AnnouncementDetailsScreen,
+  AnnouncementsScreen,
+} from "@/screens/Announcements";
 import ContactUsScreen from "@/screens/ContactUsScreen";
 import EventsScreen from "@/screens/EventsScreen";
 import { GroupsScreen } from "@/screens/GroupsScreen";
 import HomeScreen from "@/screens/HomeScreen";
 import ServicesScreen from "@/screens/ServicesScreen";
-
-import AnnouncementDetails from "./components/AnnouncementCard/AnnouncementDetails";
 
 // These should eventually look like:
 // import { EventsScreen, EventsDetailScreen } from @/screens/Events;
@@ -62,7 +63,7 @@ export const AppNavigator = () => {
       <RootStack.Screen name="Announcements" component={AnnouncementsScreen} />
       <RootStack.Screen
         name="AnnouncementDetail"
-        component={AnnouncementDetails}
+        component={AnnouncementDetailsScreen}
       />
       <RootStack.Screen name="ContactUs" component={ContactUsScreen} />
     </RootStack.Navigator>

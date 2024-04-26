@@ -13,7 +13,7 @@ import { Announcement } from "@/api/apiSchemas";
 import { Tag } from "../Layout/Tag";
 
 interface AnnouncementCardProps extends Partial<Announcement> {
-  key: number | undefined;
+  id: number | undefined;
   isLoading?: boolean;
   style?: StyleProp<ViewStyle>;
 }
@@ -31,7 +31,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
     return text;
   };
 
-  console.log(props.key);
+  console.log(props.id);
 
   return (
     <Shadow
@@ -44,7 +44,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
         style={styles.innerContainer}
         activeOpacity={0.6}
         disabled={props.isLoading}
-        onPress={() => navigationRef.navigate(`announcements/${props.key}`)}
+        onPress={() => navigationRef.navigate(`announcements/${props.id}`)}
       >
         <Skeleton.Group show={Boolean(props.isLoading)}>
           {props.HostingGroup?.data && (

@@ -8,7 +8,7 @@ import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { useGetAnnouncements } from "@/api/apiComponents";
 import { AnnouncementList } from "@/components/AnnouncementCard/AnnouncementList";
 
-import ScreenWrapper from "../components/ScreenWrapper";
+import ScreenWrapper from "../../components/ScreenWrapper";
 
 export const AnnouncementsScreen = () => {
   const {

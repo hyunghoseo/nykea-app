@@ -28,7 +28,7 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
       maxItemsPerRow={numColumns}
       renderItem={({ item }) =>
         item.attributes ? (
-          <AnnouncementCard key={item.id} {...item.attributes} />
+          <AnnouncementCard id={item.id} {...item.attributes} />
         ) : null
       }
       style={styles.list}
@@ -40,9 +40,7 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
       key={numColumns + "placeholder"}
       listKey={numColumns + ""}
       maxItemsPerRow={numColumns}
-      renderItem={(rowIndex) => (
-        <AnnouncementCard key={rowIndex + ""} isLoading />
-      )}
+      renderItem={(rowIndex) => <AnnouncementCard isLoading />}
       style={styles.list}
     />
   );
