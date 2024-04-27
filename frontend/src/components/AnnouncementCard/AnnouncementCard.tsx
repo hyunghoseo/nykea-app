@@ -31,8 +31,6 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
     return text;
   };
 
-  console.log(props.id);
-
   return (
     <Shadow
       style={styles.outerContainer}
@@ -78,8 +76,6 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
 };
 
 const useStyles = () => {
-  const { isMobile } = useResponsiveLayout();
-
   return StyleSheet.create({
     outerContainer: {
       flex: 1,

@@ -1,5 +1,4 @@
 import { LinkingOptions } from "@react-navigation/native";
-import { UndefinedInitialDataInfiniteOptions } from "@tanstack/react-query";
 
 /*
  * Examples with query params:
