@@ -45,9 +45,8 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
         activeOpacity={0.6}
         disabled={props.isLoading}
         onPress={() =>
-          navigationRef.navigate("Details", {
-            itemId: 86,
-            otherParam: "anything you want here",
+          navigationRef.navigate("AnnouncementDetails", {
+            id: props.id,
           })
         }
       >
