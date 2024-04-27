@@ -6,7 +6,6 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Shadow } from "react-native-shadow-2";
 
 import { useNavigationRef } from "@/contexts/NavigationProvider";
-import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { Announcement } from "@/api/apiSchemas";
 

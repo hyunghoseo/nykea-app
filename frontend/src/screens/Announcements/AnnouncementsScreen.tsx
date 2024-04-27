@@ -2,7 +2,6 @@ import { H1, P } from "@expo/html-elements";
 import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
-import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { useGetAnnouncements } from "@/api/apiComponents";
@@ -42,8 +41,6 @@ export const AnnouncementsScreen = () => {
 };
 
 const useStyles = () => {
-  const { isMobile } = useResponsiveLayout();
-
   return StyleSheet.create({
     headerSection: {
       alignItems: "center",
