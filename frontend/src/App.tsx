@@ -61,10 +61,7 @@ export const AppNavigator = () => {
       <RootStack.Screen name="Services" component={ServicesScreen} />
       <RootStack.Screen name="Events" component={EventsScreen} />
       <RootStack.Screen name="Announcements" component={AnnouncementsScreen} />
-      <RootStack.Screen
-        name="AnnouncementDetail"
-        component={AnnouncementDetailsScreen}
-      />
+      <RootStack.Screen name="Details" component={AnnouncementDetailsScreen} />
       <RootStack.Screen name="ContactUs" component={ContactUsScreen} />
     </RootStack.Navigator>
   );

@@ -44,7 +44,12 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
         style={styles.innerContainer}
         activeOpacity={0.6}
         disabled={props.isLoading}
-        onPress={() => navigationRef.navigate(`announcements/${props.id}`)}
+        onPress={() =>
+          navigationRef.navigate("Details", {
+            itemId: 86,
+            otherParam: "anything you want here",
+          })
+        }
       >
         <Skeleton.Group show={Boolean(props.isLoading)}>
           {props.HostingGroup?.data && (

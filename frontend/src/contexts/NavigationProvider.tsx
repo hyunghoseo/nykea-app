@@ -64,6 +64,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({
             Services: "services",
             Events: "events",
             ContactUs: "contact-us",
+            Details: "details",
           },
         },
       }}
