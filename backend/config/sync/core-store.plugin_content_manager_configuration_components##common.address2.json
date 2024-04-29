@@ -37,7 +37,7 @@
       "AddressURL": {
         "edit": {
           "label": "AddressURL",
-          "description": "When the link is clicked, it will go to this URL.",
+          "description": "Please paste a Google Maps link.",
           "placeholder": "",
           "visible": true,
           "editable": true
