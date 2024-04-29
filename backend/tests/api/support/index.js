@@ -11,7 +11,7 @@ describe("Support Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    it("Public user should post support ticket", async () => {
+    it("[Create] Public user should post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
@@ -27,7 +27,7 @@ describe("Support Test", () => {
             .expect(200)
     });
 
-    it("Authenticated user should post support ticket", async () => {
+    it("[Create] Authenticated user should post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
@@ -37,7 +37,7 @@ describe("Support Test", () => {
             .expect(200)
     })
 
-    it("Admin user should not post support ticket", async () => {
+    it("[Create] Admin user should not post support ticket", async () => {
         await request(strapi.server.httpServer)
             .post("/api/supports")
             .set("accept", "application/json")
@@ -47,7 +47,7 @@ describe("Support Test", () => {
             .expect(500)
     })
 
-    it("Public user should not find support tickets", async () => {
+    it("[Find] Public user should not find support tickets", async () => {
         await request(strapi.server.httpServer)
             .get("/api/supports")
             .set("accept", "application/json")
@@ -55,7 +55,7 @@ describe("Support Test", () => {
             .expect(500)
     })
 
-    it("Authenticated user should not find support tickets", async () => {
+    it("[Find] Authenticated user should not find support tickets", async () => {
         await request(strapi.server.httpServer)
             .get("/api/supports")
             .set("accept", "application/json")
@@ -64,7 +64,7 @@ describe("Support Test", () => {
             .expect(500)
     })
 
-    it("Admin user should find support tickets", async () => {
+    it("[Find] Admin user should find support tickets", async () => {
         await request(strapi.server.httpServer)
             .get("/api/supports")
             .set("accept", "application/json")
@@ -76,7 +76,7 @@ describe("Support Test", () => {
             });
     });
 
-    it("Admin user should find a support ticket", async () => {
+    it("[FindOne] Admin user should find a support ticket", async () => {
         const id = 2
         const support = constructor.constructSupportTicket(id);
         await request(strapi.server.httpServer)
@@ -97,7 +97,7 @@ describe("Support Test", () => {
             })
     });
 
-    it("Admin user should update a support ticket", async () => {
+    it("[Update] Admin user should update a support ticket", async () => {
         const id = 3; 
         const updatedStatus = "Completed";
         const updatedMemo = "Ticket Completed";
