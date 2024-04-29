@@ -28,6 +28,44 @@ const constructAnnouncement = (id) => {
 }
 
 /**
+     * @param {string | number} id
+     */
+const constructBanner = (id) => {
+    return {
+        data: {
+            "Title": "Banner Title " + id,
+            "Description": "Banner Description " + id,
+            "Link": {
+                "id": 1,
+                "Label": "NY Korean Family Church",
+                "URL": "www.nykea.org"
+            },
+            "StartDate": "2024-01-26",
+            "EndDate": "2024-02-26",
+            "locale": "en"
+        }
+    };
+}
+
+/**
+ * @param {string | number} id
+ */
+
+const constructChurchInfo = (id) => {
+    return {
+        data: {
+            "ChurchName": "Test Name " + id,
+            "Phone": "000-000-0000",
+            "Email": "test" + id + "@test.com",
+            "Address": id + "north haledon",
+            "PrivatePolicy": "policy" + id,
+            "locale": "en",
+            "publishedAt": Date.now(),
+        }
+    };
+}
+
+/**
  * @param {string | number} id
  */
 const constructGroup = (id) => {
@@ -108,10 +146,10 @@ const constructEvent = (id) => {
             "Title": "Event Title " + id,
             "Poster": null,
             "StartDate": {
-                    "Date": "2024-04-14",
-                    "Time": "12:13:54.000",
-                    "TimeZone": "EST"
-                },
+                "Date": "2024-04-14",
+                "Time": "12:13:54.000",
+                "TimeZone": "EST"
+            },
             "Location": [
                 {
                     "Label": "KEA Church 100",
@@ -125,7 +163,7 @@ const constructEvent = (id) => {
             ],
             "Description": "Event Description " + id,
             "HostingGroup": null,
-            "Fee": "$ Event Fee " + id, 
+            "Fee": "$ Event Fee " + id,
             "Contact": "Event Contact " + id,
             "Private": false,
             "locale": "en"
@@ -134,8 +172,10 @@ const constructEvent = (id) => {
 }
 
 module.exports = {
-    constructGroup, 
-    constructUserInfo, 
+    constructBanner,
+    constructGroup,
+    constructChurchInfo,
+    constructUserInfo,
     constructLeader,
     constructSupportTicket,
     constructEvent,

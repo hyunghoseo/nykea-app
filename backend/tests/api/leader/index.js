@@ -72,7 +72,7 @@ describe("Leader Test", () => {
 
     it("[Find] Public user should not find leaders", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/leaders")
+            .get("/api/leaders?locale=en")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(500)
@@ -80,7 +80,7 @@ describe("Leader Test", () => {
 
     it("[Find] Authenticated user should find leaders", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/leaders")
+            .get("/api/leaders?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
@@ -92,7 +92,7 @@ describe("Leader Test", () => {
 
     it("[Find] Admin user should find leaders", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/leaders")
+            .get("/api/leaders?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
