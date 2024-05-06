@@ -53,7 +53,7 @@ describe("Announcement Test", () => {
     // Find
     it("[Find] Public user should find Announcements", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/announcements")
+            .get("/api/announcements?locale=en")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
@@ -64,7 +64,7 @@ describe("Announcement Test", () => {
 
     it("[Find] Authenticated user should find Announcements", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/announcements")
+            .get("/api/announcements?locale=en")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
@@ -75,7 +75,7 @@ describe("Announcement Test", () => {
 
     it("[Find] Admin user should find Announcements", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/announcements/")
+            .get("/api/announcements?locale=en")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)

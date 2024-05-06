@@ -54,7 +54,7 @@ describe("Event Test", () => {
     // Find
     it("[Find] Public user should find Events", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/events")
+            .get("/api/events?locale=en")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
@@ -65,7 +65,7 @@ describe("Event Test", () => {
 
     it("[Find] Authenticated user should find Events", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/events")
+            .get("/api/events?locale=en")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
@@ -76,7 +76,7 @@ describe("Event Test", () => {
 
     it("[Find] Admin user should find Events", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/events")
+            .get("/api/events?locale=en")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
             .expect(200)
@@ -186,6 +186,4 @@ describe("Event Test", () => {
                 expect(data.attributes.locale).toBe(event.data.locale);
             })
     })
-
-    
 })
