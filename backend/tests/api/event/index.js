@@ -33,7 +33,6 @@ describe("Event Test", () => {
 
     it("[Create] Admin user should post Events", async () => {
         const event = constructor.constructEvent(1);
-        console.log(event);
         await request(strapi.server.httpServer)
             .post("/api/events?populate=*")
             .set("accept", "application/json")

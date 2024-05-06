@@ -226,18 +226,18 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Description",
           "Location.Label",
           "Location.Address",
           "Location.City",
           "Location.State",
-          "Location.Country",
-          "Description",
-          "StartDate.TimeZone",
-          "EndDate.TimeZone"
+          "Location.Country"
         ],
         "locales": [
           "en"
@@ -269,18 +269,18 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Description",
           "Location.Label",
           "Location.Address",
           "Location.City",
           "Location.State",
-          "Location.Country",
-          "Description",
-          "StartDate.TimeZone",
-          "EndDate.TimeZone"
+          "Location.Country"
         ],
         "locales": [
           "en"
@@ -301,18 +301,18 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Description",
           "Location.Label",
           "Location.Address",
           "Location.City",
           "Location.State",
-          "Location.Country",
-          "Description",
-          "StartDate.TimeZone",
-          "EndDate.TimeZone"
+          "Location.Country"
         ],
         "locales": [
           "en"

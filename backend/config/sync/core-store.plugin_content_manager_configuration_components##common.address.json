@@ -1,7 +1,7 @@
 {
-  "key": "plugin_content_manager_configuration_components::common.address2",
+  "key": "plugin_content_manager_configuration_components::common.address",
   "value": {
-    "uid": "common.address2",
+    "uid": "common.address",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -90,20 +90,6 @@
           "sortable": true
         }
       },
-      "Country": {
-        "edit": {
-          "label": "Country",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Country",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "State": {
         "edit": {
           "label": "State",
@@ -114,6 +100,20 @@
         },
         "list": {
           "label": "State",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Country": {
+        "edit": {
+          "label": "Country",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Country",
           "searchable": true,
           "sortable": true
         }

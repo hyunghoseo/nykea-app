@@ -43,8 +43,8 @@ export interface AgendaDefault extends Schema.Component {
   };
 }
 
-export interface CommonAddress2 extends Schema.Component {
-  collectionName: 'components_common_address2s';
+export interface CommonAddress extends Schema.Component {
+  collectionName: 'components_common_addresses';
   info: {
     displayName: 'Address';
     icon: 'pinMap';
@@ -243,7 +243,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'agenda.default': AgendaDefault;
-      'common.address2': CommonAddress2;
+      'common.address': CommonAddress;
       'common.date-time': CommonDateTime;
       'common.link': CommonLink;
       'list.announcement': ListAnnouncement;

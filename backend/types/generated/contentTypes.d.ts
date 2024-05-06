@@ -1020,14 +1020,14 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Location: Attribute.Component<'common.address2', true> &
+    Description: Attribute.Blocks &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Description: Attribute.Blocks &
+    Location: Attribute.Component<'common.address', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

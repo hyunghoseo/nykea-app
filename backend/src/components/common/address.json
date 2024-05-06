@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_common_address2s",
+  "collectionName": "components_common_addresses",
   "info": {
     "displayName": "Address",
     "icon": "pinMap",
@@ -81,8 +81,8 @@
         "WI, Wisconsin",
         "WY, Wyoming"
       ],
-      "default": "NJ, New Jersey",
-      "required": true
+      "required": true,
+      "default": "NJ, New Jersey"
     },
     "Country": {
       "type": "enumeration",
@@ -91,8 +91,8 @@
         "Rep. of Korea",
         "Japan"
       ],
-      "default": "USA",
-      "required": true
+      "required": true,
+      "default": "USA"
     }
   }
 }
