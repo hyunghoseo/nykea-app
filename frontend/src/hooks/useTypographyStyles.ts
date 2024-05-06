@@ -155,5 +155,13 @@ export const useTypographyStyles = () => {
       color: theme.colors.primary[0],
       textDecorationLine: "underline",
     },
+    date: {
+      ...defaultStyles,
+      fontFamily:
+        locale === "en" ? "NotoSans_400Regular" : "NotoSansKR_400Regular",
+      color: theme.colors.dark,
+      fontSize: 16,
+      lineHeight: 32,
+    },
   });
 };

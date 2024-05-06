@@ -50,7 +50,7 @@ describe("User Info Test", () => {
 
     it("[Find] Public user should not find user-infos", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/user-infos")
+            .get("/api/user-infos?locale=en")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(500)
@@ -58,7 +58,7 @@ describe("User Info Test", () => {
 
     it("[Find] Authenticated user should find user-infos", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/user-infos")
+            .get("/api/user-infos?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
@@ -70,7 +70,7 @@ describe("User Info Test", () => {
 
     it("[Find] Admin user should find user-infos", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/user-infos")
+            .get("/api/user-infos?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
@@ -111,7 +111,7 @@ describe("User Info Test", () => {
         const id = 1;
         const userInfo = constructor.constructUserInfo(id)
         await request(strapi.server.httpServer)
-            .get("/api/user-infos/" + 1)
+            .get("/api/user-infos/" + 1 + "?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)

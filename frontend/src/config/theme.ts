@@ -13,5 +13,13 @@ export const theme = {
       "#E9EFF6",
     ],
     black: "#2A2A2A",
+    dark: "#595959", //used for dates
+    tag: {
+      group: "#FAECDE",
+      news: "#E9EFF6",
+      workshop: "#ECF1EF",
+      event: "#ECF1EF",
+      headquarter: "#F7EBF8",
+    },
   },
 };

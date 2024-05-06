@@ -11,7 +11,7 @@ describe("Group Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    it("Public user should not post group", async () => {
+    it("[Create] Public user should not post group", async () => {
         await request(strapi.server.httpServer)
             .post("/api/groups")
             .set("accept", "application/json")
@@ -20,7 +20,7 @@ describe("Group Test", () => {
             .expect(500)
     })
 
-    it("Authenticated user should not post group", async () => {
+    it("[Create] Authenticated user should not post group", async () => {
         await request(strapi.server.httpServer)
             .post("/api/groups")
             .set("accept", "application/json")
@@ -30,7 +30,7 @@ describe("Group Test", () => {
             .expect(500)
     })
 
-    it("Admin user should post groups", async () => {
+    it("[Create] Admin user should post groups", async () => {
         await request(strapi.server.httpServer)
             .post("/api/groups")
             .set("accept", "application/json")
@@ -48,9 +48,9 @@ describe("Group Test", () => {
             .expect(200)
     })
 
-    it("Public user should find groups", async () => {
+    it("[Find] Public user should find groups", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups")
+            .get("/api/groups?locale=en")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
@@ -59,9 +59,9 @@ describe("Group Test", () => {
             });
     });
 
-    it("Authenticated user should find groups", async () => {
+    it("[Find] Authenticated user should find groups", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups")
+            .get("/api/groups?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
@@ -71,9 +71,9 @@ describe("Group Test", () => {
             });
     });
 
-    it("Admin user should find groups", async () => {
+    it("[Find] Admin user should find groups", async () => {
         await request(strapi.server.httpServer)
-            .get("/api/groups")
+            .get("/api/groups?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
@@ -83,7 +83,7 @@ describe("Group Test", () => {
             });
     });
 
-    it("Public user should find a group", async () => {
+    it("[FindOne] Public user should find a group", async () => {
         const id = 1;
         const group = constructor.constructGroup(id);
         await request(strapi.server.httpServer)
@@ -100,7 +100,7 @@ describe("Group Test", () => {
             })
     });
 
-    it("Authenticated user should find a group", async () => {
+    it("[FindOne] Authenticated user should find a group", async () => {
         const id = 1;
         const group = constructor.constructGroup(id);
         await request(strapi.server.httpServer)
@@ -118,7 +118,7 @@ describe("Group Test", () => {
             })
     });
 
-    it("Admin user should find a group", async () => {
+    it("[FindOne] Admin user should find a group", async () => {
         const id = 1;
         const group = constructor.constructGroup(id);
         await request(strapi.server.httpServer)

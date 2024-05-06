@@ -1,6 +1,7 @@
 const request = require('supertest');
 const { jwt } = require("../../helpers/strapi");
 const userFactory = require("../../user/factory");
+const constructor = require("../../helpers/constructor");
 
 describe("Church Info Test", () => {
     let authenticatedUser;
@@ -10,58 +11,40 @@ describe("Church Info Test", () => {
         adminUser = await userFactory.createUser(strapi, "admin");
     });
 
-    /**
-     * @param {string | number} id
-     */
-
-    const constructChurchInfo = (id) => {
-        return {
-            data: {
-                "ChurchName": "Test Name " + id,
-                "Phone": "000-000-0000",
-                "Email": "test" + id + "@test.com",
-                "Address": id + "north haledon",
-                "PrivatePolicy": "policy" + id,
-                "locale": "en",
-                "publishedAt": Date.now(),
-            }
-        };
-    }
-
-    it("Public user should not put church-info", async () => {
+    it("[Update] Public user should not put church-info", async () => {
         await request(strapi.server.httpServer)
             .put("/api/church-info") //strapi uses put for single type
             .set("accept", "application/json")
-            .send(constructChurchInfo(0))
+            .send(constructor.constructChurchInfo(0))
             .expect("Content-Type", /json/)
             .expect(500)
     });
 
-    it("Authenticated user should not put church-info", async () => {
+    it("[Update] Authenticated user should not put church-info", async () => {
         await request(strapi.server.httpServer)
             .put("/api/church-info") //strapi uses put for single type
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
-            .send(constructChurchInfo(0))
+            .send(constructor.constructChurchInfo(0))
             .expect("Content-Type", /json/)
             .expect(500)
     });
 
-    it("Admin user should put church-info", async () => {
+    it("[Update] Admin user should put church-info", async () => {
         await request(strapi.server.httpServer)
             .put("/api/church-info") //strapi uses put for single type
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
-            .send(constructChurchInfo(1))
+            .send(constructor.constructChurchInfo(1))
             .expect("Content-Type", /json/)
             .expect(200)   
     });
 
-    it("Public user should find church-info", async () => {
+    it("[Find] Public user should find church-info", async () => {
         const id = 1;
-        const churchInfo = constructChurchInfo(id);
+        const churchInfo = constructor.constructChurchInfo(id);
         await request(strapi.server.httpServer)
-            .get("/api/church-info")
+            .get("/api/church-info?locale=en")
             .set("accept", "application/json")
             .expect("Content-Type", /json/)
             .expect(200)
@@ -76,11 +59,11 @@ describe("Church Info Test", () => {
             });
     });
 
-    it("Authenticated user should find church-info", async () => {
+    it("[Find] Authenticated user should find church-info", async () => {
         const id = 1;
-        const churchInfo = constructChurchInfo(id);
+        const churchInfo = constructor.constructChurchInfo(id);
         await request(strapi.server.httpServer)
-            .get("/api/church-info")
+            .get("/api/church-info?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(authenticatedUser.id)}`)
             .expect("Content-Type", /json/)
@@ -96,11 +79,11 @@ describe("Church Info Test", () => {
             });
     });
 
-    it("Admin user should find church-info", async () => {
+    it("[Find] Admin user should find church-info", async () => {
         const id = 1;
-        const churchInfo = constructChurchInfo(id);
+        const churchInfo = constructor.constructChurchInfo(id);
         await request(strapi.server.httpServer)
-            .get("/api/church-info")
+            .get("/api/church-info?locale=en")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .expect("Content-Type", /json/)
