@@ -8,6 +8,7 @@ import { Shadow } from "react-native-shadow-2";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { Announcement } from "@/api/apiSchemas";
+import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 
 import { Tag } from "../Layout/Tag";
 
@@ -75,6 +76,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
 };
 
 const useStyles = () => {
+  const { isMobile } = useResponsiveLayout();
   return StyleSheet.create({
     outerContainer: {
       flex: 1,
