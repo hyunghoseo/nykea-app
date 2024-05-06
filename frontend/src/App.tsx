@@ -29,7 +29,10 @@ import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
 import AboutScreen from "@/screens/AboutScreen";
-import AnnouncementsScreen from "@/screens/AnnouncementsScreen";
+import {
+  AnnouncementDetailsScreen,
+  AnnouncementsScreen,
+} from "@/screens/Announcements";
 import ContactUsScreen from "@/screens/ContactUsScreen";
 import EventsScreen from "@/screens/EventsScreen";
 import { GroupsScreen } from "@/screens/GroupsScreen";
@@ -58,6 +61,10 @@ export const AppNavigator = () => {
       <RootStack.Screen name="Services" component={ServicesScreen} />
       <RootStack.Screen name="Events" component={EventsScreen} />
       <RootStack.Screen name="Announcements" component={AnnouncementsScreen} />
+      <RootStack.Screen
+        name="AnnouncementDetails"
+        component={AnnouncementDetailsScreen}
+      />
       <RootStack.Screen name="ContactUs" component={ContactUsScreen} />
     </RootStack.Navigator>
   );

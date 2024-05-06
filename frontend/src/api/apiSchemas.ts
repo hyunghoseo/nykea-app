@@ -15,34 +15,30 @@ export type Error = {
 
 export type AnnouncementLocalizationRequest = {
   Title: string;
-  /**
-   * @example string or id
-   */
-  Poster?: number | string;
-  Description?: string;
+  Poster?: (number | string)[];
   /**
    * @example string or id
    */
   HostingGroup?: number | string;
   Private: boolean;
   Link?: CommonLinkComponent[];
+  Description: void;
+  YoutubeURL?: string;
   locale: string;
 };
 
 export type AnnouncementRequest = {
   data: {
     Title: string;
-    /**
-     * @example string or id
-     */
-    Poster?: number | string;
-    Description?: string;
+    Poster?: (number | string)[];
     /**
      * @example string or id
      */
     HostingGroup?: number | string;
     Private: boolean;
     Link?: CommonLinkComponent[];
+    Description: void;
+    YoutubeURL?: string;
     locale?: string;
   };
 };
@@ -360,9 +356,8 @@ export type Announcement = {
           };
         };
       };
-    };
+    }[];
   };
-  Description?: string;
   HostingGroup?: {
     data?: {
       id?: number;
@@ -460,6 +455,8 @@ export type Announcement = {
   };
   Private: boolean;
   Link?: CommonLinkComponent[];
+  Description: void;
+  YoutubeURL?: string;
   /**
    * @format date-time
    */
@@ -991,12 +988,10 @@ export type EventLocalizationRequest = {
    * @example string or id
    */
   Poster?: number | string;
-  Description?: string;
-  Pictures?: (number | string)[];
-  Location?: string;
+  Picture?: (number | string)[];
   Fee?: string;
   Links?: CommonLinkComponent[];
-  StartDate?: CommonDateTimeComponent;
+  StartDate: CommonDateTimeComponent;
   EndDate?: CommonDateTimeComponent;
   /**
    * @example string or id
@@ -1004,6 +999,8 @@ export type EventLocalizationRequest = {
   HostingGroup?: number | string;
   Private: boolean;
   Contact?: string;
+  Location: CommonAddress2Component[];
+  Description?: void;
   locale: string;
 };
 
@@ -1014,12 +1011,10 @@ export type EventRequest = {
      * @example string or id
      */
     Poster?: number | string;
-    Description?: string;
-    Pictures?: (number | string)[];
-    Location?: string;
+    Picture?: (number | string)[];
     Fee?: string;
     Links?: CommonLinkComponent[];
-    StartDate?: CommonDateTimeComponent;
+    StartDate: CommonDateTimeComponent;
     EndDate?: CommonDateTimeComponent;
     /**
      * @example string or id
@@ -1027,6 +1022,8 @@ export type EventRequest = {
     HostingGroup?: number | string;
     Private: boolean;
     Contact?: string;
+    Location: CommonAddress2Component[];
+    Description?: void;
     locale?: string;
   };
 };
@@ -1346,8 +1343,7 @@ export type Event = {
       };
     };
   };
-  Description?: string;
-  Pictures?: {
+  Picture?: {
     data?: {
       id?: number;
       attributes?: {
@@ -1404,10 +1400,9 @@ export type Event = {
       };
     }[];
   };
-  Location?: string;
   Fee?: string;
   Links?: CommonLinkComponent[];
-  StartDate?: CommonDateTimeComponent;
+  StartDate: CommonDateTimeComponent;
   EndDate?: CommonDateTimeComponent;
   HostingGroup?: {
     data?: {
@@ -1506,6 +1501,8 @@ export type Event = {
   };
   Private: boolean;
   Contact?: string;
+  Location: CommonAddress2Component[];
+  Description?: void;
   /**
    * @format date-time
    */
@@ -1557,6 +1554,54 @@ export type CommonDateTimeComponent = {
    * @example 12:54.000
    */
   Time?: string;
+  TimeZone?: string;
+};
+
+export type CommonAddress2Component = {
+  id?: number;
+  Label?: string;
+  AddressURL?: string;
+  Address?: string;
+  AddressDetail?: string;
+  City?: string;
+  Country?: string;
+  state?: {
+    data?: {
+      id?: number;
+      attributes?: {
+        Abbreviation?: string;
+        State?: string;
+        /**
+         * @format date-time
+         */
+        createdAt?: string;
+        /**
+         * @format date-time
+         */
+        updatedAt?: string;
+        /**
+         * @format date-time
+         */
+        publishedAt?: string;
+        createdBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+        updatedBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+        localizations?: {
+          data?: any[];
+        };
+        locale?: string;
+      };
+    };
+  };
 };
 
 export type GroupLocalizationRequest = {
@@ -3259,9 +3304,8 @@ export type ListAnnouncementComponent = {
                 };
               };
             };
-          };
+          }[];
         };
-        Description?: string;
         HostingGroup?: {
           data?: {
             id?: number;
@@ -3274,6 +3318,8 @@ export type ListAnnouncementComponent = {
           Label?: string;
           URL?: string;
         }[];
+        Description?: void;
+        YoutubeURL?: string;
         /**
          * @format date-time
          */
@@ -3380,8 +3426,7 @@ export type ListEventComponent = {
             };
           };
         };
-        Description?: string;
-        Pictures?: {
+        Picture?: {
           data?: {
             id?: number;
             attributes?: {
@@ -3438,7 +3483,6 @@ export type ListEventComponent = {
             };
           }[];
         };
-        Location?: string;
         Fee?: string;
         Links?: {
           id?: number;
@@ -3456,6 +3500,7 @@ export type ListEventComponent = {
            * @example 12:54.000
            */
           Time?: string;
+          TimeZone?: string;
         };
         EndDate?: {
           id?: number;
@@ -3468,6 +3513,7 @@ export type ListEventComponent = {
            * @example 12:54.000
            */
           Time?: string;
+          TimeZone?: string;
         };
         HostingGroup?: {
           data?: {
@@ -3477,6 +3523,53 @@ export type ListEventComponent = {
         };
         Private?: boolean;
         Contact?: string;
+        Location?: {
+          id?: number;
+          Label?: string;
+          AddressURL?: string;
+          Address?: string;
+          AddressDetail?: string;
+          City?: string;
+          Country?: string;
+          state?: {
+            data?: {
+              id?: number;
+              attributes?: {
+                Abbreviation?: string;
+                State?: string;
+                /**
+                 * @format date-time
+                 */
+                createdAt?: string;
+                /**
+                 * @format date-time
+                 */
+                updatedAt?: string;
+                /**
+                 * @format date-time
+                 */
+                publishedAt?: string;
+                createdBy?: {
+                  data?: {
+                    id?: number;
+                    attributes?: {};
+                  };
+                };
+                updatedBy?: {
+                  data?: {
+                    id?: number;
+                    attributes?: {};
+                  };
+                };
+                localizations?: {
+                  data?: any[];
+                };
+                locale?: string;
+              };
+            };
+          };
+        }[];
+        Description?: void;
         /**
          * @format date-time
          */
@@ -3510,63 +3603,37 @@ export type ListEventComponent = {
   };
 };
 
-export type SupportLocalizationRequest = {
-  FullName: string;
-  Email: string;
-  Phone: string;
-  Title: string;
-  Message: string;
-  /**
-   * @format date-time
-   */
-  DateSubmitted: string;
-  Status: "Submitted" | "Under Review" | "Completed";
-  Memo?: string;
-  /**
-   * @format date-time
-   */
-  DateCompleted?: string;
+export type StateLocalizationRequest = {
+  Abbreviation: string;
+  State?: string;
   locale: string;
 };
 
-export type SupportRequest = {
+export type StateRequest = {
   data: {
-    FullName: string;
-    Email: string;
-    Phone: string;
-    Title: string;
-    Message: string;
-    /**
-     * @format date-time
-     */
-    DateSubmitted: string;
-    Status: "Submitted" | "Under Review" | "Completed";
-    Memo?: string;
-    /**
-     * @format date-time
-     */
-    DateCompleted?: string;
+    Abbreviation: string;
+    State?: string;
     locale?: string;
   };
 };
 
-export type SupportResponseDataObjectLocalized = {
+export type StateResponseDataObjectLocalized = {
   id?: number;
-  attributes?: Support;
+  attributes?: State;
 };
 
-export type SupportLocalizationResponse = {
-  data?: SupportResponseDataObjectLocalized;
+export type StateLocalizationResponse = {
+  data?: StateResponseDataObjectLocalized;
   meta?: Record<string, any>;
 };
 
-export type SupportListResponseDataItemLocalized = {
+export type StateListResponseDataItemLocalized = {
   id?: number;
-  attributes?: Support;
+  attributes?: State;
 };
 
-export type SupportLocalizationListResponse = {
-  data?: SupportListResponseDataItemLocalized[];
+export type StateLocalizationListResponse = {
+  data?: StateListResponseDataItemLocalized[];
   meta?: {
     pagination?: {
       page?: number;
@@ -3583,13 +3650,13 @@ export type SupportLocalizationListResponse = {
   };
 };
 
-export type SupportListResponseDataItem = {
+export type StateListResponseDataItem = {
   id?: number;
-  attributes?: Support;
+  attributes?: State;
 };
 
-export type SupportListResponse = {
-  data?: SupportListResponseDataItem[];
+export type StateListResponse = {
+  data?: StateListResponseDataItem[];
   meta?: {
     pagination?: {
       page?: number;
@@ -3606,22 +3673,9 @@ export type SupportListResponse = {
   };
 };
 
-export type Support = {
-  FullName: string;
-  Email: string;
-  Phone: string;
-  Title: string;
-  Message: string;
-  /**
-   * @format date-time
-   */
-  DateSubmitted: string;
-  Status: "Submitted" | "Under Review" | "Completed";
-  Memo?: string;
-  /**
-   * @format date-time
-   */
-  DateCompleted?: string;
+export type State = {
+  Abbreviation: string;
+  State?: string;
   /**
    * @format date-time
    */
@@ -3754,9 +3808,207 @@ export type Support = {
     };
   };
   localizations?: {
-    data?: Support[];
+    data?: State[];
   };
   locale?: string;
+};
+
+export type StateResponseDataObject = {
+  id?: number;
+  attributes?: State;
+};
+
+export type StateResponse = {
+  data?: StateResponseDataObject;
+  meta?: Record<string, any>;
+};
+
+export type SupportRequest = {
+  data: {
+    FullName?: string;
+    Email?: string;
+    Phone?: string;
+    Title: string;
+    Message: string;
+    /**
+     * @format date-time
+     */
+    DateSubmitted: string;
+    Status: "Submitted" | "Under Review" | "Completed";
+    Memo?: string;
+    /**
+     * @format date-time
+     */
+    DateCompleted?: string;
+  };
+};
+
+export type SupportListResponseDataItem = {
+  id?: number;
+  attributes?: Support;
+};
+
+export type SupportListResponse = {
+  data?: SupportListResponseDataItem[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /**
+       * @minimum 25
+       */
+      pageSize?: number;
+      /**
+       * @maximum 1
+       */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+};
+
+export type Support = {
+  FullName?: string;
+  Email?: string;
+  Phone?: string;
+  Title: string;
+  Message: string;
+  /**
+   * @format date-time
+   */
+  DateSubmitted: string;
+  Status: "Submitted" | "Under Review" | "Completed";
+  Memo?: string;
+  /**
+   * @format date-time
+   */
+  DateCompleted?: string;
+  /**
+   * @format date-time
+   */
+  createdAt?: string;
+  /**
+   * @format date-time
+   */
+  updatedAt?: string;
+  createdBy?: {
+    data?: {
+      id?: number;
+      attributes?: {
+        firstname?: string;
+        lastname?: string;
+        username?: string;
+        /**
+         * @format email
+         */
+        email?: string;
+        resetPasswordToken?: string;
+        registrationToken?: string;
+        isActive?: boolean;
+        roles?: {
+          data?: {
+            id?: number;
+            attributes?: {
+              name?: string;
+              code?: string;
+              description?: string;
+              users?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                }[];
+              };
+              permissions?: {
+                data?: {
+                  id?: number;
+                  attributes?: {
+                    action?: string;
+                    actionParameters?: void;
+                    subject?: string;
+                    properties?: void;
+                    conditions?: void;
+                    role?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                    /**
+                     * @format date-time
+                     */
+                    createdAt?: string;
+                    /**
+                     * @format date-time
+                     */
+                    updatedAt?: string;
+                    createdBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                    updatedBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                  };
+                }[];
+              };
+              /**
+               * @format date-time
+               */
+              createdAt?: string;
+              /**
+               * @format date-time
+               */
+              updatedAt?: string;
+              createdBy?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+              updatedBy?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+            };
+          }[];
+        };
+        blocked?: boolean;
+        preferedLanguage?: string;
+        /**
+         * @format date-time
+         */
+        createdAt?: string;
+        /**
+         * @format date-time
+         */
+        updatedAt?: string;
+        createdBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+        updatedBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+      };
+    };
+  };
+  updatedBy?: {
+    data?: {
+      id?: number;
+      attributes?: {};
+    };
+  };
 };
 
 export type SupportResponseDataObject = {

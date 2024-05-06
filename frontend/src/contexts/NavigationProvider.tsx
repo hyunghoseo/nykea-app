@@ -6,7 +6,7 @@ import {
   NavigationContainerRefWithCurrent,
 } from "@react-navigation/native";
 
-import { RootStackParamList } from "@/config/navigation";
+import { linking, RootStackParamList } from "@/config/navigation";
 import { TranslationEntryKey } from "@/config/translations";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -54,19 +54,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({
         const routeName = navigationRef.getCurrentRoute()?.name;
         setCurrentRoute(routeName);
       }}
-      linking={{
-        prefixes: ["nykea.org", "nykea://"],
-        config: {
-          screens: {
-            Home: "",
-            About: "about",
-            Groups: "groups",
-            Services: "services",
-            Events: "events",
-            ContactUs: "contact-us",
-          },
-        },
-      }}
+      linking={linking}
       theme={{
         ...DefaultTheme,
         colors: { ...DefaultTheme.colors, background: "white" },
