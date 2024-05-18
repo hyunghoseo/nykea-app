@@ -97,7 +97,7 @@ export const useTypographyStyles = () => {
     h6: {
       ...defaultStyles,
       fontFamily:
-        locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
+        locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
             fontSize: 16,
@@ -105,7 +105,7 @@ export const useTypographyStyles = () => {
             letterSpacing: 0.25,
           }
         : {
-            fontSize: 18,
+            fontSize: 16,
             lineHeight: 32,
             letterSpacing: 0.75,
           }),
