@@ -1082,7 +1082,7 @@ export interface ApiGroupGroup extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    ShortDescription: Attribute.Text &
+    ShortDescription: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
