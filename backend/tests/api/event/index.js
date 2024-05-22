@@ -41,10 +41,7 @@ describe("Event Test", () => {
             .expect("Content-Type", /json/)
             .expect(200)
             .expect((data) => {
-                console.log(data.body);
                 data = data.body.data;
-                console.log(event.data.StartDate);
-                console.log(data.attributes.StartDate);
                 expect(data.attributes.Title).toBe(event.data.Title);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
                 expect(data.attributes.Description).toEqual(event.data.Description);
