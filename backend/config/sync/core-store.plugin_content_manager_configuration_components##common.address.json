@@ -1,7 +1,7 @@
 {
-  "key": "plugin_content_manager_configuration_components::common.address2",
+  "key": "plugin_content_manager_configuration_components::common.address",
   "value": {
-    "uid": "common.address2",
+    "uid": "common.address",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -23,7 +23,7 @@
       "Label": {
         "edit": {
           "label": "Label",
-          "description": "",
+          "description": "Location Title: Church, Park, etc.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -37,7 +37,7 @@
       "AddressURL": {
         "edit": {
           "label": "AddressURL",
-          "description": "When the link is clicked, it will go to this URL.",
+          "description": "Please paste a Google Maps link.",
           "placeholder": "",
           "visible": true,
           "editable": true
@@ -90,6 +90,20 @@
           "sortable": true
         }
       },
+      "State": {
+        "edit": {
+          "label": "State",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "State",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "Country": {
         "edit": {
           "label": "Country",
@@ -100,21 +114,6 @@
         },
         "list": {
           "label": "Country",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "state": {
-        "edit": {
-          "label": "state",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "Abbreviation"
-        },
-        "list": {
-          "label": "state",
           "searchable": true,
           "sortable": true
         }
@@ -154,7 +153,7 @@
             "size": 4
           },
           {
-            "name": "state",
+            "name": "State",
             "size": 4
           },
           {

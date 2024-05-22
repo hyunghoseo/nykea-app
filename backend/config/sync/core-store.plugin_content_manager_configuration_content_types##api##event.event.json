@@ -65,7 +65,7 @@
       "Fee": {
         "edit": {
           "label": "Fee",
-          "description": "",
+          "description": "Available to write Text and Numbers (Please put $ before stating the fee)",
           "placeholder": "",
           "visible": true,
           "editable": true

@@ -184,14 +184,19 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.City",
+          "Location.State",
+          "Location.Country"
         ]
       },
       "conditions": [
@@ -211,14 +216,19 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.City",
+          "Location.State",
+          "Location.Country"
         ]
       },
       "conditions": [
@@ -238,14 +248,19 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.City",
+          "Location.State",
+          "Location.Country"
         ]
       },
       "conditions": [

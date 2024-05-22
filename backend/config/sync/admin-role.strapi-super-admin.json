@@ -285,14 +285,14 @@
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
           "Location.AddressURL",
           "Location.Address",
           "Location.AddressDetail",
           "Location.City",
-          "Location.Country",
-          "Location.state",
-          "Description"
+          "Location.State",
+          "Location.Country"
         ],
         "locales": [
           "en",
@@ -346,14 +346,14 @@
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
           "Location.AddressURL",
           "Location.Address",
           "Location.AddressDetail",
           "Location.City",
-          "Location.Country",
-          "Location.state",
-          "Description"
+          "Location.State",
+          "Location.Country"
         ],
         "locales": [
           "en",
@@ -383,14 +383,14 @@
           "HostingGroup",
           "Private",
           "Contact",
+          "Description",
           "Location.Label",
           "Location.AddressURL",
           "Location.Address",
           "Location.AddressDetail",
           "Location.City",
-          "Location.Country",
-          "Location.state",
-          "Description"
+          "Location.State",
+          "Location.Country"
         ],
         "locales": [
           "en",
@@ -684,78 +684,6 @@
     {
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
-      "subject": "api::state.state",
-      "properties": {
-        "fields": [
-          "Abbreviation",
-          "State"
-        ],
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "actionParameters": {},
-      "subject": "api::state.state",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "actionParameters": {},
-      "subject": "api::state.state",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "actionParameters": {},
-      "subject": "api::state.state",
-      "properties": {
-        "fields": [
-          "Abbreviation",
-          "State"
-        ],
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "actionParameters": {},
-      "subject": "api::state.state",
-      "properties": {
-        "fields": [
-          "Abbreviation",
-          "State"
-        ],
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "actionParameters": {},
       "subject": "api::support.support",
       "properties": {
         "fields": [
@@ -768,10 +696,6 @@
           "Status",
           "Memo",
           "DateCompleted"
-        ],
-        "locales": [
-          "en",
-          "ko"
         ]
       },
       "conditions": []
@@ -780,24 +704,7 @@
       "action": "plugin::content-manager.explorer.delete",
       "actionParameters": {},
       "subject": "api::support.support",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "actionParameters": {},
-      "subject": "api::support.support",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
+      "properties": {},
       "conditions": []
     },
     {
@@ -815,10 +722,6 @@
           "Status",
           "Memo",
           "DateCompleted"
-        ],
-        "locales": [
-          "en",
-          "ko"
         ]
       },
       "conditions": []
@@ -838,10 +741,6 @@
           "Status",
           "Memo",
           "DateCompleted"
-        ],
-        "locales": [
-          "en",
-          "ko"
         ]
       },
       "conditions": []
