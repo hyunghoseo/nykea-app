@@ -13,7 +13,7 @@ interface DetailPageProps {
     isError: boolean;
     data: any;
     title: string;
-    tag1: string;
+    tags: any;
     postedDate: string;
     description: string;
 }
@@ -30,13 +30,13 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
                 <View style={styles.wrapper}>
                     <View style={styles.headerSection}>
                         <View style={styles.tags}>
-                            <Tag text={props.tag1} />
-                            <Tag text={props.tag1} />
+                            <Tag type={props.type} text={props.type} />
+                            <Tag text={props.data?.attributes.HostingGroup.data.attributes.Name} />
                         </View>
                         <H2 style={[h2]}>{props.data?.attributes?.title}</H2>
                         <H6 style={[h6, styles.date]}>{props.postedDate}</H6>
                     </View>
-                    <View>{props.data}</View>
+                    <View></View>
                 </View>
             ) : (
                     <View>

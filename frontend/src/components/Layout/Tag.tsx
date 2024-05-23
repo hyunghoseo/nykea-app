@@ -2,13 +2,15 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import { theme } from "@/config/theme";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
+import { useTagColor } from "@/hooks/useColors";
 
 interface TagProps {
   text?: string;
+  type?: string;
 }
 
-export const Tag: React.FC<TagProps> = ({ text }) => {
-  const styles = useStyles();
+export const Tag: React.FC<TagProps> = ({ text, type = undefined }) => {
+  const styles = useStyles(type);
   const { tag } = useTypographyStyles();
 
   return (
@@ -18,16 +20,18 @@ export const Tag: React.FC<TagProps> = ({ text }) => {
   );
 };
 
-const useStyles = () => {
+const useStyles = (type: any) => {
+  const color = useTagColor(type);
   return StyleSheet.create({
     container: {
-      backgroundColor: theme.colors.tag.group,
+      backgroundColor: color,
       justifyContent: "center",
       paddingHorizontal: 8,
       paddingVertical: 4,
       width: "auto",
       borderRadius: 5,
       marginBottom: 16,
+      marginRight: 12,
     },
   });
 };

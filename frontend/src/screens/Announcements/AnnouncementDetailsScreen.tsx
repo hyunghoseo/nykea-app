@@ -8,8 +8,9 @@ import ScreenWrapper from "../../components/ScreenWrapper";
 export const AnnouncementDetailsScreen = ({ route }: any) => {
   const { id } = route.params;
   console.log(id);
+
   const {
-    data: { data: announcement = {} } = {},
+    data: { data: announcement } = {},
     isLoading,
     isError,
   } = useGetAnnouncementsId({ pathParams: { id } });
@@ -19,9 +20,9 @@ export const AnnouncementDetailsScreen = ({ route }: any) => {
       type="announcement"
       isLoading={isLoading}
       isError={isError}
-      data="ji"
+      data={announcement}
       title="title"
-      tag1="hello"
+      tags={announcement?.HostingGroup?.data.attributes.name}
       postedDate="00.000"
       description="yes right."
     />

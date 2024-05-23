@@ -20,6 +20,8 @@ export const theme = {
       workshop: "#ECF1EF",
       event: "#ECF1EF",
       headquarter: "#F7EBF8",
+      announcement: "#F7EBF8",
+      advertisement: "#F7EBF8"
     },
   },
 };
