@@ -1,6 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { theme } from "@/config/theme";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { useTagColor } from "@/hooks/useColors";
 

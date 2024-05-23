@@ -1,5 +1,6 @@
 import { H2, H6, P } from "@expo/html-elements";
 import { StyleSheet, View } from "react-native";
+import Moment from "moment";
 
 import { theme } from "@/config/theme";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
@@ -12,9 +13,7 @@ interface DetailPageProps {
     isLoading: boolean;
     isError: boolean;
     data: any;
-    title: string;
     tags: any;
-    postedDate: string;
     description: string;
 }
 
@@ -33,10 +32,12 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
                             <Tag type={props.type} text={props.type} />
                             <Tag text={props.data?.attributes.HostingGroup.data.attributes.Name} />
                         </View>
-                        <H2 style={[h2]}>{props.data?.attributes?.title}</H2>
-                        <H6 style={[h6, styles.date]}>{props.postedDate}</H6>
+                        <H2 style={[h2]}>{props.data?.attributes?.Title}</H2>
+                        <View style={styles.dateSection}>
+                            <H6 style={[h6, styles.date]}>Posted on {Moment(props.data?.attributes?.publishedAt).format("MMM DD.YYYY")}</H6>
+                        </View>
                     </View>
-                    <View></View>
+                    <View style={styles.mainSection}></View>
                 </View>
             ) : (
                     <View>
@@ -52,6 +53,7 @@ const useStyles = () => {
         wrapper: {
             width: '100%',
             maxWidth: 672,
+            marginBottom: 40,
         },
         headerSection: {
 
@@ -59,8 +61,14 @@ const useStyles = () => {
         tags: {
             flexDirection: 'row'
         },
+        dateSection: {
+            marginTop: 24,
+        },
         date: {
             color: theme.colors.dark,
         },
+        mainSection: {
+            marginBottom: 48,
+        }
     });
 };
