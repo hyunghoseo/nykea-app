@@ -999,8 +999,8 @@ export type EventLocalizationRequest = {
   HostingGroup?: number | string;
   Private: boolean;
   Contact?: string;
-  Location: CommonAddress2Component[];
-  Description?: void;
+  Description: void;
+  Location: CommonAddressComponent[];
   locale: string;
 };
 
@@ -1022,8 +1022,8 @@ export type EventRequest = {
     HostingGroup?: number | string;
     Private: boolean;
     Contact?: string;
-    Location: CommonAddress2Component[];
-    Description?: void;
+    Description: void;
+    Location: CommonAddressComponent[];
     locale?: string;
   };
 };
@@ -1501,8 +1501,8 @@ export type Event = {
   };
   Private: boolean;
   Contact?: string;
-  Location: CommonAddress2Component[];
-  Description?: void;
+  Description: void;
+  Location: CommonAddressComponent[];
   /**
    * @format date-time
    */
@@ -1554,54 +1554,107 @@ export type CommonDateTimeComponent = {
    * @example 12:54.000
    */
   Time?: string;
-  TimeZone?: string;
+  TimeZone?:
+    | "Atlanta, GA, USA (GMT-4)"
+    | "Auckland, New Zealand (GMT+12)"
+    | "Austin, TX, USA (GMT-5)"
+    | "Beijing, China (GMT+8)"
+    | "Berlin, Germany (GMT+2)"
+    | "Boston, MA, USA (GMT-4)"
+    | "Brussels, Belgium (GMT+2)"
+    | "Chicago, IL, USA (GMT-5)"
+    | "Dallas, TX, USA (GMT-5)"
+    | "Houston, TX, USA (GMT-5)"
+    | "Istanbul, Turkey (GMT+3)"
+    | "Las Vegas, NV, USA (GMT-7)"
+    | "London, England, UK (GMT+1)"
+    | "Los Angeles, CA, USA (GMT-7)"
+    | "Madrid, Spain (GMT+2)"
+    | "Melbourne, Australia (GMT+10)"
+    | "Miami, FL, USA (GMT-4)"
+    | "Minneapolis, MN, USA (GMT-5)"
+    | "Mexico City, Mexico (GMT-5)"
+    | "Moscow, Russia (GMT+3)"
+    | "Nashville, TN, USA (GMT-5)"
+    | "New York, NY, USA (GMT-4)"
+    | "Orlando, FL, USA (GMT-4)"
+    | "Paris, France (GMT+2)"
+    | "Phoenix, AZ, USA (GMT-7)"
+    | "Portland, OR, USA (GMT-7)"
+    | "Rome, Italy (GMT+2)"
+    | "San Diego, CA, USA (GMT-7)"
+    | "San Francisco, CA, USA (GMT-7)"
+    | "Seattle, WA, USA (GMT-7)"
+    | "Seoul, South Korea (GMT+9)"
+    | "Sydney, Australia (GMT+10)"
+    | "Tokyo, Japan (GMT+9)"
+    | "Toronto, ON, Canada (GMT-4)"
+    | "Vancouver, BC, Canada (GMT-7)"
+    | "Vienna, Austria (GMT+2)"
+    | "Washington, D.C., USA (GMT-4)"
+    | "Zurich, Switzerland (GMT+2)";
 };
 
-export type CommonAddress2Component = {
+export type CommonAddressComponent = {
   id?: number;
   Label?: string;
   AddressURL?: string;
   Address?: string;
   AddressDetail?: string;
   City?: string;
-  Country?: string;
-  state?: {
-    data?: {
-      id?: number;
-      attributes?: {
-        Abbreviation?: string;
-        State?: string;
-        /**
-         * @format date-time
-         */
-        createdAt?: string;
-        /**
-         * @format date-time
-         */
-        updatedAt?: string;
-        /**
-         * @format date-time
-         */
-        publishedAt?: string;
-        createdBy?: {
-          data?: {
-            id?: number;
-            attributes?: {};
-          };
-        };
-        updatedBy?: {
-          data?: {
-            id?: number;
-            attributes?: {};
-          };
-        };
-        localizations?: {
-          data?: any[];
-        };
-        locale?: string;
-      };
-    };
-  };
+  State?:
+    | "N/A"
+    | "AL, Alabama"
+    | "AK, Alaska"
+    | "AZ, Arizona"
+    | "AR, Arkansas"
+    | "CA, California"
+    | "CO, Colorado"
+    | "CT, Connecticut"
+    | "DE, Delaware"
+    | "FL, Florida"
+    | "GA, Georgia"
+    | "HI, Hawaii"
+    | "ID, Idaho"
+    | "IL, Illinois"
+    | "IN, Indiana"
+    | "IA, Iowa"
+    | "KS, Kansas"
+    | "KY, Kentucky"
+    | "LA, Louisiana"
+    | "ME, Maine"
+    | "MD, Maryland"
+    | "MA, Massachusetts"
+    | "MI, Michigan"
+    | "MN, Minnesota"
+    | "MS, Mississippi"
+    | "MO, Missouri"
+    | "MT, Montana"
+    | "NE, Nebraska"
+    | "NV, Nevada"
+    | "NH, New Hampshire"
+    | "NJ, New Jersey"
+    | "NM, New Mexico"
+    | "NY, New York"
+    | "NC, North Carolina"
+    | "ND, North Dakota"
+    | "OH, Ohio"
+    | "OK, Oklahoma"
+    | "OR, Oregon"
+    | "PA, Pennsylvania"
+    | "RI, Rhode Island"
+    | "SC, South Carolina"
+    | "SD, South Dakota"
+    | "TN, Tennessee"
+    | "TX, Texas"
+    | "UT, Utah"
+    | "VT, Vermont"
+    | "VA, Virginia"
+    | "WA, Washington"
+    | "WV, West Virginia"
+    | "WI, Wisconsin"
+    | "WY, Wyoming";
+  Country?: "USA" | "Rep. of Korea" | "Japan";
 };
 
 export type GroupLocalizationRequest = {
@@ -3500,7 +3553,45 @@ export type ListEventComponent = {
            * @example 12:54.000
            */
           Time?: string;
-          TimeZone?: string;
+          TimeZone?:
+            | "Atlanta, GA, USA (GMT-4)"
+            | "Auckland, New Zealand (GMT+12)"
+            | "Austin, TX, USA (GMT-5)"
+            | "Beijing, China (GMT+8)"
+            | "Berlin, Germany (GMT+2)"
+            | "Boston, MA, USA (GMT-4)"
+            | "Brussels, Belgium (GMT+2)"
+            | "Chicago, IL, USA (GMT-5)"
+            | "Dallas, TX, USA (GMT-5)"
+            | "Houston, TX, USA (GMT-5)"
+            | "Istanbul, Turkey (GMT+3)"
+            | "Las Vegas, NV, USA (GMT-7)"
+            | "London, England, UK (GMT+1)"
+            | "Los Angeles, CA, USA (GMT-7)"
+            | "Madrid, Spain (GMT+2)"
+            | "Melbourne, Australia (GMT+10)"
+            | "Miami, FL, USA (GMT-4)"
+            | "Minneapolis, MN, USA (GMT-5)"
+            | "Mexico City, Mexico (GMT-5)"
+            | "Moscow, Russia (GMT+3)"
+            | "Nashville, TN, USA (GMT-5)"
+            | "New York, NY, USA (GMT-4)"
+            | "Orlando, FL, USA (GMT-4)"
+            | "Paris, France (GMT+2)"
+            | "Phoenix, AZ, USA (GMT-7)"
+            | "Portland, OR, USA (GMT-7)"
+            | "Rome, Italy (GMT+2)"
+            | "San Diego, CA, USA (GMT-7)"
+            | "San Francisco, CA, USA (GMT-7)"
+            | "Seattle, WA, USA (GMT-7)"
+            | "Seoul, South Korea (GMT+9)"
+            | "Sydney, Australia (GMT+10)"
+            | "Tokyo, Japan (GMT+9)"
+            | "Toronto, ON, Canada (GMT-4)"
+            | "Vancouver, BC, Canada (GMT-7)"
+            | "Vienna, Austria (GMT+2)"
+            | "Washington, D.C., USA (GMT-4)"
+            | "Zurich, Switzerland (GMT+2)";
         };
         EndDate?: {
           id?: number;
@@ -3513,7 +3604,45 @@ export type ListEventComponent = {
            * @example 12:54.000
            */
           Time?: string;
-          TimeZone?: string;
+          TimeZone?:
+            | "Atlanta, GA, USA (GMT-4)"
+            | "Auckland, New Zealand (GMT+12)"
+            | "Austin, TX, USA (GMT-5)"
+            | "Beijing, China (GMT+8)"
+            | "Berlin, Germany (GMT+2)"
+            | "Boston, MA, USA (GMT-4)"
+            | "Brussels, Belgium (GMT+2)"
+            | "Chicago, IL, USA (GMT-5)"
+            | "Dallas, TX, USA (GMT-5)"
+            | "Houston, TX, USA (GMT-5)"
+            | "Istanbul, Turkey (GMT+3)"
+            | "Las Vegas, NV, USA (GMT-7)"
+            | "London, England, UK (GMT+1)"
+            | "Los Angeles, CA, USA (GMT-7)"
+            | "Madrid, Spain (GMT+2)"
+            | "Melbourne, Australia (GMT+10)"
+            | "Miami, FL, USA (GMT-4)"
+            | "Minneapolis, MN, USA (GMT-5)"
+            | "Mexico City, Mexico (GMT-5)"
+            | "Moscow, Russia (GMT+3)"
+            | "Nashville, TN, USA (GMT-5)"
+            | "New York, NY, USA (GMT-4)"
+            | "Orlando, FL, USA (GMT-4)"
+            | "Paris, France (GMT+2)"
+            | "Phoenix, AZ, USA (GMT-7)"
+            | "Portland, OR, USA (GMT-7)"
+            | "Rome, Italy (GMT+2)"
+            | "San Diego, CA, USA (GMT-7)"
+            | "San Francisco, CA, USA (GMT-7)"
+            | "Seattle, WA, USA (GMT-7)"
+            | "Seoul, South Korea (GMT+9)"
+            | "Sydney, Australia (GMT+10)"
+            | "Tokyo, Japan (GMT+9)"
+            | "Toronto, ON, Canada (GMT-4)"
+            | "Vancouver, BC, Canada (GMT-7)"
+            | "Vienna, Austria (GMT+2)"
+            | "Washington, D.C., USA (GMT-4)"
+            | "Zurich, Switzerland (GMT+2)";
         };
         HostingGroup?: {
           data?: {
@@ -3523,6 +3652,7 @@ export type ListEventComponent = {
         };
         Private?: boolean;
         Contact?: string;
+        Description?: void;
         Location?: {
           id?: number;
           Label?: string;
@@ -3530,46 +3660,60 @@ export type ListEventComponent = {
           Address?: string;
           AddressDetail?: string;
           City?: string;
-          Country?: string;
-          state?: {
-            data?: {
-              id?: number;
-              attributes?: {
-                Abbreviation?: string;
-                State?: string;
-                /**
-                 * @format date-time
-                 */
-                createdAt?: string;
-                /**
-                 * @format date-time
-                 */
-                updatedAt?: string;
-                /**
-                 * @format date-time
-                 */
-                publishedAt?: string;
-                createdBy?: {
-                  data?: {
-                    id?: number;
-                    attributes?: {};
-                  };
-                };
-                updatedBy?: {
-                  data?: {
-                    id?: number;
-                    attributes?: {};
-                  };
-                };
-                localizations?: {
-                  data?: any[];
-                };
-                locale?: string;
-              };
-            };
-          };
+          State?:
+            | "N/A"
+            | "AL, Alabama"
+            | "AK, Alaska"
+            | "AZ, Arizona"
+            | "AR, Arkansas"
+            | "CA, California"
+            | "CO, Colorado"
+            | "CT, Connecticut"
+            | "DE, Delaware"
+            | "FL, Florida"
+            | "GA, Georgia"
+            | "HI, Hawaii"
+            | "ID, Idaho"
+            | "IL, Illinois"
+            | "IN, Indiana"
+            | "IA, Iowa"
+            | "KS, Kansas"
+            | "KY, Kentucky"
+            | "LA, Louisiana"
+            | "ME, Maine"
+            | "MD, Maryland"
+            | "MA, Massachusetts"
+            | "MI, Michigan"
+            | "MN, Minnesota"
+            | "MS, Mississippi"
+            | "MO, Missouri"
+            | "MT, Montana"
+            | "NE, Nebraska"
+            | "NV, Nevada"
+            | "NH, New Hampshire"
+            | "NJ, New Jersey"
+            | "NM, New Mexico"
+            | "NY, New York"
+            | "NC, North Carolina"
+            | "ND, North Dakota"
+            | "OH, Ohio"
+            | "OK, Oklahoma"
+            | "OR, Oregon"
+            | "PA, Pennsylvania"
+            | "RI, Rhode Island"
+            | "SC, South Carolina"
+            | "SD, South Dakota"
+            | "TN, Tennessee"
+            | "TX, Texas"
+            | "UT, Utah"
+            | "VT, Vermont"
+            | "VA, Virginia"
+            | "WA, Washington"
+            | "WV, West Virginia"
+            | "WI, Wisconsin"
+            | "WY, Wyoming";
+          Country?: "USA" | "Rep. of Korea" | "Japan";
         }[];
-        Description?: void;
         /**
          * @format date-time
          */
@@ -3601,226 +3745,6 @@ export type ListEventComponent = {
       };
     };
   };
-};
-
-export type StateLocalizationRequest = {
-  Abbreviation: string;
-  State?: string;
-  locale: string;
-};
-
-export type StateRequest = {
-  data: {
-    Abbreviation: string;
-    State?: string;
-    locale?: string;
-  };
-};
-
-export type StateResponseDataObjectLocalized = {
-  id?: number;
-  attributes?: State;
-};
-
-export type StateLocalizationResponse = {
-  data?: StateResponseDataObjectLocalized;
-  meta?: Record<string, any>;
-};
-
-export type StateListResponseDataItemLocalized = {
-  id?: number;
-  attributes?: State;
-};
-
-export type StateLocalizationListResponse = {
-  data?: StateListResponseDataItemLocalized[];
-  meta?: {
-    pagination?: {
-      page?: number;
-      /**
-       * @minimum 25
-       */
-      pageSize?: number;
-      /**
-       * @maximum 1
-       */
-      pageCount?: number;
-      total?: number;
-    };
-  };
-};
-
-export type StateListResponseDataItem = {
-  id?: number;
-  attributes?: State;
-};
-
-export type StateListResponse = {
-  data?: StateListResponseDataItem[];
-  meta?: {
-    pagination?: {
-      page?: number;
-      /**
-       * @minimum 25
-       */
-      pageSize?: number;
-      /**
-       * @maximum 1
-       */
-      pageCount?: number;
-      total?: number;
-    };
-  };
-};
-
-export type State = {
-  Abbreviation: string;
-  State?: string;
-  /**
-   * @format date-time
-   */
-  createdAt?: string;
-  /**
-   * @format date-time
-   */
-  updatedAt?: string;
-  /**
-   * @format date-time
-   */
-  publishedAt?: string;
-  createdBy?: {
-    data?: {
-      id?: number;
-      attributes?: {
-        firstname?: string;
-        lastname?: string;
-        username?: string;
-        /**
-         * @format email
-         */
-        email?: string;
-        resetPasswordToken?: string;
-        registrationToken?: string;
-        isActive?: boolean;
-        roles?: {
-          data?: {
-            id?: number;
-            attributes?: {
-              name?: string;
-              code?: string;
-              description?: string;
-              users?: {
-                data?: {
-                  id?: number;
-                  attributes?: {};
-                }[];
-              };
-              permissions?: {
-                data?: {
-                  id?: number;
-                  attributes?: {
-                    action?: string;
-                    actionParameters?: void;
-                    subject?: string;
-                    properties?: void;
-                    conditions?: void;
-                    role?: {
-                      data?: {
-                        id?: number;
-                        attributes?: {};
-                      };
-                    };
-                    /**
-                     * @format date-time
-                     */
-                    createdAt?: string;
-                    /**
-                     * @format date-time
-                     */
-                    updatedAt?: string;
-                    createdBy?: {
-                      data?: {
-                        id?: number;
-                        attributes?: {};
-                      };
-                    };
-                    updatedBy?: {
-                      data?: {
-                        id?: number;
-                        attributes?: {};
-                      };
-                    };
-                  };
-                }[];
-              };
-              /**
-               * @format date-time
-               */
-              createdAt?: string;
-              /**
-               * @format date-time
-               */
-              updatedAt?: string;
-              createdBy?: {
-                data?: {
-                  id?: number;
-                  attributes?: {};
-                };
-              };
-              updatedBy?: {
-                data?: {
-                  id?: number;
-                  attributes?: {};
-                };
-              };
-            };
-          }[];
-        };
-        blocked?: boolean;
-        preferedLanguage?: string;
-        /**
-         * @format date-time
-         */
-        createdAt?: string;
-        /**
-         * @format date-time
-         */
-        updatedAt?: string;
-        createdBy?: {
-          data?: {
-            id?: number;
-            attributes?: {};
-          };
-        };
-        updatedBy?: {
-          data?: {
-            id?: number;
-            attributes?: {};
-          };
-        };
-      };
-    };
-  };
-  updatedBy?: {
-    data?: {
-      id?: number;
-      attributes?: {};
-    };
-  };
-  localizations?: {
-    data?: State[];
-  };
-  locale?: string;
-};
-
-export type StateResponseDataObject = {
-  id?: number;
-  attributes?: State;
-};
-
-export type StateResponse = {
-  data?: StateResponseDataObject;
-  meta?: Record<string, any>;
 };
 
 export type SupportRequest = {
