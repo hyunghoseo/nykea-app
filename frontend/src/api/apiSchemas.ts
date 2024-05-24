@@ -422,6 +422,7 @@ export type Announcement = {
           };
         };
         Type?: "Administrative" | "Community" | "Education" | "Activities";
+        Criteria?: string;
         /**
          * @format date-time
          */
@@ -1468,6 +1469,7 @@ export type Event = {
           };
         };
         Type?: "Administrative" | "Community" | "Education" | "Activities";
+        Criteria?: string;
         /**
          * @format date-time
          */
@@ -1611,7 +1613,8 @@ export type GroupLocalizationRequest = {
    * @example string or id
    */
   Picture?: number | string;
-  Type?: "Administrative" | "Community" | "Education" | "Activities";
+  Type: "Administrative" | "Community" | "Education" | "Activities";
+  Criteria?: string;
   locale: string;
 };
 
@@ -1623,7 +1626,8 @@ export type GroupRequest = {
      * @example string or id
      */
     Picture?: number | string;
-    Type?: "Administrative" | "Community" | "Education" | "Activities";
+    Type: "Administrative" | "Community" | "Education" | "Activities";
+    Criteria?: string;
     locale?: string;
   };
 };
@@ -1944,7 +1948,8 @@ export type Group = {
       };
     };
   };
-  Type?: "Administrative" | "Community" | "Education" | "Activities";
+  Type: "Administrative" | "Community" | "Education" | "Activities";
+  Criteria?: string;
   /**
    * @format date-time
    */
@@ -3206,6 +3211,7 @@ export type AgendaDefaultComponent = {
           };
         };
         Type?: "Administrative" | "Community" | "Education" | "Activities";
+        Criteria?: string;
         /**
          * @format date-time
          */

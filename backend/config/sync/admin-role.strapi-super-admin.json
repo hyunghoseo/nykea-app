@@ -408,7 +408,8 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
         ],
         "locales": [
           "en",
@@ -450,7 +451,8 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
         ],
         "locales": [
           "en",
@@ -468,7 +470,8 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
         ],
         "locales": [
           "en",
