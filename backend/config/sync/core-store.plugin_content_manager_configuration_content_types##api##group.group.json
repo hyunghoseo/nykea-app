@@ -80,7 +80,7 @@
         "edit": {
           "label": "Criteria",
           "description": "",
-          "placeholder": "",
+          "placeholder": "For wives, For voted members, etc.",
           "visible": true,
           "editable": true
         },
