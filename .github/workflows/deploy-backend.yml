@@ -38,11 +38,6 @@ jobs:
           cd backend
           yarn build
 
-      - name: Import Configuration
-        run: |
-          cd backend
-          yarn cs import --yes
-
       - name: Compress build directory
         run: |
           tar -czvf strapi-build.tar.gz -C backend build
