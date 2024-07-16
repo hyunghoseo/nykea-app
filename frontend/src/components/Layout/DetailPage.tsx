@@ -32,7 +32,7 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
                 <View style={styles.wrapper}>
                     <View style={styles.headerSection}>
                         <View style={styles.tags}>
-                            <Tag type={props.type} text={props.type} />
+                            <Tag type={props.type} text={t(`post.type.` + props.type)} />
                             <Tag text={props.data?.attributes.HostingGroup.data.attributes.Name} />
                         </View>
                         <H2 style={[h2]}>{props.data?.attributes?.Title}</H2>
