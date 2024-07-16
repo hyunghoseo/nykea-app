@@ -165,6 +165,24 @@ export const useTypographyStyles = () => {
     },
     i: {
       fontStyle: 'italic'
+    },
+    code: {
+      ...defaultStyles,
+      fontFamily:
+        locale === "en" ? "NotoSans_400Regular" : "NotoSansKR_400Regular",
+      color: theme.colors.black,
+      backgroundColor: theme.colors.primary[9]
+    },
+    quote: {
+      ...defaultStyles,
+      fontFamily:
+        locale === "en" ? "NotoSans_400Regular" : "NotoSansKR_400Regular",
+      color: theme.colors.dark,
+      fontSize: 16,
+      lineHeight: 32,
+      paddingLeft: 32,
+      paddingTop: 8,
+      paddingBottom: 8,
     }
   });
 };
