@@ -275,7 +275,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ]
       },
       "conditions": [
@@ -290,7 +291,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ]
       },
       "conditions": [
@@ -305,7 +307,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ]
       },
       "conditions": [

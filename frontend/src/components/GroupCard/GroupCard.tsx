@@ -16,7 +16,7 @@ interface GroupCardProps extends Partial<Group> {
 
 export const GroupCard: React.FC<GroupCardProps> = (props) => {
   const styles = useStyles();
-  const { h4, bodySmall } = useTypographyStyles();
+  const { h4, bodySmall, overline } = useTypographyStyles();
 
   return (
     <TouchableOpacity
@@ -46,6 +46,9 @@ export const GroupCard: React.FC<GroupCardProps> = (props) => {
         <View style={styles.detailsSection}>
           <Skeleton colorMode="light">
             <H4 style={h4}>{props.Name}</H4>
+          </Skeleton>
+          <Skeleton colorMode="light">
+            <P style={overline}>{props.Criteria}</P>
           </Skeleton>
           <Skeleton colorMode="light">
             <P style={bodySmall}>{props.ShortDescription}</P>

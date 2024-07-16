@@ -1095,11 +1095,18 @@ export interface ApiGroupGroup extends Schema.CollectionType {
         };
       }>;
     Type: Attribute.Enumeration<
-      ['Administrative', 'Community', 'Education', 'Activities']
+      ['Administrative', 'Community', 'Education', 'Music', 'Activities']
     > &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
+        };
+      }>;
+    Criteria: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     createdAt: Attribute.DateTime;

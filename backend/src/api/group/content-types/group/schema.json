@@ -50,7 +50,7 @@
     "Type": {
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "type": "enumeration",
@@ -58,8 +58,18 @@
         "Administrative",
         "Community",
         "Education",
+        "Music",
         "Activities"
-      ]
+      ],
+      "required": true
+    },
+    "Criteria": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
