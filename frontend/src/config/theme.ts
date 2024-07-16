@@ -21,7 +21,7 @@ export const theme = {
       event: "#ECF1EF",
       headquarter: "#F7EBF8",
       announcement: "#F7EBF8",
-      advertisement: "#F7EBF8"
+      advertisement: "#F7EBF8",
     },
   },
 };

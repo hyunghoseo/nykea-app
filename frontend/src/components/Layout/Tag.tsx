@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { useTagColor } from "@/hooks/useColors";
+import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 
 interface TagProps {
   text?: string;

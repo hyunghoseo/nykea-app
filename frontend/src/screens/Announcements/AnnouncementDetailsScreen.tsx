@@ -1,8 +1,6 @@
 import { useGetAnnouncementsId } from "@/api/apiComponents";
 import { DetailPage } from "@/components/Layout/DetailPage";
 
-import ScreenWrapper from "../../components/ScreenWrapper";
-
 export const AnnouncementDetailsScreen = ({ route }: any) => {
   const { id } = route.params;
   console.log(id);
