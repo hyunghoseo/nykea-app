@@ -1,12 +1,22 @@
-import { Text } from "react-native";
-
-import ScreenWrapper from "../../components/ScreenWrapper";
+import { useGetAnnouncementsId } from "@/api/apiComponents";
+import { DetailPage } from "@/components/Layout/DetailPage";
 
 export const AnnouncementDetailsScreen = ({ route }: any) => {
   const { id } = route.params;
+
+  const {
+    data: { data: announcement } = {},
+    isLoading,
+    isError,
+  } = useGetAnnouncementsId({ pathParams: { id } });
   return (
-    <ScreenWrapper>
-      <Text>AnnouncementDetails Screen {id}</Text>
-    </ScreenWrapper>
+    <DetailPage
+      type="announcement"
+      isLoading={isLoading}
+      isError={isError}
+      data={announcement}
+      tags={announcement?.HostingGroup?.data.attributes.name}
+      description="yes right."
+    />
   );
 };

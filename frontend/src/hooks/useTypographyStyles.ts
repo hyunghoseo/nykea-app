@@ -97,7 +97,7 @@ export const useTypographyStyles = () => {
     h6: {
       ...defaultStyles,
       fontFamily:
-        locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
+        locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
             fontSize: 16,
@@ -105,7 +105,7 @@ export const useTypographyStyles = () => {
             letterSpacing: 0.25,
           }
         : {
-            fontSize: 18,
+            fontSize: 16,
             lineHeight: 32,
             letterSpacing: 0.75,
           }),
@@ -162,6 +162,27 @@ export const useTypographyStyles = () => {
       color: theme.colors.dark,
       fontSize: 16,
       lineHeight: 32,
+    },
+    i: {
+      fontStyle: "italic",
+    },
+    code: {
+      ...defaultStyles,
+      fontFamily:
+        locale === "en" ? "NotoSans_400Regular" : "NotoSansKR_400Regular",
+      color: theme.colors.black,
+      backgroundColor: theme.colors.primary[9],
+    },
+    quote: {
+      ...defaultStyles,
+      fontFamily:
+        locale === "en" ? "NotoSans_400Regular" : "NotoSansKR_400Regular",
+      color: theme.colors.dark,
+      fontSize: 16,
+      lineHeight: 32,
+      paddingLeft: 32,
+      paddingTop: 8,
+      paddingBottom: 8,
     },
   });
 };
