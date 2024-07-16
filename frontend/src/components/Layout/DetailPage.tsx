@@ -7,6 +7,7 @@ import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 
 import ScreenWrapper from "../ScreenWrapper";
 import { Tag } from "./Tag";
+import { RichText } from "./RichText";
 
 interface DetailPageProps {
     type: string;
@@ -37,7 +38,11 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
                             <H6 style={[h6, styles.date]}>Posted on {Moment(props.data?.attributes?.publishedAt).format("MMM DD.YYYY")}</H6>
                         </View>
                     </View>
-                    <View style={styles.mainSection}></View>
+                    <View style={styles.mainSection}>
+                        <RichText
+                            content={props.data?.attributes?.Description}
+                        />
+                    </View>
                 </View>
             ) : (
                     <View>
@@ -56,7 +61,7 @@ const useStyles = () => {
             marginBottom: 40,
         },
         headerSection: {
-
+            marginBottom: 40,
         },
         tags: {
             flexDirection: 'row'
