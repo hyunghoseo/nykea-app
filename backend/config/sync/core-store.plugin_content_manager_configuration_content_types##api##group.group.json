@@ -76,6 +76,20 @@
           "sortable": true
         }
       },
+      "Criteria": {
+        "edit": {
+          "label": "Criteria",
+          "description": "",
+          "placeholder": "For wives, For voted members, etc.",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Criteria",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -136,33 +150,39 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "Name",
-        "ShortDescription",
-        "Picture"
-      ],
       "edit": [
         [
           {
             "name": "Name",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Type",
             "size": 6
           },
           {
-            "name": "ShortDescription",
+            "name": "Criteria",
             "size": 6
           }
         ],
         [
           {
-            "name": "Picture",
+            "name": "ShortDescription",
             "size": 6
           },
           {
-            "name": "Type",
+            "name": "Picture",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "Name",
+        "ShortDescription",
+        "Picture"
       ]
     }
   },

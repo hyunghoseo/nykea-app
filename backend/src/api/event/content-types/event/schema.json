@@ -118,6 +118,15 @@
       },
       "type": "string"
     },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks",
+      "required": true
+    },
     "Location": {
       "type": "component",
       "repeatable": true,
@@ -126,17 +135,8 @@
           "localized": true
         }
       },
-      "component": "common.address2",
+      "component": "common.address",
       "required": true
-    },
-    "Description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "blocks",
-      "required": false
     }
   }
 }

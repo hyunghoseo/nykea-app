@@ -166,13 +166,18 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Description",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.City",
+          "Location.State",
+          "Location.Country"
         ]
       },
       "conditions": []
@@ -190,13 +195,18 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Description",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.City",
+          "Location.State",
+          "Location.Country"
         ]
       },
       "conditions": []
@@ -214,13 +224,18 @@
           "Links.URL",
           "StartDate.Date",
           "StartDate.Time",
+          "StartDate.TimeZone",
           "EndDate.Date",
           "EndDate.Time",
+          "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Description",
           "Location.Label",
           "Location.Address",
-          "Description"
+          "Location.City",
+          "Location.State",
+          "Location.Country"
         ]
       },
       "conditions": []
@@ -233,7 +248,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ]
       },
       "conditions": []
@@ -246,7 +262,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ]
       },
       "conditions": []
@@ -259,7 +276,8 @@
         "fields": [
           "Name",
           "ShortDescription",
-          "Picture"
+          "Picture",
+          "Type"
         ]
       },
       "conditions": []

@@ -28,8 +28,8 @@ const constructAnnouncement = (id) => {
 }
 
 /**
-     * @param {string | number} id
-     */
+ * @param {string | number} id
+ */
 const constructBanner = (id) => {
     return {
         data: {
@@ -60,40 +60,6 @@ const constructChurchInfo = (id) => {
             "PrivatePolicy": "policy" + id,
             "locale": "en",
             "publishedAt": Date.now(),
-        }
-    };
-}
-
-/**
- * @param {string | number} id
- */
-const constructEvent = (id) => {
-    return {
-        data: {
-            "Title": "Event Title " + id,
-            "Poster": null,
-            "StartDate": {
-                "Date": "2024-04-14",
-                "Time": "12:13:54.000",
-                "TimeZone": "EST"
-            },
-            "Location": [
-                {
-                    "Label": "KEA Church 100",
-                    "AddressURL": "www.google.com",
-                    "Address": "374 Squaw Brook Rd",
-                    "AddressDetail": null,
-                    "City": null,
-                    "Country": null,
-                    "state": null
-                }
-            ],
-            "Description": "Event Description " + id,
-            "HostingGroup": null,
-            "Fee": "$ Event Fee " + id,
-            "Contact": "Event Contact " + id,
-            "Private": false,
-            "locale": "en"
         }
     };
 }
@@ -164,6 +130,56 @@ const constructUserInfo = (id) => {
             "users_permissions_user": null,
             "locale": "en",
             "publishedAt": Date.now(),
+        }
+    };
+}
+
+/**
+ * @param {string | number} id
+ */
+
+const constructEvent = (id) => {
+    return {
+        data: {
+            "Title": "Event Title " + id,
+            "Poster": null,
+            "Picture": null,
+            "StartDate": {
+                "id": 1,
+                "Date": "2024-12-31",
+                "Time": "12:00:00.000",
+                "TimeZone": "New York, NY, USA (GMT-4)"
+            },
+            "EndDate": null,
+            "Location": [
+                {
+                    "id": 1,
+                    "Label": "KEA NY Family Church",
+                    "AddressURL": "https://www.google.com/maps/place/KEA+NY+Family+Church/@40.9663491,-74.1853393,17z/data=!3m1!4b1!4m6!3m5!1s0x89c2fd3b52a5eeb5:0xe3f6754a3483b46d!8m2!3d40.9663451!4d-74.1827697!16s%2Fg%2F11c1ww4t_2?entry=ttu",
+                    "Address": "374 Squaw Brook Rd",
+                    "AddressDetail": null,
+                    "City": "North Haledon",
+                    "Country": "USA",
+                    "State": "NJ, New Jersey"
+                }
+            ],
+            "Links": [],
+            "Description": [
+                {
+                    "type": "paragraph",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Welcome!"
+                        }
+                    ]
+                }
+            ],
+            "HostingGroup": null,
+            "Fee": null, 
+            "Contact": null,
+            "Private": false,
+            "locale": "en"
         }
     };
 }

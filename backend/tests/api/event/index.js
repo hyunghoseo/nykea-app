@@ -34,7 +34,7 @@ describe("Event Test", () => {
     it("[Create] Admin user should post Events", async () => {
         const event = constructor.constructEvent(1);
         await request(strapi.server.httpServer)
-            .post("/api/events")
+            .post("/api/events?populate=*")
             .set("accept", "application/json")
             .set("Authorization", `Bearer ${await jwt(adminUser.id)}`)
             .send(constructor.constructEvent(1))
@@ -42,9 +42,11 @@ describe("Event Test", () => {
             .expect(200)
             .expect((data) => {
                 data = data.body.data;
-                console.log(data);
                 expect(data.attributes.Title).toBe(event.data.Title);
                 expect(data.attributes.Fee).toBe(event.data.Fee);
+                expect(data.attributes.Description).toEqual(event.data.Description);
+                expect(data.attributes.Location).toStrictEqual(event.data.Location);
+                expect(data.attributes.StartDate).toStrictEqual(event.data.StartDate);
                 expect(data.attributes.Contact).toBe(event.data.Contact);
                 expect(data.attributes.Private).toBe(event.data.Private);
                 expect(data.attributes.locale).toBe(event.data.locale);
@@ -81,7 +83,6 @@ describe("Event Test", () => {
             .expect("Content-Type", /json/)
             .expect(200)
             .then((data) => {
-                console.log(data.body.data);
                 expect(data.body.data.length).toBe(1);
             })
     })
@@ -169,7 +170,6 @@ describe("Event Test", () => {
     it("[Update] Admin user should update Events", async () => {
         const id = 1;
         const event = constructor.constructEvent(3);
-        console.log(event);
         await request(strapi.server.httpServer)
             .put("/api/events/" + id)
             .set("accept", "application/json")
