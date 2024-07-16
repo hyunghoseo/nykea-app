@@ -4,6 +4,7 @@ import Moment from "moment";
 
 import { theme } from "@/config/theme";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
+import { useTranslation } from "@/hooks/useTranslation";
 
 import ScreenWrapper from "../ScreenWrapper";
 import { Tag } from "./Tag";
@@ -21,6 +22,7 @@ interface DetailPageProps {
 export const DetailPage: React.FC<DetailPageProps> = (props) => {
     const styles = useStyles();
     const { h2, h6, bodyNormal } = useTypographyStyles();
+    const { t } = useTranslation();
     return (
         <ScreenWrapper>
             {props.isError ? (
@@ -35,7 +37,7 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
                         </View>
                         <H2 style={[h2]}>{props.data?.attributes?.Title}</H2>
                         <View style={styles.dateSection}>
-                            <H6 style={[h6, styles.date]}>Posted on {Moment(props.data?.attributes?.publishedAt).format("MMM DD.YYYY")}</H6>
+                            <H6 style={[h6, styles.date]}>{t(`details.postedDate`)}{Moment(props.data?.attributes?.publishedAt).format("MMM DD, YYYY")}</H6>
                         </View>
                     </View>
                     <View style={styles.mainSection}>

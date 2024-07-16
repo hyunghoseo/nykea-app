@@ -42,6 +42,7 @@ export const translations: Translations = {
     "page.Groups.types.Education": "Education",
     "page.Groups.types.Activities": "Activities",
     "page.Announcements.title": "Announcements",
+    "details.postedDate": "Posted on ",
   },
   ko: {
     home: "뉴욕한인교회",
@@ -62,6 +63,7 @@ export const translations: Translations = {
     "page.Groups.types.Education": "교육",
     "page.Groups.types.Activities": "동아리",
     "page.Announcements.title": "공지사항",
+    "details.postedDate": "작성 날짜  ",
   },
   ja: {
     home: "NY Korean Family Church",
@@ -82,5 +84,6 @@ export const translations: Translations = {
     "page.Groups.types.Education": "Education",
     "page.Groups.types.Activities": "Activities",
     "page.Announcements.title": "Announcements",
+    "details.postedDate": "Posted on ",
   },
 };
