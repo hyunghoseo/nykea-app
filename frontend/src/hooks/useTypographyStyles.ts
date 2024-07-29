@@ -22,14 +22,14 @@ export const useTypographyStyles = () => {
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
-          fontSize: 36,
-          lineHeight: 44,
-        }
+            fontSize: 36,
+            lineHeight: 44,
+          }
         : {
-          fontSize: 48,
-          lineHeight: 58,
-          letterSpacing: 0.25,
-        }),
+            fontSize: 48,
+            lineHeight: 58,
+            letterSpacing: 0.25,
+          }),
     },
     h2: {
       ...defaultStyles,
@@ -37,14 +37,14 @@ export const useTypographyStyles = () => {
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
-          fontSize: 28,
-          lineHeight: 40,
-        }
+            fontSize: 28,
+            lineHeight: 40,
+          }
         : {
-          fontSize: 36,
-          lineHeight: 46,
-          letterSpacing: 0.25,
-        }),
+            fontSize: 36,
+            lineHeight: 46,
+            letterSpacing: 0.25,
+          }),
     },
     h3: {
       ...defaultStyles,
@@ -52,15 +52,15 @@ export const useTypographyStyles = () => {
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
-          fontSize: 22,
-          lineHeight: 32,
-          letterSpacing: 0.1,
-        }
+            fontSize: 22,
+            lineHeight: 32,
+            letterSpacing: 0.1,
+          }
         : {
-          fontSize: 26,
-          lineHeight: 36,
-          letterSpacing: 0.25,
-        }),
+            fontSize: 26,
+            lineHeight: 36,
+            letterSpacing: 0.25,
+          }),
     },
     h4: {
       ...defaultStyles,
@@ -68,15 +68,15 @@ export const useTypographyStyles = () => {
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
-          fontSize: 20,
-          lineHeight: 28,
-          letterSpacing: 0.15,
-        }
+            fontSize: 20,
+            lineHeight: 28,
+            letterSpacing: 0.15,
+          }
         : {
-          fontSize: 24,
-          lineHeight: 32,
-          letterSpacing: 0.25,
-        }),
+            fontSize: 24,
+            lineHeight: 32,
+            letterSpacing: 0.25,
+          }),
     },
     h5: {
       ...defaultStyles,
@@ -84,15 +84,15 @@ export const useTypographyStyles = () => {
         locale === "en" ? "KumbhSans_600SemiBold" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
-          fontSize: 18,
-          lineHeight: 24,
-          letterSpacing: 0.15,
-        }
+            fontSize: 18,
+            lineHeight: 24,
+            letterSpacing: 0.15,
+          }
         : {
-          fontSize: 20,
-          lineHeight: 28,
-          letterSpacing: 0.5,
-        }),
+            fontSize: 20,
+            lineHeight: 28,
+            letterSpacing: 0.5,
+          }),
     },
     h6: {
       ...defaultStyles,
@@ -100,15 +100,15 @@ export const useTypographyStyles = () => {
         locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
       ...(isMobile
         ? {
-          fontSize: 16,
-          lineHeight: 24,
-          letterSpacing: 0.25,
-        }
+            fontSize: 16,
+            lineHeight: 24,
+            letterSpacing: 0.25,
+          }
         : {
-          fontSize: 16,
-          lineHeight: 32,
-          letterSpacing: 0.75,
-        }),
+            fontSize: 16,
+            lineHeight: 32,
+            letterSpacing: 0.75,
+          }),
     },
     overline: {
       ...defaultStyles,
@@ -191,7 +191,7 @@ export const useTypographyStyles = () => {
       fontSize: 16,
       lineHeight: 20,
       letterSpacing: 0.5,
-      color: "#ffffff"
-    }
+      color: "#ffffff",
+    },
   });
 };
