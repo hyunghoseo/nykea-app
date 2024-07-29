@@ -9,6 +9,8 @@ import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import ScreenWrapper from "../ScreenWrapper";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
+import { ButtonTypes, Button } from "./Button";
+import { CommonLinkComponent } from "@/api/apiSchemas";
 
 interface DetailPageProps {
   type: string;
@@ -49,13 +51,23 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           </View>
           <View style={styles.mainSection}>
             <RichText content={props.data?.attributes?.Description} />
+            <View style={styles.buttonSection}>
+              {props.data?.attributes?.Link?.map((link: CommonLinkComponent) => (
+                <Button
+                  type={ButtonTypes.default}
+                  text={link.Label}
+                  url={link.URL}
+                />
+              )
+              )}
+            </View>
           </View>
         </View>
       ) : (
-        <View>
-          <P style={bodyNormal}>Still loading</P>
-        </View>
-      )}
+          <View>
+            <P style={bodyNormal}>Still loading</P>
+          </View>
+        )}
     </ScreenWrapper>
   );
 };
@@ -82,5 +94,10 @@ const useStyles = () => {
     mainSection: {
       marginBottom: 48,
     },
+    buttonSection: {
+      marginTop: 16,
+      flexDirection: "row",
+      flexWrap: "wrap"
+    }
   });
 };
