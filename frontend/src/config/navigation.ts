@@ -13,6 +13,7 @@ export type RootStackParamList = {
   Events: undefined;
   Announcements: undefined;
   ContactUs: undefined;
+  Policy: undefined;
   AnnouncementDetails: { id: number };
 };
 
@@ -23,6 +24,7 @@ export const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Home: "",
       About: "about",
+      Policy: "policy",
       Groups: "groups",
       Services: "services",
       Events: "events",
@@ -42,5 +44,6 @@ export const navRoutes = [
   "Events",
   "Announcements",
   "ContactUs",
+  "Policy",
   "AnnouncementDetails",
 ] as const;

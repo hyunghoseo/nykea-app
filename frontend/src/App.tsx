@@ -29,6 +29,7 @@ import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
 import AboutScreen from "@/screens/AboutScreen";
+import PolicyScreen from "@/screens/PolicyScreen";
 import {
   AnnouncementDetailsScreen,
   AnnouncementsScreen,
@@ -57,6 +58,7 @@ export const AppNavigator = () => {
     >
       <RootStack.Screen name="Home" component={HomeScreen} />
       <RootStack.Screen name="About" component={AboutScreen} />
+      <RootStack.Screen name="Policy" component={PolicyScreen} />
       <RootStack.Screen name="Groups" component={GroupsScreen} />
       <RootStack.Screen name="Services" component={ServicesScreen} />
       <RootStack.Screen name="Events" component={EventsScreen} />
