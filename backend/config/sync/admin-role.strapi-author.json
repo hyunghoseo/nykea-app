@@ -15,12 +15,29 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description"
+          "Description",
+          "YoutubeURL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::announcement.announcement",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -34,7 +51,12 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description"
+          "Description",
+          "YoutubeURL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -53,7 +75,12 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description"
+          "Description",
+          "YoutubeURL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -72,11 +99,27 @@
           "Link.URL",
           "StartDate",
           "EndDate"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::banner.banner",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -90,6 +133,10 @@
           "Link.URL",
           "StartDate",
           "EndDate"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -108,6 +155,10 @@
           "Link.URL",
           "StartDate",
           "EndDate"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -124,14 +175,29 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::church-info.church-info",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -143,9 +209,12 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -162,9 +231,12 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -197,11 +269,27 @@
           "Location.City",
           "Location.State",
           "Location.Country"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::event.event",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -229,6 +317,10 @@
           "Location.City",
           "Location.State",
           "Location.Country"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -261,6 +353,10 @@
           "Location.City",
           "Location.State",
           "Location.Country"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -276,12 +372,29 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::group.group",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -292,7 +405,12 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -308,7 +426,12 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -326,11 +449,27 @@
           "FullName",
           "Title",
           "Picture"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::leader.leader",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -343,6 +482,10 @@
           "FullName",
           "Title",
           "Picture"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -360,11 +503,48 @@
           "FullName",
           "Title",
           "Picture"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {
+        "fields": [
+          "Policy"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {
+        "fields": [
+          "Policy"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {
+        "fields": [
+          "Policy"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.create",
@@ -391,11 +571,27 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::service.service",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -422,6 +618,10 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -453,6 +653,10 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -533,11 +737,27 @@
           "LastName",
           "MiddleName",
           "users_permissions_user"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::user-info.user-info",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
@@ -550,6 +770,10 @@
           "LastName",
           "MiddleName",
           "users_permissions_user"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
@@ -567,11 +791,32 @@
           "LastName",
           "MiddleName",
           "users_permissions_user"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "plugin::users-permissions.user",
+      "properties": {
+        "fields": [
+          "username",
+          "email",
+          "provider",
+          "confirmed",
+          "blocked",
+          "role",
+          "user_info"
+        ]
+      },
+      "conditions": []
     },
     {
       "action": "plugin::upload.assets.copy-link",

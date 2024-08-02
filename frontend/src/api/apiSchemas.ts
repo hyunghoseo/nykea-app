@@ -761,7 +761,6 @@ export type ChurchInfoLocalizationRequest = {
   Phone: string;
   Email: string;
   Address: string;
-  PrivatePolicy?: string;
   FamilyWebsites?: CommonLinkComponent[];
   locale: string;
 };
@@ -772,7 +771,6 @@ export type ChurchInfoRequest = {
     Phone: string;
     Email: string;
     Address: string;
-    PrivatePolicy?: string;
     FamilyWebsites?: CommonLinkComponent[];
     locale?: string;
   };
@@ -839,7 +837,6 @@ export type ChurchInfo = {
   Phone: string;
   Email: string;
   Address: string;
-  PrivatePolicy?: string;
   FamilyWebsites?: CommonLinkComponent[];
   /**
    * @format date-time
@@ -2591,6 +2588,176 @@ export type LeaderResponseDataObject = {
 
 export type LeaderResponse = {
   data?: LeaderResponseDataObject;
+  meta?: Record<string, any>;
+};
+
+export type PrivatePolicyRequest = {
+  data: {
+    Policy: void;
+  };
+};
+
+export type PrivatePolicyListResponseDataItem = {
+  id?: number;
+  attributes?: PrivatePolicy;
+};
+
+export type PrivatePolicyListResponse = {
+  data?: PrivatePolicyListResponseDataItem[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /**
+       * @minimum 25
+       */
+      pageSize?: number;
+      /**
+       * @maximum 1
+       */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+};
+
+export type PrivatePolicy = {
+  Policy: void;
+  /**
+   * @format date-time
+   */
+  createdAt?: string;
+  /**
+   * @format date-time
+   */
+  updatedAt?: string;
+  createdBy?: {
+    data?: {
+      id?: number;
+      attributes?: {
+        firstname?: string;
+        lastname?: string;
+        username?: string;
+        /**
+         * @format email
+         */
+        email?: string;
+        resetPasswordToken?: string;
+        registrationToken?: string;
+        isActive?: boolean;
+        roles?: {
+          data?: {
+            id?: number;
+            attributes?: {
+              name?: string;
+              code?: string;
+              description?: string;
+              users?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                }[];
+              };
+              permissions?: {
+                data?: {
+                  id?: number;
+                  attributes?: {
+                    action?: string;
+                    actionParameters?: void;
+                    subject?: string;
+                    properties?: void;
+                    conditions?: void;
+                    role?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                    /**
+                     * @format date-time
+                     */
+                    createdAt?: string;
+                    /**
+                     * @format date-time
+                     */
+                    updatedAt?: string;
+                    createdBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                    updatedBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                  };
+                }[];
+              };
+              /**
+               * @format date-time
+               */
+              createdAt?: string;
+              /**
+               * @format date-time
+               */
+              updatedAt?: string;
+              createdBy?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+              updatedBy?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+            };
+          }[];
+        };
+        blocked?: boolean;
+        preferedLanguage?: string;
+        /**
+         * @format date-time
+         */
+        createdAt?: string;
+        /**
+         * @format date-time
+         */
+        updatedAt?: string;
+        createdBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+        updatedBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+      };
+    };
+  };
+  updatedBy?: {
+    data?: {
+      id?: number;
+      attributes?: {};
+    };
+  };
+};
+
+export type PrivatePolicyResponseDataObject = {
+  id?: number;
+  attributes?: PrivatePolicy;
+};
+
+export type PrivatePolicyResponse = {
+  data?: PrivatePolicyResponseDataObject;
   meta?: Record<string, any>;
 };
 

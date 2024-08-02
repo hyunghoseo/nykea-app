@@ -37,6 +37,9 @@
       "action": "api::leader.leader.findOne"
     },
     {
+      "action": "api::private-policy.private-policy.find"
+    },
+    {
       "action": "api::support.support.create"
     },
     {
