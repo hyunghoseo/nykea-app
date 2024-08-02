@@ -1,13 +1,51 @@
-import { Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { H1, P } from "@expo/html-elements";
 
+import { theme } from "@/config/theme";
 import ScreenWrapper from "../components/ScreenWrapper";
+import { useGetChurchInfo } from "@/api/apiComponents";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 
-const PolicyScreen = () => {
+
+export const PolicyScreen = () => {
+  //   const {
+  //     data: { data: { attributes : } } },
+  //     isLoading,
+  //     isError,
+  // } = useGetChurchInfo({});
+  const { t } = useTranslation();
+  const styles = useStyles();
+  const { h1, bodyNormal } = useTypographyStyles();
   return (
     <ScreenWrapper>
-      <Text>Policy Screen</Text>
+      <View style={styles.headerSection}>
+        <H1 style={[h1, styles.headerTitle]}>
+          {t("page.policies.title")}
+        </H1>
+      </View>
     </ScreenWrapper>
   );
 };
 
-export default PolicyScreen;
+const useStyles = () => {
+  return StyleSheet.create({
+    headerSection: {
+      alignItems: "center",
+      maxWidth: 648,
+      gap: 24,
+      marginVertical: 32,
+    },
+    headerTitle: {
+      color: theme.colors.primary[0],
+    },
+    mainSection: {
+      width: "100%",
+      maxWidth: 1328,
+      marginVertical: 32,
+      gap: 32,
+      alignItems: "flex-start",
+    },
+    announcementSection: { width: "100%", gap: 24 },
+  });
+};
