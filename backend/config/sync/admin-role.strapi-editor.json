@@ -15,7 +15,24 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description"
+          "Description",
+          "YoutubeURL"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::announcement.announcement",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -32,7 +49,12 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description"
+          "Description",
+          "YoutubeURL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -49,7 +71,12 @@
           "Private",
           "Link.Label",
           "Link.URL",
-          "Description"
+          "Description",
+          "YoutubeURL"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -66,6 +93,22 @@
           "Link.URL",
           "StartDate",
           "EndDate"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::banner.banner",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -82,6 +125,10 @@
           "Link.URL",
           "StartDate",
           "EndDate"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -98,6 +145,10 @@
           "Link.URL",
           "StartDate",
           "EndDate"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -112,10 +163,10 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
-        ]
+        ],
+        "locales": []
       },
       "conditions": []
     },
@@ -129,10 +180,10 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
-        ]
+        ],
+        "locales": []
       },
       "conditions": []
     },
@@ -146,10 +197,10 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
-        ]
+        ],
+        "locales": []
       },
       "conditions": []
     },
@@ -161,6 +212,7 @@
         "fields": [
           "Title",
           "Poster",
+          "Picture",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -172,12 +224,29 @@
           "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Contact",
           "Description",
           "Location.Label",
           "Location.Address",
           "Location.City",
           "Location.State",
           "Location.Country"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::event.event",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -190,6 +259,7 @@
         "fields": [
           "Title",
           "Poster",
+          "Picture",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -201,12 +271,17 @@
           "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Contact",
           "Description",
           "Location.Label",
           "Location.Address",
           "Location.City",
           "Location.State",
           "Location.Country"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -219,6 +294,7 @@
         "fields": [
           "Title",
           "Poster",
+          "Picture",
           "Fee",
           "Links.Label",
           "Links.URL",
@@ -230,12 +306,17 @@
           "EndDate.TimeZone",
           "HostingGroup",
           "Private",
+          "Contact",
           "Description",
           "Location.Label",
           "Location.Address",
           "Location.City",
           "Location.State",
           "Location.Country"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -249,7 +330,24 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::group.group",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -263,7 +361,12 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -277,7 +380,12 @@
           "Name",
           "ShortDescription",
           "Picture",
-          "Type"
+          "Type",
+          "Criteria"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -293,6 +401,22 @@
           "FullName",
           "Title",
           "Picture"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::leader.leader",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -308,6 +432,10 @@
           "FullName",
           "Title",
           "Picture"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -323,6 +451,10 @@
           "FullName",
           "Title",
           "Picture"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -352,6 +484,22 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::service.service",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -381,6 +529,10 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -410,6 +562,10 @@
           "Announcements",
           "SermonVideo",
           "ServiceType"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -482,6 +638,19 @@
           "LastName",
           "MiddleName",
           "users_permissions_user"
+        ],
+        "locales": []
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::user-info.user-info",
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -497,6 +666,10 @@
           "LastName",
           "MiddleName",
           "users_permissions_user"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -512,7 +685,8 @@
           "LastName",
           "MiddleName",
           "users_permissions_user"
-        ]
+        ],
+        "locales": []
       },
       "conditions": []
     },

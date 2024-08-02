@@ -184,5 +184,14 @@ export const useTypographyStyles = () => {
       paddingTop: 8,
       paddingBottom: 8,
     },
+    buttonLarge: {
+      ...defaultStyles,
+      fontFamily:
+        locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
+      fontSize: 16,
+      lineHeight: 20,
+      letterSpacing: 0.5,
+      color: "#ffffff",
+    },
   });
 };

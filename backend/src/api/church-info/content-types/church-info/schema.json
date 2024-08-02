@@ -54,14 +54,6 @@
       "type": "string",
       "required": true
     },
-    "PrivatePolicy": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text"
-    },
     "FamilyWebsites": {
       "type": "component",
       "repeatable": true,

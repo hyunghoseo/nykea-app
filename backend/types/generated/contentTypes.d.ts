@@ -899,12 +899,6 @@ export interface ApiChurchInfoChurchInfo extends Schema.SingleType {
           localized: false;
         };
       }>;
-    PrivatePolicy: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     FamilyWebsites: Attribute.Component<'common.link', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1204,6 +1198,36 @@ export interface ApiLeaderLeader extends Schema.CollectionType {
       'api::leader.leader'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiPrivatePolicyPrivatePolicy extends Schema.SingleType {
+  collectionName: 'private_policies';
+  info: {
+    singularName: 'private-policy';
+    pluralName: 'private-policies';
+    displayName: 'PrivatePolicy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Policy: Attribute.Blocks & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::private-policy.private-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::private-policy.private-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1512,6 +1536,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::group.group': ApiGroupGroup;
       'api::leader.leader': ApiLeaderLeader;
+      'api::private-policy.private-policy': ApiPrivatePolicyPrivatePolicy;
       'api::service.service': ApiServiceService;
       'api::support.support': ApiSupportSupport;
       'api::user-info.user-info': ApiUserInfoUserInfo;

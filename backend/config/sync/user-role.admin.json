@@ -73,6 +73,12 @@
       "action": "api::leader.leader.update"
     },
     {
+      "action": "api::private-policy.private-policy.find"
+    },
+    {
+      "action": "api::private-policy.private-policy.update"
+    },
+    {
       "action": "api::support.support.find"
     },
     {
