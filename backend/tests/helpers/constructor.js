@@ -57,7 +57,6 @@ const constructChurchInfo = (id) => {
             "Phone": "000-000-0000",
             "Email": "test" + id + "@test.com",
             "Address": id + "north haledon",
-            "PrivatePolicy": "policy" + id,
             "locale": "en",
             "publishedAt": Date.now(),
         }
