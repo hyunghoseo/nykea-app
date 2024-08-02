@@ -17,7 +17,7 @@ export type TranslationEntryKey =
   | "page.Groups.types.Education"
   | "page.Groups.types.Activities"
   | "page.Announcements.title"
-  | "page.Policies.title"
+  | "page.Policies.title";
 
 type Translations = {
   [key in Locale]: { [key in TranslationEntryKey]: string };

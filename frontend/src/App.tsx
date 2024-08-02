@@ -29,7 +29,6 @@ import { LocaleProvider } from "@/contexts/LocaleProvider";
 import { NavigationProvider } from "@/contexts/NavigationProvider";
 import { Layout } from "@/components/Layout";
 import AboutScreen from "@/screens/AboutScreen";
-import { PolicyScreen } from "@/screens/PolicyScreen";
 import {
   AnnouncementDetailsScreen,
   AnnouncementsScreen,
@@ -38,6 +37,7 @@ import ContactUsScreen from "@/screens/ContactUsScreen";
 import EventsScreen from "@/screens/EventsScreen";
 import { GroupsScreen } from "@/screens/GroupsScreen";
 import HomeScreen from "@/screens/HomeScreen";
+import { PolicyScreen } from "@/screens/PolicyScreen";
 import ServicesScreen from "@/screens/ServicesScreen";
 
 // These should eventually look like:

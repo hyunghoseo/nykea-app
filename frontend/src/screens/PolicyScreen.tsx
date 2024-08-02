@@ -1,18 +1,19 @@
-import { StyleSheet, View } from "react-native";
 import { H1, P } from "@expo/html-elements";
+import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
-import ScreenWrapper from "../components/ScreenWrapper";
-import { useGetPrivatePolicy } from "@/api/apiComponents";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
+import { useGetPrivatePolicy } from "@/api/apiComponents";
+
 import { RichText } from "../components/Layout/RichText";
+import ScreenWrapper from "../components/ScreenWrapper";
 
 export const PolicyScreen = () => {
   const {
     data: { data: { attributes: { Policy: policy } = {} } = {} } = {},
     isError,
-    isLoading
+    isLoading,
   } = useGetPrivatePolicy({});
   const { t } = useTranslation();
   const styles = useStyles();
@@ -20,9 +21,7 @@ export const PolicyScreen = () => {
   return (
     <ScreenWrapper>
       <View style={styles.headerSection}>
-        <H1 style={[h1, styles.headerTitle]}>
-          {t("page.policies.title")}
-        </H1>
+        <H1 style={[h1, styles.headerTitle]}>{t("page.policies.title")}</H1>
       </View>
       <View style={styles.mainSection}>
         {isError ? (
@@ -31,10 +30,10 @@ export const PolicyScreen = () => {
         {!isError && !isLoading && policy ? (
           <RichText content={policy} />
         ) : (
-            <View>
-              <P style={bodyNormal}>Still loading</P>
-            </View>
-          )}
+          <View>
+            <P style={bodyNormal}>Still loading</P>
+          </View>
+        )}
       </View>
     </ScreenWrapper>
   );
