@@ -2540,6 +2540,238 @@ export const usePostLeadersIdLocalizations = (
   });
 };
 
+export type GetPrivatePolicyQueryParams = {
+  /**
+   * Sort by attributes ascending (asc) or descending (desc)
+   */
+  sort?: string;
+  /**
+   * Return page/pageSize (default: true)
+   */
+  ["pagination[withCount]"]?: boolean;
+  /**
+   * Page number (default: 0)
+   */
+  ["pagination[page]"]?: number;
+  /**
+   * Page size (default: 25)
+   */
+  ["pagination[pageSize]"]?: number;
+  /**
+   * Offset value (default: 0)
+   */
+  ["pagination[start]"]?: number;
+  /**
+   * Number of entities to return (default: 25)
+   */
+  ["pagination[limit]"]?: number;
+  /**
+   * Fields to return (ex: title,author)
+   */
+  fields?: string;
+  /**
+   * Relations to return
+   */
+  populate?: string;
+  /**
+   * Filters to apply
+   */
+  filters?: Record<string, any>;
+  /**
+   * Locale to apply
+   */
+  locale?: string;
+};
+
+export type GetPrivatePolicyError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type GetPrivatePolicyVariables = {
+  queryParams?: GetPrivatePolicyQueryParams;
+} & ApiContext["fetcherOptions"];
+
+export const fetchGetPrivatePolicy = (
+  variables: GetPrivatePolicyVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<
+    Schemas.PrivatePolicyResponse,
+    GetPrivatePolicyError,
+    undefined,
+    {},
+    GetPrivatePolicyQueryParams,
+    {}
+  >({ url: "/private-policy", method: "get", ...variables, signal });
+
+export const useGetPrivatePolicy = <TData = Schemas.PrivatePolicyResponse>(
+  variables: GetPrivatePolicyVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.PrivatePolicyResponse,
+      GetPrivatePolicyError,
+      TData
+    >,
+    "queryKey" | "queryFn" | "initialData"
+  >,
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.PrivatePolicyResponse,
+    GetPrivatePolicyError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: "/private-policy",
+      operationId: "getPrivatePolicy",
+      variables,
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetPrivatePolicy({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions,
+  });
+};
+
+export type PutPrivatePolicyError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type PutPrivatePolicyVariables = {
+  body: Schemas.PrivatePolicyRequest;
+} & ApiContext["fetcherOptions"];
+
+export const fetchPutPrivatePolicy = (
+  variables: PutPrivatePolicyVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<
+    Schemas.PrivatePolicyResponse,
+    PutPrivatePolicyError,
+    Schemas.PrivatePolicyRequest,
+    {},
+    {},
+    {}
+  >({ url: "/private-policy", method: "put", ...variables, signal });
+
+export const usePutPrivatePolicy = (
+  options?: Omit<
+    reactQuery.UseMutationOptions<
+      Schemas.PrivatePolicyResponse,
+      PutPrivatePolicyError,
+      PutPrivatePolicyVariables
+    >,
+    "mutationFn"
+  >,
+) => {
+  const { fetcherOptions } = useApiContext();
+  return reactQuery.useMutation<
+    Schemas.PrivatePolicyResponse,
+    PutPrivatePolicyError,
+    PutPrivatePolicyVariables
+  >({
+    mutationFn: (variables: PutPrivatePolicyVariables) =>
+      fetchPutPrivatePolicy({ ...fetcherOptions, ...variables }),
+    ...options,
+  });
+};
+
+export type DeletePrivatePolicyError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type DeletePrivatePolicyVariables = ApiContext["fetcherOptions"];
+
+export const fetchDeletePrivatePolicy = (
+  variables: DeletePrivatePolicyVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<number, DeletePrivatePolicyError, undefined, {}, {}, {}>({
+    url: "/private-policy",
+    method: "delete",
+    ...variables,
+    signal,
+  });
+
+export const useDeletePrivatePolicy = (
+  options?: Omit<
+    reactQuery.UseMutationOptions<
+      number,
+      DeletePrivatePolicyError,
+      DeletePrivatePolicyVariables
+    >,
+    "mutationFn"
+  >,
+) => {
+  const { fetcherOptions } = useApiContext();
+  return reactQuery.useMutation<
+    number,
+    DeletePrivatePolicyError,
+    DeletePrivatePolicyVariables
+  >({
+    mutationFn: (variables: DeletePrivatePolicyVariables) =>
+      fetchDeletePrivatePolicy({ ...fetcherOptions, ...variables }),
+    ...options,
+  });
+};
+
 export type GetServicesQueryParams = {
   /**
    * Sort by attributes ascending (asc) or descending (desc)
@@ -3879,6 +4111,11 @@ export type QueryOperation =
       path: "/leaders/{id}";
       operationId: "getLeadersId";
       variables: GetLeadersIdVariables;
+    }
+  | {
+      path: "/private-policy";
+      operationId: "getPrivatePolicy";
+      variables: GetPrivatePolicyVariables;
     }
   | {
       path: "/services";

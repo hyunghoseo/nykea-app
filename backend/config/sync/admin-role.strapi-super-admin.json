@@ -187,7 +187,6 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
         ],
@@ -232,7 +231,6 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
         ],
@@ -253,7 +251,6 @@
           "Phone",
           "Email",
           "Address",
-          "PrivatePolicy",
           "FamilyWebsites.Label",
           "FamilyWebsites.URL"
         ],
@@ -557,6 +554,46 @@
         "locales": [
           "en",
           "ko"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {
+        "fields": [
+          "Policy"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {
+        "fields": [
+          "Policy"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::private-policy.private-policy",
+      "properties": {
+        "fields": [
+          "Policy"
         ]
       },
       "conditions": []

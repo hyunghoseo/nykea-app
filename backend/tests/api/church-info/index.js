@@ -54,7 +54,6 @@ describe("Church Info Test", () => {
                 expect(data.attributes.Phone).toBe(churchInfo.data.Phone);
                 expect(data.attributes.Email).toBe(churchInfo.data.Email);
                 expect(data.attributes.Address).toBe(churchInfo.data.Address);
-                expect(data.attributes.PrivatePolicy).toBe(churchInfo.data.PrivatePolicy);
                 expect(data.attributes.locale).toBe(churchInfo.data.locale);
             });
     });
@@ -74,7 +73,6 @@ describe("Church Info Test", () => {
                 expect(data.attributes.Phone).toBe(churchInfo.data.Phone);
                 expect(data.attributes.Email).toBe(churchInfo.data.Email);
                 expect(data.attributes.Address).toBe(churchInfo.data.Address);
-                expect(data.attributes.PrivatePolicy).toBe(churchInfo.data.PrivatePolicy);
                 expect(data.attributes.locale).toBe(churchInfo.data.locale);
             });
     });
@@ -94,7 +92,6 @@ describe("Church Info Test", () => {
                 expect(data.attributes.Phone).toBe(churchInfo.data.Phone);
                 expect(data.attributes.Email).toBe(churchInfo.data.Email);
                 expect(data.attributes.Address).toBe(churchInfo.data.Address);
-                expect(data.attributes.PrivatePolicy).toBe(churchInfo.data.PrivatePolicy);
                 expect(data.attributes.locale).toBe(churchInfo.data.locale);
             });
     });
