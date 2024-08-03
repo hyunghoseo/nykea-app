@@ -64,9 +64,13 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
-          <View style={styles.mainSection}>
-            <Youtube />
-          </View>
+          {props.data?.attributes?.YoutubeURL &&
+            <View style={styles.mainSection}>
+              <Youtube
+                url={props.data?.attributes?.YoutubeURL}
+              />
+            </View>
+          }
         </View>
       ) : (
           <View>
@@ -81,8 +85,7 @@ const useStyles = () => {
   return StyleSheet.create({
     wrapper: {
       width: "100%",
-      maxWidth: 672,
-      marginBottom: 40,
+      maxWidth: 672
     },
     headerSection: {
       marginBottom: 40,

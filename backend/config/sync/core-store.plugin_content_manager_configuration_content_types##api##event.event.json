@@ -161,6 +161,20 @@
           "sortable": true
         }
       },
+      "Description": {
+        "edit": {
+          "label": "Description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Description",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "Location": {
         "edit": {
           "label": "Location",
@@ -175,18 +189,18 @@
           "sortable": false
         }
       },
-      "Description": {
+      "YoutubeURL": {
         "edit": {
-          "label": "Description",
+          "label": "YoutubeURL",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Description",
-          "searchable": false,
-          "sortable": false
+          "label": "YoutubeURL",
+          "searchable": true,
+          "sortable": true
         }
       },
       "createdAt": {
@@ -249,6 +263,13 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "Title",
+        "Poster",
+        "HostingGroup",
+        "Private"
+      ],
       "edit": [
         [
           {
@@ -315,14 +336,13 @@
             "name": "Description",
             "size": 12
           }
+        ],
+        [
+          {
+            "name": "YoutubeURL",
+            "size": 6
+          }
         ]
-      ],
-      "list": [
-        "id",
-        "Title",
-        "Poster",
-        "HostingGroup",
-        "Private"
       ]
     }
   },

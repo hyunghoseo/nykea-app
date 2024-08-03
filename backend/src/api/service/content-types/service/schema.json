@@ -82,13 +82,14 @@
       ],
       "required": true
     },
-    "SermonVideo": {
+    "YoutubeURL": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "regex": "^((?:https?:)?\\/\\/)?((?:www|m)\\.)?((?:youtube(?:-nocookie)?\\.com|youtu.be))(\\/(?:[\\w\\-]+\\?v=|embed\\/|live\\/|v\\/)?)([\\w\\-]+)(\\S+)?$"
     },
     "ServiceType": {
       "pluginOptions": {

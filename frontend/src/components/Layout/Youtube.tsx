@@ -1,16 +1,16 @@
 import YoutubePlayer from "react-native-youtube-iframe";
 import { View } from "react-native";
 import { useState } from "react";
+import getVideoId from 'get-video-id';
 
 interface YoutubeProps {
-    url?: string;
-    id?: string;
+    url: string;
 }
 export const Youtube: React.FC<YoutubeProps> = ({
-    url,
-    id
+    url
 }) => {
     const [width, setWidth] = useState(0);
+    const { id } = getVideoId(url);
 
     return (
         <View
@@ -21,7 +21,7 @@ export const Youtube: React.FC<YoutubeProps> = ({
         >
             <YoutubePlayer
                 height={(width / 16) * 9}
-                videoId={"BamhalnDSDI"}
+                videoId={id}
             />
         </View>
     );
