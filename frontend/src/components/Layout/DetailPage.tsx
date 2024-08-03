@@ -11,6 +11,7 @@ import ScreenWrapper from "../ScreenWrapper";
 import { Button, ButtonTypes } from "./Button";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
+import { Youtube } from "./Youtube";
 
 interface DetailPageProps {
   type: string;
@@ -63,12 +64,19 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
+          {props.data?.attributes?.YoutubeURL &&
+            <View style={styles.mainSection}>
+              <Youtube
+                url={props.data?.attributes?.YoutubeURL}
+              />
+            </View>
+          }
         </View>
       ) : (
-        <View>
-          <P style={bodyNormal}>Still loading</P>
-        </View>
-      )}
+          <View>
+            <P style={bodyNormal}>Still loading</P>
+          </View>
+        )}
     </ScreenWrapper>
   );
 };
@@ -77,8 +85,7 @@ const useStyles = () => {
   return StyleSheet.create({
     wrapper: {
       width: "100%",
-      maxWidth: 672,
-      marginBottom: 40,
+      maxWidth: 672
     },
     headerSection: {
       marginBottom: 40,

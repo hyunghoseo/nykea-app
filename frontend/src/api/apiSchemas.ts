@@ -1004,6 +1004,7 @@ export type EventLocalizationRequest = {
   Contact?: string;
   Description: void;
   Location: CommonAddressComponent[];
+  YoutubeURL?: string;
   locale: string;
 };
 
@@ -1027,6 +1028,7 @@ export type EventRequest = {
     Contact?: string;
     Description: void;
     Location: CommonAddressComponent[];
+    YoutubeURL?: string;
     locale?: string;
   };
 };
@@ -1512,6 +1514,7 @@ export type Event = {
   Contact?: string;
   Description: void;
   Location: CommonAddressComponent[];
+  YoutubeURL?: string;
   /**
    * @format date-time
    */
@@ -2786,7 +2789,7 @@ export type ServiceLocalizationRequest = {
     | ListDefaultComponent
     | ListEventComponent
   )[];
-  SermonVideo?: string;
+  YoutubeURL?: string;
   ServiceType: "Sunday" | "Family" | "Special";
   locale: string;
 };
@@ -2817,7 +2820,7 @@ export type ServiceRequest = {
       | ListDefaultComponent
       | ListEventComponent
     )[];
-    SermonVideo?: string;
+    YoutubeURL?: string;
     ServiceType: "Sunday" | "Family" | "Special";
     locale?: string;
   };
@@ -3163,7 +3166,7 @@ export type Service = {
     | ListDefaultComponent
     | ListEventComponent
   )[];
-  SermonVideo?: string;
+  YoutubeURL?: string;
   ServiceType: "Sunday" | "Family" | "Special";
   /**
    * @format date-time
@@ -3902,6 +3905,7 @@ export type ListEventComponent = {
             | "WY, Wyoming";
           Country?: "USA" | "Rep. of Korea" | "Japan";
         }[];
+        YoutubeURL?: string;
         /**
          * @format date-time
          */
