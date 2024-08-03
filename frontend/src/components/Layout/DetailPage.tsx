@@ -14,6 +14,7 @@ import { Button, ButtonTypes } from "./Button";
 import { Gallery } from "./Gallery";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
+import { Youtube } from "./Youtube";
 
 interface DetailPageProps {
   type: "announcement" | "event";
@@ -94,10 +95,10 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
         </View>
       ) : (
-        <View>
-          <P style={bodyNormal}>Still loading</P>
-        </View>
-      )}
+          <View>
+            <P style={bodyNormal}>Still loading</P>
+          </View>
+        )}
     </ScreenWrapper>
   );
 };
