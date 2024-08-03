@@ -135,16 +135,16 @@
           "sortable": false
         }
       },
-      "SermonVideo": {
+      "YoutubeURL": {
         "edit": {
-          "label": "SermonVideo",
+          "label": "YoutubeURL",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "SermonVideo",
+          "label": "YoutubeURL",
           "searchable": true,
           "sortable": true
         }
@@ -274,11 +274,11 @@
         ],
         [
           {
-            "name": "SermonVideo",
+            "name": "ServiceType",
             "size": 6
           },
           {
-            "name": "ServiceType",
+            "name": "YoutubeURL",
             "size": 6
           }
         ]
