@@ -1,26 +1,25 @@
 name: "Frontend"
 
 on:
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
+  push:
+    paths:
+      - "frontend/**"
 
 jobs:
   test-frontend:
+    defaults:
+      run:
+        working-directory: frontend
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - uses: actions/checkout@v3
       - name: Install Node modules
-        run: cd frontend && yarn install
+        run: yarn install --frozen-lockfile
+      - name: Typecheck
+        run: yarn typecheck
       - name: Linting
-        run: cd frontend && yarn lint
+        run: yarn lint
       - name: Unit & Integration tests
-        run: cd frontend && yarn test
+        run: yarn test
+      - name: Build
+        run: yarn build
