@@ -17,7 +17,10 @@ export type TranslationEntryKey =
   | "page.Groups.types.Education"
   | "page.Groups.types.Activities"
   | "page.Announcements.title"
-  | "page.Policies.title";
+  | "page.Policies.title"
+  | "post.type.announcement"
+  | "post.type.event"
+  | "details.postedDate";
 
 type Translations = {
   [key in Locale]: { [key in TranslationEntryKey]: string };
@@ -46,7 +49,7 @@ export const translations: Translations = {
     "page.Groups.types.Activities": "Activities",
     "page.Announcements.title": "Announcements",
     "details.postedDate": "Posted on ",
-    "page.policies.title": "Private Policy",
+    "page.Policies.title": "Private Policy",
   },
   ko: {
     home: "뉴욕한인교회",
@@ -70,7 +73,7 @@ export const translations: Translations = {
     "page.Groups.types.Activities": "동아리",
     "page.Announcements.title": "공지사항",
     "details.postedDate": "작성 날짜  ",
-    "page.policies.title": "이용 약관",
+    "page.Policies.title": "이용 약관",
   },
   ja: {
     home: "NY Korean Family Church",
@@ -94,6 +97,6 @@ export const translations: Translations = {
     "page.Groups.types.Activities": "Activities",
     "page.Announcements.title": "Announcements",
     "details.postedDate": "Posted on ",
-    "page.policies.title": "Private Policy",
+    "page.Policies.title": "Private Policy",
   },
 };

@@ -44,6 +44,4 @@ export const navRoutes = [
   "Events",
   "Announcements",
   "ContactUs",
-  "Policy",
-  "AnnouncementDetails",
 ] as const;
