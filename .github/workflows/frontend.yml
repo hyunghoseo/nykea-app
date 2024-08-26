@@ -13,9 +13,10 @@ jobs:
       run:
         working-directory: frontend
     runs-on: ubuntu-latest
+
     steps:
       - name: Install Node modules
-        run: yarn install --frozen-lockfile
+        run: yarn install
       - name: Typecheck
         run: yarn typecheck
       - name: Linting
