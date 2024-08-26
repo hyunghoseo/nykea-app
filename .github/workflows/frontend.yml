@@ -22,4 +22,4 @@ jobs:
       - name: Unit & Integration tests
         run: yarn test
       - name: Build
-        run: "yarn build:web"
+        run: yarn build:web
