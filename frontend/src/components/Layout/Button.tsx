@@ -39,7 +39,7 @@ const useStyles = (type: ButtonTypes) => {
         height: 52,
         alignItems: "center",
         justifyContent: "center",
-        width: "fit-content",
+        width: "auto",
         paddingHorizontal: 24,
         marginRight: 16,
         marginTop: 16,
@@ -49,8 +49,9 @@ const useStyles = (type: ButtonTypes) => {
       },
     });
   } else {
-    return StylesSheet.create({
+    return StyleSheet.create({
       container: {},
+      text: {},
     });
   }
 };

@@ -16,6 +16,7 @@ export type TranslationEntryKey =
   | "page.Groups.types.Community"
   | "page.Groups.types.Education"
   | "page.Groups.types.Activities"
+  | "page.Groups.types.Music"
   | "page.Announcements.title"
   | "page.Policies.title"
   | "post.type.announcement"
@@ -47,6 +48,7 @@ export const translations: Translations = {
     "page.Groups.types.Community": "Community Groups",
     "page.Groups.types.Education": "Education",
     "page.Groups.types.Activities": "Activities",
+    "page.Groups.types.Music": "Music",
     "page.Announcements.title": "Announcements",
     "details.postedDate": "Posted on ",
     "page.Policies.title": "Private Policy",
@@ -71,6 +73,7 @@ export const translations: Translations = {
     "page.Groups.types.Community": "커뮤니티 ",
     "page.Groups.types.Education": "교육",
     "page.Groups.types.Activities": "동아리",
+    "page.Groups.types.Music": "음악",
     "page.Announcements.title": "공지사항",
     "details.postedDate": "작성 날짜  ",
     "page.Policies.title": "이용 약관",
@@ -95,6 +98,7 @@ export const translations: Translations = {
     "page.Groups.types.Community": "Community",
     "page.Groups.types.Education": "Education",
     "page.Groups.types.Activities": "Activities",
+    "page.Groups.types.Music": "Music",
     "page.Announcements.title": "Announcements",
     "details.postedDate": "Posted on ",
     "page.Policies.title": "Private Policy",

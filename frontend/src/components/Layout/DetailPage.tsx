@@ -3,6 +3,7 @@ import Moment from "moment";
 import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
+import { TranslationEntryKey } from "@/config/translations";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { CommonLinkComponent } from "@/api/apiSchemas";
@@ -13,7 +14,7 @@ import { RichText } from "./RichText";
 import { Tag } from "./Tag";
 
 interface DetailPageProps {
-  type: string;
+  type: "announcement" | "event";
   isLoading: boolean;
   isError: boolean;
   data: any;
@@ -34,7 +35,7 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
         <View style={styles.wrapper}>
           <View style={styles.headerSection}>
             <View style={styles.tags}>
-              <Tag type={props.type} text={t(`post.type.` + props.type)} />
+              <Tag type={props.type} text={t(`post.type.${props.type}`)} />
               <Tag
                 text={props.data?.attributes.HostingGroup.data.attributes.Name}
               />

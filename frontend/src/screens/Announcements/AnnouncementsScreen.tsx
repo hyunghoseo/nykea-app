@@ -11,7 +11,7 @@ import ScreenWrapper from "../../components/ScreenWrapper";
 
 export const AnnouncementsScreen = () => {
   const {
-    data: { data: announcements = {} } = {},
+    data: { data: announcements = [] } = {},
     isLoading,
     isError,
   } = useGetAnnouncements({});

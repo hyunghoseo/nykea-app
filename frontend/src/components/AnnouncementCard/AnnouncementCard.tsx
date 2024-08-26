@@ -13,7 +13,7 @@ import { Announcement } from "@/api/apiSchemas";
 import { Tag } from "../Layout/Tag";
 
 interface AnnouncementCardProps extends Partial<Announcement> {
-  id: number | undefined;
+  id?: number;
   isLoading?: boolean;
   style?: StyleProp<ViewStyle>;
 }
@@ -44,7 +44,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
         disabled={props.isLoading}
         onPress={() =>
           navigationRef.navigate("AnnouncementDetails", {
-            id: props.id,
+            id: props.id || 0,
           })
         }
       >
@@ -66,7 +66,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
           </Skeleton>
           <Skeleton colorMode="light">
             <P style={bodyNormal} numberOfLines={3} ellipsizeMode="clip">
-              {getPlainText(props.Description)}
+              {props.Description ? getPlainText(props.Description) : ""}
             </P>
           </Skeleton>
         </Skeleton.Group>
@@ -83,7 +83,7 @@ const useStyles = () => {
       gap: 32,
       width: "100%",
       borderRadius: 8,
-      borderBlockColor: 0,
+      borderBlockColor: "transparent",
     },
     innerContainer: {
       backgroundColor: "white",
