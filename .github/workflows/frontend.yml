@@ -1,9 +1,11 @@
 name: "Frontend"
 
 on:
-  push:
-    paths:
-      - "frontend/**"
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
 
 jobs:
   test-frontend:
@@ -12,7 +14,6 @@ jobs:
         working-directory: frontend
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Install Node modules
         run: yarn install --frozen-lockfile
       - name: Typecheck

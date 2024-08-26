@@ -1,9 +1,11 @@
 name: "Backend"
 
 on:
-  push:
-    paths:
-      - "backend/**"
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
 
 jobs:
   test-backend:
