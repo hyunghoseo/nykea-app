@@ -51,9 +51,9 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
             </View>
           </View>
           <View style={styles.mainSection}>
-            {props.type === "event" &&
+            {props.type === "event" && (
               <H3 style={[h3, styles.eventDescription]}>Event Description</H3>
-            }
+            )}
             <RichText content={props.data?.attributes?.Description} />
             <View style={styles.buttonSection}>
               {props.data?.attributes?.Link?.map(
@@ -74,10 +74,10 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
         </View>
       ) : (
-          <View>
-            <P style={bodyNormal}>Still loading</P>
-          </View>
-        )}
+        <View>
+          <P style={bodyNormal}>Still loading</P>
+        </View>
+      )}
     </ScreenWrapper>
   );
 };
@@ -111,6 +111,6 @@ const useStyles = () => {
     },
     eventDescription: {
       marginBottom: 24,
-    }
+    },
   });
 };
