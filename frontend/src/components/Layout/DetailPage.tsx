@@ -3,13 +3,13 @@ import Moment from "moment";
 import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
-import { TranslationEntryKey } from "@/config/translations";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { CommonLinkComponent } from "@/api/apiSchemas";
 
 import ScreenWrapper from "../ScreenWrapper";
 import { Button, ButtonTypes } from "./Button";
+import { Gallery } from "./Gallery";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
 
@@ -64,6 +64,11 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
+          {props.data?.attributes?.Poster?.data && (
+            <View style={styles.mainSection}>
+              <Gallery data={props.data?.attributes?.Poster?.data} />
+            </View>
+          )}
         </View>
       ) : (
         <View>

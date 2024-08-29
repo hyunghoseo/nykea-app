@@ -1,7 +1,7 @@
 import { ApiContext } from "./apiContext";
 
-const baseUrl = "https://admin.nykea.org/api"; //PROD
-// const baseUrl = "http://localhost:1338/api"; //LOCAL Switch for testing and never commit
+export const baseUrl = "https://admin.nykea.org/api"; //PROD
+// export const baseUrl = "http://localhost:1338/api"; //LOCAL Switch for testing and never commit
 
 export type ErrorWrapper<TError> =
   | TError
