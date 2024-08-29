@@ -1,6 +1,6 @@
 import { H2, H6, P } from "@expo/html-elements";
 import Moment from "moment";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 import { theme } from "@/config/theme";
 import { TranslationEntryKey } from "@/config/translations";
@@ -12,6 +12,7 @@ import ScreenWrapper from "../ScreenWrapper";
 import { Button, ButtonTypes } from "./Button";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
+import { Gallery } from "./Gallery";
 
 interface DetailPageProps {
   type: "announcement" | "event";
@@ -64,12 +65,19 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
+          {props.data?.attributes?.Poster?.data &&
+            <View style={styles.mainSection}>
+              <Gallery
+                data={props.data?.attributes?.Poster?.data}
+              />
+            </View>
+          }
         </View>
       ) : (
-        <View>
-          <P style={bodyNormal}>Still loading</P>
-        </View>
-      )}
+          <View>
+            <P style={bodyNormal}>Still loading</P>
+          </View>
+        )}
     </ScreenWrapper>
   );
 };
