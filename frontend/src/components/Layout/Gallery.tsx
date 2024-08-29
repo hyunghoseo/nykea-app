@@ -103,7 +103,7 @@ export const Gallery: React.FC<GalleryProps> = ({ data }) => {
   );
 };
 
-const useStyles = (type: any) => {
+const useStyles = () => {
   return StyleSheet.create({
     container: {
       flexDirection: "column",
