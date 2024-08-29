@@ -4,7 +4,6 @@ run-name: ${{ github.actor }}, ${{ github.ref_name }}🚀
 on: [push]
 
 jobs:
-  #First job
   workflow-setup:
     runs-on: ubuntu-latest
 
@@ -16,14 +15,12 @@ jobs:
         with:
           node-version: 18
 
-  #Second job
   frontend:
     needs: workflow-setup
     uses: ./.github/workflows/frontend.yml
     with:
       environment: develop
 
-  #Second job
   backend:
     needs: workflow-setup
     uses: ./.github/workflows/backend.yml
