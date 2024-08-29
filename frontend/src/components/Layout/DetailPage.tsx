@@ -1,4 +1,4 @@
-import { H2, H6, P } from "@expo/html-elements";
+import { H2, H3, H6, P } from "@expo/html-elements";
 import Moment from "moment";
 import { StyleSheet, View } from "react-native";
 
@@ -24,7 +24,7 @@ interface DetailPageProps {
 
 export const DetailPage: React.FC<DetailPageProps> = (props) => {
   const styles = useStyles();
-  const { h2, h6, bodyNormal } = useTypographyStyles();
+  const { h2, h3, h6, bodyNormal } = useTypographyStyles();
   const { t } = useTranslation();
   return (
     <ScreenWrapper>
@@ -51,6 +51,9 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
             </View>
           </View>
           <View style={styles.mainSection}>
+            {props.type === "event" && (
+              <H3 style={[h3, styles.eventDescription]}>Event Description</H3>
+            )}
             <RichText content={props.data?.attributes?.Description} />
             <View style={styles.buttonSection}>
               {props.data?.attributes?.Link?.map(
@@ -105,6 +108,9 @@ const useStyles = () => {
       marginTop: 16,
       flexDirection: "row",
       flexWrap: "wrap",
+    },
+    eventDescription: {
+      marginBottom: 24,
     },
   });
 };

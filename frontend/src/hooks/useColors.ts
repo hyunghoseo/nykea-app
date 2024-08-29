@@ -5,6 +5,8 @@ export const useTagColor = (type: string) => {
   let color = theme.colors.tag.group;
   if (type === "announcement") {
     color = theme.colors.tag.announcement;
+  } else if (type === "event") {
+    color = theme.colors.tag.event;
   }
   return color;
 };
