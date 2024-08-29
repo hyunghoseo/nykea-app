@@ -100,10 +100,10 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
         </View>
       ) : (
-        <View>
-          <P style={bodyNormal}>Still loading</P>
-        </View>
-      )}
+          <View>
+            <P style={bodyNormal}>Still loading</P>
+          </View>
+        )}
     </ScreenWrapper>
   );
 };
