@@ -81,13 +81,11 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
-          {props.data?.attributes?.YoutubeURL &&
+          {props.data?.attributes?.YoutubeURL && (
             <View style={styles.mainSection}>
-              <Youtube
-                url={props.data?.attributes?.YoutubeURL}
-              />
+              <Youtube url={props.data?.attributes?.YoutubeURL} />
             </View>
-          }
+          )}
           {props.data?.attributes?.Poster?.data && (
             <View style={styles.gallerySection}>
               <H3 style={[h3, styles.galleryTitle]}>Posters</H3>
@@ -102,10 +100,10 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
         </View>
       ) : (
-          <View>
-            <P style={bodyNormal}>Still loading</P>
-          </View>
-        )}
+        <View>
+          <P style={bodyNormal}>Still loading</P>
+        </View>
+      )}
     </ScreenWrapper>
   );
 };
