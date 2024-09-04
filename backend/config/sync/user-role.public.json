@@ -34,13 +34,13 @@
       "action": "api::private-policy.private-policy.find"
     },
     {
-      "action": "api::support.support.create"
-    },
-    {
       "action": "api::service.service.find"
     },
     {
       "action": "api::service.service.findOne"
+    },
+    {
+      "action": "api::support.support.create"
     },
     {
       "action": "plugin::users-permissions.auth.callback"
