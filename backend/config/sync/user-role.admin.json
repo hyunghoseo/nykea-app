@@ -79,6 +79,21 @@
       "action": "api::private-policy.private-policy.update"
     },
     {
+      "action": "api::service.service.create"
+    },
+    {
+      "action": "api::service.service.createLocalization"
+    },
+    {
+      "action": "api::service.service.find"
+    },
+    {
+      "action": "api::service.service.findOne"
+    },
+    {
+      "action": "api::service.service.update"
+    },
+    {
       "action": "api::support.support.find"
     },
     {

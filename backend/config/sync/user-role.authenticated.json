@@ -40,6 +40,12 @@
       "action": "api::private-policy.private-policy.find"
     },
     {
+      "action": "api::service.service.find"
+    },
+    {
+      "action": "api::service.service.findOne"
+    },
+    {
       "action": "api::support.support.create"
     },
     {

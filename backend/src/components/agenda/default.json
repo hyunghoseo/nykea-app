@@ -10,7 +10,7 @@
     "Title": {
       "type": "string",
       "required": true,
-      "minLength": 3
+      "minLength": 1
     },
     "AssignedUser": {
       "type": "relation",
@@ -22,7 +22,7 @@
     },
     "Image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"
@@ -42,7 +42,8 @@
         "Opening Prayer",
         "Monthly Video",
         "Sermon"
-      ]
+      ],
+      "required": true
     },
     "AssignedGroup": {
       "type": "relation",
