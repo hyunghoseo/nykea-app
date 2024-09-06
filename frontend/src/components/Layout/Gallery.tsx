@@ -81,6 +81,7 @@ export const Gallery: React.FC<GalleryProps> = ({ data }) => {
       )}
       {cnt > 4 && (
         <SimpleGrid
+          style={styles.grid}
           data={data}
           key={2}
           listKey={2 + ""}
@@ -96,7 +97,7 @@ export const Gallery: React.FC<GalleryProps> = ({ data }) => {
               />
             ) : null
           }
-          spacing={16}
+          spacing={0}
         />
       )}
     </View>
@@ -116,9 +117,13 @@ const useStyles = () => {
       resizeMode: "contain",
       flex: 1,
       aspectRatio: 1,
+      margin: 5,
     },
     hmargin: {
       width: 16,
+    },
+    grid: {
+      padding: 0,
     },
   });
 };

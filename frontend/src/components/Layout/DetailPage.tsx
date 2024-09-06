@@ -69,7 +69,14 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           </View>
           {props.data?.attributes?.Poster?.data && (
             <View style={styles.mainSection}>
+              <H3 style={[h3, styles.galleryTitle]}>Posters</H3>
               <Gallery data={props.data?.attributes?.Poster?.data} />
+            </View>
+          )}
+          {props.data?.attributes?.Picture?.data && (
+            <View style={styles.mainSection}>
+              <H3 style={[h3, styles.galleryTitle]}>Pictures</H3>
+              <Gallery data={props.data?.attributes?.Picture?.data} />
             </View>
           )}
         </View>
@@ -110,6 +117,9 @@ const useStyles = () => {
       flexWrap: "wrap",
     },
     eventDescription: {
+      marginBottom: 24,
+    },
+    galleryTitle: {
       marginBottom: 24,
     },
   });
