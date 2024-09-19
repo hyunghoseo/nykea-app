@@ -21,8 +21,8 @@ const useStyles = () => {
       flex: 1,
     },
     content: {
-      paddingVertical: 32,
-      paddingHorizontal: isMobile ? 32 : 56,
+      paddingBottom: 32,
+      paddingHorizontal: isMobile ? 0 : 56,
       alignItems: "center",
     },
   });
