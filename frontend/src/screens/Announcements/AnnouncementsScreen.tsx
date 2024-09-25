@@ -46,7 +46,7 @@ const useStyles = () => {
       alignItems: "center",
       maxWidth: 648,
       gap: 24,
-      marginVertical: 32,
+      marginTop: 53,
     },
     headerTitle: {
       color: theme.colors.primary[0],

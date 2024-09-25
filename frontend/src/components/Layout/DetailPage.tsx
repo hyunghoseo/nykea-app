@@ -106,10 +106,10 @@ const useStyles = (type: string) => {
   return StyleSheet.create({
     wrapper: {
       width: "100%",
-      maxWidth: type == "event" ? 906 : 672,
+      maxWidth: type === "event" ? 906 : 672,
       marginBottom: 40,
       alignItems: "center",
-      marginTop: type == "announcement" ? 16 : 0,
+      marginTop: type === "announcement" ? 16 : 0,
     },
     headerSection: {
       marginBottom: 40,
