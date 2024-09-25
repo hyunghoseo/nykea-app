@@ -108,10 +108,13 @@ const useStyles = (type: string) => {
       width: "100%",
       maxWidth: type == "event" ? 906 : 672,
       marginBottom: 40,
+      alignItems: "center",
+      marginTop: type == "announcement" ? 16 : 0,
     },
     headerSection: {
       marginBottom: 40,
       maxWidth: 674,
+      width: "100%",
       paddingHorizontal: 32,
       marginTop: 40,
     },
@@ -127,9 +130,13 @@ const useStyles = (type: string) => {
     mainSection: {
       marginBottom: 48,
       paddingHorizontal: 32,
+      width: "100%",
+      maxWidth: 674,
     },
     gallerySection: {
       marginBottom: 48,
+      width: "100%",
+      maxWidth: 674,
     },
     buttonSection: {
       marginTop: 16,
