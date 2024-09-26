@@ -1028,6 +1028,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    YoutubeURL: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1299,7 +1305,7 @@ export interface ApiServiceService extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    SermonVideo: Attribute.String &
+    YoutubeURL: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

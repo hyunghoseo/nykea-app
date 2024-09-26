@@ -289,7 +289,8 @@
           "Location.AddressDetail",
           "Location.City",
           "Location.State",
-          "Location.Country"
+          "Location.Country",
+          "YoutubeURL"
         ],
         "locales": [
           "en",
@@ -350,7 +351,8 @@
           "Location.AddressDetail",
           "Location.City",
           "Location.State",
-          "Location.Country"
+          "Location.Country",
+          "YoutubeURL"
         ],
         "locales": [
           "en",
@@ -387,7 +389,8 @@
           "Location.AddressDetail",
           "Location.City",
           "Location.State",
-          "Location.Country"
+          "Location.Country",
+          "YoutubeURL"
         ],
         "locales": [
           "en",
@@ -621,7 +624,7 @@
           "Agenda.Video",
           "Agenda.Standing",
           "Announcements",
-          "SermonVideo",
+          "YoutubeURL",
           "ServiceType"
         ],
         "locales": [
@@ -678,7 +681,7 @@
           "Agenda.Video",
           "Agenda.Standing",
           "Announcements",
-          "SermonVideo",
+          "YoutubeURL",
           "ServiceType"
         ],
         "locales": [
@@ -711,7 +714,7 @@
           "Agenda.Video",
           "Agenda.Standing",
           "Announcements",
-          "SermonVideo",
+          "YoutubeURL",
           "ServiceType"
         ],
         "locales": [

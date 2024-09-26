@@ -14,6 +14,7 @@ import { Button, ButtonTypes } from "./Button";
 import { Gallery } from "./Gallery";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
+import { Youtube } from "./Youtube";
 
 interface DetailPageProps {
   type: "announcement" | "event";
@@ -80,6 +81,11 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
+          {props.data?.attributes?.YoutubeURL && (
+            <View style={styles.mainSection}>
+              <Youtube url={props.data?.attributes?.YoutubeURL} />
+            </View>
+          )}
           {props.data?.attributes?.Poster?.data && (
             <View style={styles.gallerySection}>
               <H3 style={[h3, styles.galleryTitle]}>Posters</H3>
