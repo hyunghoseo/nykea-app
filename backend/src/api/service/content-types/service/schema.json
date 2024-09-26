@@ -55,8 +55,7 @@
           "localized": false
         }
       },
-      "type": "string",
-      "default": "English FM 89.0"
+      "type": "string"
     },
     "Agenda": {
       "type": "component",
@@ -66,7 +65,8 @@
           "localized": true
         }
       },
-      "component": "agenda.default"
+      "component": "agenda.default",
+      "required": true
     },
     "Announcements": {
       "pluginOptions": {

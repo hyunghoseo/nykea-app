@@ -1282,9 +1282,9 @@ export interface ApiServiceService extends Schema.CollectionType {
         i18n: {
           localized: false;
         };
-      }> &
-      Attribute.DefaultTo<'English FM 89.0'>;
+      }>;
     Agenda: Attribute.Component<'agenda.default', true> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

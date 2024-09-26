@@ -9,29 +9,20 @@ on:
 
 jobs:
   test-backend:
+    defaults:
+      run:
+        working-directory: backend
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - uses: actions/checkout@v3
       - name: Install Node modules
-        run: |
-          cd backend
-          yarn install
+        run: yarn install
       - name: Build project
-        run: |
-          cd backend
-          yarn build
+        run: yarn build
       - name: Import Configuration
         run: |
-          cd backend
           cp .env.example .env
           yarn cs import --yes
       - name: Unit & Integration tests
-        run: |
-          cd backend
-          yarn jest --watchAll=false --forceExit --detectOpenHandles
+        run: yarn jest --watchAll=false --forceExit --detectOpenHandles

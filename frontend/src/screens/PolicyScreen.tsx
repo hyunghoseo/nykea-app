@@ -11,7 +11,7 @@ import ScreenWrapper from "../components/ScreenWrapper";
 
 export const PolicyScreen = () => {
   const {
-    data: { data: { attributes: { Policy: policy } = {} } = {} } = {},
+    data: { data: { attributes: { Policy: policy = "" } = {} } = {} } = {},
     isError,
     isLoading,
   } = useGetPrivatePolicy({});
@@ -21,7 +21,7 @@ export const PolicyScreen = () => {
   return (
     <ScreenWrapper>
       <View style={styles.headerSection}>
-        <H1 style={[h1, styles.headerTitle]}>{t("page.policies.title")}</H1>
+        <H1 style={[h1, styles.headerTitle]}>{t("page.Policies.title")}</H1>
       </View>
       <View style={styles.mainSection}>
         {isError ? (

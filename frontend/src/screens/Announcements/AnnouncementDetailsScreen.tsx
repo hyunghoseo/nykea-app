@@ -15,7 +15,7 @@ export const AnnouncementDetailsScreen = ({ route }: any) => {
       isLoading={isLoading}
       isError={isError}
       data={announcement}
-      tags={announcement?.HostingGroup?.data.attributes.name}
+      tags={announcement?.attributes?.HostingGroup?.data?.attributes?.Name}
       description="yes right."
     />
   );

@@ -65,7 +65,6 @@ const useStyles = () => {
   return StyleSheet.create({
     container: { flex: 1, gap: isMobile ? 12 : 16 },
     image: {
-      aspectRatio: 1,
       width: "100%",
       height: "auto",
       pointerEvents: "none",

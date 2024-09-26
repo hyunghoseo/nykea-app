@@ -1,19 +1,22 @@
-import { H2, H6, P } from "@expo/html-elements";
+import { H2, H3, H6, P } from "@expo/html-elements";
+import { Image } from "expo-image";
 import Moment from "moment";
 import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
+import { baseUrl } from "@/api/apiFetcher";
 import { CommonLinkComponent } from "@/api/apiSchemas";
 
 import ScreenWrapper from "../ScreenWrapper";
 import { Button, ButtonTypes } from "./Button";
+import { Gallery } from "./Gallery";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
 
 interface DetailPageProps {
-  type: string;
+  type: "announcement" | "event";
   isLoading: boolean;
   isError: boolean;
   data: any;
@@ -22,9 +25,10 @@ interface DetailPageProps {
 }
 
 export const DetailPage: React.FC<DetailPageProps> = (props) => {
-  const styles = useStyles();
-  const { h2, h6, bodyNormal } = useTypographyStyles();
+  const styles = useStyles(props.type);
+  const { h2, h3, h6, bodyNormal } = useTypographyStyles();
   const { t } = useTranslation();
+  console.log(props.data?.attributes?.Poster?.data);
   return (
     <ScreenWrapper>
       {props.isError ? (
@@ -32,9 +36,19 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
       ) : null}
       {!props.isError && !props.isLoading && props.data ? (
         <View style={styles.wrapper}>
+          {props.type === "event" && (
+            <Image
+              style={styles.mainPoster}
+              contentFit="cover"
+              source={
+                baseUrl.replace("/api", "") +
+                props.data?.attributes?.Poster?.data[0].attributes?.url
+              }
+            />
+          )}
           <View style={styles.headerSection}>
             <View style={styles.tags}>
-              <Tag type={props.type} text={t(`post.type.` + props.type)} />
+              <Tag type={props.type} text={t(`post.type.${props.type}`)} />
               <Tag
                 text={props.data?.attributes.HostingGroup.data.attributes.Name}
               />
@@ -50,6 +64,9 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
             </View>
           </View>
           <View style={styles.mainSection}>
+            {props.type === "event" && (
+              <H3 style={[h3, styles.eventDescription]}>Event Description</H3>
+            )}
             <RichText content={props.data?.attributes?.Description} />
             <View style={styles.buttonSection}>
               {props.data?.attributes?.Link?.map(
@@ -63,6 +80,18 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
+          {props.data?.attributes?.Poster?.data && (
+            <View style={styles.gallerySection}>
+              <H3 style={[h3, styles.galleryTitle]}>Posters</H3>
+              <Gallery data={props.data?.attributes?.Poster?.data} />
+            </View>
+          )}
+          {props.data?.attributes?.Picture?.data && (
+            <View style={styles.gallerySection}>
+              <H3 style={[h3, styles.galleryTitle]}>Pictures</H3>
+              <Gallery data={props.data?.attributes?.Picture?.data} />
+            </View>
+          )}
         </View>
       ) : (
         <View>
@@ -73,15 +102,21 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
   );
 };
 
-const useStyles = () => {
+const useStyles = (type: string) => {
   return StyleSheet.create({
     wrapper: {
       width: "100%",
-      maxWidth: 672,
+      maxWidth: type === "event" ? 906 : 672,
       marginBottom: 40,
+      alignItems: "center",
+      marginTop: type === "announcement" ? 16 : 0,
     },
     headerSection: {
       marginBottom: 40,
+      maxWidth: 674,
+      width: "100%",
+      paddingHorizontal: 32,
+      marginTop: 40,
     },
     tags: {
       flexDirection: "row",
@@ -94,11 +129,34 @@ const useStyles = () => {
     },
     mainSection: {
       marginBottom: 48,
+      paddingHorizontal: 32,
+      width: "100%",
+      maxWidth: 674,
+    },
+    gallerySection: {
+      marginBottom: 48,
+      width: "100%",
+      maxWidth: 674,
     },
     buttonSection: {
       marginTop: 16,
       flexDirection: "row",
       flexWrap: "wrap",
+    },
+    eventDescription: {
+      marginBottom: 24,
+    },
+    galleryTitle: {
+      marginBottom: 24,
+      paddingHorizontal: 32,
+    },
+    mainPoster: {
+      width: "100%",
+      height: "100%",
+      maxWidth: 906,
+      maxHeight: 338,
+      minHeight: 240,
+      alignSelf: "center",
     },
   });
 };

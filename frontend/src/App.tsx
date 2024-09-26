@@ -34,7 +34,7 @@ import {
   AnnouncementsScreen,
 } from "@/screens/Announcements";
 import ContactUsScreen from "@/screens/ContactUsScreen";
-import EventsScreen from "@/screens/EventsScreen";
+import { EventDetailsScreen, EventsScreen } from "@/screens/Events";
 import { GroupsScreen } from "@/screens/GroupsScreen";
 import HomeScreen from "@/screens/HomeScreen";
 import { PolicyScreen } from "@/screens/PolicyScreen";
@@ -62,6 +62,7 @@ export const AppNavigator = () => {
       <RootStack.Screen name="Groups" component={GroupsScreen} />
       <RootStack.Screen name="Services" component={ServicesScreen} />
       <RootStack.Screen name="Events" component={EventsScreen} />
+      <RootStack.Screen name="EventDetails" component={EventDetailsScreen} />
       <RootStack.Screen name="Announcements" component={AnnouncementsScreen} />
       <RootStack.Screen
         name="AnnouncementDetails"
