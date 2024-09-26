@@ -19,11 +19,13 @@ export const Gallery: React.FC<GalleryProps> = ({ data }) => {
   return (
     <View style={styles.container}>
       {cnt < 4 && (
-        <Image
-          style={styles.image}
-          source={baseUrl.replace("/api", "") + data[0].attributes?.url}
-          contentFit="fill"
-        />
+        <View style={styles.hcontainer}>
+          <Image
+            style={styles.image}
+            source={baseUrl.replace("/api", "") + data[0].attributes?.url}
+            contentFit="fill"
+          />
+        </View>
       )}
       {cnt === 2 && (
         <View style={styles.hcontainer}>
@@ -97,7 +99,7 @@ export const Gallery: React.FC<GalleryProps> = ({ data }) => {
               />
             ) : null
           }
-          spacing={0}
+          spacing={16}
         />
       )}
     </View>
@@ -112,18 +114,18 @@ const useStyles = () => {
     hcontainer: {
       flexDirection: "row",
       marginTop: 16,
+      paddingHorizontal: 32,
     },
     image: {
       resizeMode: "contain",
       flex: 1,
       aspectRatio: 1,
-      margin: 5,
     },
     hmargin: {
       width: 16,
     },
     grid: {
-      padding: 0,
+      marginHorizontal: 16,
     },
   });
 };

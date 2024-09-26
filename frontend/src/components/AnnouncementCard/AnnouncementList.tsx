@@ -49,7 +49,7 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
 const useStyles = () => {
   return StyleSheet.create({
     list: {
-      margin: -32,
+      margin: 0,
     },
   });
 };
