@@ -1,6 +1,6 @@
 import { H2, H3, H6, P } from "@expo/html-elements";
 import { Image } from "expo-image";
-import Moment from "moment";
+import moment from "moment";
 import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
@@ -11,6 +11,7 @@ import { CommonLinkComponent } from "@/api/apiSchemas";
 
 import ScreenWrapper from "../ScreenWrapper";
 import { Button, ButtonTypes } from "./Button";
+import { EventDetails } from "./Event/EventDetails";
 import { Gallery } from "./Gallery";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
@@ -28,7 +29,6 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
   const styles = useStyles(props.type);
   const { h2, h3, h6, bodyNormal } = useTypographyStyles();
   const { t } = useTranslation();
-  console.log(props.data?.attributes?.Poster?.data);
   return (
     <ScreenWrapper>
       {props.isError ? (
@@ -57,12 +57,20 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
             <View style={styles.dateSection}>
               <H6 style={[h6, styles.date]}>
                 {t(`details.postedDate`)}
-                {Moment(props.data?.attributes?.publishedAt).format(
+                {moment(props.data?.attributes?.publishedAt).format(
                   "MMM DD, YYYY",
                 )}
               </H6>
             </View>
           </View>
+          {props.type === "event" && (
+            <EventDetails
+              StartDate={props?.data?.attributes?.StartDate}
+              EndDate={props?.data?.attributes?.EndDate}
+              Location={props?.data?.attributes?.Location}
+              Fee={props?.data?.attributes?.Fee}
+            />
+          )}
           <View style={styles.mainSection}>
             {props.type === "event" && (
               <H3 style={[h3, styles.eventDescription]}>Event Description</H3>

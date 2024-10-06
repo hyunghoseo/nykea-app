@@ -83,7 +83,7 @@ const constructGroup = (id) => {
   * @param {string | number} id
   * @param {string | number} userInfoId
   */
- const constructLeader = (id, userInfoId) => {
+const constructLeader = (id, userInfoId) => {
     return {
         data: {
             "StartYear": 2020,
@@ -147,7 +147,7 @@ const constructEvent = (id) => {
                 "id": 1,
                 "Date": "2024-12-31",
                 "Time": "12:00:00.000",
-                "TimeZone": "New York, NY, USA (GMT-4)"
+                "TimeZone": "EST"
             },
             "EndDate": null,
             "Location": [
@@ -175,7 +175,7 @@ const constructEvent = (id) => {
                 }
             ],
             "HostingGroup": null,
-            "Fee": null, 
+            "Fee": null,
             "Contact": null,
             "Private": false,
             "locale": "en"
