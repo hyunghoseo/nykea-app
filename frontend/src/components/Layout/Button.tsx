@@ -1,7 +1,7 @@
 import { Linking, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { theme } from "@/config/theme";
+import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 
 export enum ButtonTypes {
   default,
@@ -21,7 +21,8 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const styles = useStyles(type);
   const { buttonLarge, bodySmall } = useTypographyStyles();
-  const buttonTextStyle = type === ButtonTypes.default ? buttonLarge : bodySmall;
+  const buttonTextStyle =
+    type === ButtonTypes.default ? buttonLarge : bodySmall;
 
   return (
     <TouchableOpacity
@@ -63,8 +64,7 @@ const useStyles = (type: ButtonTypes) => {
         borderWidth: 1,
         marginRight: 16,
         width: "auto",
-        marginVertical: 8,
-
+        marginTop: 8,
       },
       text: {
         color: "#ffffff",

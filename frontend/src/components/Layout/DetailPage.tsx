@@ -11,10 +11,10 @@ import { CommonLinkComponent } from "@/api/apiSchemas";
 
 import ScreenWrapper from "../ScreenWrapper";
 import { Button, ButtonTypes } from "./Button";
+import { EventDetails } from "./Event/EventDetails";
 import { Gallery } from "./Gallery";
 import { RichText } from "./RichText";
 import { Tag } from "./Tag";
-import { EventDetails } from "./Event/EventDetails";
 
 interface DetailPageProps {
   type: "announcement" | "event";
@@ -29,7 +29,6 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
   const styles = useStyles(props.type);
   const { h2, h3, h6, bodyNormal } = useTypographyStyles();
   const { t } = useTranslation();
-  console.log(props.data?.attributes);
   return (
     <ScreenWrapper>
       {props.isError ? (
@@ -69,6 +68,7 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               StartDate={props?.data?.attributes?.StartDate}
               EndDate={props?.data?.attributes?.EndDate}
               Location={props?.data?.attributes?.Location}
+              Fee={props?.data?.attributes?.Fee}
             />
           )}
           <View style={styles.mainSection}>
@@ -102,12 +102,11 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
         </View>
       ) : (
-          <View>
-            <P style={bodyNormal}>Still loading</P>
-          </View>
-        )
-      }
-    </ScreenWrapper >
+        <View>
+          <P style={bodyNormal}>Still loading</P>
+        </View>
+      )}
+    </ScreenWrapper>
   );
 };
 
