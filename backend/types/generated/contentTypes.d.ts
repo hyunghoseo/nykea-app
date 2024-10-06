@@ -969,7 +969,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    Fee: Attribute.String &
+    Fee: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1008,7 +1008,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    Contact: Attribute.String &
+    Contact: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
