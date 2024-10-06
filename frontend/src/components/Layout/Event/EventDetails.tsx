@@ -46,9 +46,9 @@ export const EventDetails: React.FC<EventDetailsProps> = (props) => {
       <H3 style={[h3, styles.eventDescription]}>Event Details</H3>
       <View style={styles.subSection}>
         <Calendar style={styles.icon} />
-        <View>
+        <View style={styles.textPart}>
           {props?.StartDate && (
-            <P style={[bodyNormal]}>
+            <P style={[styles.p, bodyNormal]}>
               <strong>Starts: </strong>
               {!props?.StartDate?.Time &&
                 moment(props?.StartDate?.Date).format("ddd, MMM DD")}
@@ -61,7 +61,7 @@ export const EventDetails: React.FC<EventDetailsProps> = (props) => {
             </P>
           )}
           {props?.EndDate && (
-            <P style={[bodyNormal]}>
+            <P style={[styles.p, bodyNormal]}>
               <strong>Ends: </strong>
               {!props?.EndDate?.Time &&
                 moment(props?.EndDate?.Date).format("ddd, MMM DD")}
@@ -77,13 +77,13 @@ export const EventDetails: React.FC<EventDetailsProps> = (props) => {
       </View>
       <View style={styles.subSection}>
         <Location style={styles.icon} />
-        <View style={styles.locationList}>
+        <View style={styles.textPart}>
           {props?.Location?.map((location: CommonAddressComponent) => (
             <View style={styles.location}>
-              <P style={bodyNormal}>
+              <P style={[styles.p, bodyNormal]}>
                 <strong>{location.Label}</strong>
               </P>
-              <P style={bodyNormal}>{getLocation(location)}</P>
+              <P style={[styles.p, bodyNormal]}>{getLocation(location)}</P>
               {location?.AddressURL && (
                 <Button
                   type={ButtonTypes.location}
@@ -98,7 +98,7 @@ export const EventDetails: React.FC<EventDetailsProps> = (props) => {
       {props?.Fee && (
         <View style={styles.feeSection}>
           <Fee style={styles.feeIcon} />
-          <P style={bodyNormal}>{props.Fee}</P>
+          <P style={[styles.p, bodyNormal]}>{props.Fee}</P>
         </View>
       )}
     </View>
@@ -119,25 +119,34 @@ const useStyles = () => {
     subSection: {
       flexDirection: "row",
       marginBottom: 24,
+      width: "100%",
+      justifyContent: "center",
     },
     icon: {
       width: 30,
       height: 42,
       marginRight: 16,
     },
-    locationList: {
-      flexDirection: "column",
+    textPart: {
+      flex: 1,
     },
     location: {
       marginBottom: 16,
+      width: "100%",
     },
     feeSection: {
       flexDirection: "row",
+      width: "auto",
     },
     feeIcon: {
       width: 30,
       height: 30,
       marginRight: 16,
+    },
+    p: {
+      width: "100%",
+      flexWrap: "wrap",
+      overflow: "hidden",
     },
   });
 };

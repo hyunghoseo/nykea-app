@@ -73,7 +73,7 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
           <View style={styles.mainSection}>
             {props.type === "event" && (
-              <H3 style={[h3, styles.eventDescription]}>Event Description</H3>
+              <H3 style={[h3, styles.eventSubtitle]}>Event Description</H3>
             )}
             <RichText content={props.data?.attributes?.Description} />
             <View style={styles.buttonSection}>
@@ -88,6 +88,14 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
               )}
             </View>
           </View>
+          {props.type === "event" && (
+            <View style={styles.mainSection}>
+              <H3 style={[h3, styles.eventSubtitle]}>
+                Event Organizer Details
+              </H3>
+              <P style={bodyNormal}>{props.data?.attributes?.Contact}</P>
+            </View>
+          )}
           {props.data?.attributes?.Poster?.data && (
             <View style={styles.gallerySection}>
               <H3 style={[h3, styles.galleryTitle]}>Posters</H3>
@@ -151,7 +159,7 @@ const useStyles = (type: string) => {
       flexDirection: "row",
       flexWrap: "wrap",
     },
-    eventDescription: {
+    eventSubtitle: {
       marginBottom: 24,
     },
     galleryTitle: {
