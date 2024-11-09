@@ -47,9 +47,11 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
 };
 
 const useStyles = () => {
+  const { isMobile } = useResponsiveLayout();
+
   return StyleSheet.create({
     list: {
-      margin: 0,
+      margin: isMobile ? -24 : -32,
     },
   });
 };

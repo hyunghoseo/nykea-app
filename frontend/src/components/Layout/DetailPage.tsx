@@ -6,7 +6,6 @@ import { StyleSheet, View } from "react-native";
 import { theme } from "@/config/theme";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
-import { baseUrl } from "@/api/apiFetcher";
 import { CommonLinkComponent } from "@/api/apiSchemas";
 
 import ScreenWrapper from "../ScreenWrapper";
@@ -40,17 +39,14 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
             <Image
               style={styles.mainPoster}
               contentFit="cover"
-              source={
-                baseUrl.replace("/api", "") +
-                props.data?.attributes?.Poster?.data[0].attributes?.url
-              }
+              source={props.data?.attributes?.Poster?.data[0].attributes?.url}
             />
           )}
           <View style={styles.headerSection}>
             <View style={styles.tags}>
               <Tag type={props.type} text={t(`post.type.${props.type}`)} />
               <Tag
-                text={props.data?.attributes.HostingGroup.data.attributes.Name}
+                text={props.data?.attributes.HostingGroup.data?.attributes.Name}
               />
             </View>
             <H2 style={[h2]}>{props.data?.attributes?.Title}</H2>

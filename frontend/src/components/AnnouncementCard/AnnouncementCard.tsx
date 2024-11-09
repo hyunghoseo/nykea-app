@@ -1,8 +1,12 @@
 import { H3, P } from "@expo/html-elements";
 import Moment from "moment";
 import { Skeleton } from "moti/skeleton";
-import { StyleProp, StyleSheet, ViewStyle } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import {
+  StyleProp,
+  StyleSheet,
+  TouchableOpacity,
+  ViewStyle,
+} from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 import { useNavigationRef } from "@/contexts/NavigationProvider";

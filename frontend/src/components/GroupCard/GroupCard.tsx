@@ -33,10 +33,7 @@ export const GroupCard: React.FC<GroupCardProps> = (props) => {
             source={
               props.Picture?.data
                 ? {
-                    // TODO: should be changed when we change image host to cloudinary
-                    uri:
-                      "https://admin.nykea.org" +
-                      props.Picture?.data?.attributes?.url,
+                    uri: props.Picture?.data?.attributes?.url,
                   }
                 : require("@/assets/placeholder.png")
             }
@@ -65,6 +62,7 @@ const useStyles = () => {
   return StyleSheet.create({
     container: { flex: 1, gap: isMobile ? 12 : 16 },
     image: {
+      aspectRatio: 1,
       width: "100%",
       height: "auto",
       pointerEvents: "none",
