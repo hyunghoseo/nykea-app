@@ -49,15 +49,7 @@ export const AnnouncementsScreen = () => {
             isLoading={isLoading}
             announcements={announcements}
           />
-          <Pagination
-            setPage={setPage}
-            pagination={{
-              page: 2,
-              pageSize: 10,
-              pageCount: 6,
-              total: 100,
-            }}
-          />
+          <Pagination setPage={setPage} pagination={pagination} />
         </View>
       </View>
     </ScreenWrapper>

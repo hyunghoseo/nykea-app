@@ -7,16 +7,14 @@ import { theme } from "@/config/theme";
 import { useLocale } from "@/contexts/LocaleProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 
-interface PaginationButtonProps {
+interface PaginationNavButtonProps {
   onPress: () => void;
-  active?: boolean;
   icon?: string;
   text?: string;
 }
 
-const PaginationButton: React.FC<PaginationButtonProps> = ({
+const PaginationNavButton: React.FC<PaginationNavButtonProps> = ({
   onPress,
-  active = false,
   icon,
   text,
 }) => {
@@ -30,14 +28,56 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
       <Text
         style={[
           styles.paginationButtonText,
-          !icon && styles.paginationButtonNoIconText,
+          isHovered && styles.paginationButtonTextHovered,
+        ]}
+      >
+        {text}
+      </Text>
+    </TouchableOpacity>
+  );
+};
+
+interface PaginationNumberButtonProps {
+  onPress: () => void;
+  active?: boolean;
+  number?: string;
+}
+
+const PaginationNumberButton: React.FC<PaginationNumberButtonProps> = ({
+  onPress,
+  active = false,
+  number,
+}) => {
+  const styles = useStyles();
+  const ref = useRef<TouchableOpacity>(null);
+  const isHovered = useHover(ref);
+
+  return (
+    <TouchableOpacity ref={ref} style={styles.paginationButton}>
+      <Text
+        style={[
+          styles.paginationButtonText,
+          styles.paginationNumberButtonText,
           active && styles.paginationButtonTextActive,
           isHovered && styles.paginationButtonTextHovered,
         ]}
       >
-        {text} {active && "•"}
+        {number}
+      </Text>
+      <Text style={[styles.paginationNumberButtonActiveDot]}>
+        {active && "•"}
       </Text>
     </TouchableOpacity>
+  );
+};
+
+const PaginationEllipsis: React.FC = () => {
+  const styles = useStyles();
+
+  return (
+    <View style={styles.ellipsis}>
+      <Text style={styles.ellipsisText}>...</Text>
+    </View>
   );
 };
 
@@ -58,26 +98,51 @@ export const Pagination: React.FC<PaginationProps> = ({
   const { t } = useTranslation();
   const styles = useStyles();
 
-  const { page = 0, pageSize = 20, pageCount = 1, total = 0 } = pagination;
+  const { page = 0, pageCount = 1 } = pagination;
 
   console.log(pagination);
+  const renderPaginationButtons = () => {
+    const buttons = new Array(pageCount)
+      .fill(null)
+      .map((_, index) => (
+        <PaginationNumberButton
+          key={index}
+          onPress={() => setPage(index + 1)}
+          active={page === index + 1}
+          number={(index + 1).toString()}
+        />
+      ));
+
+    let firstMainNumber = page - 3;
+    let lastMainNumber = page + 1;
+
+    if (firstMainNumber < 0 || firstMainNumber === 1) {
+      firstMainNumber = 0;
+    }
+    if (lastMainNumber > pageCount - 1) {
+      lastMainNumber = pageCount - 1;
+    }
+
+    const mainButtons = buttons.slice(firstMainNumber, lastMainNumber + 1);
+
+    return [
+      firstMainNumber > 0 ? buttons[0] : null,
+      firstMainNumber > 1 ? <PaginationEllipsis /> : null,
+      ...mainButtons,
+      lastMainNumber < pageCount - 2 ? <PaginationEllipsis /> : null,
+      lastMainNumber < pageCount - 1 ? buttons[pageCount - 1] : null,
+    ];
+  };
 
   return (
     <View style={styles.paginationSection}>
-      <PaginationButton
+      <PaginationNavButton
         onPress={() => setPage(page - 1)}
         icon="chevron-left"
         text={t("pagination.previous")}
       />
-      {new Array(pageCount).fill(null).map((_, index) => (
-        <PaginationButton
-          key={index}
-          onPress={() => setPage(index + 1)}
-          active={page === index + 1}
-          text={(index + 1).toString()}
-        />
-      ))}
-      <PaginationButton
+      {renderPaginationButtons()}
+      <PaginationNavButton
         onPress={() => setPage(page + 1)}
         icon="chevron-right"
         text={t("pagination.next")}
@@ -93,14 +158,14 @@ const useStyles = () => {
     paginationSection: {
       flexDirection: "row",
       justifyContent: "center",
-      gap: 16,
+      gap: 8,
       alignSelf: "center",
     },
     paginationButton: {
       width: 50,
-      height: 84,
+      height: 64,
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       color: theme.colors.primary[0],
     },
     paginationButtonText: {
@@ -113,18 +178,41 @@ const useStyles = () => {
       borderBottomWidth: 1,
       borderBottomColor: "transparent",
     },
-    paginationButtonNoIconText: {
+    paginationNumberButtonText: {
+      paddingTop: 8,
+      minWidth: 16,
+      textAlign: "center",
       fontSize: 16,
       lineHeight: 24,
+    },
+    paginationNumberButtonActiveDot: {
+      color: theme.colors.primary[0],
+      fontSize: 18,
+      lineHeight: 16,
     },
     paginationButtonTextHovered: {
       color: theme.colors.primary[0],
       borderBottomColor: theme.colors.primary[0],
     },
     paginationButtonTextActive: {
-      fontFamily: locale === "en" ? "KumbhSans_700Bold" : "NotoSansKR_700Bold",
+      fontFamily:
+        locale === "en" ? "KumbhSans_800ExtraBold" : "NotoSansKR_900Black",
       color: theme.colors.primary[0],
       letterSpacing: 0.4,
+    },
+    ellipsis: {
+      width: 50,
+      height: 64,
+      alignItems: "center",
+      justifyContent: "flex-start",
+    },
+    ellipsisText: {
+      fontFamily:
+        locale === "en" ? "KumbhSans_500Medium" : "NotoSansKR_500Medium",
+      color: theme.colors.primary[0],
+      paddingTop: 12,
+      fontSize: 24,
+      lineHeight: 24,
     },
   });
 };
