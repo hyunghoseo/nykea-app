@@ -100,7 +100,6 @@ export const Pagination: React.FC<PaginationProps> = ({
 
   const { page = 0, pageCount = 1 } = pagination;
 
-  console.log(pagination);
   const renderPaginationButtons = () => {
     const buttons = new Array(pageCount)
       .fill(null)
