@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Image, Platform, StyleSheet, Text, View } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
-import { useHover } from "react-native-web-hooks";
+import { useActive, useHover } from "react-native-web-hooks";
 
 import { LanguageOption, languageOptions } from "@/config/languages";
 import { theme } from "@/config/theme";
@@ -10,6 +10,7 @@ import { useLocale } from "@/contexts/LocaleProvider";
 const LanguageButton: React.FC<LanguageOption> = (languageOption) => {
   const ref = useRef<TouchableHighlight>(null);
   const isHovered = useHover(ref);
+  const isActive = useActive(ref);
 
   const { locale, setLocale } = useLocale();
 
@@ -21,7 +22,7 @@ const LanguageButton: React.FC<LanguageOption> = (languageOption) => {
       hitSlop={8}
       style={[
         styles.button,
-        isHovered && styles.buttonHovered,
+        (isHovered || isActive) && styles.buttonHovered,
         languageOption.locale === locale && styles.buttonActive,
       ]}
     >

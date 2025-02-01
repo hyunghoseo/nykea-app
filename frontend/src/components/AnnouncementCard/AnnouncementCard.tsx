@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { H3, P } from "@expo/html-elements";
 import Moment from "moment";
 import { Skeleton } from "moti/skeleton";
@@ -8,7 +9,9 @@ import {
   ViewStyle,
 } from "react-native";
 import { Shadow } from "react-native-shadow-2";
+import { useActive, useHover } from "react-native-web-hooks";
 
+import { theme } from "@/config/theme";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
@@ -24,6 +27,9 @@ interface AnnouncementCardProps extends Partial<Announcement> {
 
 export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
   const styles = useStyles();
+  const ref = useRef<TouchableOpacity>(null);
+  const isHovered = useHover(ref);
+  const isActive = useActive(ref);
   const { h3, date, bodyNormal } = useTypographyStyles();
   const { navigationRef } = useNavigationRef();
 
@@ -43,7 +49,11 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
       distance={15}
     >
       <TouchableOpacity
-        style={styles.innerContainer}
+        ref={ref}
+        style={[
+          styles.innerContainer,
+          (isHovered || isActive) && styles.innerContainerHovered,
+        ]}
         activeOpacity={0.6}
         disabled={props.isLoading}
         onPress={() =>
@@ -95,10 +105,14 @@ const useStyles = () => {
       paddingHorizontal: 24,
       paddingVertical: 32,
       width: "100%",
-      borderWidth: 0,
       alignItems: "flex-start",
       height: isMobile ? "100%" : 357,
       overflow: "hidden",
+      borderWidth: 2,
+      borderColor: "transparent",
+    },
+    innerContainerHovered: {
+      borderColor: theme.colors.primary[4],
     },
     text: {
       marginBottom: 8,

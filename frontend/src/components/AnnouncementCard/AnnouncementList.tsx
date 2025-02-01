@@ -42,6 +42,7 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
       maxItemsPerRow={numColumns}
       renderItem={(rowIndex) => <AnnouncementCard isLoading />}
       style={styles.list}
+      spacing={isMobile ? 24 : 32}
     />
   );
 };

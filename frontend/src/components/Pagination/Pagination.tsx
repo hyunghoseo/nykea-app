@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Icon } from "react-native-elements";
-import { useHover } from "react-native-web-hooks";
+import { useActive, useHover } from "react-native-web-hooks";
 
 import { theme } from "@/config/theme";
 import { useLocale } from "@/contexts/LocaleProvider";
@@ -11,24 +11,31 @@ interface PaginationNavButtonProps {
   onPress: () => void;
   icon?: string;
   text?: string;
+  disabled?: boolean;
 }
 
 const PaginationNavButton: React.FC<PaginationNavButtonProps> = ({
   onPress,
   icon,
   text,
+  disabled,
 }) => {
   const styles = useStyles();
   const ref = useRef<TouchableOpacity>(null);
   const isHovered = useHover(ref);
+  const isActive = useActive(ref);
 
   return (
-    <TouchableOpacity ref={ref} style={styles.paginationButton}>
+    <TouchableOpacity
+      ref={ref}
+      style={styles.paginationButton}
+      disabled={disabled}
+    >
       {icon && <Icon color={theme.colors.primary[0]} name={icon} size={34} />}
       <Text
         style={[
           styles.paginationButtonText,
-          isHovered && styles.paginationButtonTextHovered,
+          (isHovered || isActive) && styles.paginationButtonTextHovered,
         ]}
       >
         {text}
@@ -51,6 +58,7 @@ const PaginationNumberButton: React.FC<PaginationNumberButtonProps> = ({
   const styles = useStyles();
   const ref = useRef<TouchableOpacity>(null);
   const isHovered = useHover(ref);
+  const isActive = useActive(ref);
 
   return (
     <TouchableOpacity ref={ref} style={styles.paginationButton}>
@@ -59,7 +67,7 @@ const PaginationNumberButton: React.FC<PaginationNumberButtonProps> = ({
           styles.paginationButtonText,
           styles.paginationNumberButtonText,
           active && styles.paginationButtonTextActive,
-          isHovered && styles.paginationButtonTextHovered,
+          (isHovered || isActive) && styles.paginationButtonTextHovered,
         ]}
       >
         {number}
@@ -98,7 +106,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   const { t } = useTranslation();
   const styles = useStyles();
 
-  const { page = 0, pageCount = 1 } = pagination;
+  const { page = 1, pageCount = 1 } = pagination;
 
   const renderPaginationButtons = () => {
     const buttons = new Array(pageCount)
