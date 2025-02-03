@@ -40,7 +40,7 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
       key={numColumns + "placeholder"}
       listKey={numColumns + ""}
       maxItemsPerRow={numColumns}
-      renderItem={(rowIndex) => <AnnouncementCard isLoading />}
+      renderItem={({ index }) => <AnnouncementCard key={index} isLoading />}
       style={styles.list}
       spacing={isMobile ? 24 : 32}
     />

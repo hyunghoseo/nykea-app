@@ -26,6 +26,7 @@ export const AnnouncementsScreen = () => {
       "pagination[pageSize]": pageSize,
       "pagination[page]": page,
       locale,
+      populate: "HostingGroup",
     },
   });
 
@@ -43,14 +44,15 @@ export const AnnouncementsScreen = () => {
       <View style={styles.mainSection}>
         {isError ? (
           <P style={bodyNormal}>There was an error getting announcements</P>
-        ) : null}
-        <View style={styles.announcementSection}>
-          <AnnouncementList
-            isLoading={isLoading}
-            announcements={announcements}
-          />
-          <Pagination setPage={setPage} pagination={pagination} />
-        </View>
+        ) : (
+          <View style={styles.announcementSection}>
+            <AnnouncementList
+              isLoading={isLoading}
+              announcements={announcements}
+            />
+            <Pagination setPage={setPage} pagination={pagination} />
+          </View>
+        )}
       </View>
     </ScreenWrapper>
   );

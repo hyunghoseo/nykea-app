@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
+} from "react-native";
 
 import { useTagColor } from "@/hooks/useColors";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
@@ -6,14 +12,15 @@ import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 interface TagProps {
   text?: string;
   type?: string;
+  style?: StyleProp<ViewStyle>;
 }
 
-export const Tag: React.FC<TagProps> = ({ text, type = undefined }) => {
+export const Tag: React.FC<TagProps> = ({ text, type = undefined, style }) => {
   const styles = useStyles(type);
   const { tag } = useTypographyStyles();
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={[styles.container, style]}>
       <Text style={tag}>{text}</Text>
     </TouchableOpacity>
   );

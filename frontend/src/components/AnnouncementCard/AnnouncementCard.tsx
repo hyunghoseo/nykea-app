@@ -6,6 +6,7 @@ import {
   StyleProp,
   StyleSheet,
   TouchableOpacity,
+  TouchableOpacityProps,
   ViewStyle,
 } from "react-native";
 import { Shadow } from "react-native-shadow-2";
@@ -19,13 +20,17 @@ import { Announcement } from "@/api/apiSchemas";
 
 import { Tag } from "../Layout/Tag";
 
-interface AnnouncementCardProps extends Partial<Announcement> {
-  id?: number;
-  isLoading?: boolean;
-  style?: StyleProp<ViewStyle>;
-}
+type AnnouncementCardProps = Partial<Announcement> &
+  Omit<TouchableOpacityProps, "id"> & {
+    id?: number;
+    isLoading?: boolean;
+    style?: StyleProp<ViewStyle>;
+  };
 
-export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
+export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
+  isLoading = false,
+  ...props
+}) => {
   const styles = useStyles();
   const ref = useRef<TouchableOpacity>(null);
   const isHovered = useHover(ref);
@@ -55,19 +60,14 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
           (isHovered || isActive) && styles.innerContainerHovered,
         ]}
         activeOpacity={0.6}
-        disabled={props.isLoading}
+        disabled={isLoading}
         onPress={() =>
           navigationRef.navigate("AnnouncementDetails", {
             id: props.id || 0,
           })
         }
       >
-        <Skeleton.Group show={Boolean(props.isLoading)}>
-          {props.HostingGroup?.data && (
-            <Skeleton colorMode="light">
-              <Tag text={props.HostingGroup?.data?.attributes?.Name} />
-            </Skeleton>
-          )}
+        <Skeleton.Group show={isLoading}>
           <Skeleton colorMode="light">
             <P style={[date, styles.text]}>
               Posted on {Moment(props.publishedAt).format("MM.DD.YY")}
@@ -78,6 +78,14 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = (props) => {
               {props.Title}
             </H3>
           </Skeleton>
+          {props.HostingGroup?.data && (
+            <Skeleton colorMode="light">
+              <Tag
+                text={props.HostingGroup?.data?.attributes?.Name}
+                style={[styles.noPointer]}
+              />
+            </Skeleton>
+          )}
           <Skeleton colorMode="light">
             <P style={bodyNormal} numberOfLines={3} ellipsizeMode="clip">
               {props.Description ? getPlainText(props.Description) : ""}
@@ -103,10 +111,10 @@ const useStyles = () => {
       backgroundColor: "white",
       borderRadius: 8,
       paddingHorizontal: 24,
-      paddingVertical: 32,
+      paddingVertical: 16,
       width: "100%",
       alignItems: "flex-start",
-      height: isMobile ? "100%" : 357,
+      height: isMobile ? "100%" : 256,
       overflow: "hidden",
       borderWidth: 2,
       borderColor: "transparent",
@@ -116,6 +124,9 @@ const useStyles = () => {
     },
     text: {
       marginBottom: 8,
+    },
+    noPointer: {
+      pointerEvents: "none",
     },
   });
 };

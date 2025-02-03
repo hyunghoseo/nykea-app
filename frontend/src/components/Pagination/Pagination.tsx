@@ -30,6 +30,7 @@ const PaginationNavButton: React.FC<PaginationNavButtonProps> = ({
       ref={ref}
       style={styles.paginationButton}
       disabled={disabled}
+      onPress={onPress}
     >
       {icon && <Icon color={theme.colors.primary[0]} name={icon} size={34} />}
       <Text
@@ -61,7 +62,11 @@ const PaginationNumberButton: React.FC<PaginationNumberButtonProps> = ({
   const isActive = useActive(ref);
 
   return (
-    <TouchableOpacity ref={ref} style={styles.paginationButton}>
+    <TouchableOpacity
+      ref={ref}
+      style={styles.paginationButton}
+      onPress={onPress}
+    >
       <Text
         style={[
           styles.paginationButtonText,
