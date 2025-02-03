@@ -23,9 +23,10 @@ export const AnnouncementsScreen = () => {
     isError,
   } = useGetAnnouncements({
     queryParams: {
+      locale,
       "pagination[pageSize]": pageSize,
       "pagination[page]": page,
-      locale,
+      sort: "publishedAt:desc",
       populate: "HostingGroup",
     },
   });
