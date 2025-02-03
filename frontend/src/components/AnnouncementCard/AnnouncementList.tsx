@@ -17,8 +17,8 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
 }) => {
   const styles = useStyles();
 
-  const { isMobile } = useResponsiveLayout();
-  const numColumns = isMobile ? 1 : 3;
+  const { isMobile, isTablet } = useResponsiveLayout();
+  const numColumns = isMobile ? 1 : isTablet ? 1 : 2;
 
   return !isLoading && announcements ? (
     <SimpleGrid

@@ -45,7 +45,7 @@ export const DetailPage: React.FC<DetailPageProps> = ({
   const { locale } = useLocale();
 
   return (
-    <ScreenWrapper>
+    <ScreenWrapper noVerticalPadding>
       {isError ? (
         <P style={bodyNormal}>There was an error getting announcement</P>
       ) : null}

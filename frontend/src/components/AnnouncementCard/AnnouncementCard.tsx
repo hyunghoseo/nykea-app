@@ -94,7 +94,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
             </Skeleton>
           )}
           <Skeleton colorMode="light">
-            <P style={bodyNormal} numberOfLines={3} ellipsizeMode="clip">
+            <P style={bodyNormal} numberOfLines={4} ellipsizeMode="clip">
               {props.Description ? getPlainText(props.Description) : ""}
             </P>
           </Skeleton>
