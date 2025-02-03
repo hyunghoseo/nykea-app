@@ -58,7 +58,7 @@ export const DetailPage: React.FC<DetailPageProps> = ({
           <View style={styles.headerSection}>
             <View style={styles.tags}>
               <Tag type={type} text={t(`post.type.${type}`)} />
-              {data?.HostingGroup ? (
+              {data?.HostingGroup?.data?.attributes?.Name ? (
                 <Tag text={data?.HostingGroup?.data?.attributes?.Name} />
               ) : null}
             </View>
