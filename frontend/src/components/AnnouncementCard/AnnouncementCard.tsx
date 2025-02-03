@@ -1,6 +1,8 @@
+import "moment/locale/ko";
+
 import { useRef } from "react";
 import { H3, P } from "@expo/html-elements";
-import Moment from "moment";
+import moment from "moment";
 import { Skeleton } from "moti/skeleton";
 import {
   StyleProp,
@@ -13,8 +15,10 @@ import { Shadow } from "react-native-shadow-2";
 import { useActive, useHover } from "react-native-web-hooks";
 
 import { theme } from "@/config/theme";
+import { useLocale } from "@/contexts/LocaleProvider";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
+import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { Announcement } from "@/api/apiSchemas";
 
@@ -37,6 +41,8 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
   const isActive = useActive(ref);
   const { h3, date, bodyNormal } = useTypographyStyles();
   const { navigationRef } = useNavigationRef();
+  const { t } = useTranslation();
+  const { locale } = useLocale();
 
   const getPlainText = (rawText: { children: { text: any }[] }[]) => {
     let text = "";
@@ -70,7 +76,8 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
         <Skeleton.Group show={isLoading}>
           <Skeleton colorMode="light">
             <P style={[date, styles.text]}>
-              Posted on {Moment(props.publishedAt).format("MM.DD.YY")}
+              {t(`details.postedDate`)}
+              {moment(props?.publishedAt).locale(locale).format("llll")}
             </P>
           </Skeleton>
           <Skeleton colorMode="light">

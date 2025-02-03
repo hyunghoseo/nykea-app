@@ -4,6 +4,7 @@ import moment from "moment";
 import { StyleSheet, View } from "react-native";
 
 import { theme } from "@/config/theme";
+import { useLocale } from "@/contexts/LocaleProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 import { Announcement, CommonLinkComponent, Event } from "@/api/apiSchemas";
@@ -41,6 +42,8 @@ export const DetailPage: React.FC<DetailPageProps> = ({
   const styles = useStyles(type);
   const { h2, h3, h6, bodyNormal } = useTypographyStyles();
   const { t } = useTranslation();
+  const { locale } = useLocale();
+
   return (
     <ScreenWrapper>
       {isError ? (
@@ -66,7 +69,7 @@ export const DetailPage: React.FC<DetailPageProps> = ({
             <View style={styles.dateSection}>
               <H6 style={[h6, styles.date]}>
                 {t(`details.postedDate`)}
-                {moment(data?.publishedAt).format("MMM DD, YYYY")}
+                {moment(data?.publishedAt).locale(locale).format("llll")}
               </H6>
             </View>
           </View>
