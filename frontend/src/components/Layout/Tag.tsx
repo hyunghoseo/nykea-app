@@ -20,6 +20,7 @@ export const Tag: React.FC<TagProps> = ({ text, type = undefined }) => {
 };
 
 const useStyles = (type: any) => {
+  type = type?.toLowerCase();
   const color = useTagColor(type);
   return StyleSheet.create({
     container: {

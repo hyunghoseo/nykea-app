@@ -17,7 +17,7 @@ import { RichText } from "./RichText";
 import { Tag } from "./Tag";
 
 interface DetailPageProps {
-  type: "announcement" | "event";
+  type: "announcement" | "event" | "service";
   isLoading: boolean;
   isError: boolean;
   data: any;
@@ -48,19 +48,37 @@ export const DetailPage: React.FC<DetailPageProps> = (props) => {
           )}
           <View style={styles.headerSection}>
             <View style={styles.tags}>
-              <Tag type={props.type} text={t(`post.type.${props.type}`)} />
-              <Tag
-                text={props.data?.attributes.HostingGroup.data.attributes.Name}
-              />
+              {props.type === "service" && (
+                <Tag
+                  type={props.type + "_" + props.data?.attributes?.ServiceType}
+                  text={t(`tag.Services.${props.data.attributes.ServiceType}`)}
+                />
+              )}
+              {props.type !== "service" && (
+                <>
+                  <Tag type={props.type} text={t(`post.type.${props.type}`)} />
+                  <Tag text={props.tags} />
+                </>
+              )}
             </View>
             <H2 style={[h2]}>{props.data?.attributes?.Title}</H2>
             <View style={styles.dateSection}>
-              <H6 style={[h6, styles.date]}>
-                {t(`details.postedDate`)}
-                {moment(props.data?.attributes?.publishedAt).format(
-                  "MMM DD, YYYY",
-                )}
-              </H6>
+              {props.type === "service" && (
+                <H6 style={[h6, styles.date]}>
+                  {t(`details.serviceDateTime`)}
+                  {moment(props.data?.attributes?.ServiceDateTime).format(
+                    "MMM DD, YYYY hh:mm A",
+                  )}
+                </H6>
+              )}
+              {props.type !== "service" && (
+                <H6 style={[h6, styles.date]}>
+                  {t(`details.postedDate`)}
+                  {moment(props.data?.attributes?.publishedAt).format(
+                    "MMM DD, YYYY",
+                  )}
+                </H6>
+              )}
             </View>
           </View>
           {props.type === "event" && (

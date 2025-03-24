@@ -16,6 +16,7 @@ export type RootStackParamList = {
   Policy: undefined;
   AnnouncementDetails: { id: number };
   EventDetails: { id: number };
+  ServiceDetails: { id: number };
 };
 
 export const linking: LinkingOptions<RootStackParamList> = {
@@ -33,6 +34,7 @@ export const linking: LinkingOptions<RootStackParamList> = {
       ContactUs: "contact-us",
       AnnouncementDetails: "announcements/:id",
       EventDetails: "events/:id",
+      ServiceDetails: "services/:id",
       // (query param example) Profile: "profile/:userId"
     },
   },

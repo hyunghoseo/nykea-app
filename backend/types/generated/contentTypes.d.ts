@@ -1255,7 +1255,7 @@ export interface ApiServiceService extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Date: Attribute.Date &
+    ServiceDateTime: Attribute.DateTime &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1313,6 +1313,12 @@ export interface ApiServiceService extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'Sunday'>;
+    Description: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -25,13 +25,13 @@
       "type": "string",
       "required": true
     },
-    "Date": {
+    "ServiceDateTime": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "date",
+      "type": "datetime",
       "required": true
     },
     "Sermon": {
@@ -104,6 +104,14 @@
       ],
       "required": true,
       "default": "Sunday"
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks"
     }
   }
 }

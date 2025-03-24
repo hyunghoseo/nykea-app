@@ -1,13 +1,11 @@
 import { Text } from "react-native";
 
-import ScreenWrapper from "../components/ScreenWrapper";
+import ScreenWrapper from "../../components/ScreenWrapper";
 
-const ServicesScreen = () => {
+export const ServicesScreen = () => {
   return (
     <ScreenWrapper>
       <Text>Services Screen</Text>
     </ScreenWrapper>
   );
 };
-
-export default ServicesScreen;

@@ -7,6 +7,8 @@ export const useTagColor = (type: string) => {
     color = theme.colors.tag.announcement;
   } else if (type === "event") {
     color = theme.colors.tag.event;
+  } else if (type.includes("service")) {
+    color = theme.colors.tag[type as keyof typeof theme.colors.tag];
   }
   return color;
 };

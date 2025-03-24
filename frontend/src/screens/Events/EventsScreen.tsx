@@ -11,5 +11,3 @@ export const EventsScreen = () => {
     </ScreenWrapper>
   );
 };
-
-export default EventsScreen;

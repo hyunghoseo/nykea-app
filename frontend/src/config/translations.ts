@@ -21,7 +21,13 @@ export type TranslationEntryKey =
   | "page.Policies.title"
   | "post.type.announcement"
   | "post.type.event"
-  | "details.postedDate";
+  | "post.type.service"
+  | "tag.Services.Family"
+  | "tag.Services.Sunday"
+  | "tag.Services.Special"
+  | "tag.Services.Youth"
+  | "details.postedDate"
+  | "details.serviceDateTime";
 
 type Translations = {
   [key in Locale]: { [key in TranslationEntryKey]: string };
@@ -38,6 +44,11 @@ export const translations: Translations = {
     "nav.ContactUs": "Contact Us",
     "post.type.announcement": "Announcement",
     "post.type.event": "Event",
+    "post.type.service": "Service",
+    "tag.Services.Family": "Family Service",
+    "tag.Services.Sunday": "Sunday Service",
+    "tag.Services.Special": "Special Service",
+    "tag.Services.Youth": "Youth Service",
     "icon.Menu": "Menu",
     "icon.Close": "Close",
     "page.Groups.title": "Groups",
@@ -51,6 +62,7 @@ export const translations: Translations = {
     "page.Groups.types.Music": "Music",
     "page.Announcements.title": "Announcements",
     "details.postedDate": "Posted on ",
+    "details.serviceDateTime": "Service on ",
     "page.Policies.title": "Private Policy",
   },
   ko: {
@@ -63,6 +75,11 @@ export const translations: Translations = {
     "nav.ContactUs": "문의하기",
     "post.type.announcement": "공지사항",
     "post.type.event": "이벤트",
+    "post.type.service": "예배",
+    "tag.Services.Family": "가정 예배",
+    "tag.Services.Sunday": "일요 예배",
+    "tag.Services.Special": "특별 예배",
+    "tag.Services.Youth": "청년 예배",
     "icon.Menu": "메 뉴",
     "icon.Close": "닫 기",
     "page.Groups.title": "부서 및 동아리",
@@ -76,6 +93,7 @@ export const translations: Translations = {
     "page.Groups.types.Music": "음악",
     "page.Announcements.title": "공지사항",
     "details.postedDate": "작성 날짜  ",
+    "details.serviceDateTime": "천일국가 ",
     "page.Policies.title": "이용 약관",
   },
   ja: {
@@ -88,6 +106,11 @@ export const translations: Translations = {
     "nav.ContactUs": "Contact Us",
     "post.type.announcement": "Announcement",
     "post.type.event": "Event",
+    "post.type.service": "Service",
+    "tag.Services.Family": "Family Service",
+    "tag.Services.Sunday": "Sunday Service",
+    "tag.Services.Special": "Special Service",
+    "tag.Services.Youth": "Youth Service",
     "icon.Menu": "Menu",
     "icon.Close": "Close",
     "page.Groups.title": "Groups",
@@ -101,6 +124,7 @@ export const translations: Translations = {
     "page.Groups.types.Music": "Music",
     "page.Announcements.title": "Announcements",
     "details.postedDate": "Posted on ",
+    "details.serviceDateTime": "Service on ",
     "page.Policies.title": "Private Policy",
   },
 };
