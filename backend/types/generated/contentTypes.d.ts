@@ -1155,7 +1155,7 @@ export interface ApiHomepageInfoHomepageInfo extends Schema.SingleType {
           localized: true;
         };
       }>;
-    MainMessageDescription: Attribute.Blocks &
+    MainMessageRichText: Attribute.Blocks &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

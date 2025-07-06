@@ -35,7 +35,7 @@
         }
       }
     },
-    "MainMessageDescription": {
+    "MainMessageRichText": {
       "pluginOptions": {
         "i18n": {
           "localized": true
