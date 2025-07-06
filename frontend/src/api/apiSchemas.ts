@@ -422,11 +422,11 @@ export type Announcement = {
           };
         };
         Type?:
-        | "Administrative"
-        | "Community"
-        | "Education"
-        | "Music"
-        | "Activities";
+          | "Administrative"
+          | "Community"
+          | "Education"
+          | "Music"
+          | "Activities";
         Criteria?: string;
         /**
          * @format date-time
@@ -846,10 +846,6 @@ export type ChurchInfo = {
    * @format date-time
    */
   updatedAt?: string;
-  /**
-   * @format date-time
-   */
-  publishedAt?: string;
   createdBy?: {
     data?: {
       id?: number;
@@ -1465,11 +1461,11 @@ export type Event = {
           };
         };
         Type?:
-        | "Administrative"
-        | "Community"
-        | "Education"
-        | "Music"
-        | "Activities";
+          | "Administrative"
+          | "Community"
+          | "Education"
+          | "Music"
+          | "Activities";
         Criteria?: string;
         /**
          * @format date-time
@@ -1558,16 +1554,16 @@ export type CommonDateTimeComponent = {
    */
   Time?: string;
   TimeZone?:
-  | "EST"
-  | "EDT"
-  | "CST"
-  | "CDT"
-  | "MST"
-  | "MDT"
-  | "PST"
-  | "PDT"
-  | "KST"
-  | "JST";
+    | "EST"
+    | "EDT"
+    | "CST"
+    | "CDT"
+    | "MST"
+    | "MDT"
+    | "PST"
+    | "PDT"
+    | "KST"
+    | "JST";
 };
 
 export type CommonAddressComponent = {
@@ -1578,57 +1574,57 @@ export type CommonAddressComponent = {
   AddressDetail?: string;
   City?: string;
   State?:
-  | "N/A"
-  | "AL, Alabama"
-  | "AK, Alaska"
-  | "AZ, Arizona"
-  | "AR, Arkansas"
-  | "CA, California"
-  | "CO, Colorado"
-  | "CT, Connecticut"
-  | "DE, Delaware"
-  | "FL, Florida"
-  | "GA, Georgia"
-  | "HI, Hawaii"
-  | "ID, Idaho"
-  | "IL, Illinois"
-  | "IN, Indiana"
-  | "IA, Iowa"
-  | "KS, Kansas"
-  | "KY, Kentucky"
-  | "LA, Louisiana"
-  | "ME, Maine"
-  | "MD, Maryland"
-  | "MA, Massachusetts"
-  | "MI, Michigan"
-  | "MN, Minnesota"
-  | "MS, Mississippi"
-  | "MO, Missouri"
-  | "MT, Montana"
-  | "NE, Nebraska"
-  | "NV, Nevada"
-  | "NH, New Hampshire"
-  | "NJ, New Jersey"
-  | "NM, New Mexico"
-  | "NY, New York"
-  | "NC, North Carolina"
-  | "ND, North Dakota"
-  | "OH, Ohio"
-  | "OK, Oklahoma"
-  | "OR, Oregon"
-  | "PA, Pennsylvania"
-  | "RI, Rhode Island"
-  | "SC, South Carolina"
-  | "SD, South Dakota"
-  | "TN, Tennessee"
-  | "TX, Texas"
-  | "UT, Utah"
-  | "VT, Vermont"
-  | "VA, Virginia"
-  | "WA, Washington"
-  | "WV, West Virginia"
-  | "WI, Wisconsin"
-  | "WY, Wyoming";
+    | "N/A"
+    | "AL, Alabama"
+    | "AK, Alaska"
+    | "AZ, Arizona"
+    | "AR, Arkansas"
+    | "CA, California"
+    | "CO, Colorado"
+    | "CT, Connecticut"
+    | "DE, Delaware"
+    | "FL, Florida"
+    | "GA, Georgia"
+    | "HI, Hawaii"
+    | "ID, Idaho"
+    | "IL, Illinois"
+    | "IN, Indiana"
+    | "IA, Iowa"
+    | "KS, Kansas"
+    | "KY, Kentucky"
+    | "LA, Louisiana"
+    | "ME, Maine"
+    | "MD, Maryland"
+    | "MA, Massachusetts"
+    | "MI, Michigan"
+    | "MN, Minnesota"
+    | "MS, Mississippi"
+    | "MO, Missouri"
+    | "MT, Montana"
+    | "NE, Nebraska"
+    | "NV, Nevada"
+    | "NH, New Hampshire"
+    | "NJ, New Jersey"
+    | "NM, New Mexico"
+    | "NY, New York"
+    | "NC, North Carolina"
+    | "ND, North Dakota"
+    | "OH, Ohio"
+    | "OK, Oklahoma"
+    | "OR, Oregon"
+    | "PA, Pennsylvania"
+    | "RI, Rhode Island"
+    | "SC, South Carolina"
+    | "SD, South Dakota"
+    | "TN, Tennessee"
+    | "TX, Texas"
+    | "UT, Utah"
+    | "VT, Vermont"
+    | "VA, Virginia"
+    | "WA, Washington"
+    | "WV, West Virginia"
+    | "WI, Wisconsin"
+    | "WY, Wyoming";
   Country?: "USA" | "Rep. of Korea" | "Japan";
 };
 
@@ -2014,6 +2010,383 @@ export type GroupResponseDataObject = {
 export type GroupResponse = {
   data?: GroupResponseDataObject;
   meta?: Record<string, any>;
+};
+
+export type HomepageInfoLocalizationRequest = {
+  MainMessageTitle?: string;
+  Slides?: ListCarouselSlideComponent[];
+  MainMessageRichText?: void;
+  locale: string;
+};
+
+export type HomepageInfoRequest = {
+  data: {
+    MainMessageTitle?: string;
+    Slides?: ListCarouselSlideComponent[];
+    MainMessageRichText?: void;
+    locale?: string;
+  };
+};
+
+export type HomepageInfoResponseDataObjectLocalized = {
+  id?: number;
+  attributes?: HomepageInfo;
+};
+
+export type HomepageInfoLocalizationResponse = {
+  data?: HomepageInfoResponseDataObjectLocalized;
+  meta?: Record<string, any>;
+};
+
+export type HomepageInfoListResponseDataItemLocalized = {
+  id?: number;
+  attributes?: HomepageInfo;
+};
+
+export type HomepageInfoLocalizationListResponse = {
+  data?: HomepageInfoListResponseDataItemLocalized[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /**
+       * @minimum 25
+       */
+      pageSize?: number;
+      /**
+       * @maximum 1
+       */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+};
+
+export type HomepageInfoListResponseDataItem = {
+  id?: number;
+  attributes?: HomepageInfo;
+};
+
+export type HomepageInfoListResponse = {
+  data?: HomepageInfoListResponseDataItem[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /**
+       * @minimum 25
+       */
+      pageSize?: number;
+      /**
+       * @maximum 1
+       */
+      pageCount?: number;
+      total?: number;
+    };
+  };
+};
+
+export type HomepageInfo = {
+  MainMessageTitle?: string;
+  Slides?: ListCarouselSlideComponent[];
+  MainMessageRichText?: void;
+  /**
+   * @format date-time
+   */
+  createdAt?: string;
+  /**
+   * @format date-time
+   */
+  updatedAt?: string;
+  createdBy?: {
+    data?: {
+      id?: number;
+      attributes?: {};
+    };
+  };
+  updatedBy?: {
+    data?: {
+      id?: number;
+      attributes?: {};
+    };
+  };
+  localizations?: {
+    data?: HomepageInfo[];
+  };
+  locale?: string;
+};
+
+export type HomepageInfoResponseDataObject = {
+  id?: number;
+  attributes?: HomepageInfo;
+};
+
+export type HomepageInfoResponse = {
+  data?: HomepageInfoResponseDataObject;
+  meta?: Record<string, any>;
+};
+
+export type ListCarouselSlideComponent = {
+  id?: number;
+  SlideDescription?: string;
+  SlideButtonText?: string;
+  SlideButtonLink?: string;
+  SlideBackgroundImage?: {
+    data?: {
+      id?: number;
+      attributes?: {
+        name?: string;
+        alternativeText?: string;
+        caption?: string;
+        width?: number;
+        height?: number;
+        formats?: void;
+        hash?: string;
+        ext?: string;
+        mime?: string;
+        /**
+         * @format float
+         */
+        size?: number;
+        url?: string;
+        previewUrl?: string;
+        provider?: string;
+        provider_metadata?: void;
+        related?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          }[];
+        };
+        folder?: {
+          data?: {
+            id?: number;
+            attributes?: {
+              name?: string;
+              pathId?: number;
+              parent?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+              children?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                }[];
+              };
+              files?: {
+                data?: {
+                  id?: number;
+                  attributes?: {
+                    name?: string;
+                    alternativeText?: string;
+                    caption?: string;
+                    width?: number;
+                    height?: number;
+                    formats?: void;
+                    hash?: string;
+                    ext?: string;
+                    mime?: string;
+                    /**
+                     * @format float
+                     */
+                    size?: number;
+                    url?: string;
+                    previewUrl?: string;
+                    provider?: string;
+                    provider_metadata?: void;
+                    related?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      }[];
+                    };
+                    folder?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                    folderPath?: string;
+                    /**
+                     * @format date-time
+                     */
+                    createdAt?: string;
+                    /**
+                     * @format date-time
+                     */
+                    updatedAt?: string;
+                    createdBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {
+                          firstname?: string;
+                          lastname?: string;
+                          username?: string;
+                          /**
+                           * @format email
+                           */
+                          email?: string;
+                          resetPasswordToken?: string;
+                          registrationToken?: string;
+                          isActive?: boolean;
+                          roles?: {
+                            data?: {
+                              id?: number;
+                              attributes?: {
+                                name?: string;
+                                code?: string;
+                                description?: string;
+                                users?: {
+                                  data?: {
+                                    id?: number;
+                                    attributes?: {};
+                                  }[];
+                                };
+                                permissions?: {
+                                  data?: {
+                                    id?: number;
+                                    attributes?: {
+                                      action?: string;
+                                      actionParameters?: void;
+                                      subject?: string;
+                                      properties?: void;
+                                      conditions?: void;
+                                      role?: {
+                                        data?: {
+                                          id?: number;
+                                          attributes?: {};
+                                        };
+                                      };
+                                      /**
+                                       * @format date-time
+                                       */
+                                      createdAt?: string;
+                                      /**
+                                       * @format date-time
+                                       */
+                                      updatedAt?: string;
+                                      createdBy?: {
+                                        data?: {
+                                          id?: number;
+                                          attributes?: {};
+                                        };
+                                      };
+                                      updatedBy?: {
+                                        data?: {
+                                          id?: number;
+                                          attributes?: {};
+                                        };
+                                      };
+                                    };
+                                  }[];
+                                };
+                                /**
+                                 * @format date-time
+                                 */
+                                createdAt?: string;
+                                /**
+                                 * @format date-time
+                                 */
+                                updatedAt?: string;
+                                createdBy?: {
+                                  data?: {
+                                    id?: number;
+                                    attributes?: {};
+                                  };
+                                };
+                                updatedBy?: {
+                                  data?: {
+                                    id?: number;
+                                    attributes?: {};
+                                  };
+                                };
+                              };
+                            }[];
+                          };
+                          blocked?: boolean;
+                          preferedLanguage?: string;
+                          /**
+                           * @format date-time
+                           */
+                          createdAt?: string;
+                          /**
+                           * @format date-time
+                           */
+                          updatedAt?: string;
+                          createdBy?: {
+                            data?: {
+                              id?: number;
+                              attributes?: {};
+                            };
+                          };
+                          updatedBy?: {
+                            data?: {
+                              id?: number;
+                              attributes?: {};
+                            };
+                          };
+                        };
+                      };
+                    };
+                    updatedBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: {};
+                      };
+                    };
+                  };
+                }[];
+              };
+              path?: string;
+              /**
+               * @format date-time
+               */
+              createdAt?: string;
+              /**
+               * @format date-time
+               */
+              updatedAt?: string;
+              createdBy?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+              updatedBy?: {
+                data?: {
+                  id?: number;
+                  attributes?: {};
+                };
+              };
+            };
+          };
+        };
+        folderPath?: string;
+        /**
+         * @format date-time
+         */
+        createdAt?: string;
+        /**
+         * @format date-time
+         */
+        updatedAt?: string;
+        createdBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+        updatedBy?: {
+          data?: {
+            id?: number;
+            attributes?: {};
+          };
+        };
+      };
+    };
+  };
+  SlideTitle?: string;
 };
 
 export type LeaderLocalizationRequest = {
@@ -2557,9 +2930,48 @@ export type LeaderResponse = {
   meta?: Record<string, any>;
 };
 
+export type PrivatePolicyLocalizationRequest = {
+  Policy: void;
+  locale: string;
+};
+
 export type PrivatePolicyRequest = {
   data: {
     Policy: void;
+    locale?: string;
+  };
+};
+
+export type PrivatePolicyResponseDataObjectLocalized = {
+  id?: number;
+  attributes?: PrivatePolicy;
+};
+
+export type PrivatePolicyLocalizationResponse = {
+  data?: PrivatePolicyResponseDataObjectLocalized;
+  meta?: Record<string, any>;
+};
+
+export type PrivatePolicyListResponseDataItemLocalized = {
+  id?: number;
+  attributes?: PrivatePolicy;
+};
+
+export type PrivatePolicyLocalizationListResponse = {
+  data?: PrivatePolicyListResponseDataItemLocalized[];
+  meta?: {
+    pagination?: {
+      page?: number;
+      /**
+       * @minimum 25
+       */
+      pageSize?: number;
+      /**
+       * @maximum 1
+       */
+      pageCount?: number;
+      total?: number;
+    };
   };
 };
 
@@ -2715,6 +3127,10 @@ export type PrivatePolicy = {
       attributes?: {};
     };
   };
+  localizations?: {
+    data?: PrivatePolicy[];
+  };
+  locale?: string;
 };
 
 export type PrivatePolicyResponseDataObject = {
@@ -3337,12 +3753,12 @@ export type AgendaDefaultComponent = {
     URL?: string;
   };
   AgendaType?:
-  | "Kiwon"
-  | "Opening Song"
-  | "Family Pledge"
-  | "Opening Prayer"
-  | "Monthly Video"
-  | "Sermon";
+    | "Kiwon"
+    | "Opening Song"
+    | "Family Pledge"
+    | "Opening Prayer"
+    | "Monthly Video"
+    | "Sermon";
   AssignedGroup?: {
     data?: {
       id?: number;
@@ -3407,11 +3823,11 @@ export type AgendaDefaultComponent = {
           };
         };
         Type?:
-        | "Administrative"
-        | "Community"
-        | "Education"
-        | "Music"
-        | "Activities";
+          | "Administrative"
+          | "Community"
+          | "Education"
+          | "Music"
+          | "Activities";
         Criteria?: string;
         /**
          * @format date-time
@@ -3708,16 +4124,16 @@ export type ListEventComponent = {
            */
           Time?: string;
           TimeZone?:
-          | "EST"
-          | "EDT"
-          | "CST"
-          | "CDT"
-          | "MST"
-          | "MDT"
-          | "PST"
-          | "PDT"
-          | "KST"
-          | "JST";
+            | "EST"
+            | "EDT"
+            | "CST"
+            | "CDT"
+            | "MST"
+            | "MDT"
+            | "PST"
+            | "PDT"
+            | "KST"
+            | "JST";
         };
         EndDate?: {
           id?: number;
@@ -3731,16 +4147,16 @@ export type ListEventComponent = {
            */
           Time?: string;
           TimeZone?:
-          | "EST"
-          | "EDT"
-          | "CST"
-          | "CDT"
-          | "MST"
-          | "MDT"
-          | "PST"
-          | "PDT"
-          | "KST"
-          | "JST";
+            | "EST"
+            | "EDT"
+            | "CST"
+            | "CDT"
+            | "MST"
+            | "MDT"
+            | "PST"
+            | "PDT"
+            | "KST"
+            | "JST";
         };
         HostingGroup?: {
           data?: {
@@ -3759,57 +4175,57 @@ export type ListEventComponent = {
           AddressDetail?: string;
           City?: string;
           State?:
-          | "N/A"
-          | "AL, Alabama"
-          | "AK, Alaska"
-          | "AZ, Arizona"
-          | "AR, Arkansas"
-          | "CA, California"
-          | "CO, Colorado"
-          | "CT, Connecticut"
-          | "DE, Delaware"
-          | "FL, Florida"
-          | "GA, Georgia"
-          | "HI, Hawaii"
-          | "ID, Idaho"
-          | "IL, Illinois"
-          | "IN, Indiana"
-          | "IA, Iowa"
-          | "KS, Kansas"
-          | "KY, Kentucky"
-          | "LA, Louisiana"
-          | "ME, Maine"
-          | "MD, Maryland"
-          | "MA, Massachusetts"
-          | "MI, Michigan"
-          | "MN, Minnesota"
-          | "MS, Mississippi"
-          | "MO, Missouri"
-          | "MT, Montana"
-          | "NE, Nebraska"
-          | "NV, Nevada"
-          | "NH, New Hampshire"
-          | "NJ, New Jersey"
-          | "NM, New Mexico"
-          | "NY, New York"
-          | "NC, North Carolina"
-          | "ND, North Dakota"
-          | "OH, Ohio"
-          | "OK, Oklahoma"
-          | "OR, Oregon"
-          | "PA, Pennsylvania"
-          | "RI, Rhode Island"
-          | "SC, South Carolina"
-          | "SD, South Dakota"
-          | "TN, Tennessee"
-          | "TX, Texas"
-          | "UT, Utah"
-          | "VT, Vermont"
-          | "VA, Virginia"
-          | "WA, Washington"
-          | "WV, West Virginia"
-          | "WI, Wisconsin"
-          | "WY, Wyoming";
+            | "N/A"
+            | "AL, Alabama"
+            | "AK, Alaska"
+            | "AZ, Arizona"
+            | "AR, Arkansas"
+            | "CA, California"
+            | "CO, Colorado"
+            | "CT, Connecticut"
+            | "DE, Delaware"
+            | "FL, Florida"
+            | "GA, Georgia"
+            | "HI, Hawaii"
+            | "ID, Idaho"
+            | "IL, Illinois"
+            | "IN, Indiana"
+            | "IA, Iowa"
+            | "KS, Kansas"
+            | "KY, Kentucky"
+            | "LA, Louisiana"
+            | "ME, Maine"
+            | "MD, Maryland"
+            | "MA, Massachusetts"
+            | "MI, Michigan"
+            | "MN, Minnesota"
+            | "MS, Mississippi"
+            | "MO, Missouri"
+            | "MT, Montana"
+            | "NE, Nebraska"
+            | "NV, Nevada"
+            | "NH, New Hampshire"
+            | "NJ, New Jersey"
+            | "NM, New Mexico"
+            | "NY, New York"
+            | "NC, North Carolina"
+            | "ND, North Dakota"
+            | "OH, Ohio"
+            | "OK, Oklahoma"
+            | "OR, Oregon"
+            | "PA, Pennsylvania"
+            | "RI, Rhode Island"
+            | "SC, South Carolina"
+            | "SD, South Dakota"
+            | "TN, Tennessee"
+            | "TX, Texas"
+            | "UT, Utah"
+            | "VT, Vermont"
+            | "VA, Virginia"
+            | "WA, Washington"
+            | "WV, West Virginia"
+            | "WI, Wisconsin"
+            | "WY, Wyoming";
           Country?: "USA" | "Rep. of Korea" | "Japan";
         }[];
         /**

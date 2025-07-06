@@ -1,7 +1,5 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
-
 type ScreenWrapperProps = {
   children: React.ReactNode;
   noVerticalPadding?: boolean;
@@ -28,14 +26,13 @@ const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
 };
 
 const useStyles = () => {
-  const { isMobile } = useResponsiveLayout();
   return StyleSheet.create({
     container: {
       flex: 1,
     },
     content: {
       paddingVertical: 32,
-      paddingHorizontal: isMobile ? 0 : 56,
+      paddingHorizontal: 0,
       alignItems: "center",
     },
     contentNoVerticalPadding: {

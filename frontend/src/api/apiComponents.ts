@@ -2092,6 +2092,305 @@ export const usePostGroupsIdLocalizations = (
   });
 };
 
+export type GetHomepageInfoQueryParams = {
+  /**
+   * Sort by attributes ascending (asc) or descending (desc)
+   */
+  sort?: string;
+  /**
+   * Return page/pageSize (default: true)
+   */
+  ["pagination[withCount]"]?: boolean;
+  /**
+   * Page number (default: 0)
+   */
+  ["pagination[page]"]?: number;
+  /**
+   * Page size (default: 25)
+   */
+  ["pagination[pageSize]"]?: number;
+  /**
+   * Offset value (default: 0)
+   */
+  ["pagination[start]"]?: number;
+  /**
+   * Number of entities to return (default: 25)
+   */
+  ["pagination[limit]"]?: number;
+  /**
+   * Fields to return (ex: title,author)
+   */
+  fields?: string;
+  /**
+   * Relations to return
+   */
+  populate?: string;
+  /**
+   * Filters to apply
+   */
+  filters?: Record<string, any>;
+  /**
+   * Locale to apply
+   */
+  locale?: string;
+};
+
+export type GetHomepageInfoError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type GetHomepageInfoVariables = {
+  queryParams?: GetHomepageInfoQueryParams;
+} & ApiContext["fetcherOptions"];
+
+export const fetchGetHomepageInfo = (
+  variables: GetHomepageInfoVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<
+    Schemas.HomepageInfoResponse,
+    GetHomepageInfoError,
+    undefined,
+    {},
+    GetHomepageInfoQueryParams,
+    {}
+  >({ url: "/homepage-info", method: "get", ...variables, signal });
+
+export const useGetHomepageInfo = <TData = Schemas.HomepageInfoResponse>(
+  variables: GetHomepageInfoVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.HomepageInfoResponse,
+      GetHomepageInfoError,
+      TData
+    >,
+    "queryKey" | "queryFn" | "initialData"
+  >,
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.HomepageInfoResponse,
+    GetHomepageInfoError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: "/homepage-info",
+      operationId: "getHomepageInfo",
+      variables,
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetHomepageInfo({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions,
+  });
+};
+
+export type PutHomepageInfoError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type PutHomepageInfoVariables = {
+  body: Schemas.HomepageInfoRequest;
+} & ApiContext["fetcherOptions"];
+
+export const fetchPutHomepageInfo = (
+  variables: PutHomepageInfoVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<
+    Schemas.HomepageInfoResponse,
+    PutHomepageInfoError,
+    Schemas.HomepageInfoRequest,
+    {},
+    {},
+    {}
+  >({ url: "/homepage-info", method: "put", ...variables, signal });
+
+export const usePutHomepageInfo = (
+  options?: Omit<
+    reactQuery.UseMutationOptions<
+      Schemas.HomepageInfoResponse,
+      PutHomepageInfoError,
+      PutHomepageInfoVariables
+    >,
+    "mutationFn"
+  >,
+) => {
+  const { fetcherOptions } = useApiContext();
+  return reactQuery.useMutation<
+    Schemas.HomepageInfoResponse,
+    PutHomepageInfoError,
+    PutHomepageInfoVariables
+  >({
+    mutationFn: (variables: PutHomepageInfoVariables) =>
+      fetchPutHomepageInfo({ ...fetcherOptions, ...variables }),
+    ...options,
+  });
+};
+
+export type DeleteHomepageInfoError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type DeleteHomepageInfoVariables = ApiContext["fetcherOptions"];
+
+export const fetchDeleteHomepageInfo = (
+  variables: DeleteHomepageInfoVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<number, DeleteHomepageInfoError, undefined, {}, {}, {}>({
+    url: "/homepage-info",
+    method: "delete",
+    ...variables,
+    signal,
+  });
+
+export const useDeleteHomepageInfo = (
+  options?: Omit<
+    reactQuery.UseMutationOptions<
+      number,
+      DeleteHomepageInfoError,
+      DeleteHomepageInfoVariables
+    >,
+    "mutationFn"
+  >,
+) => {
+  const { fetcherOptions } = useApiContext();
+  return reactQuery.useMutation<
+    number,
+    DeleteHomepageInfoError,
+    DeleteHomepageInfoVariables
+  >({
+    mutationFn: (variables: DeleteHomepageInfoVariables) =>
+      fetchDeleteHomepageInfo({ ...fetcherOptions, ...variables }),
+    ...options,
+  });
+};
+
+export type PostHomepageInfoLocalizationsError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type PostHomepageInfoLocalizationsVariables = {
+  body: Schemas.HomepageInfoLocalizationRequest;
+} & ApiContext["fetcherOptions"];
+
+export const fetchPostHomepageInfoLocalizations = (
+  variables: PostHomepageInfoLocalizationsVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<
+    Schemas.HomepageInfoLocalizationResponse,
+    PostHomepageInfoLocalizationsError,
+    Schemas.HomepageInfoLocalizationRequest,
+    {},
+    {},
+    {}
+  >({
+    url: "/homepage-info/localizations",
+    method: "post",
+    ...variables,
+    signal,
+  });
+
+export const usePostHomepageInfoLocalizations = (
+  options?: Omit<
+    reactQuery.UseMutationOptions<
+      Schemas.HomepageInfoLocalizationResponse,
+      PostHomepageInfoLocalizationsError,
+      PostHomepageInfoLocalizationsVariables
+    >,
+    "mutationFn"
+  >,
+) => {
+  const { fetcherOptions } = useApiContext();
+  return reactQuery.useMutation<
+    Schemas.HomepageInfoLocalizationResponse,
+    PostHomepageInfoLocalizationsError,
+    PostHomepageInfoLocalizationsVariables
+  >({
+    mutationFn: (variables: PostHomepageInfoLocalizationsVariables) =>
+      fetchPostHomepageInfoLocalizations({ ...fetcherOptions, ...variables }),
+    ...options,
+  });
+};
+
 export type GetLeadersQueryParams = {
   /**
    * Sort by attributes ascending (asc) or descending (desc)
@@ -2768,6 +3067,73 @@ export const useDeletePrivatePolicy = (
   >({
     mutationFn: (variables: DeletePrivatePolicyVariables) =>
       fetchDeletePrivatePolicy({ ...fetcherOptions, ...variables }),
+    ...options,
+  });
+};
+
+export type PostPrivatePolicyLocalizationsError = Fetcher.ErrorWrapper<
+  | {
+      status: 400;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 401;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 403;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 404;
+      payload: Schemas.Error;
+    }
+  | {
+      status: 500;
+      payload: Schemas.Error;
+    }
+>;
+
+export type PostPrivatePolicyLocalizationsVariables = {
+  body: Schemas.PrivatePolicyLocalizationRequest;
+} & ApiContext["fetcherOptions"];
+
+export const fetchPostPrivatePolicyLocalizations = (
+  variables: PostPrivatePolicyLocalizationsVariables,
+  signal?: AbortSignal,
+) =>
+  apiFetch<
+    Schemas.PrivatePolicyLocalizationResponse,
+    PostPrivatePolicyLocalizationsError,
+    Schemas.PrivatePolicyLocalizationRequest,
+    {},
+    {},
+    {}
+  >({
+    url: "/private-policy/localizations",
+    method: "post",
+    ...variables,
+    signal,
+  });
+
+export const usePostPrivatePolicyLocalizations = (
+  options?: Omit<
+    reactQuery.UseMutationOptions<
+      Schemas.PrivatePolicyLocalizationResponse,
+      PostPrivatePolicyLocalizationsError,
+      PostPrivatePolicyLocalizationsVariables
+    >,
+    "mutationFn"
+  >,
+) => {
+  const { fetcherOptions } = useApiContext();
+  return reactQuery.useMutation<
+    Schemas.PrivatePolicyLocalizationResponse,
+    PostPrivatePolicyLocalizationsError,
+    PostPrivatePolicyLocalizationsVariables
+  >({
+    mutationFn: (variables: PostPrivatePolicyLocalizationsVariables) =>
+      fetchPostPrivatePolicyLocalizations({ ...fetcherOptions, ...variables }),
     ...options,
   });
 };
@@ -4101,6 +4467,11 @@ export type QueryOperation =
       path: "/groups/{id}";
       operationId: "getGroupsId";
       variables: GetGroupsIdVariables;
+    }
+  | {
+      path: "/homepage-info";
+      operationId: "getHomepageInfo";
+      variables: GetHomepageInfoVariables;
     }
   | {
       path: "/leaders";
