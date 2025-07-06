@@ -473,11 +473,11 @@
         "fields": [
           "MainMessageTitle",
           "MainMessageDescription",
-          "Slides.SlideTitle",
           "Slides.SlideDescription",
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
-          "Slides.SlideBackgroundImage"
+          "Slides.SlideBackgroundImage",
+          "Slides.SlideTitle"
         ],
         "locales": [
           "en",
@@ -506,11 +506,11 @@
         "fields": [
           "MainMessageTitle",
           "MainMessageDescription",
-          "Slides.SlideTitle",
           "Slides.SlideDescription",
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
-          "Slides.SlideBackgroundImage"
+          "Slides.SlideBackgroundImage",
+          "Slides.SlideTitle"
         ],
         "locales": [
           "en",
@@ -527,11 +527,11 @@
         "fields": [
           "MainMessageTitle",
           "MainMessageDescription",
-          "Slides.SlideTitle",
           "Slides.SlideDescription",
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
-          "Slides.SlideBackgroundImage"
+          "Slides.SlideBackgroundImage",
+          "Slides.SlideTitle"
         ],
         "locales": [
           "en",

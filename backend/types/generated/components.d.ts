@@ -175,13 +175,14 @@ export interface ListCarouselSlide extends Schema.Component {
   collectionName: 'components_list_carousel_slides';
   info: {
     displayName: 'CarouselSlide';
+    description: '';
   };
   attributes: {
-    SlideTitle: Attribute.Text;
     SlideDescription: Attribute.String;
     SlideButtonText: Attribute.String;
     SlideButtonLink: Attribute.String;
     SlideBackgroundImage: Attribute.Media;
+    SlideTitle: Attribute.String;
   };
 }
 
