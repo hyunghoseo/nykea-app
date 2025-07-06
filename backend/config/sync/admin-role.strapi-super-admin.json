@@ -480,6 +480,71 @@
     {
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
+      "subject": "api::homepage-info.homepage-info",
+      "properties": {
+        "fields": [
+          "MainMessageTitle",
+          "MainMessageDescription",
+          "Slides.SlideTitle",
+          "Slides.SlideDescription",
+          "Slides.SlideButtonText",
+          "Slides.SlideButtonLink",
+          "Slides.SlideBackgroundImage"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::homepage-info.homepage-info",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "api::homepage-info.homepage-info",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::homepage-info.homepage-info",
+      "properties": {
+        "fields": [
+          "MainMessageTitle",
+          "MainMessageDescription",
+          "Slides.SlideTitle",
+          "Slides.SlideDescription",
+          "Slides.SlideButtonText",
+          "Slides.SlideButtonLink",
+          "Slides.SlideBackgroundImage"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::homepage-info.homepage-info",
+      "properties": {
+        "fields": [
+          "MainMessageTitle",
+          "MainMessageDescription",
+          "Slides.SlideTitle",
+          "Slides.SlideDescription",
+          "Slides.SlideButtonText",
+          "Slides.SlideButtonLink",
+          "Slides.SlideBackgroundImage"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
       "subject": "api::leader.leader",
       "properties": {
         "fields": [
