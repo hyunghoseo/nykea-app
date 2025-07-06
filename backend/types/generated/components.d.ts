@@ -171,6 +171,20 @@ export interface ListAnnouncement extends Schema.Component {
   };
 }
 
+export interface ListCarouselSlide extends Schema.Component {
+  collectionName: 'components_list_carousel_slides';
+  info: {
+    displayName: 'CarouselSlide';
+  };
+  attributes: {
+    SlideTitle: Attribute.Text;
+    SlideDescription: Attribute.String;
+    SlideButtonText: Attribute.String;
+    SlideButtonLink: Attribute.String;
+    SlideBackgroundImage: Attribute.Media;
+  };
+}
+
 export interface ListDefault extends Schema.Component {
   collectionName: 'components_list_defaults';
   info: {
@@ -208,6 +222,7 @@ declare module '@strapi/types' {
       'common.date-time': CommonDateTime;
       'common.link': CommonLink;
       'list.announcement': ListAnnouncement;
+      'list.carousel-slide': ListCarouselSlide;
       'list.default': ListDefault;
       'list.event': ListEvent;
     }
