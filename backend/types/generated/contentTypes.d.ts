@@ -859,11 +859,11 @@ export interface ApiChurchInfoChurchInfo extends Schema.SingleType {
   info: {
     singularName: 'church-info';
     pluralName: 'church-infos';
-    displayName: 'ChurchInfo';
+    displayName: 'Church Info';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -907,7 +907,6 @@ export interface ApiChurchInfoChurchInfo extends Schema.SingleType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::church-info.church-info',
       'oneToOne',
@@ -1136,15 +1135,34 @@ export interface ApiHomepageInfoHomepageInfo extends Schema.SingleType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
-    MainMessageTitle: Attribute.Text;
-    MainMessageDescription: Attribute.String;
-    Slides: Attribute.Component<'list.carousel-slide', true>;
+    MainMessageTitle: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    MainMessageDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slides: Attribute.Component<'list.carousel-slide', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::homepage-info.homepage-info',
       'oneToOne',
@@ -1157,6 +1175,12 @@ export interface ApiHomepageInfoHomepageInfo extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::homepage-info.homepage-info',
+      'oneToMany',
+      'api::homepage-info.homepage-info'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1239,14 +1263,25 @@ export interface ApiPrivatePolicyPrivatePolicy extends Schema.SingleType {
   info: {
     singularName: 'private-policy';
     pluralName: 'private-policies';
-    displayName: 'PrivatePolicy';
+    displayName: 'Private Policy';
     description: '';
   };
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Policy: Attribute.Blocks & Attribute.Required;
+    Policy: Attribute.Blocks &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1261,6 +1296,12 @@ export interface ApiPrivatePolicyPrivatePolicy extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::private-policy.private-policy',
+      'oneToMany',
+      'api::private-policy.private-policy'
+    >;
+    locale: Attribute.String;
   };
 }
 

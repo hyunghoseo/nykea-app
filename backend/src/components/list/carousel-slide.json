@@ -1,13 +1,11 @@
 {
   "collectionName": "components_list_carousel_slides",
   "info": {
-    "displayName": "CarouselSlide"
+    "displayName": "CarouselSlide",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "SlideTitle": {
-      "type": "text"
-    },
     "SlideDescription": {
       "type": "string"
     },
@@ -18,14 +16,18 @@
       "type": "string"
     },
     "SlideBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "SlideTitle": {
+      "type": "string"
     }
   }
 }
