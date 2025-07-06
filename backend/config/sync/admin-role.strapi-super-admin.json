@@ -210,18 +210,6 @@
       "conditions": []
     },
     {
-      "action": "plugin::content-manager.explorer.publish",
-      "actionParameters": {},
-      "subject": "api::church-info.church-info",
-      "properties": {
-        "locales": [
-          "en",
-          "ko"
-        ]
-      },
-      "conditions": []
-    },
-    {
       "action": "plugin::content-manager.explorer.read",
       "actionParameters": {},
       "subject": "api::church-info.church-info",
@@ -490,6 +478,10 @@
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -498,14 +490,12 @@
       "action": "plugin::content-manager.explorer.delete",
       "actionParameters": {},
       "subject": "api::homepage-info.homepage-info",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "actionParameters": {},
-      "subject": "api::homepage-info.homepage-info",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
       "conditions": []
     },
     {
@@ -521,6 +511,10 @@
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -538,6 +532,10 @@
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -630,6 +628,10 @@
       "properties": {
         "fields": [
           "Policy"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -638,7 +640,12 @@
       "action": "plugin::content-manager.explorer.delete",
       "actionParameters": {},
       "subject": "api::private-policy.private-policy",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "ko"
+        ]
+      },
       "conditions": []
     },
     {
@@ -648,6 +655,10 @@
       "properties": {
         "fields": [
           "Policy"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
@@ -659,6 +670,10 @@
       "properties": {
         "fields": [
           "Policy"
+        ],
+        "locales": [
+          "en",
+          "ko"
         ]
       },
       "conditions": []
