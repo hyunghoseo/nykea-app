@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Image, Platform, StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { useHover } from "react-native-web-hooks";
+import { useActive, useHover } from "react-native-web-hooks";
 
 import { LanguageOption, languageOptions } from "@/config/languages";
 import { theme } from "@/config/theme";
@@ -13,9 +13,13 @@ import Minus from "@/assets/minus.svg";
 const DropdownItem: React.FC<LanguageOption> = (languageOption) => {
   const ref = useRef<View>(null);
   const isHovered = useHover(ref);
+  const isActive = useActive(ref);
 
   return (
-    <View ref={ref} style={[styles.item, isHovered && styles.itemHovered]}>
+    <View
+      ref={ref}
+      style={[styles.item, (isHovered || isActive) && styles.itemHovered]}
+    >
       <Image source={languageOption.flag} style={styles.flag} />
       <Text
         style={[

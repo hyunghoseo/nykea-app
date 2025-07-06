@@ -17,8 +17,8 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
 }) => {
   const styles = useStyles();
 
-  const { isMobile } = useResponsiveLayout();
-  const numColumns = isMobile ? 1 : 3;
+  const { isMobile, isTablet } = useResponsiveLayout();
+  const numColumns = isMobile ? 1 : isTablet ? 1 : 2;
 
   return !isLoading && announcements ? (
     <SimpleGrid
@@ -40,16 +40,19 @@ export const AnnouncementList: React.FC<AnnouncementListProps> = ({
       key={numColumns + "placeholder"}
       listKey={numColumns + ""}
       maxItemsPerRow={numColumns}
-      renderItem={(rowIndex) => <AnnouncementCard isLoading />}
+      renderItem={({ index }) => <AnnouncementCard key={index} isLoading />}
       style={styles.list}
+      spacing={isMobile ? 24 : 32}
     />
   );
 };
 
 const useStyles = () => {
+  const { isMobile } = useResponsiveLayout();
+
   return StyleSheet.create({
     list: {
-      margin: 0,
+      margin: isMobile ? -24 : -32,
     },
   });
 };

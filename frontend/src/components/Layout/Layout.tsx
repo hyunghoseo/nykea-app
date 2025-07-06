@@ -19,7 +19,7 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const { isMobile } = useResponsiveLayout();
+  const { isMobile, isTablet, isDesktop } = useResponsiveLayout();
   const { currentRoute } = useNavigationRef();
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,10 +27,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   // Close menu if no longer mobile layout
   useEffect(() => {
-    if (!isMobile) {
+    if (isDesktop) {
       setIsMenuOpen(false);
     }
-  }, [isMobile]);
+  }, [isDesktop]);
 
   // Close menu if current route changes
   useEffect(() => {
@@ -42,7 +42,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <View
         style={[
           styles.screenContainer,
-          isMobile
+          isMobile || isTablet
             ? styles.screenContainerMobile
             : styles.screenContainerDesktop,
         ]}
@@ -50,7 +50,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </View>
       <Header
-        variant={isMobile ? "mobile" : "desktop"}
+        variant={isMobile || isTablet ? "mobile" : "desktop"}
         mobileRightIcon={
           isMenuOpen ? (
             <NavClose style={styles.icon} />

@@ -1127,6 +1127,38 @@ export interface ApiGroupGroup extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomepageInfoHomepageInfo extends Schema.SingleType {
+  collectionName: 'homepage_infos';
+  info: {
+    singularName: 'homepage-info';
+    pluralName: 'homepage-infos';
+    displayName: 'Homepage Info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    MainMessageTitle: Attribute.Text;
+    MainMessageDescription: Attribute.String;
+    Slides: Attribute.Component<'list.carousel-slide', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage-info.homepage-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage-info.homepage-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLeaderLeader extends Schema.CollectionType {
   collectionName: 'leaders';
   info: {
@@ -1535,6 +1567,7 @@ declare module '@strapi/types' {
       'api::church-info.church-info': ApiChurchInfoChurchInfo;
       'api::event.event': ApiEventEvent;
       'api::group.group': ApiGroupGroup;
+      'api::homepage-info.homepage-info': ApiHomepageInfoHomepageInfo;
       'api::leader.leader': ApiLeaderLeader;
       'api::private-policy.private-policy': ApiPrivatePolicyPrivatePolicy;
       'api::service.service': ApiServiceService;

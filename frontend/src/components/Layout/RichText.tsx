@@ -10,6 +10,7 @@ import {
   Q,
   Span,
   Strong,
+  UL,
 } from "@expo/html-elements";
 import { Link } from "@react-navigation/native";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
@@ -37,7 +38,7 @@ export const RichText: React.FC<RichTextProps> = ({ content }) => {
               case "ordered":
                 return <P style={bodyNormal}>{children}</P>;
               case "unordered":
-                return <P style={bodyNormal}>{children}</P>;
+                return <UL style={bodyNormal}>{children}</UL>;
             }
           },
           heading: ({ children, level }) => {

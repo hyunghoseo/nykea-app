@@ -6,10 +6,10 @@ import { baseUrl } from "@/api/apiFetcher";
 
 interface GalleryProps {
   data: {
-    attributes: {
-      url: string;
+    attributes?: {
+      url?: string;
     };
-    id: number;
+    id?: number;
   }[];
 }
 

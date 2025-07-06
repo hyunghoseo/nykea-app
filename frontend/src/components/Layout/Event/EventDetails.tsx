@@ -15,9 +15,9 @@ import { Button, ButtonTypes } from "../Button";
 
 interface EventDetailsProps {
   StartDate: CommonDateTimeComponent;
-  EndDate: CommonDateTimeComponent;
+  EndDate?: CommonDateTimeComponent;
   Location: CommonAddressComponent[];
-  Fee: string;
+  Fee?: string;
 }
 
 export const EventDetails: React.FC<EventDetailsProps> = (props) => {

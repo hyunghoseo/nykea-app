@@ -15,9 +15,7 @@ export const EventDetailsScreen = ({ route }: any) => {
       type="event"
       isLoading={isLoading}
       isError={isError}
-      data={event}
-      tags={event?.attributes?.HostingGroup?.data?.attributes?.Name}
-      description="yes right."
+      data={event?.attributes}
     />
   );
 };
