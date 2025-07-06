@@ -1,0 +1,135 @@
+{
+  "key": "plugin_content_manager_configuration_components::list.carousel-slide",
+  "value": {
+    "uid": "list.carousel-slide",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "SlideDescription",
+      "defaultSortBy": "SlideDescription",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SlideTitle": {
+        "edit": {
+          "label": "SlideTitle",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SlideTitle",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SlideDescription": {
+        "edit": {
+          "label": "SlideDescription",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SlideDescription",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SlideButtonText": {
+        "edit": {
+          "label": "SlideButtonText",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SlideButtonText",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SlideButtonLink": {
+        "edit": {
+          "label": "SlideButtonLink",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SlideButtonLink",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SlideBackgroundImage": {
+        "edit": {
+          "label": "SlideBackgroundImage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SlideBackgroundImage",
+          "searchable": false,
+          "sortable": false
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "SlideTitle",
+        "SlideDescription",
+        "SlideButtonText"
+      ],
+      "edit": [
+        [
+          {
+            "name": "SlideTitle",
+            "size": 6
+          },
+          {
+            "name": "SlideDescription",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "SlideButtonText",
+            "size": 6
+          },
+          {
+            "name": "SlideButtonLink",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "SlideBackgroundImage",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
