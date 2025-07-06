@@ -4,11 +4,11 @@
   "info": {
     "singularName": "church-info",
     "pluralName": "church-infos",
-    "displayName": "ChurchInfo",
+    "displayName": "Church Info",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {

@@ -4,17 +4,26 @@
   "info": {
     "singularName": "private-policy",
     "pluralName": "private-policies",
-    "displayName": "PrivatePolicy",
+    "displayName": "Private Policy",
     "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Policy": {
       "type": "blocks",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
