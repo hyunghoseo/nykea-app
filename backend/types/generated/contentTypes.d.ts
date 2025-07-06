@@ -1133,6 +1133,7 @@ export interface ApiHomepageInfoHomepageInfo extends Schema.SingleType {
     singularName: 'homepage-info';
     pluralName: 'homepage-infos';
     displayName: 'Homepage Info';
+    description: '';
   };
   options: {
     draftAndPublish: true;
