@@ -7,8 +7,8 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "MainMessageDescription",
-      "defaultSortBy": "MainMessageDescription",
+      "mainField": "id",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -34,20 +34,6 @@
           "sortable": true
         }
       },
-      "MainMessageDescription": {
-        "edit": {
-          "label": "MainMessageDescription",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "MainMessageDescription",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "Slides": {
         "edit": {
           "label": "Slides",
@@ -58,6 +44,20 @@
         },
         "list": {
           "label": "Slides",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "MainMessageDescription": {
+        "edit": {
+          "label": "MainMessageDescription",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "MainMessageDescription",
           "searchable": false,
           "sortable": false
         }
@@ -125,7 +125,6 @@
       "list": [
         "id",
         "MainMessageTitle",
-        "MainMessageDescription",
         "Slides"
       ],
       "edit": [
@@ -133,15 +132,17 @@
           {
             "name": "MainMessageTitle",
             "size": 6
-          },
-          {
-            "name": "MainMessageDescription",
-            "size": 6
           }
         ],
         [
           {
             "name": "Slides",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "MainMessageDescription",
             "size": 12
           }
         ]

@@ -472,12 +472,12 @@
       "properties": {
         "fields": [
           "MainMessageTitle",
-          "MainMessageDescription",
           "Slides.SlideDescription",
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage",
-          "Slides.SlideTitle"
+          "Slides.SlideTitle",
+          "MainMessageDescription"
         ],
         "locales": [
           "en",
@@ -505,12 +505,12 @@
       "properties": {
         "fields": [
           "MainMessageTitle",
-          "MainMessageDescription",
           "Slides.SlideDescription",
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage",
-          "Slides.SlideTitle"
+          "Slides.SlideTitle",
+          "MainMessageDescription"
         ],
         "locales": [
           "en",
@@ -526,12 +526,12 @@
       "properties": {
         "fields": [
           "MainMessageTitle",
-          "MainMessageDescription",
           "Slides.SlideDescription",
           "Slides.SlideButtonText",
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage",
-          "Slides.SlideTitle"
+          "Slides.SlideTitle",
+          "MainMessageDescription"
         ],
         "locales": [
           "en",

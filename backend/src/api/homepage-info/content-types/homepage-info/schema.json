@@ -24,14 +24,6 @@
         }
       }
     },
-    "MainMessageDescription": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "Slides": {
       "displayName": "CarouselSlide",
       "type": "component",
@@ -42,6 +34,14 @@
           "localized": true
         }
       }
+    },
+    "MainMessageDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks"
     }
   }
 }
