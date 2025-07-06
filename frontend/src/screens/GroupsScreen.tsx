@@ -72,7 +72,8 @@ const useStyles = () => {
       alignItems: "center",
       maxWidth: 648,
       gap: 24,
-      marginVertical: 32,
+      marginBottom: 32,
+      paddingHorizontal: 32,
     },
     headerTitle: {
       color: theme.colors.primary[0],
@@ -86,6 +87,7 @@ const useStyles = () => {
       marginVertical: 32,
       gap: isMobile ? 32 : 40,
       alignItems: "flex-start",
+      paddingHorizontal: 32,
     },
     groupSection: { width: "100%", gap: 24 },
     groupTitle: {

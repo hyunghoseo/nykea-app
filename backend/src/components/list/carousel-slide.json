@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_list_carousel_slides",
+  "info": {
+    "displayName": "CarouselSlide"
+  },
+  "options": {},
+  "attributes": {
+    "SlideTitle": {
+      "type": "text"
+    },
+    "SlideDescription": {
+      "type": "string"
+    },
+    "SlideButtonText": {
+      "type": "string"
+    },
+    "SlideButtonLink": {
+      "type": "string"
+    },
+    "SlideBackgroundImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

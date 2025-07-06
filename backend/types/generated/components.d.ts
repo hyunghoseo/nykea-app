@@ -131,48 +131,8 @@ export interface CommonDateTime extends Schema.Component {
     Date: Attribute.Date & Attribute.Required;
     Time: Attribute.Time & Attribute.DefaultTo<'12:00'>;
     TimeZone: Attribute.Enumeration<
-      [
-        'Atlanta, GA, USA (GMT-4)',
-        'Auckland, New Zealand (GMT+12)',
-        'Austin, TX, USA (GMT-5)',
-        'Beijing, China (GMT+8)',
-        'Berlin, Germany (GMT+2)',
-        'Boston, MA, USA (GMT-4)',
-        'Brussels, Belgium (GMT+2)',
-        'Chicago, IL, USA (GMT-5)',
-        'Dallas, TX, USA (GMT-5)',
-        'Houston, TX, USA (GMT-5)',
-        'Istanbul, Turkey (GMT+3)',
-        'Las Vegas, NV, USA (GMT-7)',
-        'London, England, UK (GMT+1)',
-        'Los Angeles, CA, USA (GMT-7)',
-        'Madrid, Spain (GMT+2)',
-        'Melbourne, Australia (GMT+10)',
-        'Miami, FL, USA (GMT-4)',
-        'Minneapolis, MN, USA (GMT-5)',
-        'Mexico City, Mexico (GMT-5)',
-        'Moscow, Russia (GMT+3)',
-        'Nashville, TN, USA (GMT-5)',
-        'New York, NY, USA (GMT-4)',
-        'Orlando, FL, USA (GMT-4)',
-        'Paris, France (GMT+2)',
-        'Phoenix, AZ, USA (GMT-7)',
-        'Portland, OR, USA (GMT-7)',
-        'Rome, Italy (GMT+2)',
-        'San Diego, CA, USA (GMT-7)',
-        'San Francisco, CA, USA (GMT-7)',
-        'Seattle, WA, USA (GMT-7)',
-        'Seoul, South Korea (GMT+9)',
-        'Sydney, Australia (GMT+10)',
-        'Tokyo, Japan (GMT+9)',
-        'Toronto, ON, Canada (GMT-4)',
-        'Vancouver, BC, Canada (GMT-7)',
-        'Vienna, Austria (GMT+2)',
-        'Washington, D.C., USA (GMT-4)',
-        'Zurich, Switzerland (GMT+2)'
-      ]
-    > &
-      Attribute.DefaultTo<'New York, NY, USA (GMT-4)'>;
+      ['EST', 'EDT', 'CST', 'CDT', 'MST', 'MDT', 'PST', 'PDT', 'KST', 'JST']
+    >;
   };
 }
 
@@ -208,6 +168,20 @@ export interface ListAnnouncement extends Schema.Component {
       'oneToOne',
       'api::announcement.announcement'
     >;
+  };
+}
+
+export interface ListCarouselSlide extends Schema.Component {
+  collectionName: 'components_list_carousel_slides';
+  info: {
+    displayName: 'CarouselSlide';
+  };
+  attributes: {
+    SlideTitle: Attribute.Text;
+    SlideDescription: Attribute.String;
+    SlideButtonText: Attribute.String;
+    SlideButtonLink: Attribute.String;
+    SlideBackgroundImage: Attribute.Media;
   };
 }
 
@@ -248,6 +222,7 @@ declare module '@strapi/types' {
       'common.date-time': CommonDateTime;
       'common.link': CommonLink;
       'list.announcement': ListAnnouncement;
+      'list.carousel-slide': ListCarouselSlide;
       'list.default': ListDefault;
       'list.event': ListEvent;
     }

@@ -3,17 +3,20 @@ import {
   KumbhSans_500Medium,
   KumbhSans_600SemiBold,
   KumbhSans_700Bold,
+  KumbhSans_800ExtraBold,
 } from "@expo-google-fonts/kumbh-sans";
 import {
   NotoSans_400Regular,
   NotoSans_500Medium,
   NotoSans_600SemiBold,
   NotoSans_700Bold,
+  NotoSans_800ExtraBold,
 } from "@expo-google-fonts/noto-sans";
 import {
   NotoSansKR_400Regular,
   NotoSansKR_500Medium,
   NotoSansKR_700Bold,
+  NotoSansKR_900Black,
 } from "@expo-google-fonts/noto-sans-kr";
 import { createStackNavigator } from "@react-navigation/stack";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -78,13 +81,16 @@ const App = () => {
     KumbhSans_500Medium,
     KumbhSans_600SemiBold,
     KumbhSans_700Bold,
+    KumbhSans_800ExtraBold,
     NotoSans_400Regular,
     NotoSans_500Medium,
     NotoSans_600SemiBold,
     NotoSans_700Bold,
+    NotoSans_800ExtraBold,
     NotoSansKR_400Regular,
     NotoSansKR_500Medium,
     NotoSansKR_700Bold,
+    NotoSansKR_900Black,
   });
 
   const onLayoutRootView = useCallback(async () => {

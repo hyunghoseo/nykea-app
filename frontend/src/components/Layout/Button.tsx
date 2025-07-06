@@ -1,10 +1,12 @@
 import { Linking, StyleSheet, Text, TouchableOpacity } from "react-native";
 
+import { theme } from "@/config/theme";
 import { useTypographyStyles } from "@/hooks/useTypographyStyles";
 
 export enum ButtonTypes {
   default,
   share,
+  location,
 }
 
 interface ButtonProps {
@@ -18,14 +20,16 @@ export const Button: React.FC<ButtonProps> = ({
   url = "",
 }) => {
   const styles = useStyles(type);
-  const { buttonLarge } = useTypographyStyles();
+  const { buttonLarge, bodySmall } = useTypographyStyles();
+  const buttonTextStyle =
+    type === ButtonTypes.default ? buttonLarge : bodySmall;
 
   return (
     <TouchableOpacity
       style={[styles.container]}
       onPress={async () => await Linking.openURL(url)}
     >
-      <Text style={[styles.text, buttonLarge]}>{text}</Text>
+      <Text style={[styles.text, buttonTextStyle]}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -43,6 +47,24 @@ const useStyles = (type: ButtonTypes) => {
         paddingHorizontal: 24,
         marginRight: 16,
         marginTop: 16,
+      },
+      text: {
+        color: "#ffffff",
+      },
+    });
+  } else if (type === ButtonTypes.location) {
+    return StyleSheet.create({
+      container: {
+        borderRadius: 30,
+        flexDirection: "row",
+        alignSelf: "flex-start",
+        paddingHorizontal: 16,
+        paddingVertical: 4,
+        borderColor: theme.colors.dark,
+        borderWidth: 1,
+        marginRight: 16,
+        width: "auto",
+        marginTop: 8,
       },
       text: {
         color: "#ffffff",

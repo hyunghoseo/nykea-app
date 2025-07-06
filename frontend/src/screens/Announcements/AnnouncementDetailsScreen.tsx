@@ -9,14 +9,13 @@ export const AnnouncementDetailsScreen = ({ route }: any) => {
     isLoading,
     isError,
   } = useGetAnnouncementsId({ pathParams: { id } });
+
   return (
     <DetailPage
       type="announcement"
       isLoading={isLoading}
       isError={isError}
-      data={announcement}
-      tags={announcement?.attributes?.HostingGroup?.data?.attributes?.Name}
-      description="yes right."
+      data={announcement?.attributes}
     />
   );
 };

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { useHover } from "react-native-web-hooks";
+import { useActive, useHover } from "react-native-web-hooks";
 
 import { navRoutes } from "@/config/navigation";
 import { useNavigationRef } from "@/contexts/NavigationProvider";
@@ -20,6 +20,7 @@ export const NavItem: React.FC<NavItemProps> = ({ route }) => {
 
   const ref = useRef<TouchableOpacity>(null);
   const isHovered = useHover(ref);
+  const isActive = useActive(ref);
 
   return (
     <TouchableOpacity
@@ -32,7 +33,7 @@ export const NavItem: React.FC<NavItemProps> = ({ route }) => {
         style={[
           styles.navText,
           route === currentRoute && styles.navTextActive,
-          isHovered && styles.navTextHovered,
+          (isHovered || isActive) && styles.navTextHovered,
         ]}
       >
         {t(`nav.${route}`)}
