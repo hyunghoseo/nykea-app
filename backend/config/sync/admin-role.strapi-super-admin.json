@@ -477,7 +477,7 @@
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage",
           "Slides.SlideTitle",
-          "MainMessageDescription"
+          "MainMessageRichText"
         ],
         "locales": [
           "en",
@@ -510,7 +510,7 @@
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage",
           "Slides.SlideTitle",
-          "MainMessageDescription"
+          "MainMessageRichText"
         ],
         "locales": [
           "en",
@@ -531,7 +531,7 @@
           "Slides.SlideButtonLink",
           "Slides.SlideBackgroundImage",
           "Slides.SlideTitle",
-          "MainMessageDescription"
+          "MainMessageRichText"
         ],
         "locales": [
           "en",

@@ -48,16 +48,16 @@
           "sortable": false
         }
       },
-      "MainMessageDescription": {
+      "MainMessageRichText": {
         "edit": {
-          "label": "MainMessageDescription",
+          "label": "MainMessageRichText",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "MainMessageDescription",
+          "label": "MainMessageRichText",
           "searchable": false,
           "sortable": false
         }
@@ -142,7 +142,7 @@
         ],
         [
           {
-            "name": "MainMessageDescription",
+            "name": "MainMessageRichText",
             "size": 12
           }
         ]
