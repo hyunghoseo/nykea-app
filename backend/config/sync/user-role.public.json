@@ -31,6 +31,9 @@
       "action": "api::group.group.findOne"
     },
     {
+      "action": "api::homepage-info.homepage-info.find"
+    },
+    {
       "action": "api::private-policy.private-policy.find"
     },
     {

@@ -1149,13 +1149,13 @@ export interface ApiHomepageInfoHomepageInfo extends Schema.SingleType {
           localized: true;
         };
       }>;
-    MainMessageDescription: Attribute.String &
+    Slides: Attribute.Component<'list.carousel-slide', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Slides: Attribute.Component<'list.carousel-slide', true> &
+    MainMessageDescription: Attribute.Blocks &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
