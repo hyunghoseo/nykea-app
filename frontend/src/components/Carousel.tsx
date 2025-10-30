@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import { Icon } from "react-native-elements";
+import { ScrollView } from "react-native-gesture-handler";
 import ReanimatedCarousel from "react-native-reanimated-carousel";
 
 import { theme } from "@/config/theme";
@@ -119,8 +120,11 @@ const Carousel: React.FC<CarouselProps> = ({
         renderItem={renderItem}
         onSnapToItem={(index) => setCurrentIndex(index)}
         autoPlay
-        autoPlayInterval={4000}
+        autoPlayInterval={6000}
         loop
+        onConfigurePanGesture={(panGesture) =>
+          panGesture.activeOffsetY([-999999, 999999]).activeOffsetX([-20, 20])
+        }
       />
 
       {/* Navigation Arrows - Web only */}
