@@ -7,6 +7,8 @@ type PrefixedNavRoute = `nav.${NavRoute}`;
 export type TranslationEntryKey =
   | PrefixedNavRoute
   | "home"
+  | "home.announcements"
+  | "home.seeAllAnnouncements"
   | "pagination.next"
   | "pagination.previous"
   | "icon.Menu"
@@ -32,6 +34,8 @@ type Translations = {
 export const translations: Translations = {
   en: {
     home: "NY Korean Family Church",
+    "home.announcements": "Announcements",
+    "home.seeAllAnnouncements": "See All Announcements",
     "pagination.next": "Next",
     "pagination.previous": "Prev",
     "nav.About": "About Us",
@@ -59,6 +63,8 @@ export const translations: Translations = {
   },
   ko: {
     home: "뉴욕한인교회",
+    "home.announcements": "공지사항",
+    "home.seeAllAnnouncements": "모든 공지사항 보기",
     "pagination.next": "다음",
     "pagination.previous": "이전",
     "nav.About": "교회 소개",
@@ -86,6 +92,8 @@ export const translations: Translations = {
   },
   ja: {
     home: "NY Korean Family Church",
+    "home.announcements": "お知らせ",
+    "home.seeAllAnnouncements": "すべてのお知らせを見る",
     "pagination.next": "次",
     "pagination.previous": "前",
     "nav.About": "About Us",

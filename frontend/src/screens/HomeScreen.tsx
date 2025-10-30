@@ -2,11 +2,13 @@ import { useEffect, useRef } from "react";
 import { Animated, Linking, StyleSheet, Text, View } from "react-native";
 
 import { theme } from "@/config/theme";
+import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
 import { RichText } from "@/components/Layout/RichText";
 
-import { useGetHomepageInfo } from "../api/apiComponents";
+import { useGetAnnouncements, useGetHomepageInfo } from "../api/apiComponents";
 import { baseUrl } from "../api/apiFetcher";
 import { ListCarouselSlideComponent } from "../api/apiSchemas";
+import { HorizontalAnnouncementList } from "../components/AnnouncementCard/HorizontalAnnouncementList";
 import Carousel, { CarouselSlide } from "../components/Carousel";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { RootStackParamList } from "../config/navigation";
@@ -96,6 +98,19 @@ const HomeScreen = () => {
     },
   });
 
+  const {
+    data: { data: announcements = [] } = {},
+    isLoading: isLoadingAnnouncements,
+  } = useGetAnnouncements({
+    queryParams: {
+      locale,
+      "pagination[pageSize]": 6,
+      "pagination[page]": 1,
+      sort: "publishedAt:desc",
+      populate: "HostingGroup",
+    },
+  });
+
   const carouselSlides: CarouselSlide[] = homepageInfo?.data?.attributes?.Slides
     ? transformApiDataToCarouselSlides(
         homepageInfo.data.attributes.Slides,
@@ -138,16 +153,11 @@ const HomeScreen = () => {
       </ScreenWrapper>
     );
   }
-
   return (
-    <ScreenWrapper noVerticalPadding>
-      <Animated.View style={{ opacity: fadeAnim, flex: 1 }}>
-        {carouselSlides.length > 0 ? (
+    <ScreenWrapper noVerticalPadding align="stretch">
+      <Animated.View style={{ opacity: fadeAnim }}>
+        {carouselSlides.length > 0 && (
           <Carousel slides={carouselSlides} height={480} maxImageWidth={1440} />
-        ) : (
-          <View style={styles.noSlidesContainer}>
-            <Text>No slides available</Text>
-          </View>
         )}
         <View style={styles.mainMessageContainer}>
           {homepageInfo?.data?.attributes?.MainMessageTitle && (
@@ -163,6 +173,10 @@ const HomeScreen = () => {
             </View>
           ) : null}
         </View>
+        <HorizontalAnnouncementList
+          announcements={announcements}
+          isLoading={isLoadingAnnouncements}
+        />
       </Animated.View>
     </ScreenWrapper>
   );
@@ -171,6 +185,7 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const useStyles = (locale: string) => {
+  const { isMobile } = useResponsiveLayout();
   return StyleSheet.create({
     loadingContainer: {
       height: 300,
@@ -203,7 +218,7 @@ const useStyles = (locale: string) => {
     },
     mainMessageContainer: {
       paddingHorizontal: 20,
-      paddingTop: 20,
+      paddingVertical: isMobile ? 20 : 56,
       justifyContent: "center",
       alignItems: "center",
       flex: 1,
@@ -212,7 +227,7 @@ const useStyles = (locale: string) => {
       alignSelf: "center",
     },
     mainMessageTitle: {
-      fontSize: 24,
+      fontSize: isMobile ? 24 : 32,
       fontFamily: locale === "ko" ? "NotoSansKR_700Bold" : "NotoSans_700Bold",
       color: theme.colors.primary[0],
       marginBottom: 32,
