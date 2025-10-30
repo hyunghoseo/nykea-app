@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Button, colors } from "react-native-elements";
+import { colors } from "react-native-elements";
 
 import { theme } from "@/config/theme";
 import { useLocale } from "@/contexts/LocaleProvider";

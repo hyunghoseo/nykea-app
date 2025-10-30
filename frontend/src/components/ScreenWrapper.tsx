@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, View } from "react-native";
+import { Platform, ScrollView, StyleSheet, View } from "react-native";
 
 type ScreenWrapperProps = {
   children: React.ReactNode;
@@ -14,7 +14,15 @@ const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
   const styles = useStyles();
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      bounces
+      alwaysBounceVertical
+      overScrollMode="always"
+      contentContainerStyle={
+        Platform.OS === "web" ? { minHeight: "100%" } : undefined
+      }
+    >
       <View
         style={[
           styles.content,
