@@ -2,6 +2,7 @@ import "moment/locale/ko";
 
 import { useRef } from "react";
 import { H3, P } from "@expo/html-elements";
+import { LinearGradient } from "expo-linear-gradient";
 import moment from "moment";
 import { Skeleton } from "moti/skeleton";
 import {
@@ -9,6 +10,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   TouchableOpacityProps,
+  View,
   ViewStyle,
 } from "react-native";
 import { Shadow } from "react-native-shadow-2";
@@ -29,13 +31,19 @@ type AnnouncementCardProps = Partial<Announcement> &
     id?: number;
     isLoading?: boolean;
     style?: StyleProp<ViewStyle>;
+    titleNumberOfLines?: number;
+    descriptionNumberOfLines?: number;
+    height?: number | string;
   };
 
 export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
   isLoading = false,
+  titleNumberOfLines = 3,
+  descriptionNumberOfLines = 4,
+  height,
   ...props
 }) => {
-  const styles = useStyles();
+  const styles = useStyles(height);
   const ref = useRef<TouchableOpacity>(null);
   const isHovered = useHover(ref);
   const isActive = useActive(ref);
@@ -73,38 +81,49 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
           })
         }
       >
-        <Skeleton.Group show={isLoading}>
-          <Skeleton colorMode="light">
-            <P style={[date, styles.text]}>
-              {t(`details.postedDate`)}
-              {moment(props?.publishedAt).locale(locale).format("llll")}
-            </P>
-          </Skeleton>
-          <Skeleton colorMode="light">
-            <H3 style={[h3, styles.text]} numberOfLines={3}>
-              {props.Title}
-            </H3>
-          </Skeleton>
-          {props.HostingGroup?.data && (
+        <View style={styles.contentContainer}>
+          <Skeleton.Group show={isLoading}>
             <Skeleton colorMode="light">
-              <Tag
-                text={props.HostingGroup?.data?.attributes?.Name}
-                style={[styles.noPointer]}
-              />
+              <P style={[date, styles.text]}>
+                {t(`details.postedDate`)}
+                {moment(props?.publishedAt).locale(locale).format("llll")}
+              </P>
             </Skeleton>
-          )}
-          <Skeleton colorMode="light">
-            <P style={bodyNormal} numberOfLines={4} ellipsizeMode="clip">
-              {props.Description ? getPlainText(props.Description) : ""}
-            </P>
-          </Skeleton>
-        </Skeleton.Group>
+            <Skeleton colorMode="light">
+              <H3 style={[h3, styles.text]} numberOfLines={titleNumberOfLines}>
+                {props.Title}
+              </H3>
+            </Skeleton>
+            {props.HostingGroup?.data && (
+              <Skeleton colorMode="light">
+                <Tag
+                  text={props.HostingGroup?.data?.attributes?.Name}
+                  style={[styles.noPointer]}
+                />
+              </Skeleton>
+            )}
+            <Skeleton colorMode="light">
+              <P
+                style={bodyNormal}
+                numberOfLines={descriptionNumberOfLines}
+                ellipsizeMode="clip"
+              >
+                {props.Description ? getPlainText(props.Description) : ""}
+              </P>
+            </Skeleton>
+          </Skeleton.Group>
+        </View>
+        <LinearGradient
+          colors={["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 1)"]}
+          style={styles.gradient}
+          pointerEvents="none"
+        />
       </TouchableOpacity>
     </Shadow>
   );
 };
 
-const useStyles = () => {
+const useStyles = (customHeight?: number | string) => {
   const { isMobile } = useResponsiveLayout();
   return StyleSheet.create({
     outerContainer: {
@@ -121,13 +140,25 @@ const useStyles = () => {
       paddingVertical: 16,
       width: "100%",
       alignItems: "flex-start",
-      height: isMobile ? "100%" : 256,
+      height: (customHeight ?? (isMobile ? "100%" : 256)) as any,
       overflow: "hidden",
       borderWidth: 2,
       borderColor: "transparent",
+      position: "relative",
     },
     innerContainerHovered: {
       borderColor: theme.colors.primary[4],
+    },
+    contentContainer: {
+      flex: 1,
+      width: "100%",
+    },
+    gradient: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      bottom: 0,
+      height: 80,
     },
     text: {
       marginBottom: 8,

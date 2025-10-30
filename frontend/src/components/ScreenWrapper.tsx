@@ -3,10 +3,12 @@ import { ScrollView, StyleSheet, View } from "react-native";
 type ScreenWrapperProps = {
   children: React.ReactNode;
   noVerticalPadding?: boolean;
+  align?: "center" | "stretch";
 };
 
 const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
   noVerticalPadding = false,
+  align = "center",
   children,
 }) => {
   const styles = useStyles();
@@ -17,6 +19,7 @@ const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
         style={[
           styles.content,
           noVerticalPadding && styles.contentNoVerticalPadding,
+          { alignItems: align },
         ]}
       >
         {children}
@@ -33,7 +36,6 @@ const useStyles = () => {
     content: {
       paddingVertical: 32,
       paddingHorizontal: 0,
-      alignItems: "center",
     },
     contentNoVerticalPadding: {
       paddingVertical: 0,
