@@ -105,7 +105,6 @@ const HomeScreen = () => {
     queryParams: {
       locale,
       "pagination[pageSize]": 6,
-      "pagination[page]": 1,
       sort: "publishedAt:desc",
       populate: "HostingGroup",
     },
@@ -117,8 +116,6 @@ const HomeScreen = () => {
         navigationRef,
       )
     : [];
-
-  // Fade in animation when data is loaded
   useEffect(() => {
     if (!isLoading && (homepageInfo || error)) {
       Animated.timing(fadeAnim, {
