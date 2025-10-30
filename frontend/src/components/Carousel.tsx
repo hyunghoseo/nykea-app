@@ -3,14 +3,13 @@ import {
   Dimensions,
   ImageBackground,
   Platform,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
 import { Icon } from "react-native-elements";
-import { ScrollView } from "react-native-gesture-handler";
-import ReanimatedCarousel from "react-native-reanimated-carousel";
 
 import { theme } from "@/config/theme";
 import { useResponsiveLayout } from "@/hooks/useResponsiveLayout";
@@ -39,8 +38,9 @@ const Carousel: React.FC<CarouselProps> = ({
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("window").width,
   );
-  const carouselRef = useRef<any>(null);
+  const scrollViewRef = useRef<ScrollView>(null);
   const { isWeb } = useResponsiveLayout();
+  const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const subscription = Dimensions.addEventListener("change", ({ window }) => {
@@ -49,6 +49,32 @@ const Carousel: React.FC<CarouselProps> = ({
 
     return () => subscription?.remove();
   }, []);
+
+  // Auto-play functionality - resets when currentIndex changes
+  useEffect(() => {
+    // Clear existing timer
+    if (autoPlayTimerRef.current) {
+      clearInterval(autoPlayTimerRef.current);
+    }
+
+    // Start new timer
+    autoPlayTimerRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex === slides.length - 1 ? 0 : prevIndex + 1;
+        scrollViewRef.current?.scrollTo({
+          x: nextIndex * screenWidth,
+          animated: true,
+        });
+        return nextIndex;
+      });
+    }, 6000);
+
+    return () => {
+      if (autoPlayTimerRef.current) {
+        clearInterval(autoPlayTimerRef.current);
+      }
+    };
+  }, [currentIndex, slides.length, screenWidth]);
 
   const renderItem = ({
     item,
@@ -96,7 +122,10 @@ const Carousel: React.FC<CarouselProps> = ({
   };
 
   const goToSlide = (index: number) => {
-    carouselRef.current?.scrollTo({ index, animated: true });
+    scrollViewRef.current?.scrollTo({
+      x: index * screenWidth,
+      animated: true,
+    });
     setCurrentIndex(index);
   };
 
@@ -110,22 +139,41 @@ const Carousel: React.FC<CarouselProps> = ({
     goToSlide(nextIndex);
   };
 
+  const handleScroll = (event: any) => {
+    const offsetX = event.nativeEvent.contentOffset.x;
+    const index = Math.round(offsetX / screenWidth);
+    if (index !== currentIndex && index >= 0 && index < slides.length) {
+      setCurrentIndex(index);
+    }
+  };
+
+  const handleScrollBegin = () => {
+    // Clear autoplay timer when user starts scrolling manually
+    if (autoPlayTimerRef.current) {
+      clearInterval(autoPlayTimerRef.current);
+    }
+  };
+
   return (
     <View style={[styles.container, { height }]}>
-      <ReanimatedCarousel
-        ref={carouselRef}
-        width={screenWidth}
-        height={height}
-        data={slides}
-        renderItem={renderItem}
-        onSnapToItem={(index) => setCurrentIndex(index)}
-        autoPlay
-        autoPlayInterval={6000}
-        loop
-        onConfigurePanGesture={(panGesture) =>
-          panGesture.activeOffsetY([-999999, 999999]).activeOffsetX([-20, 20])
-        }
-      />
+      <ScrollView
+        ref={scrollViewRef}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={handleScroll}
+        onScrollBeginDrag={handleScrollBegin}
+        onMomentumScrollEnd={handleScroll}
+        scrollEventThrottle={16}
+        style={{ height }}
+        contentContainerStyle={{ height }}
+      >
+        {slides.map((slide, index) => (
+          <View key={slide.id} style={{ width: screenWidth, height }}>
+            {renderItem({ item: slide, index })}
+          </View>
+        ))}
+      </ScrollView>
 
       {/* Navigation Arrows - Web only */}
       {isWeb && (
@@ -176,7 +224,8 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   slide: {
-    flex: 1,
+    width: "100%",
+    height: "100%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
